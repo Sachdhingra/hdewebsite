@@ -1,24 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { products, categories } from '../data/mockData';
-import { Star, Heart } from 'lucide-react';
+import { getProductsByCategory, getCategoryBySlug } from '../utils/api';
+import { categories as mockCategories } from '../data/mockData';
+import { Heart } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import InquiryForm from '../components/InquiryForm';
 
 const CategoryPage = () => {
   const { slug } = useParams();
   const [priceFilter, setPriceFilter] = useState('all');
-  
-  const category = categories.find(cat => cat.slug === slug);
-  const categoryProducts = products.filter(p => p.category === slug);
+  const [category, setCategory] = useState(null);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredProducts = categoryProducts.filter(product => {
-    if (priceFilter === 'all') return true;
-    if (priceFilter === 'under25k') return product.price < 25000;
-    if (priceFilter === '25k-50k') return product.price >= 25000 && product.price <= 50000;
-    if (priceFilter === 'above50k') return product.price > 50000;
-    return true;
-  });
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        // Fetch category
+        try {
+          const cat = await getCategoryBySlug(slug);
+          setCategory(cat);
+        } catch (error) {
+          // Fallback to mock
+          const mockCat = mockCategories.find(c => c.slug === slug);
+          setCategory(mockCat);
+        }
+
+        // Fetch products
+        const filters = {};
+        if (priceFilter === 'under25k') {
+          filters.maxPrice = 25000;
+        } else if (priceFilter === '25k-50k') {
+          filters.minPrice = 25000;
+          filters.maxPrice = 50000;
+        } else if (priceFilter === 'above50k') {
+          filters.minPrice = 50000;
+        }
+
+        const productsData = await getProductsByCategory(slug, filters);
+        setProducts(productsData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (slug) {
+      fetchData();
+    }
+  }, [slug, priceFilter]);
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-16 text-center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   if (!category) {
     return (
@@ -105,62 +145,68 @@ const CategoryPage = () => {
           <div className="flex-1">
             <div className="mb-6">
               <p className="text-gray-600">
-                Showing {filteredProducts.length} products
+                Showing {products.length} products
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProducts.map((product) => {
-                const discount = Math.round(
-                  ((product.originalPrice - product.price) / product.originalPrice) * 100
-                );
-                return (
-                  <div
-                    key={product.id}
-                    className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden group"
-                  >
-                    <div className="relative aspect-square overflow-hidden">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      {discount > 0 && (
-                        <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                          {discount}% OFF
-                        </div>
-                      )}
-                      <button className="absolute top-4 right-4 bg-white p-2 rounded-full hover:bg-red-50 transition-colors">
-                        <Heart size={20} className="text-gray-600 hover:text-red-500" />
-                      </button>
-                    </div>
-                    <div className="p-4">
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
-                        {product.name}
-                      </h3>
-                      <p className="text-sm text-gray-600 mb-3 line-clamp-2">{product.description}</p>
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="text-2xl font-bold text-gray-900">
-                          ₹{product.price.toLocaleString('en-IN')}
-                        </span>
-                        <span className="text-sm text-gray-500 line-through">
-                          ₹{product.originalPrice.toLocaleString('en-IN')}
-                        </span>
+            {products.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-gray-600">No products found in this price range.</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {products.map((product) => {
+                  const discount = Math.round(
+                    ((product.originalPrice - product.price) / product.originalPrice) * 100
+                  );
+                  return (
+                    <div
+                      key={product.id || product._id}
+                      className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden group"
+                    >
+                      <div className="relative aspect-square overflow-hidden">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        {discount > 0 && (
+                          <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            {discount}% OFF
+                          </div>
+                        )}
+                        <button className="absolute top-4 right-4 bg-white p-2 rounded-full hover:bg-red-50 transition-colors">
+                          <Heart size={20} className="text-gray-600 hover:text-red-500" />
+                        </button>
                       </div>
-                      <div className="flex flex-wrap gap-1 mb-3">
-                        {product.features.slice(0, 2).map((feature, index) => (
-                          <span key={index} className="text-xs bg-gray-100 px-2 py-1 rounded">
-                            {feature}
+                      <div className="p-4">
+                        <h3 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
+                          {product.name}
+                        </h3>
+                        <p className="text-sm text-gray-600 mb-3 line-clamp-2">{product.description}</p>
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="text-2xl font-bold text-gray-900">
+                            ₹{product.price.toLocaleString('en-IN')}
                           </span>
-                        ))}
+                          <span className="text-sm text-gray-500 line-through">
+                            ₹{product.originalPrice.toLocaleString('en-IN')}
+                          </span>
+                        </div>
+                        <div className="flex flex-wrap gap-1 mb-3">
+                          {product.features.slice(0, 2).map((feature, index) => (
+                            <span key={index} className="text-xs bg-gray-100 px-2 py-1 rounded">
+                              {feature}
+                            </span>
+                          ))}
+                        </div>
+                        <Button className="w-full bg-red-500 hover:bg-red-600 text-white transition-colors">
+                          View Details
+                        </Button>
                       </div>
-                      <Button className="w-full bg-red-500 hover:bg-red-600 text-white transition-colors">
-                        View Details
-                      </Button>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </div>
