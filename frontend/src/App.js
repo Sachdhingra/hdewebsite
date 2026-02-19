@@ -7,6 +7,7 @@ import Home from "@/pages/Home";
 import CategoryPage from "@/pages/CategoryPage";
 import ShowroomsPage from "@/pages/ShowroomsPage";
 import ContactPage from "@/pages/ContactPage";
+import AdminDashboard from "@/pages/AdminDashboard";
 import { Toaster } from "@/components/ui/sonner";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/showrooms" element={<ShowroomsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/products" element={<CategoryPage />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
           </Routes>
         </main>
         <Footer />
