@@ -1,17 +1,11 @@
 from fastapi import APIRouter, HTTPException, Query
 from typing import Optional, List
 from models.lead import Lead, LeadCreate, LeadAssign, LeadStatusUpdate, LeadNote, LeadNoteAdd
-from motor.motor_asyncio import AsyncIOMotorClient
-import os
+from database import db
 from datetime import datetime
 from bson import ObjectId
 
 router = APIRouter()
-
-# MongoDB connection
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
 
 @router.post("/leads", response_model=dict)
 async def create_lead(lead: LeadCreate):
