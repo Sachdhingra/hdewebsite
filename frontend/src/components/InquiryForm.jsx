@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
-import { useToast } from '../hooks/use-toast';
-import { Phone, Mail, MessageSquare } from 'lucide-react';
+import { toast } from 'sonner';
+import { MessageSquare } from 'lucide-react';
+import { submitLead } from '../utils/api';
 
 const InquiryForm = ({ productName = '', category = '' }) => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,13 +25,16 @@ const InquiryForm = ({ productName = '', category = '' }) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // TODO: This will be connected to backend API and CRM later
-    // For now, just simulate submission
-    setTimeout(() => {
-      toast({
-        title: "Inquiry Submitted!",
-        description: "Thank you for your interest. Our team will contact you shortly.",
+    try {
+      const response = await submitLead({
+        ...formData,
+        source: category ? 'category-page' : 'website'
       });
+      
+      toast.success(response.message || 'Inquiry submitted successfully!', {
+        description: 'Our team will contact you shortly.',
+      });
+      
       setFormData({
         name: '',
         email: '',
@@ -40,8 +43,14 @@ const InquiryForm = ({ productName = '', category = '' }) => {
         productInterest: '',
         category: ''
       });
+    } catch (error) {
+      console.error('Error submitting lead:', error);
+      toast.error('Failed to submit inquiry', {
+        description: 'Please try again or contact us directly.',
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
