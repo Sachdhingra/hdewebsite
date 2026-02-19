@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Star, Heart } from 'lucide-react';
-import { products } from '../data/mockData';
+import { Heart } from 'lucide-react';
+import { getFeaturedProducts } from '../utils/api';
 import { Button } from './ui/button';
 
 const ProductCard = ({ product }) => {
@@ -44,7 +44,7 @@ const ProductCard = ({ product }) => {
           ))}
         </div>
         <Button
-          onClick={() => navigate(`/product/${product.id}`)}
+          onClick={() => navigate(`/product/${product.id || product._id}`)}
           className="w-full bg-red-500 hover:bg-red-600 text-white transition-colors"
         >
           View Details
@@ -55,7 +55,37 @@ const ProductCard = ({ product }) => {
 };
 
 const FeaturedProducts = () => {
-  const featuredProducts = products.slice(0, 4);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const data = await getFeaturedProducts();
+        setProducts(data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        // Fallback to mock data
+        import('../data/mockData').then(({ products: mockProducts }) => {
+          setProducts(mockProducts.slice(0, 4));
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center">Loading products...</div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-16 bg-white">
@@ -69,8 +99,8 @@ const FeaturedProducts = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {products.map((product) => (
+            <ProductCard key={product.id || product._id} product={product} />
           ))}
         </div>
       </div>
