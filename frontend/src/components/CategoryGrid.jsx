@@ -1,9 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { categories } from '../data/mockData';
+import { getCategories } from '../data/mockData';
 
 const CategoryGrid = () => {
   const navigate = useNavigate();
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const data = await getCategories();
+        setCategories(data);
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+        // Fallback to mock data
+        import('../data/mockData').then(({ categories: mockCategories }) => {
+          setCategories(mockCategories);
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCategories();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center">Loading categories...</div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-16 bg-gray-50">
@@ -14,7 +45,7 @@ const CategoryGrid = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((category) => (
             <div
-              key={category.id}
+              key={category.id || category._id}
               onClick={() => navigate(`/category/${category.slug}`)}
               className="group relative overflow-hidden rounded-lg cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
             >
