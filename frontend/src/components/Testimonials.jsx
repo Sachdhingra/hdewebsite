@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Star } from 'lucide-react';
-import { testimonials } from '../data/mockData';
+import { getTestimonials } from '../utils/api';
 
 const TestimonialCard = ({ testimonial }) => {
   return (
@@ -20,6 +20,38 @@ const TestimonialCard = ({ testimonial }) => {
 };
 
 const Testimonials = () => {
+  const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const data = await getTestimonials();
+        setTestimonials(data);
+      } catch (error) {
+        console.error('Error fetching testimonials:', error);
+        // Fallback to mock data
+        import('../data/mockData').then(({ testimonials: mockTestimonials }) => {
+          setTestimonials(mockTestimonials);
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center">Loading testimonials...</div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -33,7 +65,7 @@ const Testimonials = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+            <TestimonialCard key={testimonial.id || testimonial._id} testimonial={testimonial} />
           ))}
         </div>
       </div>
