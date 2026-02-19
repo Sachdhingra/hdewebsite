@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getCategories } from '../data/mockData';
+import { getCategories } from '../utils/api';
 
 const CategoryGrid = () => {
   const navigate = useNavigate();
