@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import HeroCarousel from '../components/HeroCarousel';
 import CategoryGrid from '../components/CategoryGrid';
 import FeaturedProducts from '../components/FeaturedProducts';
