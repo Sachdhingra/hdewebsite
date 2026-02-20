@@ -232,22 +232,19 @@ const CSVUploadPage = () => {
                 Download Template
               </Button>
 
-              <div className="relative">
+              <div className="relative inline-block">
                 <input
                   type="file"
                   accept=".csv"
                   onChange={(e) => handleFileUpload(e, activeTab)}
-                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                   disabled={uploading}
-                  id="csv-file-input"
+                  id={`csv-file-input-${activeTab}`}
                 />
-                <Button
-                  disabled={uploading}
-                  className="bg-red-500 hover:bg-red-600 text-white flex items-center gap-2 pointer-events-none"
-                >
+                <div className={`bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md flex items-center gap-2 ${uploading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}>
                   <Upload size={18} />
-                  {uploading ? 'Uploading...' : 'Upload CSV File'}
-                </Button>
+                  <span className="font-medium">{uploading ? 'Uploading...' : 'Upload CSV File'}</span>
+                </div>
               </div>
 
               <Button
