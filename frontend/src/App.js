@@ -10,6 +10,8 @@ import ContactPage from "@/pages/ContactPage";
 import AdminDashboard from "@/pages/AdminDashboard";
 import CSVUploadPage from "@/pages/CSVUploadPage";
 import CartPage from "@/pages/CartPage";
+import CartInquiriesPage from "@/pages/CartInquiriesPage";
+import ProductEditPage from "@/pages/ProductEditPage";
 import { Toaster } from "@/components/ui/sonner";
 
 function App() {
