@@ -1,16 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Heart } from 'lucide-react';
+import { Heart, ShoppingCart } from 'lucide-react';
 import { getFeaturedProducts } from '../utils/api';
 import { Button } from './ui/button';
+import { toast } from 'sonner';
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
 
+  const addToCart = (e) => {
+    e.stopPropagation();
+    
+    const cartItem = {
+      productId: product.id || product._id,
+      productName: product.name,
+      price: product.price,
+      quantity: 1,
+      image: product.image
+    };
+
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const existingIndex = cart.findIndex(item => item.productId === cartItem.productId);
+
+    if (existingIndex >= 0) {
+      cart[existingIndex].quantity += 1;
+      toast.success('Quantity updated in cart');
+    } else {
+      cart.push(cartItem);
+      toast.success('Added to cart');
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.dispatchEvent(new Event('storage'));
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden group">
-      <div className="relative aspect-square overflow-hidden">
+      <div className="relative aspect-square overflow-hidden cursor-pointer" onClick={() => navigate(`/product/${product.id || product._id}`)}>
         <img
           src={product.image}
           alt={product.name}
@@ -43,12 +70,22 @@ const ProductCard = ({ product }) => {
             </span>
           ))}
         </div>
-        <Button
-          onClick={() => navigate(`/product/${product.id || product._id}`)}
-          className="w-full bg-red-500 hover:bg-red-600 text-white transition-colors"
-        >
-          View Details
-        </Button>
+        <div className="grid grid-cols-2 gap-2">
+          <Button
+            onClick={() => navigate(`/product/${product.id || product._id}`)}
+            variant="outline"
+            className="border-red-500 text-red-500 hover:bg-red-50"
+          >
+            View Details
+          </Button>
+          <Button
+            onClick={addToCart}
+            className="bg-red-500 hover:bg-red-600 text-white flex items-center justify-center gap-1"
+          >
+            <ShoppingCart size={16} />
+            Add to Cart
+          </Button>
+        </div>
       </div>
     </div>
   );
