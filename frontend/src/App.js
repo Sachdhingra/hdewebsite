@@ -29,6 +29,8 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
             <Route path="/admin/csv-upload" element={<CSVUploadPage />} />
+            <Route path="/admin/cart-inquiries" element={<CartInquiriesPage />} />
+            <Route path="/admin/products" element={<ProductEditPage />} />
           </Routes>
         </main>
         <Footer />
