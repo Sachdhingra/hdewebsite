@@ -63,18 +63,34 @@ const AdminDashboard = () => {
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
               <h1 className="text-3xl font-bold text-gray-800">CRM Dashboard</h1>
               <p className="text-gray-600 mt-1">Manage leads and track conversions</p>
             </div>
-            <Button
-              onClick={() => navigate('/admin/csv-upload')}
-              className="bg-green-500 hover:bg-green-600 text-white flex items-center gap-2"
-            >
-              <Upload size={18} />
-              CSV Upload
-            </Button>
+            <div className="flex gap-2 flex-wrap">
+              <Button
+                onClick={() => navigate('/admin/cart-inquiries')}
+                className="bg-purple-500 hover:bg-purple-600 text-white flex items-center gap-2"
+              >
+                <ShoppingCart size={18} />
+                Cart Inquiries
+              </Button>
+              <Button
+                onClick={() => navigate('/admin/products')}
+                className="bg-blue-500 hover:bg-blue-600 text-white flex items-center gap-2"
+              >
+                <Package size={18} />
+                Edit Products
+              </Button>
+              <Button
+                onClick={() => navigate('/admin/csv-upload')}
+                className="bg-green-500 hover:bg-green-600 text-white flex items-center gap-2"
+              >
+                <Upload size={18} />
+                CSV Upload
+              </Button>
+            </div>
           </div>
         </div>
       </div>
