@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getLeads, getLeadStats, updateLeadStatus, assignLead } from '../utils/api';
 import { toast } from 'sonner';
-import { Users, Mail, Phone, Calendar, Filter } from 'lucide-react';
+import { Users, Mail, Phone, Calendar, Filter, Upload } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
   const [leads, setLeads] = useState([]);
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
