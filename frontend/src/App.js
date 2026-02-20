@@ -24,6 +24,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/products" element={<CategoryPage />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/csv-upload" element={<CSVUploadPage />} />
           </Routes>
         </main>
         <Footer />
