@@ -9,6 +9,7 @@ import ShowroomsPage from "@/pages/ShowroomsPage";
 import ContactPage from "@/pages/ContactPage";
 import AdminDashboard from "@/pages/AdminDashboard";
 import CSVUploadPage from "@/pages/CSVUploadPage";
+import CartPage from "@/pages/CartPage";
 import { Toaster } from "@/components/ui/sonner";
 
 function App() {
