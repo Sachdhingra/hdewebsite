@@ -1,11 +1,27 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Search, Heart, ShoppingCart, MapPin, Phone, Menu, X } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Search, Heart, ShoppingCart, MapPin, Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
+import { subcategories } from '../data/subcategories';
 
 const Header = () => {
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('homes');
+  const [hoveredCategory, setHoveredCategory] = useState(null);
+  
+  // Get cart count from localStorage
+  const cartItems = JSON.parse(localStorage.getItem('cart') || '[]');
+  const cartCount = cartItems.length;
+
+  const mainCategories = [
+    { name: 'Living room', slug: 'living-room' },
+    { name: 'Bedroom', slug: 'bedroom' },
+    { name: 'Dining room', slug: 'dining-room' },
+    { name: 'Office and Study', slug: 'office-study' },
+    { name: 'Modular Kitchens', slug: 'modular-kitchen' },
+    { name: 'All Products', slug: 'all' }
+  ];
 
   return (
     <header className="w-full bg-white shadow-sm sticky top-0 z-50">
@@ -58,8 +74,13 @@ const Header = () => {
             <Link to="/wishlist" className="text-gray-700 hover:text-gray-900">
               <Heart size={22} />
             </Link>
-            <Link to="/cart" className="text-gray-700 hover:text-gray-900">
+            <Link to="/cart" className="text-gray-700 hover:text-gray-900 relative">
               <ShoppingCart size={22} />
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold">
+                  {cartCount}
+                </span>
+              )}
             </Link>
           </div>
 
@@ -101,40 +122,50 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Navigation Menu */}
+      {/* Navigation Menu with Mega Dropdown */}
       <nav className="bg-white border-b border-gray-200">
         <div className="container mx-auto px-4">
-          <ul className="hidden lg:flex items-center gap-8 py-3 text-sm font-medium">
-            <li>
-              <Link to="/category/living-room" className="text-gray-700 hover:text-red-500 transition-colors">
-                Living room
-              </Link>
-            </li>
-            <li>
-              <Link to="/category/bedroom" className="text-gray-700 hover:text-red-500 transition-colors">
-                Bedroom
-              </Link>
-            </li>
-            <li>
-              <Link to="/category/dining-room" className="text-gray-700 hover:text-red-500 transition-colors">
-                Dining room
-              </Link>
-            </li>
-            <li>
-              <Link to="/category/office-study" className="text-gray-700 hover:text-red-500 transition-colors">
-                Office and Study
-              </Link>
-            </li>
-            <li>
-              <Link to="/category/modular-kitchen" className="text-gray-700 hover:text-red-500 transition-colors">
-                Modular Kitchens
-              </Link>
-            </li>
-            <li>
-              <Link to="/products" className="text-gray-700 hover:text-red-500 transition-colors">
-                All Products
-              </Link>
-            </li>
+          <ul className="hidden lg:flex items-center gap-8 py-3 text-sm font-medium relative">
+            {mainCategories.map((category) => (
+              <li
+                key={category.slug}
+                className="relative"
+                onMouseEnter={() => setHoveredCategory(category.slug)}
+                onMouseLeave={() => setHoveredCategory(null)}
+              >
+                <Link
+                  to={`/category/${category.slug}`}
+                  className="text-gray-700 hover:text-red-500 transition-colors flex items-center gap-1"
+                >
+                  {category.name}
+                  {subcategories[category.slug] && <ChevronDown size={14} />}
+                </Link>
+
+                {/* Mega Dropdown */}
+                {subcategories[category.slug] && hoveredCategory === category.slug && (
+                  <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg p-6 min-w-[300px] z-50">
+                    <h4 className="text-sm font-semibold text-gray-800 mb-3 uppercase">
+                      {category.name}
+                    </h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      {subcategories[category.slug].map((subcat) => (
+                        <Link
+                          key={subcat.slug}
+                          to={`/category/${category.slug}/${subcat.slug}`}
+                          className="flex items-center gap-2 p-2 rounded hover:bg-red-50 transition-colors"
+                          onClick={() => setHoveredCategory(null)}
+                        >
+                          <span className="text-xl">{subcat.icon}</span>
+                          <span className="text-sm text-gray-700 hover:text-red-500">
+                            {subcat.name}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </li>
+            ))}
             <li>
               <Link to="/offers" className="text-red-500 font-semibold hover:text-red-600 transition-colors">
                 Offers
@@ -145,54 +176,45 @@ const Header = () => {
           {/* Mobile Menu */}
           {mobileMenuOpen && (
             <div className="lg:hidden py-4 space-y-2">
-              <Link
-                to="/category/living-room"
-                className="block py-2 text-gray-700 hover:text-red-500"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Living room
-              </Link>
-              <Link
-                to="/category/bedroom"
-                className="block py-2 text-gray-700 hover:text-red-500"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Bedroom
-              </Link>
-              <Link
-                to="/category/dining-room"
-                className="block py-2 text-gray-700 hover:text-red-500"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Dining room
-              </Link>
-              <Link
-                to="/category/office-study"
-                className="block py-2 text-gray-700 hover:text-red-500"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Office and Study
-              </Link>
-              <Link
-                to="/category/modular-kitchen"
-                className="block py-2 text-gray-700 hover:text-red-500"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Modular Kitchens
-              </Link>
-              <Link
-                to="/products"
-                className="block py-2 text-gray-700 hover:text-red-500"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                All Products
-              </Link>
+              {mainCategories.map((category) => (
+                <div key={category.slug}>
+                  <Link
+                    to={`/category/${category.slug}`}
+                    className="block py-2 text-gray-700 hover:text-red-500 font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {category.name}
+                  </Link>
+                  {subcategories[category.slug] && (
+                    <div className="pl-4 space-y-1">
+                      {subcategories[category.slug].map((subcat) => (
+                        <Link
+                          key={subcat.slug}
+                          to={`/category/${category.slug}/${subcat.slug}`}
+                          className="block py-1 text-sm text-gray-600 hover:text-red-500"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {subcat.icon} {subcat.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
               <Link
                 to="/offers"
                 className="block py-2 text-red-500 font-semibold"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Offers
+              </Link>
+              <Link
+                to="/cart"
+                className="block py-2 text-gray-700 font-medium flex items-center gap-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <ShoppingCart size={18} />
+                Cart {cartCount > 0 && `(${cartCount})`}
               </Link>
             </div>
           )}
