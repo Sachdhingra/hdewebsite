@@ -41,6 +41,7 @@ api_router.include_router(leads.router, tags=["Leads"])
 api_router.include_router(products.router, tags=["Products"])
 api_router.include_router(categories.router, tags=["Categories"])
 api_router.include_router(testimonials.router, tags=["Testimonials"])
+api_router.include_router(csv_upload.router, tags=["CSV Upload"])
 
 # Include the router in the main app
 app.include_router(api_router)
