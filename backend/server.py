@@ -7,7 +7,7 @@ import logging
 from pathlib import Path
 
 # Import route modules
-from routes import leads, products, categories, testimonials, csv_upload
+from routes import leads, products, categories, testimonials, csv_upload, cart
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
