@@ -112,11 +112,11 @@ async def upload_interio_csv(
                 if original_price < price:
                     original_price = price
                 
-                # Collect all images (handle multiple 'image' columns)
+                # Collect all images (handle multiple 'image' columns including image.1, image.2)
                 images = []
-                for i, col in enumerate(columns):
-                    if col == 'image':
-                        val = row.iloc[i] if i < len(row) else None
+                for col in columns:
+                    if col == 'image' or col.startswith('image.'):
+                        val = row.get(col)
                         if pd.notna(val):
                             img_url = str(val).strip()
                             # Only include actual image URLs (not product page URLs)
