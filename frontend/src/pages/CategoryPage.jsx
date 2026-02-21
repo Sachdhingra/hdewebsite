@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getProductsByCategory, getCategoryBySlug } from '../utils/api';
 import { categories as mockCategories } from '../data/mockData';
 import { Heart } from 'lucide-react';
@@ -158,10 +158,13 @@ const CategoryPage = () => {
                   const discount = Math.round(
                     ((product.originalPrice - product.price) / product.originalPrice) * 100
                   );
+                  const productId = product.id || product._id;
                   return (
-                    <div
-                      key={product.id || product._id}
-                      className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden group"
+                    <Link
+                      to={`/product/${productId}`}
+                      key={productId}
+                      className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden group block"
+                      data-testid={`product-card-${productId}`}
                     >
                       <div className="relative aspect-square overflow-hidden">
                         <img
@@ -174,7 +177,10 @@ const CategoryPage = () => {
                             {discount}% OFF
                           </div>
                         )}
-                        <button className="absolute top-4 right-4 bg-white p-2 rounded-full hover:bg-red-50 transition-colors">
+                        <button 
+                          onClick={(e) => e.preventDefault()}
+                          className="absolute top-4 right-4 bg-white p-2 rounded-full hover:bg-red-50 transition-colors"
+                        >
                           <Heart size={20} className="text-gray-600 hover:text-red-500" />
                         </button>
                       </div>
@@ -202,7 +208,7 @@ const CategoryPage = () => {
                           View Details
                         </Button>
                       </div>
-                    </div>
+                    </Link>
                   );
                 })}
               </div>
