@@ -11,7 +11,7 @@ from datetime import datetime
 
 # MongoDB connection
 MONGO_URL = os.environ.get('MONGO_URL', 'mongodb://localhost:27017')
-DB_NAME = os.environ.get('DB_NAME', 'interio_clone')
+DB_NAME = os.environ.get('DB_NAME', 'test_database')
 
 def parse_price(price_str):
     """Convert price string like '?4,990' or '?1,03,290' to float"""
