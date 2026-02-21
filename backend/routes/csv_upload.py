@@ -125,11 +125,11 @@ async def upload_interio_csv(
                 
                 primary_image = images[0] if images else ""
                 
-                # Collect description parts
+                # Collect description parts (handle description.1, description.2, etc.)
                 description_parts = []
-                for i, col in enumerate(columns):
-                    if col == 'description':
-                        val = row.iloc[i] if i < len(row) else None
+                for col in columns:
+                    if col == 'description' or col.startswith('description.'):
+                        val = row.get(col)
                         if pd.notna(val) and str(val).strip():
                             description_parts.append(str(val).strip())
                 
