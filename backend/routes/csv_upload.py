@@ -50,6 +50,9 @@ async def upload_interio_csv(
         contents = await file.read()
         df = pd.read_csv(io.StringIO(contents.decode('utf-8')))
         
+        # Strip whitespace from column names
+        df.columns = df.columns.str.strip()
+        
         # Determine category from filename or override
         if category_override:
             category_slug = category_override.lower().replace(' ', '-')
