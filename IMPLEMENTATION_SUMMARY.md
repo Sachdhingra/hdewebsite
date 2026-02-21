@@ -3,8 +3,8 @@
 ## ✅ Project Completed Successfully!
 
 ### 🌐 Website URL
-**Live Site:** https://interio-crm-connect.preview.emergentagent.com
-**Admin Dashboard:** https://interio-crm-connect.preview.emergentagent.com/admin/dashboard
+**Live Site:** https://godrej-partner-test.preview.emergentagent.com
+**Admin Dashboard:** https://godrej-partner-test.preview.emergentagent.com/admin/dashboard
 
 ---
 
@@ -78,14 +78,14 @@ A complete lead management system for tracking and converting inquiries.
 ## 🚀 How to Use
 
 ### For Customers (Public Website):
-1. Visit: https://interio-crm-connect.preview.emergentagent.com
+1. Visit: https://godrej-partner-test.preview.emergentagent.com
 2. Browse categories and products
 3. View showroom information
 4. Submit inquiry through any contact form
 5. Inquiries are automatically saved to CRM
 
 ### For Admin/Sales Team (CRM Dashboard):
-1. Visit: https://interio-crm-connect.preview.emergentagent.com/admin/dashboard
+1. Visit: https://godrej-partner-test.preview.emergentagent.com/admin/dashboard
 2. View all leads and statistics
 3. Filter leads by status
 4. Update lead status using dropdown

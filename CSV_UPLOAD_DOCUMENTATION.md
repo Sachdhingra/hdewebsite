@@ -3,7 +3,7 @@
 ## ✅ Feature Implemented Successfully!
 
 ### 📊 **CSV Upload Admin Panel**
-**URL:** https://interio-crm-connect.preview.emergentagent.com/admin/csv-upload
+**URL:** https://godrej-partner-test.preview.emergentagent.com/admin/csv-upload
 
 ---
 
@@ -149,7 +149,7 @@ name,email,phone,message,category,source
 ## 💡 How to Use
 
 ### **Step 1: Download Template**
-1. Go to: https://interio-crm-connect.preview.emergentagent.com/admin/csv-upload
+1. Go to: https://godrej-partner-test.preview.emergentagent.com/admin/csv-upload
 2. Select tab (Products/Categories/Leads)
 3. Click "Download Template"
 4. Open in Excel/Google Sheets
