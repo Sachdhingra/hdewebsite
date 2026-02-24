@@ -6,9 +6,20 @@ from bson import ObjectId
 
 router = APIRouter()
 
+# Category hierarchy for fetching products by parent category
+PARENT_SUBCATEGORIES = {
+    'living-room': ['sofas', 'recliners', 'coffee-tables', 'tv-units', 'bean-bags', 'ottomans', 'center-tables'],
+    'bedroom': ['beds', 'wardrobes', 'dressers', 'bedside-tables', 'mattresses'],
+    'dining-room': ['dining-tables', 'dining-chairs', 'dining-sets', 'crockery-units', 'bar-cabinets'],
+    'office-study': ['office-chairs', 'work-chairs', 'study-tables', 'bookshelves', 'computer-tables', 'filing-cabinets'],
+    'modular-kitchen': ['kitchen-cabinets', 'kitchen-storage', 'kitchen-islands'],
+    'storage': ['shoe-racks', 'storage-cabinets', 'wall-shelves', 'display-units']
+}
+
 @router.get("/products", response_model=dict)
 async def get_products(
     category: Optional[str] = Query(None, description="Filter by category slug"),
+    parentCategory: Optional[str] = Query(None, description="Filter by parent category"),
     minPrice: Optional[float] = Query(None, description="Minimum price"),
     maxPrice: Optional[float] = Query(None, description="Maximum price"),
     inStock: Optional[bool] = Query(None, description="Filter by stock status"),
@@ -19,7 +30,20 @@ async def get_products(
         query = {}
         
         if category:
-            query['category'] = category
+            # Check if this is a parent category
+            if category in PARENT_SUBCATEGORIES:
+                # Get products from this category AND all its subcategories
+                subcategories = PARENT_SUBCATEGORIES[category]
+                query['$or'] = [
+                    {'category': category},
+                    {'category': {'$in': subcategories}},
+                    {'parentCategory': category}
+                ]
+            else:
+                query['category'] = category
+        
+        if parentCategory:
+            query['parentCategory'] = parentCategory
         
         if minPrice is not None or maxPrice is not None:
             query['price'] = {}
@@ -34,9 +58,9 @@ async def get_products(
         cursor = db.products.find(query).sort('createdAt', -1)
         
         if featured:
-            cursor = cursor.limit(4)
+            cursor = cursor.limit(8)
         
-        products = await cursor.to_list(length=100)
+        products = await cursor.to_list(length=500)
         
         # Convert ObjectId to string
         for product in products:
