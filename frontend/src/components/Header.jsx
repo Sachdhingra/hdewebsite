@@ -1,27 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, Heart, ShoppingCart, MapPin, Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
-import { subcategories } from '../data/subcategories';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const Header = () => {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('homes');
   const [hoveredCategory, setHoveredCategory] = useState(null);
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
   
   // Get cart count from localStorage
   const cartItems = JSON.parse(localStorage.getItem('cart') || '[]');
   const cartCount = cartItems.length;
 
-  const mainCategories = [
-    { name: 'Living room', slug: 'living-room' },
-    { name: 'Bedroom', slug: 'bedroom' },
-    { name: 'Dining room', slug: 'dining-room' },
-    { name: 'Office and Study', slug: 'office-study' },
-    { name: 'Modular Kitchens', slug: 'modular-kitchen' },
-    { name: 'All Products', slug: 'all' }
+  // Default categories structure (fallback)
+  const defaultCategories = [
+    { name: 'Living Room', slug: 'living-room', subcategories: [] },
+    { name: 'Bedroom', slug: 'bedroom', subcategories: [] },
+    { name: 'Dining Room', slug: 'dining-room', subcategories: [] },
+    { name: 'Office & Study', slug: 'office-study', subcategories: [] },
+    { name: 'Modular Kitchen', slug: 'modular-kitchen', subcategories: [] }
   ];
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
+  const fetchCategories = async () => {
+    try {
+      const response = await axios.get(`${BACKEND_URL}/api/categories/hierarchy`);
+      if (response.data.success && response.data.hierarchy.length > 0) {
+        setCategories(response.data.hierarchy);
+      } else {
+        setCategories(defaultCategories);
+      }
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+      setCategories(defaultCategories);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <header className="w-full bg-white shadow-sm sticky top-0 z-50">
@@ -122,11 +146,11 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Navigation Menu with Mega Dropdown */}
+      {/* Navigation Menu with Dynamic Categories */}
       <nav className="bg-white border-b border-gray-200">
         <div className="container mx-auto px-4">
           <ul className="hidden lg:flex items-center gap-8 py-3 text-sm font-medium relative">
-            {mainCategories.map((category) => (
+            {categories.map((category) => (
               <li
                 key={category.slug}
                 className="relative"
@@ -138,34 +162,50 @@ const Header = () => {
                   className="text-gray-700 hover:text-red-500 transition-colors flex items-center gap-1"
                 >
                   {category.name}
-                  {subcategories[category.slug] && <ChevronDown size={14} />}
+                  {category.subcategories?.length > 0 && <ChevronDown size={14} />}
                 </Link>
 
-                {/* Mega Dropdown */}
-                {subcategories[category.slug] && hoveredCategory === category.slug && (
-                  <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg p-6 min-w-[300px] z-50">
-                    <h4 className="text-sm font-semibold text-gray-800 mb-3 uppercase">
+                {/* Mega Dropdown for subcategories */}
+                {category.subcategories?.length > 0 && hoveredCategory === category.slug && (
+                  <div className="absolute top-full left-0 mt-2 bg-white shadow-xl rounded-lg p-6 min-w-[350px] z-50 border border-gray-100">
+                    <h4 className="text-sm font-semibold text-gray-800 mb-4 uppercase border-b pb-2">
                       {category.name}
                     </h4>
-                    <div className="grid grid-cols-2 gap-3">
-                      {subcategories[category.slug].map((subcat) => (
+                    <div className="grid grid-cols-2 gap-2">
+                      {category.subcategories.map((subcat) => (
                         <Link
                           key={subcat.slug}
-                          to={`/category/${category.slug}/${subcat.slug}`}
-                          className="flex items-center gap-2 p-2 rounded hover:bg-red-50 transition-colors"
+                          to={`/category/${subcat.slug}`}
+                          className="flex items-center justify-between p-3 rounded-lg hover:bg-red-50 transition-colors group"
                           onClick={() => setHoveredCategory(null)}
                         >
-                          <span className="text-xl">{subcat.icon}</span>
-                          <span className="text-sm text-gray-700 hover:text-red-500">
+                          <span className="text-sm text-gray-700 group-hover:text-red-500 font-medium">
                             {subcat.name}
                           </span>
+                          {subcat.productCount > 0 && (
+                            <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                              {subcat.productCount}
+                            </span>
+                          )}
                         </Link>
                       ))}
                     </div>
+                    <Link
+                      to={`/category/${category.slug}`}
+                      className="block mt-4 pt-3 border-t text-center text-sm text-red-500 hover:text-red-600 font-medium"
+                      onClick={() => setHoveredCategory(null)}
+                    >
+                      View All {category.name} →
+                    </Link>
                   </div>
                 )}
               </li>
             ))}
+            <li>
+              <Link to="/products" className="text-gray-700 hover:text-red-500 transition-colors">
+                All Products
+              </Link>
+            </li>
             <li>
               <Link to="/offers" className="text-red-500 font-semibold hover:text-red-600 transition-colors">
                 Offers
@@ -175,9 +215,9 @@ const Header = () => {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="lg:hidden py-4 space-y-2">
-              {mainCategories.map((category) => (
-                <div key={category.slug}>
+            <div className="lg:hidden py-4 space-y-2 max-h-[70vh] overflow-y-auto">
+              {categories.map((category) => (
+                <div key={category.slug} className="border-b border-gray-100 pb-2">
                   <Link
                     to={`/category/${category.slug}`}
                     className="block py-2 text-gray-700 hover:text-red-500 font-medium"
@@ -185,22 +225,32 @@ const Header = () => {
                   >
                     {category.name}
                   </Link>
-                  {subcategories[category.slug] && (
+                  {category.subcategories?.length > 0 && (
                     <div className="pl-4 space-y-1">
-                      {subcategories[category.slug].map((subcat) => (
+                      {category.subcategories.map((subcat) => (
                         <Link
                           key={subcat.slug}
-                          to={`/category/${category.slug}/${subcat.slug}`}
-                          className="block py-1 text-sm text-gray-600 hover:text-red-500"
+                          to={`/category/${subcat.slug}`}
+                          className="block py-1 text-sm text-gray-600 hover:text-red-500 flex items-center justify-between"
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          {subcat.icon} {subcat.name}
+                          <span>{subcat.name}</span>
+                          {subcat.productCount > 0 && (
+                            <span className="text-xs text-gray-400">({subcat.productCount})</span>
+                          )}
                         </Link>
                       ))}
                     </div>
                   )}
                 </div>
               ))}
+              <Link
+                to="/products"
+                className="block py-2 text-gray-700 font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                All Products
+              </Link>
               <Link
                 to="/offers"
                 className="block py-2 text-red-500 font-semibold"
