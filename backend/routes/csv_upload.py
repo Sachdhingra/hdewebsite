@@ -9,10 +9,10 @@ from typing import Optional
 router = APIRouter()
 
 def parse_price(price_str):
-    """Convert price string like '₹4,990.00' or '?4,990' to float"""
+    """Convert price string like '₹4,990.00' or '??21,690' to float"""
     if pd.isna(price_str) or not price_str:
         return 0.0
-    # Remove currency symbols, commas, spaces
+    # Remove currency symbols, commas, spaces, question marks
     clean_price = re.sub(r'[^\d.]', '', str(price_str).replace(',', ''))
     try:
         return float(clean_price) if clean_price else 0.0
@@ -23,9 +23,7 @@ def extract_category_from_filename(filename):
     """Extract category name from filename like 'BEDROOM.csv' -> 'bedroom'"""
     if not filename:
         return None
-    # Remove extension and clean up
     name = filename.rsplit('.', 1)[0]
-    # Convert to lowercase and replace spaces/underscores with hyphens
     slug = re.sub(r'[\s_]+', '-', name.lower().strip())
     return slug
 
@@ -33,17 +31,192 @@ def create_category_name(slug):
     """Convert slug to display name: 'work-chairs' -> 'Work Chairs'"""
     return ' '.join(word.capitalize() for word in slug.split('-'))
 
+def detect_csv_format(columns):
+    """Detect which CSV format is being used"""
+    columns_lower = [c.lower() for c in columns]
+    
+    # Format 2: SOFAS/RECLINERS format (product-name, main-image src, etc.)
+    if 'product-name' in columns_lower or 'main-image src' in columns_lower:
+        return 'format2'
+    
+    # Format 1: Standard Interio format (name, originalprice, etc.)
+    if 'name' in columns_lower or 'originalprice' in columns_lower:
+        return 'format1'
+    
+    # Try to detect by checking for common patterns
+    for col in columns_lower:
+        if 'product' in col and 'name' in col:
+            return 'format2'
+    
+    return 'format1'  # Default to format1
+
+def process_format1_row(row, columns, category_slug, index):
+    """Process a row in Format 1 (name, originalprice, image, etc.)"""
+    name = str(row.get('name', '')).strip()
+    if not name or name == 'nan':
+        return None
+    
+    price = parse_price(row.get('price', 0))
+    original_price = parse_price(row.get('originalprice', row.get('originalPrice', 0)))
+    
+    if original_price < price:
+        original_price = price
+    
+    # Collect images
+    images = []
+    for col in columns:
+        if col == 'image' or col.startswith('image.'):
+            val = row.get(col)
+            if pd.notna(val):
+                img_url = str(val).strip()
+                if img_url.startswith('http') and 'media/catalog' in img_url:
+                    images.append(img_url)
+    
+    # Collect description
+    description_parts = []
+    for col in columns:
+        if col == 'description' or col.startswith('description.'):
+            val = row.get(col)
+            if pd.notna(val) and str(val).strip():
+                description_parts.append(str(val).strip())
+    description = ' | '.join(description_parts) if description_parts else name
+    
+    # Parse features
+    features = []
+    features_val = row.get('features', '')
+    if pd.notna(features_val) and features_val:
+        features = [f.strip() for f in str(features_val).split(',') if f.strip()]
+    
+    discount_text = row.get('price-discount-text', '')
+    if pd.notna(discount_text) and discount_text:
+        features.append(str(discount_text).strip())
+    
+    in_stock = True
+    stock_val = row.get('inStock', 'TRUE')
+    if pd.notna(stock_val):
+        in_stock = str(stock_val).upper() in ['TRUE', '1', 'YES']
+    
+    sku = str(row.get('sku', '')).strip() if pd.notna(row.get('sku')) else f"{category_slug[:3].upper()}-{index+1:04d}"
+    warranty = str(row.get('warranty', '')).strip() if pd.notna(row.get('warranty')) else ""
+    
+    return {
+        'name': name,
+        'category': category_slug,
+        'price': price,
+        'originalPrice': original_price,
+        'image': images[0] if images else "",
+        'images': images,
+        'description': description,
+        'features': features,
+        'inStock': in_stock,
+        'sku': sku,
+        'warranty': warranty,
+        'createdAt': datetime.utcnow(),
+        'updatedAt': datetime.utcnow()
+    }
+
+def process_format2_row(row, columns, category_slug, index):
+    """Process a row in Format 2 (product-name, main-image src, price 2, etc.)"""
+    # Get product name - try multiple column names
+    name = None
+    for col_name in ['product-name', 'productname', 'product name']:
+        if col_name in [c.lower() for c in columns]:
+            actual_col = [c for c in columns if c.lower() == col_name][0]
+            name = str(row.get(actual_col, '')).strip()
+            if name and name != 'nan':
+                break
+    
+    if not name or name == 'nan':
+        return None
+    
+    # Parse prices - try multiple column names
+    price = parse_price(row.get('price', 0))
+    original_price = parse_price(row.get('price 2', row.get('price2', 0)))
+    
+    if original_price < price:
+        original_price = price
+    if price == 0 and original_price > 0:
+        price = original_price
+    
+    # Collect images
+    images = []
+    main_img = row.get('main-image src', '')
+    if pd.notna(main_img) and str(main_img).startswith('http'):
+        images.append(str(main_img).strip())
+    
+    hover_img = row.get('hover-image src', '')
+    if pd.notna(hover_img) and str(hover_img).startswith('http'):
+        images.append(str(hover_img).strip())
+    
+    # Description from short-mini-des or similar
+    description = ""
+    for col_name in ['short-mini-des', 'short-mini-description', 'description', 'mini-des']:
+        if col_name in [c.lower() for c in columns]:
+            actual_col = [c for c in columns if c.lower() == col_name][0]
+            desc_val = row.get(actual_col, '')
+            if pd.notna(desc_val) and str(desc_val).strip():
+                description = str(desc_val).strip()
+                break
+    
+    if not description:
+        description = name
+    
+    # Features
+    features = []
+    
+    # Add prod-label (warranty info)
+    prod_label = row.get('prod-label', '')
+    if pd.notna(prod_label) and prod_label:
+        features.append(str(prod_label).strip())
+    
+    # Add description parts as features
+    if description and description != name:
+        desc_parts = [p.strip() for p in description.split(',') if p.strip()]
+        features.extend(desc_parts)
+    
+    # Add discount text
+    discount_text = row.get('price-discount-text', '')
+    if pd.notna(discount_text) and discount_text:
+        features.append(str(discount_text).strip())
+    
+    # Add color/finish from custom-tooltip
+    color_tooltip = row.get('custom-tooltip', '')
+    if pd.notna(color_tooltip) and color_tooltip and str(color_tooltip).strip():
+        features.append(f"Color: {str(color_tooltip).strip()}")
+    
+    # Warranty
+    warranty = ""
+    if pd.notna(prod_label) and 'warranty' in str(prod_label).lower():
+        warranty = str(prod_label).strip()
+    
+    return {
+        'name': name,
+        'category': category_slug,
+        'price': price,
+        'originalPrice': original_price,
+        'image': images[0] if images else "",
+        'images': images,
+        'description': description,
+        'features': features,
+        'inStock': True,
+        'sku': f"{category_slug[:3].upper()}-{index+1:04d}",
+        'warranty': warranty,
+        'createdAt': datetime.utcnow(),
+        'updatedAt': datetime.utcnow()
+    }
+
 @router.post("/csv/upload/interio")
 async def upload_interio_csv(
     file: UploadFile = File(...),
     category_override: Optional[str] = Form(None)
 ):
     """
-    Upload products via CSV file in Interio scraped format.
+    Upload products via CSV file - supports multiple formats.
     Category is auto-detected from filename (e.g., BEDROOM.csv -> bedroom category)
     
-    Expected columns: name, category, price, originalprice, image columns, description columns, 
-                     features, inStock, sku, warranty, price-discount-text
+    Supported formats:
+    - Format 1: name, category, price, originalprice, image, features, warranty
+    - Format 2: product-name, main-image src, price, price 2, short-mini-des, prod-label
     """
     try:
         # Read CSV file
@@ -52,6 +225,13 @@ async def upload_interio_csv(
         
         # Strip whitespace from column names
         df.columns = df.columns.str.strip()
+        
+        columns = list(df.columns)
+        print(f"CSV Columns: {columns}")
+        
+        # Detect format
+        csv_format = detect_csv_format(columns)
+        print(f"Detected format: {csv_format}")
         
         # Determine category from filename or override
         if category_override:
@@ -68,24 +248,30 @@ async def upload_interio_csv(
         existing_category = await db.categories.find_one({"slug": category_slug})
         if not existing_category:
             # Get first product image for category image
-            first_image = None
-            if 'image' in df.columns:
-                for val in df['image']:
-                    if pd.notna(val) and str(val).startswith('http') and 'media/catalog' in str(val):
+            first_image = ""
+            if csv_format == 'format2':
+                for val in df.get('main-image src', []):
+                    if pd.notna(val) and str(val).startswith('http'):
                         first_image = str(val)
                         break
+            else:
+                for col in columns:
+                    if col == 'image' or col.startswith('image.'):
+                        for val in df[col]:
+                            if pd.notna(val) and str(val).startswith('http') and 'media/catalog' in str(val):
+                                first_image = str(val)
+                                break
+                        if first_image:
+                            break
             
             await db.categories.insert_one({
                 "name": category_name,
                 "slug": category_slug,
                 "description": f"Browse our {category_name} collection",
-                "image": first_image or "",
+                "image": first_image,
                 "order": 10,
                 "createdAt": datetime.utcnow()
             })
-        
-        # Get all column names (handle duplicate column names)
-        columns = list(df.columns)
         
         # Process and insert products
         inserted_count = 0
@@ -95,81 +281,26 @@ async def upload_interio_csv(
         
         for index, row in df.iterrows():
             try:
-                # Get product name
-                name = str(row.get('name', '')).strip()
-                if not name or name == 'nan':
+                # Process row based on format
+                if csv_format == 'format2':
+                    product_data = process_format2_row(row, columns, category_slug, index)
+                else:
+                    product_data = process_format1_row(row, columns, category_slug, index)
+                
+                if not product_data:
                     continue
+                
+                name = product_data['name']
                 
                 # Skip duplicates within same upload
                 if name in seen_names:
                     continue
                 seen_names.add(name)
                 
-                # Parse prices
-                price = parse_price(row.get('price', 0))
-                original_price = parse_price(row.get('originalprice', row.get('originalPrice', 0)))
-                
-                if original_price < price:
-                    original_price = price
-                
-                # Collect all images (handle multiple 'image' columns including image.1, image.2)
-                images = []
-                for col in columns:
-                    if col == 'image' or col.startswith('image.'):
-                        val = row.get(col)
-                        if pd.notna(val):
-                            img_url = str(val).strip()
-                            # Only include actual image URLs (not product page URLs)
-                            if img_url.startswith('http') and 'media/catalog' in img_url:
-                                images.append(img_url)
-                
-                primary_image = images[0] if images else ""
-                
-                # Collect description parts (handle description.1, description.2, etc.)
-                description_parts = []
-                for col in columns:
-                    if col == 'description' or col.startswith('description.'):
-                        val = row.get(col)
-                        if pd.notna(val) and str(val).strip():
-                            description_parts.append(str(val).strip())
-                
-                description = ' | '.join(description_parts) if description_parts else name
-                
-                # Parse features
-                features = []
-                features_val = row.get('features', '')
-                if pd.notna(features_val) and features_val:
-                    features = [f.strip() for f in str(features_val).split(',') if f.strip()]
-                
-                # Add discount to features
-                discount_text = row.get('price-discount-text', '')
-                if pd.notna(discount_text) and discount_text:
-                    features.append(str(discount_text).strip())
-                
-                # Parse other fields
-                in_stock = True
-                stock_val = row.get('inStock', 'TRUE')
-                if pd.notna(stock_val):
-                    in_stock = str(stock_val).upper() in ['TRUE', '1', 'YES']
-                
-                sku = str(row.get('sku', '')).strip() if pd.notna(row.get('sku')) else f"{category_slug[:3].upper()}-{index+1:04d}"
-                warranty = str(row.get('warranty', '')).strip() if pd.notna(row.get('warranty')) else ""
-                
-                product_data = {
-                    'name': name,
-                    'category': category_slug,
-                    'price': price,
-                    'originalPrice': original_price,
-                    'image': primary_image,
-                    'images': images,
-                    'description': description,
-                    'features': features,
-                    'inStock': in_stock,
-                    'sku': sku,
-                    'warranty': warranty,
-                    'createdAt': datetime.utcnow(),
-                    'updatedAt': datetime.utcnow()
-                }
+                # Skip if no valid price
+                if product_data['price'] == 0 and product_data['originalPrice'] == 0:
+                    errors.append(f"Row {index + 2}: No valid price found")
+                    continue
                 
                 # Check if product already exists (by name and category)
                 existing = await db.products.find_one({
@@ -192,6 +323,14 @@ async def upload_interio_csv(
             except Exception as e:
                 errors.append(f"Row {index + 2}: {str(e)}")
         
+        total_processed = inserted_count + updated_count
+        
+        if total_processed == 0:
+            raise HTTPException(
+                status_code=400, 
+                detail=f"No products could be processed. Format detected: {csv_format}. Columns found: {columns}"
+            )
+        
         return {
             "success": True,
             "message": f"Upload complete for '{category_name}' category",
@@ -199,15 +338,18 @@ async def upload_interio_csv(
                 "name": category_name,
                 "slug": category_slug
             },
+            "format_detected": csv_format,
             "inserted": inserted_count,
             "updated": updated_count,
-            "total_processed": inserted_count + updated_count,
+            "total_processed": total_processed,
             "errors": errors[:10] if errors else None,
             "total_errors": len(errors)
         }
         
     except pd.errors.EmptyDataError:
         raise HTTPException(status_code=400, detail="CSV file is empty")
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error processing CSV: {str(e)}")
 
@@ -246,76 +388,8 @@ async def list_product_categories():
 # Keep old endpoints for backwards compatibility
 @router.post("/csv/products/upload")
 async def upload_products_csv(file: UploadFile = File(...)):
-    """
-    Legacy endpoint - Upload products via CSV file.
-    Expected columns: name, category, price, originalPrice, image, description, features, inStock, sku, warranty
-    """
-    try:
-        contents = await file.read()
-        df = pd.read_csv(io.StringIO(contents.decode('utf-8')))
-        
-        # Check if this is an Interio format CSV
-        if 'originalprice' in df.columns or 'price-discount-text' in df.columns:
-            # Redirect to Interio upload handler
-            file.file.seek(0)
-            return await upload_interio_csv(file)
-        
-        # Validate required columns for legacy format
-        required_columns = ['name', 'category', 'price', 'originalPrice', 'description']
-        missing_columns = [col for col in required_columns if col not in df.columns]
-        
-        if missing_columns:
-            raise HTTPException(
-                status_code=400, 
-                detail=f"Missing required columns: {', '.join(missing_columns)}"
-            )
-        
-        inserted_count = 0
-        errors = []
-        
-        for index, row in df.iterrows():
-            try:
-                features = []
-                if pd.notna(row.get('features')):
-                    features = [f.strip() for f in str(row['features']).split(',')]
-                
-                images = []
-                if pd.notna(row.get('images')):
-                    images = [img.strip() for img in str(row['images']).split(',')]
-                
-                product_data = {
-                    'name': str(row['name']),
-                    'category': str(row['category']).lower().replace(' ', '-'),
-                    'price': float(row['price']),
-                    'originalPrice': float(row['originalPrice']),
-                    'image': str(row.get('image', '')),
-                    'images': images,
-                    'description': str(row['description']),
-                    'features': features,
-                    'inStock': bool(row.get('inStock', True)),
-                    'sku': str(row.get('sku', '')),
-                    'warranty': str(row.get('warranty', '')),
-                    'createdAt': datetime.utcnow(),
-                    'updatedAt': datetime.utcnow()
-                }
-                
-                await db.products.insert_one(product_data)
-                inserted_count += 1
-                
-            except Exception as e:
-                errors.append(f"Row {index + 2}: {str(e)}")
-        
-        return {
-            "success": True,
-            "message": f"Successfully uploaded {inserted_count} products",
-            "inserted": inserted_count,
-            "errors": errors if errors else None
-        }
-        
-    except pd.errors.EmptyDataError:
-        raise HTTPException(status_code=400, detail="CSV file is empty")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error processing CSV: {str(e)}")
+    """Legacy endpoint - redirects to main upload handler"""
+    return await upload_interio_csv(file)
 
 @router.post("/csv/categories/upload")
 async def upload_categories_csv(file: UploadFile = File(...)):
