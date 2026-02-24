@@ -5,6 +5,12 @@ import io
 import re
 from datetime import datetime
 from typing import Optional
+import logging
+import traceback
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
