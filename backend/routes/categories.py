@@ -38,111 +38,55 @@ async def get_categories_hierarchy():
         counts = await db.products.aggregate(pipeline).to_list(100)
         count_map = {item["_id"]: item["count"] for item in counts}
         
-        # Build 3-level hierarchy
-        # Level 1: Main categories (Living Room, Bedroom, etc.)
-        # Level 2: Groups (Sofas & Loungers, Tables, etc.)
-        # Level 3: Subcategories (Sofas, L-shaped Sofa, etc.) with thumbnails
+        # Organize categories by level
+        parents = {}  # Level 1
+        groups = {}   # Level 2
+        subcats = {}  # Level 3
         
-        hierarchy = {}
-        groups = {}
-        subcategories = []
-        
-        for cat in categories:
-            cat['_id'] = str(cat['_id'])
-            cat['productCount'] = count_map.get(cat.get('slug', ''), 0)
-            
-            level = cat.get('level', 1)
-            parent = cat.get('parentCategory')
-            group = cat.get('groupSlug')
-            
-            if level == 1 or (not parent and not group):
-                # Main category
-                hierarchy[cat['slug']] = {
-                    'name': cat['name'],
-                    'slug': cat['slug'],
-                    'image': cat.get('image', ''),
-                    'groups': {},
-                    'subcategories': []
-                }
-            elif level == 2 or (parent and not group):
-                # Group or direct subcategory
-                groups[cat['slug']] = {
-                    'name': cat['name'],
-                    'slug': cat['slug'],
-                    'parent': parent,
-                    'subcategories': []
-                }
-            else:
-                # Subcategory with thumbnail
-                subcategories.append({
-                    'name': cat['name'],
-                    'slug': cat['slug'],
-                    'parent': parent,
-                    'group': group,
-                    'image': cat.get('image', ''),
-                    'productCount': cat['productCount']
-                })
-        
-        # Also add categories that have products but might not have explicit level
         for cat in categories:
             slug = cat.get('slug')
-            parent = cat.get('parentCategory')
-            group = cat.get('groupSlug')
+            level = cat.get('level', 1)
             
-            if slug not in hierarchy and slug not in groups:
-                if count_map.get(slug, 0) > 0:
-                    subcategories.append({
-                        'name': cat['name'],
-                        'slug': slug,
-                        'parent': parent,
-                        'group': group,
-                        'image': cat.get('image', ''),
-                        'productCount': count_map.get(slug, 0)
-                    })
+            cat_data = {
+                'name': cat.get('name', slug),
+                'slug': slug,
+                'image': cat.get('image', ''),
+                'productCount': count_map.get(slug, 0),
+                'parentCategory': cat.get('parentCategory'),
+                'groupSlug': cat.get('groupSlug')
+            }
+            
+            if level == 1:
+                parents[slug] = {**cat_data, 'groups': [], 'subcategories': []}
+            elif level == 2:
+                groups[slug] = {**cat_data, 'subcategories': []}
+            elif level == 3:
+                subcats[slug] = cat_data
+        
+        # Attach subcategories to groups
+        for slug, subcat in subcats.items():
+            group_slug = subcat.get('groupSlug')
+            if group_slug and group_slug in groups:
+                groups[group_slug]['subcategories'].append({
+                    'name': subcat['name'],
+                    'slug': subcat['slug'],
+                    'image': subcat['image'],
+                    'productCount': subcat['productCount']
+                })
         
         # Attach groups to parents
-        for group_slug, group_data in groups.items():
-            parent = group_data['parent']
-            if parent and parent in hierarchy:
-                hierarchy[parent]['groups'][group_slug] = group_data
-        
-        # Attach subcategories to groups or directly to parents
-        for subcat in subcategories:
-            parent = subcat.get('parent')
-            group = subcat.get('group')
-            
-            if group and parent and parent in hierarchy and group in hierarchy[parent]['groups']:
-                hierarchy[parent]['groups'][group]['subcategories'].append(subcat)
-            elif parent and parent in hierarchy:
-                # Check if this should go under a group
-                found_group = False
-                for g_slug, g_data in hierarchy[parent]['groups'].items():
-                    if subcat['slug'] in str(g_data.get('subcategories', [])):
-                        g_data['subcategories'].append(subcat)
-                        found_group = True
-                        break
-                
-                if not found_group:
-                    hierarchy[parent]['subcategories'].append(subcat)
-        
-        # Convert to list format
-        result = []
-        for slug, data in hierarchy.items():
-            groups_list = []
-            for g_slug, g_data in data['groups'].items():
-                groups_list.append({
-                    'name': g_data['name'],
-                    'slug': g_slug,
-                    'subcategories': g_data['subcategories']
+        for slug, group in groups.items():
+            parent_slug = group.get('parentCategory')
+            if parent_slug and parent_slug in parents:
+                parents[parent_slug]['groups'].append({
+                    'name': group['name'],
+                    'slug': group['slug'],
+                    'subcategories': group['subcategories']
                 })
-            
-            result.append({
-                'name': data['name'],
-                'slug': slug,
-                'image': data['image'],
-                'groups': groups_list,
-                'subcategories': data['subcategories']
-            })
+        
+        # Convert to list and sort
+        result = list(parents.values())
+        result.sort(key=lambda x: {'living-room': 1, 'bedroom': 2, 'dining-room': 3, 'office-study': 4}.get(x['slug'], 99))
         
         return {"success": True, "hierarchy": result}
     except Exception as e:
