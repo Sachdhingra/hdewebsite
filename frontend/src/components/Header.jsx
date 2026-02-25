@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, Heart, ShoppingCart, MapPin, Phone, Menu, X, ChevronDown } from 'lucide-react';
-import { Button } from './ui/button';
+import { Search, Heart, ShoppingCart, MapPin, Phone, Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -11,21 +10,11 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('homes');
   const [hoveredCategory, setHoveredCategory] = useState(null);
+  const [hoveredGroup, setHoveredGroup] = useState(null);
   const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
   
-  // Get cart count from localStorage
   const cartItems = JSON.parse(localStorage.getItem('cart') || '[]');
   const cartCount = cartItems.length;
-
-  // Default categories structure (fallback)
-  const defaultCategories = [
-    { name: 'Living Room', slug: 'living-room', subcategories: [] },
-    { name: 'Bedroom', slug: 'bedroom', subcategories: [] },
-    { name: 'Dining Room', slug: 'dining-room', subcategories: [] },
-    { name: 'Office & Study', slug: 'office-study', subcategories: [] },
-    { name: 'Modular Kitchen', slug: 'modular-kitchen', subcategories: [] }
-  ];
 
   useEffect(() => {
     fetchCategories();
@@ -34,17 +23,18 @@ const Header = () => {
   const fetchCategories = async () => {
     try {
       const response = await axios.get(`${BACKEND_URL}/api/categories/hierarchy`);
-      if (response.data.success && response.data.hierarchy.length > 0) {
+      if (response.data.success) {
         setCategories(response.data.hierarchy);
-      } else {
-        setCategories(defaultCategories);
       }
     } catch (error) {
       console.error('Error fetching categories:', error);
-      setCategories(defaultCategories);
-    } finally {
-      setLoading(false);
     }
+  };
+
+  const handleCategoryClick = (slug) => {
+    setHoveredCategory(null);
+    setHoveredGroup(null);
+    navigate(`/category/${slug}`);
   };
 
   return (
@@ -53,7 +43,7 @@ const Header = () => {
       <div className="bg-gray-800 text-white text-sm">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <Link to="/become-dealer" className="hover:text-gray-300 transition-colors flex items-center gap-1">
+            <Link to="/become-dealer" className="hover:text-gray-300 transition-colors">
               Become a dealer
             </Link>
             <Link to="/showrooms" className="hover:text-gray-300 transition-colors flex items-center gap-1">
@@ -90,7 +80,7 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation Icons */}
           <div className="hidden lg:flex items-center gap-6">
             <button className="text-gray-700 hover:text-gray-900">
               <Search size={22} />
@@ -125,9 +115,7 @@ const Header = () => {
             <button
               onClick={() => setActiveTab('homes')}
               className={`px-4 py-2 rounded transition-colors ${
-                activeTab === 'homes'
-                  ? 'bg-red-500 text-white'
-                  : 'bg-white text-gray-700 hover:bg-gray-100'
+                activeTab === 'homes' ? 'bg-red-500 text-white' : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
               For Homes
@@ -135,9 +123,7 @@ const Header = () => {
             <button
               onClick={() => setActiveTab('business')}
               className={`px-4 py-2 rounded transition-colors ${
-                activeTab === 'business'
-                  ? 'bg-red-500 text-white'
-                  : 'bg-white text-gray-700 hover:bg-gray-100'
+                activeTab === 'business' ? 'bg-red-500 text-white' : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
               For Businesses
@@ -146,57 +132,169 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Navigation Menu with Dynamic Categories */}
-      <nav className="bg-white border-b border-gray-200">
+      {/* Navigation Menu */}
+      <nav className="bg-white border-b border-gray-200 relative">
         <div className="container mx-auto px-4">
-          <ul className="hidden lg:flex items-center gap-8 py-3 text-sm font-medium relative">
+          <ul className="hidden lg:flex items-center gap-8 py-3 text-sm font-medium">
             {categories.map((category) => (
               <li
                 key={category.slug}
                 className="relative"
-                onMouseEnter={() => setHoveredCategory(category.slug)}
-                onMouseLeave={() => setHoveredCategory(null)}
+                onMouseEnter={() => {
+                  setHoveredCategory(category.slug);
+                  // Auto-select first group if exists
+                  if (category.groups?.length > 0) {
+                    setHoveredGroup(category.groups[0].slug);
+                  } else {
+                    setHoveredGroup(null);
+                  }
+                }}
+                onMouseLeave={() => {
+                  setHoveredCategory(null);
+                  setHoveredGroup(null);
+                }}
               >
                 <Link
                   to={`/category/${category.slug}`}
-                  className="text-gray-700 hover:text-red-500 transition-colors flex items-center gap-1"
+                  className={`flex items-center gap-1 transition-colors ${
+                    hoveredCategory === category.slug ? 'text-red-500' : 'text-gray-700 hover:text-red-500'
+                  }`}
                 >
                   {category.name}
-                  {category.subcategories?.length > 0 && <ChevronDown size={14} />}
+                  {(category.groups?.length > 0 || category.subcategories?.length > 0) && (
+                    <ChevronDown size={14} />
+                  )}
                 </Link>
 
-                {/* Mega Dropdown for subcategories */}
-                {category.subcategories?.length > 0 && hoveredCategory === category.slug && (
-                  <div className="absolute top-full left-0 mt-2 bg-white shadow-xl rounded-lg p-6 min-w-[350px] z-50 border border-gray-100">
-                    <h4 className="text-sm font-semibold text-gray-800 mb-4 uppercase border-b pb-2">
-                      {category.name}
-                    </h4>
-                    <div className="grid grid-cols-2 gap-2">
-                      {category.subcategories.map((subcat) => (
-                        <Link
-                          key={subcat.slug}
-                          to={`/category/${subcat.slug}`}
-                          className="flex items-center justify-between p-3 rounded-lg hover:bg-red-50 transition-colors group"
-                          onClick={() => setHoveredCategory(null)}
-                        >
-                          <span className="text-sm text-gray-700 group-hover:text-red-500 font-medium">
-                            {subcat.name}
-                          </span>
-                          {subcat.productCount > 0 && (
-                            <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
-                              {subcat.productCount}
-                            </span>
-                          )}
-                        </Link>
-                      ))}
+                {/* Mega Menu Dropdown - Interio Style */}
+                {hoveredCategory === category.slug && 
+                 (category.groups?.length > 0 || category.subcategories?.length > 0) && (
+                  <div 
+                    className="absolute top-full left-0 mt-0 bg-white shadow-2xl border border-gray-100 z-50"
+                    style={{ minWidth: '800px' }}
+                  >
+                    <div className="flex">
+                      {/* Left Sidebar - Groups */}
+                      {category.groups?.length > 0 && (
+                        <div className="w-56 bg-gray-50 border-r border-gray-200 py-4">
+                          <div className="px-4 pb-2 text-xs font-semibold text-gray-400 uppercase">
+                            {category.name}
+                          </div>
+                          {category.groups.map((group) => (
+                            <div
+                              key={group.slug}
+                              onMouseEnter={() => setHoveredGroup(group.slug)}
+                              className={`px-4 py-3 cursor-pointer flex items-center justify-between transition-colors ${
+                                hoveredGroup === group.slug 
+                                  ? 'bg-white text-red-500 border-l-4 border-red-500' 
+                                  : 'text-gray-700 hover:bg-white'
+                              }`}
+                            >
+                              <span className="font-medium">{group.name}</span>
+                              {group.subcategories?.length > 0 && (
+                                <ChevronRight size={16} />
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Right Side - Subcategory Thumbnails */}
+                      <div className="flex-1 p-6">
+                        {category.groups?.map((group) => (
+                          hoveredGroup === group.slug && group.subcategories?.length > 0 && (
+                            <div key={group.slug}>
+                              <div className="grid grid-cols-3 gap-4">
+                                {group.subcategories.map((subcat) => (
+                                  <Link
+                                    key={subcat.slug}
+                                    to={`/category/${subcat.slug}`}
+                                    onClick={() => handleCategoryClick(subcat.slug)}
+                                    className="group block"
+                                  >
+                                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden mb-2">
+                                      {subcat.image ? (
+                                        <img
+                                          src={subcat.image}
+                                          alt={subcat.name}
+                                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        />
+                                      ) : (
+                                        <div className="w-full h-full flex items-center justify-center text-gray-400">
+                                          <span className="text-4xl">🛋️</span>
+                                        </div>
+                                      )}
+                                    </div>
+                                    <div className="flex items-center justify-between">
+                                      <span className="text-sm text-gray-800 group-hover:text-red-500 font-medium">
+                                        {subcat.name}
+                                      </span>
+                                      <ChevronRight size={16} className="text-gray-400 group-hover:text-red-500" />
+                                    </div>
+                                    {subcat.productCount > 0 && (
+                                      <span className="text-xs text-gray-500">
+                                        {subcat.productCount} products
+                                      </span>
+                                    )}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          )
+                        ))}
+
+                        {/* Direct subcategories (no groups) */}
+                        {!category.groups?.length && category.subcategories?.length > 0 && (
+                          <div className="grid grid-cols-3 gap-4">
+                            {category.subcategories.map((subcat) => (
+                              <Link
+                                key={subcat.slug}
+                                to={`/category/${subcat.slug}`}
+                                onClick={() => handleCategoryClick(subcat.slug)}
+                                className="group block"
+                              >
+                                <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden mb-2">
+                                  {subcat.image ? (
+                                    <img
+                                      src={subcat.image}
+                                      alt={subcat.name}
+                                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    />
+                                  ) : (
+                                    <div className="w-full h-full flex items-center justify-center text-gray-400">
+                                      <span className="text-4xl">🪑</span>
+                                    </div>
+                                  )}
+                                </div>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-sm text-gray-800 group-hover:text-red-500 font-medium">
+                                    {subcat.name}
+                                  </span>
+                                  <ChevronRight size={16} className="text-gray-400 group-hover:text-red-500" />
+                                </div>
+                                {subcat.productCount > 0 && (
+                                  <span className="text-xs text-gray-500">
+                                    {subcat.productCount} products
+                                  </span>
+                                )}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                    <Link
-                      to={`/category/${category.slug}`}
-                      className="block mt-4 pt-3 border-t text-center text-sm text-red-500 hover:text-red-600 font-medium"
-                      onClick={() => setHoveredCategory(null)}
-                    >
-                      View All {category.name} →
-                    </Link>
+
+                    {/* View All Link */}
+                    <div className="border-t border-gray-100 p-4 bg-gray-50">
+                      <Link
+                        to={`/category/${category.slug}`}
+                        onClick={() => handleCategoryClick(category.slug)}
+                        className="text-red-500 hover:text-red-600 font-medium text-sm flex items-center gap-1"
+                      >
+                        View All {category.name}
+                        <ChevronRight size={16} />
+                      </Link>
+                    </div>
                   </div>
                 )}
               </li>
@@ -217,55 +315,33 @@ const Header = () => {
           {mobileMenuOpen && (
             <div className="lg:hidden py-4 space-y-2 max-h-[70vh] overflow-y-auto">
               {categories.map((category) => (
-                <div key={category.slug} className="border-b border-gray-100 pb-2">
+                <div key={category.slug} className="border-b border-gray-100 pb-3">
                   <Link
                     to={`/category/${category.slug}`}
-                    className="block py-2 text-gray-700 hover:text-red-500 font-medium"
+                    className="block py-2 text-gray-700 font-medium"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {category.name}
                   </Link>
-                  {category.subcategories?.length > 0 && (
-                    <div className="pl-4 space-y-1">
-                      {category.subcategories.map((subcat) => (
-                        <Link
-                          key={subcat.slug}
-                          to={`/category/${subcat.slug}`}
-                          className="block py-1 text-sm text-gray-600 hover:text-red-500 flex items-center justify-between"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          <span>{subcat.name}</span>
-                          {subcat.productCount > 0 && (
-                            <span className="text-xs text-gray-400">({subcat.productCount})</span>
-                          )}
-                        </Link>
-                      ))}
+                  {category.groups?.map((group) => (
+                    <div key={group.slug} className="pl-4">
+                      <div className="py-1 text-sm text-gray-500 font-medium">{group.name}</div>
+                      <div className="pl-4 space-y-1">
+                        {group.subcategories?.map((subcat) => (
+                          <Link
+                            key={subcat.slug}
+                            to={`/category/${subcat.slug}`}
+                            className="block py-1 text-sm text-gray-600 hover:text-red-500"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {subcat.name} {subcat.productCount > 0 && `(${subcat.productCount})`}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  )}
+                  ))}
                 </div>
               ))}
-              <Link
-                to="/products"
-                className="block py-2 text-gray-700 font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                All Products
-              </Link>
-              <Link
-                to="/offers"
-                className="block py-2 text-red-500 font-semibold"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Offers
-              </Link>
-              <Link
-                to="/cart"
-                className="block py-2 text-gray-700 font-medium flex items-center gap-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <ShoppingCart size={18} />
-                Cart {cartCount > 0 && `(${cartCount})`}
-              </Link>
             </div>
           )}
         </div>
