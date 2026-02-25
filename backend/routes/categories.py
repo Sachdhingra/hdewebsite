@@ -13,98 +13,144 @@ async def get_categories():
         cursor = db.categories.find({}).sort('order', 1)
         categories = await cursor.to_list(length=100)
         
-        # Get product counts per category
-        pipeline = [
-            {"$group": {"_id": "$category", "count": {"$sum": 1}}}
-        ]
+        # Get product counts
+        pipeline = [{"$group": {"_id": "$category", "count": {"$sum": 1}}}]
         counts = await db.products.aggregate(pipeline).to_list(100)
         count_map = {item["_id"]: item["count"] for item in counts}
         
-        # Build hierarchy
-        parent_categories = []
-        subcategory_map = {}
+        for cat in categories:
+            cat['_id'] = str(cat['_id'])
+            cat['id'] = cat['_id']
+            cat['productCount'] = count_map.get(cat.get('slug', ''), 0)
         
-        for category in categories:
-            category['_id'] = str(category['_id'])
-            category['id'] = category['_id']
-            category['productCount'] = count_map.get(category.get('slug', ''), 0)
-            
-            parent = category.get('parentCategory')
-            if parent:
-                if parent not in subcategory_map:
-                    subcategory_map[parent] = []
-                subcategory_map[parent].append(category)
-            else:
-                parent_categories.append(category)
-        
-        # Attach subcategories to parents
-        for parent in parent_categories:
-            parent['subcategories'] = subcategory_map.get(parent['slug'], [])
-            # Calculate total products including subcategories
-            parent['totalProducts'] = parent['productCount'] + sum(
-                sub['productCount'] for sub in parent['subcategories']
-            )
-        
-        return {
-            "categories": parent_categories,
-            "allCategories": categories
-        }
+        return {"categories": categories, "allCategories": categories}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error fetching categories: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/categories/hierarchy", response_model=dict)
 async def get_categories_hierarchy():
-    """Get categories organized by parent-child hierarchy for navigation"""
+    """Get 3-level category hierarchy for mega menu"""
     try:
-        cursor = db.categories.find({}).sort('order', 1)
-        categories = await cursor.to_list(length=100)
+        categories = await db.categories.find({}).sort('order', 1).to_list(100)
         
         # Get product counts
         pipeline = [{"$group": {"_id": "$category", "count": {"$sum": 1}}}]
         counts = await db.products.aggregate(pipeline).to_list(100)
         count_map = {item["_id"]: item["count"] for item in counts}
         
-        # Build hierarchy
+        # Build 3-level hierarchy
+        # Level 1: Main categories (Living Room, Bedroom, etc.)
+        # Level 2: Groups (Sofas & Loungers, Tables, etc.)
+        # Level 3: Subcategories (Sofas, L-shaped Sofa, etc.) with thumbnails
+        
         hierarchy = {}
-        standalone = []
+        groups = {}
+        subcategories = []
         
         for cat in categories:
             cat['_id'] = str(cat['_id'])
             cat['productCount'] = count_map.get(cat.get('slug', ''), 0)
             
+            level = cat.get('level', 1)
             parent = cat.get('parentCategory')
-            if parent:
-                if parent not in hierarchy:
-                    hierarchy[parent] = {
-                        'name': parent.replace('-', ' ').title(),
-                        'slug': parent,
-                        'subcategories': []
-                    }
-                hierarchy[parent]['subcategories'].append({
+            group = cat.get('groupSlug')
+            
+            if level == 1 or (not parent and not group):
+                # Main category
+                hierarchy[cat['slug']] = {
                     'name': cat['name'],
                     'slug': cat['slug'],
+                    'image': cat.get('image', ''),
+                    'groups': {},
+                    'subcategories': []
+                }
+            elif level == 2 or (parent and not group):
+                # Group or direct subcategory
+                groups[cat['slug']] = {
+                    'name': cat['name'],
+                    'slug': cat['slug'],
+                    'parent': parent,
+                    'subcategories': []
+                }
+            else:
+                # Subcategory with thumbnail
+                subcategories.append({
+                    'name': cat['name'],
+                    'slug': cat['slug'],
+                    'parent': parent,
+                    'group': group,
+                    'image': cat.get('image', ''),
                     'productCount': cat['productCount']
                 })
-            elif cat.get('isParent') or not parent:
-                if cat['slug'] not in hierarchy:
-                    hierarchy[cat['slug']] = {
-                        'name': cat['name'],
-                        'slug': cat['slug'],
-                        'subcategories': []
-                    }
-                else:
-                    hierarchy[cat['slug']]['name'] = cat['name']
         
-        return {
-            "success": True,
-            "hierarchy": list(hierarchy.values())
-        }
+        # Also add categories that have products but might not have explicit level
+        for cat in categories:
+            slug = cat.get('slug')
+            parent = cat.get('parentCategory')
+            group = cat.get('groupSlug')
+            
+            if slug not in hierarchy and slug not in groups:
+                if count_map.get(slug, 0) > 0:
+                    subcategories.append({
+                        'name': cat['name'],
+                        'slug': slug,
+                        'parent': parent,
+                        'group': group,
+                        'image': cat.get('image', ''),
+                        'productCount': count_map.get(slug, 0)
+                    })
+        
+        # Attach groups to parents
+        for group_slug, group_data in groups.items():
+            parent = group_data['parent']
+            if parent and parent in hierarchy:
+                hierarchy[parent]['groups'][group_slug] = group_data
+        
+        # Attach subcategories to groups or directly to parents
+        for subcat in subcategories:
+            parent = subcat.get('parent')
+            group = subcat.get('group')
+            
+            if group and parent and parent in hierarchy and group in hierarchy[parent]['groups']:
+                hierarchy[parent]['groups'][group]['subcategories'].append(subcat)
+            elif parent and parent in hierarchy:
+                # Check if this should go under a group
+                found_group = False
+                for g_slug, g_data in hierarchy[parent]['groups'].items():
+                    if subcat['slug'] in str(g_data.get('subcategories', [])):
+                        g_data['subcategories'].append(subcat)
+                        found_group = True
+                        break
+                
+                if not found_group:
+                    hierarchy[parent]['subcategories'].append(subcat)
+        
+        # Convert to list format
+        result = []
+        for slug, data in hierarchy.items():
+            groups_list = []
+            for g_slug, g_data in data['groups'].items():
+                groups_list.append({
+                    'name': g_data['name'],
+                    'slug': g_slug,
+                    'subcategories': g_data['subcategories']
+                })
+            
+            result.append({
+                'name': data['name'],
+                'slug': slug,
+                'image': data['image'],
+                'groups': groups_list,
+                'subcategories': data['subcategories']
+            })
+        
+        return {"success": True, "hierarchy": result}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/categories/{slug}", response_model=dict)
 async def get_category_by_slug(slug: str):
-    """Get a category by slug with its subcategories"""
+    """Get a category by slug with subcategories"""
     try:
         category = await db.categories.find_one({"slug": slug})
         if not category:
@@ -113,35 +159,42 @@ async def get_category_by_slug(slug: str):
         category['_id'] = str(category['_id'])
         category['id'] = category['_id']
         
-        # Get subcategories if this is a parent
-        subcategories = await db.categories.find({"parentCategory": slug}).to_list(50)
-        for sub in subcategories:
+        # Get subcategories (both by parentCategory and groupSlug)
+        subcats = await db.categories.find({
+            "$or": [
+                {"parentCategory": slug},
+                {"groupSlug": slug}
+            ]
+        }).to_list(50)
+        
+        # Get product counts
+        pipeline = [{"$group": {"_id": "$category", "count": {"$sum": 1}}}]
+        counts = await db.products.aggregate(pipeline).to_list(100)
+        count_map = {item["_id"]: item["count"] for item in counts}
+        
+        for sub in subcats:
             sub['_id'] = str(sub['_id'])
             sub['id'] = sub['_id']
+            sub['productCount'] = count_map.get(sub.get('slug', ''), 0)
         
-        category['subcategories'] = subcategories
+        category['subcategories'] = subcats
+        category['productCount'] = count_map.get(slug, 0)
         
         return category
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error fetching category: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.post("/categories", response_model=dict)
 async def create_category(category: CategoryCreate):
-    """Create a new category (Admin only)"""
+    """Create a new category"""
     try:
         existing = await db.categories.find_one({"slug": category.slug})
         if existing:
-            raise HTTPException(status_code=400, detail="Category with this slug already exists")
+            raise HTTPException(status_code=400, detail="Category exists")
         
-        category_dict = category.dict()
-        result = await db.categories.insert_one(category_dict)
-        
-        return {
-            "success": True,
-            "categoryId": str(result.inserted_id),
-            "message": "Category created successfully"
-        }
+        result = await db.categories.insert_one(category.dict())
+        return {"success": True, "categoryId": str(result.inserted_id)}
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error creating category: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
