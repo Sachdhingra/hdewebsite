@@ -58,12 +58,12 @@
     var header =
       '<a class="skip" href="#main">Skip to content</a>' +
       '<div class="strip"><div class="wrap">' +
-        "<span>" + esc(B.partnerLine) + " in " + esc(B.city) + " since " + esc(B.since) + "</span>" +
+        '<span class="strip-partner"><span class="partner-pill"><img src="assets/img/interio-logo.png" alt="interio by Godrej" width="76" height="40"></span>' + esc(B.partnerLine) + " in " + esc(B.city) + " since " + esc(B.since) + "</span>" +
         '<span class="strip-contacts"><a href="tel:' + esc(B.phoneHref) + '">Call ' + esc(B.phone) + "</a>" +
         '<a href="' + waLink("Hi, I would like to know more about your furniture.") + '" target="_blank" rel="noopener">WhatsApp us</a></span>' +
       "</div></div>" +
       '<header class="site-header"><div class="wrap">' +
-        '<a class="brand" href="index.html" aria-label="' + esc(B.name) + ' home"><span class="brand-mark">' + esc(B.shortName) + "</span>" +
+        '<a class="brand" href="index.html" aria-label="' + esc(B.name) + ' home"><img class="brand-logo" src="assets/img/hde-logo-160.webp" alt="" width="56" height="56">' +
           '<span><span class="brand-name">' + esc(B.name) + '</span><span class="brand-sub">Furniture and interiors, ' + esc(B.city) + "</span></span></a>" +
         '<nav class="nav" id="site-nav" aria-label="Main">' +
           '<div class="nav-item"><button type="button" aria-expanded="false" aria-controls="mega">Shop by room ' + icon("chev") + "</button>" +
@@ -82,8 +82,8 @@
 
     var footer =
       '<footer class="site-footer"><div class="wrap">' +
-        '<div class="footer-about"><a class="brand" href="index.html"><span class="brand-mark">' + esc(B.shortName) + '</span><span class="brand-name">' + esc(B.name) + "</span></a>" +
-          "<p>Furniture, modular kitchens and wardrobes for homes and offices in " + esc(B.city) + " and nearby. " + esc(B.partnerLine) + " since " + esc(B.since) + ".</p>" +
+        '<div class="footer-about"><a class="brand" href="index.html"><img class="brand-logo brand-logo--lg" src="assets/img/hde-logo-160.webp" alt="" width="72" height="72"><span class="brand-name">' + esc(B.name) + "</span></a>" +
+          "<p class=\"footer-partner\"><img src=\"assets/img/interio-logo.png\" alt=\"interio by Godrej\" width=\"105\" height=\"55\"></p><p>Furniture, modular kitchens and wardrobes for homes and offices in " + esc(B.city) + " and nearby. " + esc(B.partnerLine) + " since " + esc(B.since) + ".</p>" +
           '<p><a href="' + esc(B.instagram) + '" target="_blank" rel="noopener">Instagram</a> &middot; <a href="' + esc(B.facebook) + '" target="_blank" rel="noopener">Facebook</a></p></div>' +
         "<div><h4>Shop</h4><ul>" + D.rooms.map(function (r) { return '<li><a href="collections.html#' + r.slug + '">' + esc(r.name) + "</a></li>"; }).join("") + "</ul></div>" +
         '<div><h4>Help</h4><ul><li><a href="about.html">About us</a></li><li><a href="contact.html">Get a quote</a></li><li><a href="contact.html#visit">Book a home visit</a></li><li><a href="stores.html">Showrooms</a></li><li><a href="contact.html#faq">FAQs</a></li></ul></div>' +
