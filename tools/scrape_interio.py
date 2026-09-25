@@ -213,7 +213,7 @@ def slug_name(url, sku):
 
 def deal_type(desc):
     """Interio descriptions end with 'Get great deals on <Category> with ...'."""
-    m = re.search(r"great deals on (.+?)(?:\s+with\b|[.!]|$)", desc, re.I)
+    m = re.search(r"great deals(?: &(?:amp;)? offers)? on (?:various )?(.+?)(?:\s+(?:with|by)\b|[.!\u2714]|$)", desc, re.I)
     return m.group(1).strip() if m else ""
 
 
@@ -253,11 +253,11 @@ def tab_rows(page_html, tab):
     return rows
 
 
-def parse_details(page_html, width=900):
+def parse_details(page_html, width=900, cfg=None, sku=""):
     """Gallery, 'why choose' intro, feature points, specifications and care text from a product page."""
     gallery = []
-    sku = re.search(r'data-product-sku="([^"]+)"', page_html)
-    sku = sku.group(1).lower() if sku else ""
+    page_sku = re.search(r'data-product-sku="([^"]+)"', page_html)
+    page_sku = page_sku.group(1).lower() if page_sku else ""
     g = re.search(r'"mage/gallery/gallery".*?"data":\s*(\[.*?\])\s*,\s*"options"', page_html, re.S)
     if g:
         try:
@@ -269,10 +269,20 @@ def parse_details(page_html, width=900):
         except ValueError:
             pass
     # Keep this product's own photos; generic banners (offers, warranty cards) don't carry the SKU.
-    own = [u for u in gallery if sku and sku in u.lower()]
+    own = [u for u in gallery if any(k and k in u.lower() for k in (page_sku, (sku or "").lower()))]
     gallery = own or gallery
     desc = re.search(r'class="product attribute description">(.*?)<div class="productpdp-tabs-content', page_html, re.S)
     desc = desc.group(1) if desc else ""
+    short = ""
+    cid = config_child(cfg or {}, sku)
+    if cid:
+        # Configurable pages load each option's description from jsonConfig instead of the page body.
+        d = (cfg.get("descriptions") or {}).get(cid) or []
+        if not desc and d and isinstance(d[0], dict):
+            desc = d[0].get("description") or ""
+        info = ((cfg.get("child_info") or {}).get(cid) or {}).get("review_html") or ""
+        m = re.search(r'id="short-info-text">(.*?)</span>', info, re.S)
+        short = text(m.group(1)) if m else ""
     intro = re.search(r'class="custom-title-text">(.*?)</span>', desc, re.S)
     pics = re.findall(r'<img[^>]+src="([^"]+/wysiwyg/[^"]+)"', desc)
     features = []
@@ -293,6 +303,7 @@ def parse_details(page_html, width=900):
         "specs": [list(r) for r in specs],
         "care": care,
         "category": category,
+        "short": short,
     }
 
 
@@ -319,7 +330,8 @@ def parse_product(page_html, url, sitemap_images=(), width=640):
         tail = re.search(r"-([0-9a-z]{10,})$", url.rstrip("/"))
         sku = tail.group(1).upper() if tail else ""
     price = to_number(offers.get("price") or m.get("product:price:amount") or m.get("og:price:amount"))
-    mrp = to_number(m.get("product:original_price:amount") or m.get("product:regular_price:amount")) or page_mrp(page_html, price)
+    cfg = json_config(page_html)
+    mrp = to_number(m.get("product:original_price:amount") or m.get("product:regular_price:amount")) or page_mrp(page_html, price, cfg, sku)
     ld_img = product_ld.get("image")
     if isinstance(ld_img, list):
         ld_img = ld_img[0] if ld_img else None
@@ -328,11 +340,15 @@ def parse_product(page_html, url, sitemap_images=(), width=640):
     img = m.get("og:image") or ld_img or (sitemap_images[0] if sitemap_images else "")
     desc = html.unescape(m.get("og:description") or m.get("description") or product_ld.get("description") or "").strip()
     cats = category_path(p)
-    details = parse_details(page_html)
+    details = parse_details(page_html, cfg=cfg, sku=sku)
+    cid = config_child(cfg, sku)
+    if cid and not desc:
+        desc = html.unescape((cfg.get("metaDescriptions") or {}).get(cid) or "")
     kind = deal_type(desc) or details["category"] or (pretty(cats[-1]) if cats else "")
     if not name or price is None:
         return None
     details.pop("category")
+    short = details.pop("short")
     return {
         "slugName": slug_name(url, sku),
         "id": (sku or url.rstrip("/").rsplit("/", 1)[-1]).lower(),
@@ -345,20 +361,46 @@ def parse_product(page_html, url, sitemap_images=(), width=640):
         # Interio's online selling price is deliberately not stored. `mrp` says the figure is an MRP.
         "from": round(mrp if mrp and mrp >= price else price),
         "mrp": bool(mrp and mrp >= price),
-        "note": spec_note(details["specs"]) or short_note(desc),
+        "note": spec_note(details["specs"]) or short or short_note(desc),
         "image": image_url(img, width),
         "source": url,
         "details": details,
     }
 
 
-def page_mrp(page_html, price):
+def json_config(page_html):
+    """The jsonConfig block of a configurable product (sizes or colours as child products)."""
+    i = page_html.find('"jsonConfig":')
+    if i < 0:
+        return {}
+    try:
+        return json.JSONDecoder().raw_decode(page_html[page_html.index("{", i):])[0]
+    except ValueError:
+        return {}
+
+
+def config_child(cfg, sku):
+    """Child product id in a jsonConfig whose SKU matches this page's SKU."""
+    for cid, csku in (cfg.get("sku") or {}).items():
+        if str(csku).lower() == (sku or "").lower():
+            return cid
+    return None
+
+
+def page_mrp(page_html, price, cfg=None, sku=""):
     """The MRP Interio shows struck through ("MRP ₹20,476") next to its online price.
 
     The main product's price box has a finalPrice span followed by an oldPrice span;
     related-product boxes further down have their own, so match the one carrying `price`."""
     if price is None:
         return None
+    if cfg:
+        # Configurable products (mattress sizes, colours) carry each option's MRP in jsonConfig.
+        cid = config_child(cfg, sku)
+        opt = (cfg.get("optionPrices") or {}).get(cid) if cid else None
+        old = ((opt or cfg.get("prices") or {}).get("oldPrice") or {}).get("amount")
+        if old:
+            return to_number(old)
     for m in re.finditer(r'data-price-amount="([\d.]+)" data-price-type="finalPrice"', page_html):
         if to_number(m.group(1)) != price:
             continue
