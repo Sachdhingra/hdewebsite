@@ -134,7 +134,7 @@
     el.className = "pl-item";
     el.innerHTML = '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" draggable="false">';
     itemsEl.appendChild(el);
-    var it = { key: ++seq, p: p, el: el, x: 0.5, y: 0.85, scale: 1, flip: false, size: null, box: null };
+    var it = { key: ++seq, p: p, el: el, x: [0.5, 0.25, 0.75, 0.4, 0.6][items.length % 5], y: 0.85, scale: 1, flip: false, size: null, box: null };
     items.push(it);
     selected = it;
     el.addEventListener("pointerdown", function (e) { startDrag(e, it); });
