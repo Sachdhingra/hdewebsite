@@ -86,7 +86,7 @@
           "<p class=\"footer-partner\"><img src=\"assets/img/interio-logo.png\" alt=\"interio by Godrej\" width=\"105\" height=\"55\"></p><p>Furniture, modular kitchens and wardrobes for homes and offices in " + esc(B.city) + " and nearby. " + esc(B.partnerLine) + " since " + esc(B.since) + ".</p>" +
           '<p><a href="' + esc(B.instagram) + '" target="_blank" rel="noopener">Instagram</a> &middot; <a href="' + esc(B.facebook) + '" target="_blank" rel="noopener">Facebook</a></p></div>' +
         "<div><h4>Shop</h4><ul>" + D.rooms.map(function (r) { return '<li><a href="collections.html#' + r.slug + '">' + esc(r.name) + "</a></li>"; }).join("") + "</ul></div>" +
-        '<div><h4>Help</h4><ul><li><a href="about.html">About us</a></li><li><a href="contact.html">Get a quote</a></li><li><a href="contact.html#visit">Free consultation</a></li><li><a href="stores.html">Showrooms</a></li><li><a href="contact.html#faq">FAQs</a></li></ul></div>' +
+        '<div><h4>Help</h4><ul><li><a href="about.html">About us</a></li><li><a href="contact.html">Get a quote</a></li><li><a href="room-planner.html">See it in your room</a></li><li><a href="contact.html#visit">Free consultation</a></li><li><a href="stores.html">Showrooms</a></li><li><a href="contact.html#faq">FAQs</a></li></ul></div>' +
         '<div><h4>Talk to us</h4><ul><li><a href="tel:' + esc(B.phoneHref) + '">' + esc(B.phone) + '</a></li><li><a href="' + waLink("Hi, I have a question.") + '" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:' + esc(B.email) + '">' + esc(B.email) + "</a></li><li>" + esc(B.hours) + "</li></ul></div>" +
       "</div>" +
       '<div class="legal"><div class="wrap"><span>&copy; ' + new Date().getFullYear() + " " + esc(B.name) + ". All rights reserved.</span>" +
@@ -422,6 +422,7 @@
             '<div class="pdp-actions">' +
               '<button class="btn btn--primary" type="button" data-enquire data-product="' + esc(name) + '" data-interest="' + esc(room.name) + '" data-source="product">Get best price</button>' +
               '<a class="btn btn--wa" href="' + esc(waLink(waText)) + '" target="_blank" rel="noopener">' + icon("wa") + "Ask on WhatsApp</a>" +
+              '<a class="btn btn--ghost" href="room-planner.html?add=' + encodeURIComponent(optionId) + '">See it in your room</a>' +
               '<button class="btn btn--ghost" type="button" data-share>Share</button>' +
             "</div>" +
             '<ul class="pdp-perks">' +
