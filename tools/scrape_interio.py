@@ -422,8 +422,43 @@ def write_details(items, folder):
             os.remove(os.path.join(folder, old))
 
 
-def write_catalog(items, path):
+def host_images(cards, folder, delay=0.3):
+    """Keep a copy of each card photo on the site (assets/img/products/<id>.jpg).
+
+    Same-origin photos load faster and let the room planner cut the studio background away,
+    which the browser only allows for images it may read. Existing copies are reused."""
+    import os
+    os.makedirs(folder, exist_ok=True)
+    keep = set()
+    for c in cards:
+        src = c.get("image") or ""
+        if not src.startswith("http") or "placeholder" in src:
+            continue
+        name = c["id"] + ".jpg"
+        path = os.path.join(folder, name)
+        if not os.path.exists(path):
+            try:
+                req = urllib.request.Request(src, headers={"User-Agent": UA})
+                with urllib.request.urlopen(req, timeout=30) as r:
+                    data = r.read()
+                with open(path, "wb") as f:
+                    f.write(data)
+                time.sleep(delay)
+            except Exception as e:
+                print("  ! photo %s: %s" % (c["id"], e), file=sys.stderr)
+                continue
+        keep.add(name)
+        c["remoteImage"] = src
+        c["image"] = "assets/img/products/" + name
+    for old in os.listdir(folder):
+        if old.endswith(".jpg") and old not in keep:
+            os.remove(os.path.join(folder, old))
+
+
+def write_catalog(items, path, images_dir=None):
     items = finalise(items)
+    if images_dir:
+        host_images(items, images_dir)
     items.sort(key=lambda x: (x["room"], x["type"], x["name"]))
     stamp = dt.datetime.utcnow().strftime("%Y-%m-%d")
     body = json.dumps(items, ensure_ascii=False, indent=1)
@@ -437,6 +472,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default="site/assets/js/catalog.js")
     ap.add_argument("--details-dir", default="site/assets/data/products", help="where per-product JSON files go")
+    ap.add_argument("--images-dir", default="site/assets/img/products", help="where card photos are copied ('' to link to interio.com)")
     ap.add_argument("--limit", type=int, default=0, help="stop after N products (0 = all)")
     ap.add_argument("--rooms", default="", help="comma list of rooms to keep, e.g. bedroom,living")
     ap.add_argument("--delay", type=float, default=1.0, help="seconds between page requests")
@@ -485,7 +521,7 @@ def main():
         print("No products parsed; catalogue left unchanged.", file=sys.stderr)
         return 1
     write_details(items, a.details_dir)
-    write_catalog(items, a.out)
+    write_catalog(items, a.out, a.images_dir or None)
     print("Wrote %d product pages to %s as %d cards, colour variants folded (%d failed, %d blocked by robots.txt)"
           % (len(items), a.out, len(finalise(list(items))), failed, skipped))
     return 0
