@@ -10,31 +10,36 @@ window.HDE_CONFIG = {
     since: "2006",
     partnerLine: "Authorised Godrej Interio channel partner", // FILL IN: confirm wording allowed by your partner agreement
     city: "Dehradun",
-    phone: "+91 135 000 0000",          // FILL IN: main showroom phone
-    phoneHref: "+911350000000",         // FILL IN: same number, digits only with country code
+    // From the Google Business listing (Karanpur showroom). These look like Godrej call-routing
+    // numbers; swap in your direct shop number if you prefer.
+    phone: "+91 91679 90455",
+    phoneHref: "+919167990455",
     whatsapp: "919800000000",           // FILL IN: WhatsApp number, digits only with country code (no +)
-    email: "info@homedecorenterprises.in", // FILL IN
-    hours: "Mon to Sat, 10:00 AM to 8:00 PM. Sun, 11:00 AM to 7:00 PM", // FILL IN
+    email: "sachdhingra@gmail.com",     // From the Google listing. A business address (e.g. info@yourdomain) looks more professional
+    hours: "Open every day, 11:00 AM to 8:00 PM", // From the Google listing
     instagram: "https://instagram.com/",   // FILL IN
     facebook: "https://facebook.com/"      // FILL IN
   },
 
+  // From the Google Business listings (via stores.interio.com), September 2026.
   stores: [
     {
-      name: "Rajpur Road Showroom",
-      address: "FILL IN: shop no., Rajpur Road, Dehradun, Uttarakhand 248001",
-      phone: "+91 135 000 0000",
-      phoneHref: "+911350000000",
-      mapLink: "https://maps.google.com/?q=Rajpur+Road+Dehradun", // FILL IN: your Google Maps link
-      highlight: "Full living, bedroom and dining range on display"
+      name: "Karanpur Showroom",
+      address: "No 9, Ashtley Hall, Irrigation Colony, Karanpur, Dehradun, Uttarakhand 248001",
+      landmark: "Near Parade Ground",
+      phone: "+91 91679 90455",
+      phoneHref: "+919167990455",
+      mapLink: "https://maps.google.com/maps?cid=1763858221292683378",
+      rating: "4.6"
     },
     {
-      name: "Saharanpur Road Showroom",
-      address: "FILL IN: shop no., Saharanpur Road, Dehradun, Uttarakhand 248001",
-      phone: "+91 135 000 0001",
-      phoneHref: "+911350000001",
-      mapLink: "https://maps.google.com/?q=Saharanpur+Road+Dehradun", // FILL IN
-      highlight: "Modular kitchen and wardrobe experience centre"
+      name: "Patel Nagar Showroom",
+      address: "No 23, Saharanpur Road, Patel Nagar, Dehradun, Uttarakhand 248001",
+      landmark: "Opposite Kolhi Petrol Pump",
+      phone: "+91 96191 81957",
+      phoneHref: "+919619181957",
+      mapLink: "https://maps.google.com/maps?cid=1477870679173429280",
+      rating: "4.8"
     }
   ],
 

@@ -71,9 +71,9 @@
               '<div class="mega-cta"><strong>Not sure where to start?</strong><p>Book a free home visit. We measure, suggest layouts and share a quote.</p>' +
               '<button class="btn btn--primary" type="button" data-enquire data-interest="Full home interiors">Book free visit</button></div>' +
             "</div></div>" +
-          navLink("collections.html#kitchen", "Modular kitchens", "kitchen") +
-          navLink("collections.html", "All collections", "collections") +
+          navLink("collections.html", "Collections", "collections") +
           navLink("stores.html", "Showrooms", "stores") +
+          navLink("about.html", "About us", "about") +
           navLink("contact.html", "Contact", "contact") +
         "</nav>" +
         '<div class="header-cta"><button class="btn btn--primary" type="button" data-enquire>Get a free quote</button>' +
@@ -86,7 +86,7 @@
           "<p>Furniture, modular kitchens and wardrobes for homes and offices in " + esc(B.city) + " and nearby. " + esc(B.partnerLine) + " since " + esc(B.since) + ".</p>" +
           '<p><a href="' + esc(B.instagram) + '" target="_blank" rel="noopener">Instagram</a> &middot; <a href="' + esc(B.facebook) + '" target="_blank" rel="noopener">Facebook</a></p></div>' +
         "<div><h4>Shop</h4><ul>" + D.rooms.map(function (r) { return '<li><a href="collections.html#' + r.slug + '">' + esc(r.name) + "</a></li>"; }).join("") + "</ul></div>" +
-        '<div><h4>Help</h4><ul><li><a href="contact.html">Get a quote</a></li><li><a href="contact.html#visit">Book a home visit</a></li><li><a href="stores.html">Showrooms</a></li><li><a href="contact.html#faq">FAQs</a></li></ul></div>' +
+        '<div><h4>Help</h4><ul><li><a href="about.html">About us</a></li><li><a href="contact.html">Get a quote</a></li><li><a href="contact.html#visit">Book a home visit</a></li><li><a href="stores.html">Showrooms</a></li><li><a href="contact.html#faq">FAQs</a></li></ul></div>' +
         '<div><h4>Talk to us</h4><ul><li><a href="tel:' + esc(B.phoneHref) + '">' + esc(B.phone) + '</a></li><li><a href="' + waLink("Hi, I have a question.") + '" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:' + esc(B.email) + '">' + esc(B.email) + "</a></li><li>" + esc(B.hours) + "</li></ul></div>" +
       "</div>" +
       '<div class="legal"><div class="wrap"><span>&copy; ' + new Date().getFullYear() + " " + esc(B.name) + ". All rights reserved.</span>" +
@@ -370,7 +370,8 @@
   function mountStores() {
     $all("[data-stores]").forEach(function (el) {
       el.innerHTML = C.stores.map(function (s) {
-        return '<article class="store"><span class="tag">' + esc(s.highlight) + "</span><h3>" + esc(s.name) + "</h3>" +
+        return '<article class="store"><span class="tag">' + esc(s.landmark) + "</span><h3>" + esc(s.name) + "</h3>" +
+          (s.rating ? '<p class="store-rating"><span class="stars" aria-hidden="true">\u2605</span> ' + esc(s.rating) + " on Google</p>" : "") +
           "<dl><div><dt>Address</dt><dd>" + esc(s.address) + "</dd></div><div><dt>Phone</dt><dd>" + esc(s.phone) + "</dd></div><div><dt>Open</dt><dd>" + esc(B.hours) + "</dd></div></dl>" +
           '<div class="btns"><a class="btn btn--ghost" href="' + esc(s.mapLink) + '" target="_blank" rel="noopener">' + icon("pin") + "Directions</a>" +
           '<a class="btn btn--ghost" href="tel:' + esc(s.phoneHref) + '">' + icon("phone") + "Call</a>" +
@@ -382,7 +383,7 @@
   function mountReviews() {
     $all("[data-reviews]").forEach(function (el) {
       el.innerHTML = D.reviews.map(function (r) {
-        return '<figure class="review"><span class="stars" aria-label="5 out of 5">★★★★★</span><blockquote>' + esc(r.text) + "</blockquote><figcaption>" + esc(r.name) + ", " + esc(r.area) + "</figcaption></figure>";
+        return '<figure class="review"><span class="stars" aria-label="5 out of 5">★★★★★</span><blockquote>' + esc(r.text) + "</blockquote><figcaption><strong>" + esc(r.name) + "</strong><br>Google review, " + esc(r.area) + (r.date ? ", " + esc(r.date) : "") + "</figcaption></figure>";
       }).join("");
     });
   }

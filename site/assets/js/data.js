@@ -58,10 +58,10 @@ window.HDE_DATA = {
       image: "https://images.unsplash.com/photo-1595428773491-ae4a0b7e3a4a?w=800&q=70&auto=format" }
   ],
 
-  // Sample reviews: FILL IN with real customer reviews (with their permission) before launch.
+  // Real Google reviews from our listings (stores.interio.com), quoted as written.
   reviews: [
-    { name: "Sample customer", area: "Vasant Vihar", text: "The team measured our kitchen, showed us three layouts and installed it in the time they promised." },
-    { name: "Sample customer", area: "Rajpur Road", text: "We visited the showroom twice before deciding. No pressure, and the delivery team assembled everything on the same day." },
-    { name: "Sample customer", area: "Mussoorie", text: "Ordered a sofa and a storage bed over WhatsApp after seeing them in store. Both arrived well packed." }
+    { name: "Siddharth Kandari", area: "Patel Nagar showroom", date: "June 2026", text: "Experience was very good thanks to Neesha Maam for the hospitality the purchasing experience been great" },
+    { name: "Saurabh Rana", area: "Karanpur showroom", date: "September 2026", text: "Wonderful furniture.. lots of options and quality of the wood is fantastic." },
+    { name: "Surya Pal Singh Bisht", area: "Karanpur showroom", date: "September 2026", text: "Godrej interio all product are good and attractive" }
   ]
 };
