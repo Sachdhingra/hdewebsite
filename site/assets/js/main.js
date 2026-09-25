@@ -47,7 +47,7 @@
   function renderChrome() {
     var cur = page();
     function navLink(href, label, key) {
-      return '<a href="' + href + '"' + (cur === key ? ' aria-current="page"' : "") + ">" + label + "</a>";
+      return '<a href="' + href + '"' + (cur === key || (key === "collections" && cur === "product") ? ' aria-current="page"' : "") + ">" + label + "</a>";
     }
     var megaCols = D.rooms.map(function (r) {
       return "<div><h4><a href=\"collections.html#" + r.slug + "\">" + esc(r.name) + "</a></h4><ul>" +
@@ -321,12 +321,154 @@
     return out;
   }
 
+  function productHref(p) { return "product.html?id=" + encodeURIComponent(p.id); }
+
   function productCard(p) {
     var room = roomBySlug(p.room) || D.rooms[0];
-    return '<article class="card">' + ph(p.image, room.name, p.name) +
-      '<div class="card-body"><span class="card-type">' + esc(p.type) + "</span><h3>" + esc(p.name) + '</h3><p class="card-note">' + (p.variants ? p.variants + " sizes, colours or finishes. " : "") + esc(p.note) + "</p>" +
+    // Synced products open their own page; the sample products have no details to show.
+    var link = CATALOG ? productHref(p) : "";
+    var pic = ph(p.image, room.name, p.name);
+    return '<article class="card' + (link ? " card--link" : "") + '">' + (link ? '<a href="' + link + '" tabindex="-1" aria-hidden="true">' + pic + "</a>" : pic) +
+      '<div class="card-body"><span class="card-type">' + esc(p.type) + "</span><h3>" + (link ? '<a href="' + link + '">' + esc(p.name) + "</a>" : esc(p.name)) + '</h3><p class="card-note">' + (p.variants ? p.variants + " sizes, colours or finishes. " : "") + esc(p.note) + "</p>" +
       '<div class="card-foot"><span class="price"><small>' + (CATALOG && !p.fromPrice ? "Price" : "Starting from") + "</small><b>" + rupees(p.from) + "</b>" + (p.mrp ? " <s>" + rupees(p.mrp) + "</s>" : "") + "</span>" +
       '<button class="btn btn--primary" type="button" data-enquire data-product="' + esc(p.name) + '" data-interest="' + esc(room.name) + '">Get best price</button></div></div></article>';
+  }
+
+  /* ---------- product page (product.html?id=...) ---------- */
+  function findProduct(id) {
+    id = String(id || "").toLowerCase();
+    for (var i = 0; i < (CATALOG || []).length; i++) {
+      var p = CATALOG[i];
+      if (p.id === id) return { card: p, option: id };
+      var hit = (p.options || []).filter(function (o) { return o.id === id; })[0];
+      if (hit) return { card: p, option: hit.id };
+    }
+    return null;
+  }
+
+  function loadDetails(id) {
+    // The preview build inlines details as window.HDE_DETAILS; the live site fetches one small file per product.
+    var pre = window.HDE_DETAILS && window.HDE_DETAILS[id];
+    if (pre) return Promise.resolve(pre);
+    if (!window.fetch) return Promise.resolve(null);
+    return fetch("assets/data/products/" + encodeURIComponent(id) + ".json")
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .catch(function () { return null; });
+  }
+
+  function setMeta(name, content) {
+    var m = $('meta[name="' + name + '"]') || $('meta[property="' + name + '"]');
+    if (m) m.setAttribute("content", content);
+  }
+
+  function mountProductPage() {
+    var root = $("[data-product-page]");
+    if (!root) return;
+    var params = new URLSearchParams(location.search);
+    var found = findProduct(params.get("id"));
+    if (!found) {
+      root.innerHTML = '<section class="page-hero"><div class="wrap"><p class="crumbs"><a href="index.html">Home</a> / <a href="collections.html">Collections</a></p>' +
+        "<h1>We couldn't find that product</h1><p>It may have been renamed or is no longer in the range. Browse the collections or ask us, and we will check stock for you.</p>" +
+        '<div class="btns"><a class="btn btn--primary" href="collections.html">Browse collections</a><button class="btn btn--ghost" type="button" data-enquire>Ask us</button></div></div></section>';
+      return;
+    }
+    var card = found.card;
+    var room = roomBySlug(card.room) || D.rooms[0];
+
+    function draw(optionId, d) {
+      var opt = (card.options || []).filter(function (o) { return o.id === optionId; })[0];
+      var name = (d && d.name) || (opt && opt.name) || card.name;
+      var price = d ? d.price : (opt ? opt.price : card.from);
+      var mrp = d ? d.mrp : card.mrp;
+      var gallery = d && d.gallery && d.gallery.length ? d.gallery : [card.image];
+      var specs = (d && d.specs) || [];
+      var key = specs.filter(function (r) { return ["Size (W x H x D, cm)", "Colour", "Made of", "Warranty"].indexOf(r[0]) > -1; });
+      var pageUrl = location.origin + location.pathname + "?id=" + encodeURIComponent(optionId);
+      var waText = "Hi, I'm interested in the " + name + " (" + rupees(price) + "). Please share today's best price and stock. " + pageUrl;
+
+      document.title = name + " | " + B.name + ", " + B.city;
+      setMeta("description", name + " at " + rupees(price) + ". " + (card.note || "") + ". Available at " + B.name + ", " + B.city + ".");
+      setMeta("og:title", name);
+      setMeta("og:image", gallery[0]);
+
+      var similar = CATALOG.filter(function (p) { return p !== card && p.room === card.room; });
+      similar.sort(function (a, b) { return (b.type === card.type) - (a.type === card.type); });
+
+      root.innerHTML =
+        '<div class="wrap pdp-crumbs"><p class="crumbs"><a href="index.html">Home</a> / <a href="collections.html#' + room.slug + '">' + esc(room.name) + "</a> / " + esc(name) + "</p></div>" +
+        '<section class="wrap pdp">' +
+          '<div class="pdp-gallery">' +
+            '<div class="pdp-main">' + ph(gallery[0], room.name, name, true) + "</div>" +
+            (gallery.length > 1 ? '<div class="pdp-thumbs" role="group" aria-label="More photos">' + gallery.map(function (g, i) {
+              return '<button type="button" data-img="' + esc(g) + '" aria-label="Photo ' + (i + 1) + '"' + (i ? "" : ' aria-current="true"') + '><img src="' + esc(g.replace(/width=\d+/, "width=160")) + '" alt="" loading="lazy" width="80" height="60"></button>';
+            }).join("") + "</div>" : "") +
+          "</div>" +
+          '<div class="pdp-info">' +
+            '<span class="card-type">' + esc(card.type || room.name) + "</span>" +
+            "<h1>" + esc(name) + "</h1>" +
+            '<p class="price pdp-price"><small>Price</small><b>' + rupees(price) + "</b>" + (mrp ? " <s>" + rupees(mrp) + "</s>" : "") + "</p>" +
+            '<p class="pdp-emi">No-cost EMI available. Exchange your old furniture with free pickup.</p>' +
+            (card.options && card.options.length > 1 ?
+              '<div class="field"><label for="pdp-opt">Size, colour or finish</label><select id="pdp-opt">' + card.options.map(function (o) {
+                return '<option value="' + esc(o.id) + '"' + (o.id === optionId ? " selected" : "") + ">" + esc(o.name) + " (" + rupees(o.price) + ")</option>";
+              }).join("") + "</select></div>" : "") +
+            (key.length ? '<dl class="pdp-key">' + key.map(function (r) { return "<div><dt>" + esc(r[0]) + "</dt><dd>" + esc(r[1]) + "</dd></div>"; }).join("") + "</dl>" : '<p class="card-note">' + esc(card.note) + "</p>") +
+            '<div class="pdp-actions">' +
+              '<button class="btn btn--primary" type="button" data-enquire data-product="' + esc(name) + '" data-interest="' + esc(room.name) + '" data-source="product">Get best price</button>' +
+              '<a class="btn btn--wa" href="' + esc(waLink(waText)) + '" target="_blank" rel="noopener">' + icon("wa") + "Ask on WhatsApp</a>" +
+              '<button class="btn btn--ghost" type="button" data-share>Share</button>' +
+            "</div>" +
+            '<ul class="pdp-perks">' +
+              "<li>" + icon("truck") + "Free delivery and installation in " + esc(B.city) + "</li>" +
+              "<li>" + icon("shield") + "Genuine Godrej Interio warranty, serviced by our local team</li>" +
+              "<li>" + icon("store") + "See it at our " + C.stores.map(function (st) { return esc(st.name.replace(" Showroom", "")); }).join(" or ") + " showroom</li>" +
+            "</ul>" +
+          "</div>" +
+        "</section>" +
+        (d && (d.intro || (d.features && d.features.length)) ?
+          '<section class="section section--stone"><div class="wrap"><div class="section-head"><div><h2>Why you will like it</h2>' + (d.intro ? "<p>" + esc(d.intro) + "</p>" : "") + "</div></div>" +
+          '<div class="pdp-features">' + (d.features || []).map(function (f) {
+            return '<article class="pdp-feature">' + (f.image ? ph(f.image, room.name, "") : "") + "<h3>" + esc(f.title) + "</h3><p>" + esc(f.text) + "</p></article>";
+          }).join("") + "</div></div></section>" : "") +
+        (specs.length || (d && d.care) ?
+          '<section class="section"><div class="wrap pdp-specs"><div><h2>Specifications</h2><table class="spec-table"><tbody>' +
+            specs.map(function (r) { return '<tr><th scope="row">' + esc(r[0]) + "</th><td>" + esc(r[1]) + "</td></tr>"; }).join("") + "</tbody></table></div>" +
+            (d && d.care ? "<div><h2>Care</h2><p>" + esc(d.care) + "</p></div>" : "") +
+          "</div></section>" : "") +
+        (similar.length ? '<section class="section section--stone"><div class="wrap"><div class="section-head"><div><h2>You may also like</h2></div><a class="link-arrow" href="collections.html#' + room.slug + '">All ' + esc(room.name.toLowerCase()) + " " + icon("arrow") + '</a></div><div class="grid-products">' +
+          similar.slice(0, 4).map(productCard).join("") + "</div></div></section>" : "");
+      wireImages(root);
+      var ld = { "@context": "https://schema.org", "@type": "Product", name: name, image: gallery, sku: d ? d.sku : card.sku, brand: { "@type": "Brand", name: "Godrej Interio" },
+        offers: { "@type": "Offer", priceCurrency: "INR", price: price, availability: "https://schema.org/InStock", seller: { "@type": "Organization", name: B.name } } };
+      var tag = $("#pdp-ld") || document.head.appendChild(Object.assign(document.createElement("script"), { id: "pdp-ld", type: "application/ld+json" }));
+      tag.textContent = JSON.stringify(ld);
+    }
+
+    function show(optionId) {
+      loadDetails(optionId).then(function (d) { draw(optionId, d); });
+    }
+    root.addEventListener("click", function (e) {
+      var t = e.target.closest("[data-img]");
+      if (t) {
+        var img = $(".pdp-main img", root);
+        img.src = t.getAttribute("data-img");
+        img.classList.remove("is-broken");
+        $all("[data-img]", root).forEach(function (b) { b.removeAttribute("aria-current"); });
+        t.setAttribute("aria-current", "true");
+      }
+      if (e.target.closest("[data-share]")) {
+        var data = { title: document.title, url: location.href };
+        if (navigator.share) navigator.share(data).catch(function () {});
+        else window.open("https://wa.me/?text=" + encodeURIComponent(document.title + " " + location.href), "_blank", "noopener");
+      }
+    });
+    root.addEventListener("change", function (e) {
+      if (e.target.id === "pdp-opt") {
+        history.replaceState(null, "", "?id=" + encodeURIComponent(e.target.value));
+        show(e.target.value);
+      }
+    });
+    show(found.option);
   }
 
   function mountRooms() {
@@ -464,6 +606,7 @@
     mountBiz();
     mountRooms();
     mountProducts();
+    mountProductPage();
     mountStores();
     mountReviews();
     mountForms(document);

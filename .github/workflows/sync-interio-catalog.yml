@@ -1,6 +1,7 @@
 name: Sync Interio catalogue
 
-# Rebuilds site/assets/js/catalog.js from interio.com product pages and commits it.
+# Rebuilds site/assets/js/catalog.js and the per-product files in site/assets/data/products
+# from interio.com product pages and commits them.
 # Runs every Monday, on demand (Actions tab > Sync Interio catalogue > Run workflow),
 # and whenever the scraper itself changes.
 on:
@@ -42,12 +43,12 @@ jobs:
             --rooms "${{ github.event.inputs.rooms || '' }}"
       - name: Commit catalogue if it changed
         run: |
-          if git diff --quiet -- site/assets/js/catalog.js; then
+          git add -A site/assets/js/catalog.js site/assets/data/products
+          if git diff --cached --quiet; then
             echo "Catalogue unchanged."
             exit 0
           fi
           git config user.name "hde-catalog-bot"
           git config user.email "hde-catalog-bot@users.noreply.github.com"
-          git add site/assets/js/catalog.js
           git commit -m "Sync Interio catalogue ($(date -u +%Y-%m-%d))"
           git push

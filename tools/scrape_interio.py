@@ -4,7 +4,9 @@
 Reads interio.com's public sitemaps, visits each /product/ page (politely, one
 request at a time), and pulls the name, SKU, price, main photo and category
 path from the page's Open Graph tags and breadcrumbs. Writes
-site/assets/js/catalog.js, which the website loads automatically.
+site/assets/js/catalog.js, which the website loads automatically, plus one
+site/assets/data/products/<id>.json per product with its photo gallery,
+features and specifications for the product page.
 
 Standard library only, so it runs anywhere Python 3.8+ is installed.
 
@@ -227,6 +229,80 @@ def image_url(src, width):
     return base + "?optimize=high&bg-color=255,255,255&fit=bounds&width=%d" % width
 
 
+def text(fragment):
+    t = re.sub(r"<[^>]+>", " ", fragment)
+    return re.sub(r"\s+", " ", html.unescape(t)).strip()
+
+
+# Product-page rows worth showing; the others (registered address, net quantity) are legal boilerplate.
+SPEC_LABELS = {
+    "Dimensions W x H x D": "Size (W x H x D, cm)", "Finish Color": "Colour", "Weight": "Weight",
+    "Warranty": "Warranty", "Primary Material": "Material", "Primary Material Subtype": "Made of",
+    "Delivery Condition": "Delivery", "Country of origin": "Made in",
+}
+
+
+def tab_rows(page_html, tab):
+    m = re.search(r'<div id="tab-%s" class="tab-content[^"]*">(.*?)</ul>' % tab, page_html, re.S)
+    rows = []
+    for li in re.findall(r"<li>(.*?)</li>", m.group(1) if m else "", re.S):
+        lab = re.search(r"<label>(.*?)(?:<label|</label>)", li, re.S)
+        val = re.search(r"<strong>(.*?)</strong>", li, re.S)
+        if lab and val and text(val.group(1)):
+            rows.append((text(lab.group(1)).rstrip(":"), text(val.group(1))))
+    return rows
+
+
+def parse_details(page_html, width=900):
+    """Gallery, 'why choose' intro, feature points, specifications and care text from a product page."""
+    gallery = []
+    sku = re.search(r'data-product-sku="([^"]+)"', page_html)
+    sku = sku.group(1).lower() if sku else ""
+    g = re.search(r'"mage/gallery/gallery".*?"data":\s*(\[.*?\])\s*,\s*"options"', page_html, re.S)
+    if g:
+        try:
+            for it in json.loads(g.group(1)):
+                if it.get("type", "image") == "image" and it.get("full"):
+                    u = image_url(it["full"], width)
+                    if u not in gallery:
+                        gallery.append(u)
+        except ValueError:
+            pass
+    # Keep this product's own photos; generic banners (offers, warranty cards) don't carry the SKU.
+    own = [u for u in gallery if sku and sku in u.lower()]
+    gallery = own or gallery
+    desc = re.search(r'class="product attribute description">(.*?)<div class="productpdp-tabs-content', page_html, re.S)
+    desc = desc.group(1) if desc else ""
+    intro = re.search(r'class="custom-title-text">(.*?)</span>', desc, re.S)
+    pics = re.findall(r'<img[^>]+src="([^"]+/wysiwyg/[^"]+)"', desc)
+    features = []
+    for i, (title, body) in enumerate(re.findall(r'class="slider-description">\s*<h2>(.*?)</h2>\s*<p>(.*?)</p>', desc, re.S)):
+        features.append({"title": text(title), "text": text(body), "image": pics[i] if i < len(pics) else ""})
+    specs, category = [], ""
+    for tab in ("specifications", "materials", "additionalinformation"):
+        for label, value in tab_rows(page_html, tab):
+            if label == "Product Category":
+                category = value
+            if label in SPEC_LABELS and SPEC_LABELS[label] not in [k for k, _ in specs]:
+                specs.append((SPEC_LABELS[label], value))
+    care = dict(tab_rows(page_html, "godrejcareinstructions")).get("Care instructions", "")
+    return {
+        "gallery": gallery[:8],
+        "intro": text(intro.group(1)) if intro else "",
+        "features": features[:6],
+        "specs": [list(r) for r in specs],
+        "care": care,
+        "category": category,
+    }
+
+
+def spec_note(specs):
+    """'1-Year Warranty, Wenge, Engineered Wood' from the specification rows."""
+    d = dict(specs)
+    parts = [d.get("Warranty", "").replace(" Year Warranty", "-Year Warranty"), d.get("Colour", ""), d.get("Made of") or d.get("Material", "")]
+    return ", ".join(p for p in parts if p)
+
+
 def parse_product(page_html, url, sitemap_images=(), width=640):
     p = PageParser()
     p.feed(page_html)
@@ -252,9 +328,11 @@ def parse_product(page_html, url, sitemap_images=(), width=640):
     img = m.get("og:image") or ld_img or (sitemap_images[0] if sitemap_images else "")
     desc = html.unescape(m.get("og:description") or m.get("description") or product_ld.get("description") or "").strip()
     cats = category_path(p)
-    kind = deal_type(desc) or (pretty(cats[-1]) if cats else "")
+    details = parse_details(page_html)
+    kind = deal_type(desc) or details["category"] or (pretty(cats[-1]) if cats else "")
     if not name or price is None:
         return None
+    details.pop("category")
     return {
         "slugName": slug_name(url, sku),
         "id": (sku or url.rstrip("/").rsplit("/", 1)[-1]).lower(),
@@ -265,9 +343,10 @@ def parse_product(page_html, url, sitemap_images=(), width=640):
         "family": name,
         "from": round(price),
         "mrp": round(mrp) if mrp and mrp > price else None,
-        "note": short_note(desc),
+        "note": spec_note(details["specs"]) or short_note(desc),
         "image": image_url(img, width),
         "source": url,
+        "details": details,
     }
 
 
@@ -282,7 +361,8 @@ def finalise(items):
     """Drop unpriced items and fold sizes/colours/finishes of one design (same short name) into one card.
 
     A folded card keeps the lowest price and says how many options exist; `fromPrice` marks
-    that the options are priced differently, so the site labels it "Starting from"."""
+    that the options are priced differently, so the site labels it "Starting from".
+    `options` lists every size/colour (id, name, price) so the product page can switch between them."""
     groups = {}
     for it in items:
         if it.get("from"):
@@ -291,7 +371,9 @@ def finalise(items):
     for members in groups.values():
         members.sort(key=lambda x: x["from"])
         card = dict(members[0])
+        card.pop("details", None)
         if len(members) > 1:
+            card["options"] = [{"id": m["id"], "name": m.get("slugName") or m["name"], "price": m["from"]} for m in members]
             card["name"] = card["family"]
             card["variants"] = len(members)
             if members[-1]["from"] != members[0]["from"]:
@@ -301,6 +383,25 @@ def finalise(items):
         card.pop("slugName", None)
         out.append(card)
     return out
+
+
+def write_details(items, folder):
+    """One JSON file per product page, loaded by site/product.html; stale files are removed."""
+    import os
+    os.makedirs(folder, exist_ok=True)
+    keep = set()
+    for it in items:
+        if not it.get("from") or not it.get("details"):
+            continue
+        name = it["id"] + ".json"
+        keep.add(name)
+        d = dict(it["details"], id=it["id"], sku=it["sku"], name=it.get("slugName") or it["name"],
+                 price=it["from"], mrp=it["mrp"], image=it["image"])
+        with open(os.path.join(folder, name), "w", encoding="utf-8") as f:
+            json.dump(d, f, ensure_ascii=False, separators=(",", ":"))
+    for old in os.listdir(folder):
+        if old.endswith(".json") and old not in keep:
+            os.remove(os.path.join(folder, old))
 
 
 def write_catalog(items, path):
@@ -317,6 +418,7 @@ def write_catalog(items, path):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default="site/assets/js/catalog.js")
+    ap.add_argument("--details-dir", default="site/assets/data/products", help="where per-product JSON files go")
     ap.add_argument("--limit", type=int, default=0, help="stop after N products (0 = all)")
     ap.add_argument("--rooms", default="", help="comma list of rooms to keep, e.g. bedroom,living")
     ap.add_argument("--delay", type=float, default=1.0, help="seconds between page requests")
@@ -364,6 +466,7 @@ def main():
     if not items:
         print("No products parsed; catalogue left unchanged.", file=sys.stderr)
         return 1
+    write_details(items, a.details_dir)
     write_catalog(items, a.out)
     print("Wrote %d product pages to %s as %d cards, colour variants folded (%d failed, %d blocked by robots.txt)"
           % (len(items), a.out, len(finalise(list(items))), failed, skipped))
