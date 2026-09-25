@@ -319,7 +319,7 @@ def parse_product(page_html, url, sitemap_images=(), width=640):
         tail = re.search(r"-([0-9a-z]{10,})$", url.rstrip("/"))
         sku = tail.group(1).upper() if tail else ""
     price = to_number(offers.get("price") or m.get("product:price:amount") or m.get("og:price:amount"))
-    mrp = to_number(m.get("product:original_price:amount") or m.get("product:regular_price:amount"))
+    mrp = to_number(m.get("product:original_price:amount") or m.get("product:regular_price:amount")) or page_mrp(page_html, price)
     ld_img = product_ld.get("image")
     if isinstance(ld_img, list):
         ld_img = ld_img[0] if ld_img else None
@@ -341,13 +341,31 @@ def parse_product(page_html, url, sitemap_images=(), width=640):
         "room": room_for(cats, kind + " " + name),
         "type": kind[:1].upper() + kind[1:],
         "family": name,
-        "from": round(price),
-        "mrp": round(mrp) if mrp and mrp > price else None,
+        # The site shows the MRP; HDE offers its own discount when the enquiry comes in, so
+        # Interio's online selling price is deliberately not stored. `mrp` says the figure is an MRP.
+        "from": round(mrp if mrp and mrp >= price else price),
+        "mrp": bool(mrp and mrp >= price),
         "note": spec_note(details["specs"]) or short_note(desc),
         "image": image_url(img, width),
         "source": url,
         "details": details,
     }
+
+
+def page_mrp(page_html, price):
+    """The MRP Interio shows struck through ("MRP ₹20,476") next to its online price.
+
+    The main product's price box has a finalPrice span followed by an oldPrice span;
+    related-product boxes further down have their own, so match the one carrying `price`."""
+    if price is None:
+        return None
+    for m in re.finditer(r'data-price-amount="([\d.]+)" data-price-type="finalPrice"', page_html):
+        if to_number(m.group(1)) != price:
+            continue
+        old = re.search(r'data-price-amount="([\d.]+)" data-price-type="oldPrice"', page_html[m.end():m.end() + 800])
+        return to_number(old.group(1)) if old else None
+    tag = re.search(r'id="price-info-text"[^>]*>\s*MRP\s*(?:&#8377;|₹)?\s*([\d,]+)', page_html)
+    return to_number(tag.group(1)) if tag else None
 
 
 def short_note(desc):

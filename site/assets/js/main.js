@@ -321,6 +321,12 @@
     return out;
   }
 
+  // Synced prices are Interio's MRP; HDE quotes its own discount when the enquiry comes in.
+  function priceLabel(p) {
+    if (!CATALOG) return "Starting from";
+    return (p.mrp ? "MRP" : "Price") + (p.fromPrice ? " from" : "");
+  }
+
   function productHref(p) { return "product.html?id=" + encodeURIComponent(p.id); }
 
   function productCard(p) {
@@ -330,7 +336,7 @@
     var pic = ph(p.image, room.name, p.name);
     return '<article class="card' + (link ? " card--link" : "") + '">' + (link ? '<a href="' + link + '" tabindex="-1" aria-hidden="true">' + pic + "</a>" : pic) +
       '<div class="card-body"><span class="card-type">' + esc(p.type) + "</span><h3>" + (link ? '<a href="' + link + '">' + esc(p.name) + "</a>" : esc(p.name)) + '</h3><p class="card-note">' + (p.variants ? p.variants + " sizes, colours or finishes. " : "") + esc(p.note) + "</p>" +
-      '<div class="card-foot"><span class="price"><small>' + (CATALOG && !p.fromPrice ? "Price" : "Starting from") + "</small><b>" + rupees(p.from) + "</b>" + (p.mrp ? " <s>" + rupees(p.mrp) + "</s>" : "") + "</span>" +
+      '<div class="card-foot"><span class="price"><small>' + priceLabel(p) + "</small><b>" + rupees(p.from) + "</b></span>" +
       '<button class="btn btn--primary" type="button" data-enquire data-product="' + esc(p.name) + '" data-interest="' + esc(room.name) + '">Get best price</button></div></div></article>';
   }
 
@@ -379,15 +385,15 @@
       var opt = (card.options || []).filter(function (o) { return o.id === optionId; })[0];
       var name = (d && d.name) || (opt && opt.name) || card.name;
       var price = d ? d.price : (opt ? opt.price : card.from);
-      var mrp = d ? d.mrp : card.mrp;
+      var isMrp = d ? d.mrp : card.mrp;
       var gallery = d && d.gallery && d.gallery.length ? d.gallery : [card.image];
       var specs = (d && d.specs) || [];
       var key = specs.filter(function (r) { return ["Size (W x H x D, cm)", "Colour", "Made of", "Warranty"].indexOf(r[0]) > -1; });
       var pageUrl = location.origin + location.pathname + "?id=" + encodeURIComponent(optionId);
-      var waText = "Hi, I'm interested in the " + name + " (" + rupees(price) + "). Please share today's best price and stock. " + pageUrl;
+      var waText = "Hi, I'm interested in the " + name + " (" + (isMrp ? "MRP " : "") + rupees(price) + "). Please share your best price and stock. " + pageUrl;
 
       document.title = name + " | " + B.name + ", " + B.city;
-      setMeta("description", name + " at " + rupees(price) + ". " + (card.note || "") + ". Available at " + B.name + ", " + B.city + ".");
+      setMeta("description", name + ", " + (isMrp ? "MRP " : "") + rupees(price) + ". " + (card.note || "") + ". Available at " + B.name + ", " + B.city + ".");
       setMeta("og:title", name);
       setMeta("og:image", gallery[0]);
 
@@ -406,11 +412,11 @@
           '<div class="pdp-info">' +
             '<span class="card-type">' + esc(card.type || room.name) + "</span>" +
             "<h1>" + esc(name) + "</h1>" +
-            '<p class="price pdp-price"><small>Price</small><b>' + rupees(price) + "</b>" + (mrp ? " <s>" + rupees(mrp) + "</s>" : "") + "</p>" +
-            '<p class="pdp-emi">No-cost EMI available. Exchange your old furniture with free pickup.</p>' +
+            '<p class="price pdp-price"><small>' + (isMrp ? "MRP (inclusive of all taxes)" : "Price") + "</small><b>" + rupees(price) + "</b></p>" +
+            '<p class="pdp-emi">Ask us for today\'s discount. No-cost EMI and exchange with free pickup available.</p>' +
             (card.options && card.options.length > 1 ?
               '<div class="field"><label for="pdp-opt">Size, colour or finish</label><select id="pdp-opt">' + card.options.map(function (o) {
-                return '<option value="' + esc(o.id) + '"' + (o.id === optionId ? " selected" : "") + ">" + esc(o.name) + " (" + rupees(o.price) + ")</option>";
+                return '<option value="' + esc(o.id) + '"' + (o.id === optionId ? " selected" : "") + ">" + esc(o.name) + " (" + (isMrp ? "MRP " : "") + rupees(o.price) + ")</option>";
               }).join("") + "</select></div>" : "") +
             (key.length ? '<dl class="pdp-key">' + key.map(function (r) { return "<div><dt>" + esc(r[0]) + "</dt><dd>" + esc(r[1]) + "</dd></div>"; }).join("") + "</dl>" : '<p class="card-note">' + esc(card.note) + "</p>") +
             '<div class="pdp-actions">' +
