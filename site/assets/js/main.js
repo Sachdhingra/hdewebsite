@@ -324,8 +324,8 @@
   function productCard(p) {
     var room = roomBySlug(p.room) || D.rooms[0];
     return '<article class="card">' + ph(p.image, room.name, p.name) +
-      '<div class="card-body"><span class="card-type">' + esc(p.type) + "</span><h3>" + esc(p.name) + '</h3><p class="card-note">' + esc(p.note) + "</p>" +
-      '<div class="card-foot"><span class="price"><small>' + (CATALOG ? "Price" : "Starting from") + "</small><b>" + rupees(p.from) + "</b>" + (p.mrp ? " <s>" + rupees(p.mrp) + "</s>" : "") + "</span>" +
+      '<div class="card-body"><span class="card-type">' + esc(p.type) + "</span><h3>" + esc(p.name) + '</h3><p class="card-note">' + (p.variants ? p.variants + " sizes, colours or finishes. " : "") + esc(p.note) + "</p>" +
+      '<div class="card-foot"><span class="price"><small>' + (CATALOG && !p.fromPrice ? "Price" : "Starting from") + "</small><b>" + rupees(p.from) + "</b>" + (p.mrp ? " <s>" + rupees(p.mrp) + "</s>" : "") + "</span>" +
       '<button class="btn btn--primary" type="button" data-enquire data-product="' + esc(p.name) + '" data-interest="' + esc(room.name) + '">Get best price</button></div></div></article>';
   }
 
@@ -348,7 +348,8 @@
       more.className = "more";
       var bar, current = [], shown = 0;
       function render() {
-        grid.innerHTML = current.length ? current.slice(0, shown).map(productCard).join("") : '<p class="empty">New designs arriving soon. Ask us what is in store today.</p>';
+        grid.innerHTML = current.length ? current.slice(0, shown).map(productCard).join("") :
+          '<div class="empty"><p>These are designed and priced for your home, so we quote them after a free visit.</p><button class="btn btn--primary" type="button" data-enquire data-interest="' + esc((roomBySlug(location.hash.slice(1)) || {}).name || "Full home interiors") + '">Book a free home visit</button></div>';
         wireImages(grid);
         var left = current.length - shown;
         more.innerHTML = left > 0 ? '<p class="more-count">Showing ' + shown + " of " + current.length + '</p><button class="btn btn--ghost" type="button">Show ' + Math.min(left, PAGE_SIZE) + " more</button>" : "";

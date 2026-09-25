@@ -2,18 +2,6 @@
  * re-run the script (or the 'Sync Interio catalogue' GitHub action) instead. */
 window.HDE_CATALOG = { updated: "2026-09-25", products: [
  {
-  "id": "56101515sd00062",
-  "sku": "56101515SD00062",
-  "name": "Adria Engineered Wood Bed",
-  "room": "bedroom",
-  "type": "",
-  "from": 41490,
-  "mrp": null,
-  "note": "Shop Adria King Size Wooden Bed 1-Year Warranty, Imperial Oak, Particle Board Online from Interio by Godrej. Get great deals on Wooden Beds ",
-  "image": "https://interio.com/media/catalog/product/5/6/56101515sd00062_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/adria-king-size-engineered-wood-bed-56101515sd00062"
- },
- {
   "id": "56101515sd00063",
   "sku": "56101515SD00063",
   "name": "Adria Engineered Wood Bed",
@@ -21,33 +9,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 32890,
   "mrp": null,
-  "note": "Shop Adria Queen Size Wooden Bed 1-Year Warranty, Imperial Oak, Particle Board Online from Interio by Godrej. Get great deals on Wooden Beds",
+  "note": "1-Year Warranty, Imperial Oak, Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00063_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/adria-queen-size-engineered-wood-bed-56101515sd00063"
- },
- {
-  "id": "adria-engineered-wood-bed-gint021",
-  "sku": "",
-  "name": "Adria Engineered Wood Bed",
-  "room": "bedroom",
-  "type": "",
-  "from": 32890,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/adria-engineered-wood-bed-GINT021"
- },
- {
-  "id": "56101509sd00132",
-  "sku": "56101509SD00132",
-  "name": "Adriana 2-Door Wooden Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 45690,
-  "mrp": null,
-  "note": "Shop Adriana 2-Door Wooden Wardrobe with Mirror (Walnut) 1-Year Warranty, 1 Drawer Online from Interio by Godrej. Get great deals on Wooden ",
-  "image": "https://interio.com/media/catalog/product/5/6/56101509sd00132_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/adriana-2-door-wooden-wardrobe-with-mirror-walnut-56101509sd00132"
+  "source": "https://interio.com/product/adria-queen-size-engineered-wood-bed-56101515sd00063",
+  "family": "Adria Engineered Wood Bed",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101509sd00134",
@@ -57,9 +24,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 43190,
   "mrp": null,
-  "note": "Shop Adriana 2-Door Wooden Wardrobe (Walnut) 1-Year Warranty, 1 Drawer Online from Interio by Godrej. Get great deals on Wooden Wardrobes wi",
+  "note": "1-Year Warranty, 1 Drawer",
   "image": "https://interio.com/media/catalog/product/5/6/56101509sd00134_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/adriana-2-door-wooden-wardrobe-walnut-56101509sd00134"
+  "source": "https://interio.com/product/adriana-2-door-wooden-wardrobe-walnut-56101509sd00134",
+  "family": "Adriana 2-Door Wooden Wardrobe",
+  "variants": 2,
+  "fromPrice": true
  },
  {
   "id": "56101515sd00048",
@@ -69,45 +39,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 31590,
   "mrp": null,
-  "note": "Shop Adriana Single Size Wooden Bed 1-Year Warranty, Walnut, Particle Board Online from Interio by Godrej. Get great deals on Wooden Beds wi",
+  "note": "1-Year Warranty, Walnut, Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00048_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/adriana-single-size-engineered-wood-bed-56101515sd00048"
- },
- {
-  "id": "armsbwu01",
-  "sku": "ARMSBWU01",
-  "name": "Adriana Single Size Engineered Wood Bed",
-  "room": "bedroom",
-  "type": "",
-  "from": 44490,
-  "mrp": null,
-  "note": "Adriana Single Size Wooden Bed with Pull-Out Storage 1-Year Warranty, Walnut, Particle Board Online from Interio by Godrej. Get great deals ",
-  "image": "https://interio.com/media/catalog/product/a/r/armsbwu01_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/adriana-single-size-engineered-wood-bed-with-pull-out-storage-armsbwu01"
- },
- {
-  "id": "aero-engineered-wood-bed-with-full-hydraulic-storage-gint022",
-  "sku": "",
-  "name": "Aero Engineered Wood Bed with Full Hydraulic Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 0,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/aero-engineered-wood-bed-with-full-hydraulic-storage-GINT022"
- },
- {
-  "id": "alina-engineered-wood-bed-with-drawer-box-storage-gint037",
-  "sku": "",
-  "name": "Alina Engineered Wood Bed with Drawer & Box Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 0,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/alina-engineered-wood-bed-with-drawer-box-storage-GINT037"
+  "source": "https://interio.com/product/adriana-single-size-engineered-wood-bed-56101515sd00048",
+  "family": "Adriana Single Size Engineered Wood Bed",
+  "variants": 2,
+  "fromPrice": true
  },
  {
   "id": "56101509sd00636",
@@ -117,45 +54,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 19590,
   "mrp": null,
-  "note": "Shop Alina 800W 2-Door Engineered Wooden Wardrobe (Walnut) 1-Year Warranty, 1 Drawer Online from Interio by Godrej. Get great deals on Woode",
+  "note": "1-Year Warranty, 1 Drawer",
   "image": "https://interio.com/media/catalog/product/5/6/56101509sd00636_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/alina-800w-2-door-engineered-wooden-wardrobe-walnut-56101509sd00636"
- },
- {
-  "id": "56101509sd00637",
-  "sku": "56101509SD00637",
-  "name": "Alina Wooden Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 30590,
-  "mrp": null,
-  "note": "Shop Alina 1200W 3-Door Engineered Wooden Wardrobe (Walnut) 1-Year Warranty, 1 Drawer Online from Interio by Godrej. Get great deals on Wood",
-  "image": "https://interio.com/media/catalog/product/5/6/56101509sd00637_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/alina-1200w-3-door-engineered-wooden-wardrobe-walnut-56101509sd00637"
- },
- {
-  "id": "56101509sd00638",
-  "sku": "56101509SD00638",
-  "name": "Alina Wooden Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 36990,
-  "mrp": null,
-  "note": "Shop Alina 1600W 4-Door Engineered Wooden Wardrobe (Walnut) 1-Year Warranty, 1 Drawer Online from Interio by Godrej. Get great deals on Wood",
-  "image": "https://interio.com/media/catalog/product/5/6/56101509sd00638_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/alina-1600w-4-door-engineered-wooden-wardrobe-walnut-56101509sd00638"
- },
- {
-  "id": "56101515sd00671",
-  "sku": "56101515SD00671",
-  "name": "Arcadia V2 Engineered Wood Bed with Half Hydraulic Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 37690,
-  "mrp": null,
-  "note": "Shop Arcadia V2 King Size Wooden Bed with Half Hydraulic Storage 1-Year Warranty, Colarain, Particle Board Online from Interio by Godrej. Ge",
-  "image": "https://interio.com/media/catalog/product/5/6/56101515sd00671_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/arcadia-v2-king-size-engineered-wood-bed-with-half-hydraulic-storage-56101515sd00671"
+  "source": "https://interio.com/product/alina-800w-2-door-engineered-wooden-wardrobe-walnut-56101509sd00636",
+  "family": "Alina Wooden Wardrobe",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101515sd00672",
@@ -165,93 +69,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 35690,
   "mrp": null,
-  "note": "Shop Arcadia V2 Queen Size Wooden Bed with Half Hydraulic Storage 1-Year Warranty, Colarain, Particle Board Online from Interio by Godrej. G",
+  "note": "1-Year Warranty, Colarain, Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00672_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/arcadia-v2-queen-size-engineered-wood-bed-with-half-hydraulic-storage-56101515sd00672"
- },
- {
-  "id": "arcadia-v2-engineered-wood-bed-with-half-hydraulic-storage-gint024",
-  "sku": "",
-  "name": "Arcadia V2 Engineered Wood Bed with Half Hydraulic Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 35690,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/arcadia-v2-engineered-wood-bed-with-half-hydraulic-storage-GINT024"
- },
- {
-  "id": "astra-v2-engineered-wood-bed-with-pullout-storage-gint025",
-  "sku": "",
-  "name": "Astra V2 Engineered Wood Bed with Pullout Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 0,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/astra-v2-engineered-wood-bed-with-pullout-storage-GINT025"
- },
- {
-  "id": "attix-3-seater-fabric-sofa-cum-bed-gint045",
-  "sku": "",
-  "name": "Attix 3-Seater Fabric Sofa Cum Bed",
-  "room": "bedroom",
-  "type": "",
-  "from": 0,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/attix-3-seater-fabric-sofa-cum-bed-GINT045"
- },
- {
-  "id": "attix-3-seater-fabric-sofa-cum-bed-gint046",
-  "sku": "",
-  "name": "Attix 3-Seater Fabric Sofa Cum Bed",
-  "room": "bedroom",
-  "type": "",
-  "from": 0,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/attix-3-seater-fabric-sofa-cum-bed-GINT046"
- },
- {
-  "id": "attix-3-seater-fabric-sofa-cum-bed-gint047",
-  "sku": "",
-  "name": "Attix 3-Seater Fabric Sofa Cum Bed",
-  "room": "bedroom",
-  "type": "",
-  "from": 0,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/attix-3-seater-fabric-sofa-cum-bed-GINT047"
- },
- {
-  "id": "attix-3-seater-fabric-sofa-cum-bed-gint048",
-  "sku": "",
-  "name": "Attix 3-Seater Fabric Sofa Cum Bed",
-  "room": "bedroom",
-  "type": "",
-  "from": 0,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/attix-3-seater-fabric-sofa-cum-bed-GINT048"
- },
- {
-  "id": "56101515sd00659",
-  "sku": "56101515SD00659",
-  "name": "Chime Engineered Wood Bed with Half Hydraulic Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 37090,
-  "mrp": null,
-  "note": "Shop Chime King Size Wooden Bed with Half Hydraulic Storage 1-Year Warranty, Sonoma Oak, Particle Board Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/5/6/56101515sd00659_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/chime-king-size-engineered-wood-bed-with-half-hydraulic-storage-56101515sd00659"
+  "source": "https://interio.com/product/arcadia-v2-queen-size-engineered-wood-bed-with-half-hydraulic-storage-56101515sd00672",
+  "family": "Arcadia V2 Engineered Wood Bed with Half Hydraulic Storage",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101515sd00660",
@@ -261,33 +84,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 34290,
   "mrp": null,
-  "note": "Shop Chime Queen Size Wooden Bed with Half Hydraulic Storage 1-Year Warranty, Sonoma Oak, Particle Board Online from Interio by Godrej. Get ",
+  "note": "1-Year Warranty, Sonoma Oak, Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00660_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/chime-queen-size-engineered-wood-bed-with-half-hydraulic-storage-56101515sd00660"
- },
- {
-  "id": "chime-engineered-wood-bed-with-half-hydraulic-storage-gint026",
-  "sku": "",
-  "name": "Chime Engineered Wood Bed with Half Hydraulic Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 34290,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/chime-engineered-wood-bed-with-half-hydraulic-storage-GINT026"
- },
- {
-  "id": "56101515sd00674",
-  "sku": "56101515SD00674",
-  "name": "Eden V2 Engineered Wood Bed with Pullout Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 43490,
-  "mrp": null,
-  "note": "Shop Eden V2 King Size Wooden Bed with Pullout Storage 1-Year Warranty, Walnut, Particle Board Online from Interio by Godrej. Get great deal",
-  "image": "https://interio.com/media/catalog/product/5/6/56101515sd00674_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/eden-v2-king-size-engineered-wood-bed-with-pullout-storage-56101515sd00674"
+  "source": "https://interio.com/product/chime-queen-size-engineered-wood-bed-with-half-hydraulic-storage-56101515sd00660",
+  "family": "Chime Engineered Wood Bed with Half Hydraulic Storage",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101515sd00675",
@@ -297,33 +99,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 39890,
   "mrp": null,
-  "note": "Shop Eden V2 Queen Size Wooden Bed with Pullout Storage 1-Year Warranty, Walnut, Particle Board Online from Interio by Godrej. Get great dea",
+  "note": "1-Year Warranty, Walnut, Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00675_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/eden-v2-queen-size-engineered-wood-bed-with-pullout-storage-56101515sd00675"
- },
- {
-  "id": "eden-v2-engineered-wood-bed-with-pullout-storage-gint027",
-  "sku": "",
-  "name": "Eden V2 Engineered Wood Bed with Pullout Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 39890,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/eden-v2-engineered-wood-bed-with-pullout-storage-GINT027"
- },
- {
-  "id": "56101515sd00019",
-  "sku": "56101515SD00019",
-  "name": "Fiona Modular Metal Bed",
-  "room": "bedroom",
-  "type": "",
-  "from": 30390,
-  "mrp": null,
-  "note": "Shop Fiona Modular Queen Size Metal Bed 1-Year Warranty, Black Online from Interio by Godrej. Get great deals on Metal Beds with ✔Free Deliv",
-  "image": "https://interio.com/media/catalog/product/5/6/56101515sd00019_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/fiona-modular-queen-size-metal-bed-56101515sd00019"
+  "source": "https://interio.com/product/eden-v2-queen-size-engineered-wood-bed-with-pullout-storage-56101515sd00675",
+  "family": "Eden V2 Engineered Wood Bed with Pullout Storage",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101515sd00020",
@@ -333,33 +114,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 22290,
   "mrp": null,
-  "note": "Shop Fiona Modular Single Size Metal Bed 1-Year Warranty, Black Online from Interio by Godrej. Get great deals on Metal Beds with ✔Free Deli",
+  "note": "1-Year Warranty, Black",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00020_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/fiona-modular-single-size-metal-bed-56101515sd00020"
- },
- {
-  "id": "fiona-modular-metal-bed-gint028",
-  "sku": "",
-  "name": "Fiona Modular Metal Bed",
-  "room": "bedroom",
-  "type": "",
-  "from": 22290,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/fiona-modular-metal-bed-GINT028"
- },
- {
-  "id": "56101515sd00684",
-  "sku": "56101515SD00684",
-  "name": "Hannah Engineered Wood Bed with Box Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 24990,
-  "mrp": null,
-  "note": "Shop Hannah King Size Wooden Bed with Box Storage 1-Year Warranty, Cola-Rain, Prelaminated Particle Board Online from Interio by Godrej. Get",
-  "image": "https://interio.com/media/catalog/product/5/6/56101515sd00684_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/hannah-king-size-engineered-wood-bed-with-box-storage-56101515sd00684"
+  "source": "https://interio.com/product/fiona-modular-single-size-metal-bed-56101515sd00020",
+  "family": "Fiona Modular Metal Bed",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101515sd00685",
@@ -369,33 +129,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 22990,
   "mrp": null,
-  "note": "Shop Hannah Queen Size Wooden Bed with Box Storage 1-Year Warranty, Cola-Rain, Prelaminated Particle Board Online from Interio by Godrej. Ge",
+  "note": "1-Year Warranty, Cola-Rain, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00685_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/hannah-queen-size-engineered-wood-bed-with-box-storage-56101515sd00685"
- },
- {
-  "id": "hannah-engineered-wood-bed-with-box-storage-gint029",
-  "sku": "",
-  "name": "Hannah Engineered Wood Bed with Box Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 22990,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/hannah-engineered-wood-bed-with-box-storage-GINT029"
- },
- {
-  "id": "56101515sd00686",
-  "sku": "56101515SD00686",
-  "name": "Irene Engineered Wood Bed with Box Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 28490,
-  "mrp": null,
-  "note": "Shop Irene King Size Wooden Bed with Box Storage 1-Year Warranty, Cola-Rain, Prelaminated Particle Board Online from Interio by Godrej. Get ",
-  "image": "https://interio.com/media/catalog/product/5/6/56101515sd00686_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/irene-king-size-engineered-wood-bed-with-box-storage-56101515sd00686"
+  "source": "https://interio.com/product/hannah-queen-size-engineered-wood-bed-with-box-storage-56101515sd00685",
+  "family": "Hannah Engineered Wood Bed with Box Storage",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101515sd00687",
@@ -405,33 +144,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 26490,
   "mrp": null,
-  "note": "Shop Irene Queen Size Wooden Bed with Box Storage 1-Year Warranty, Cola-Rain, Prelaminated Particle Board Online from Interio by Godrej. Get",
+  "note": "1-Year Warranty, Cola-Rain, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00687_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/irene-queen-size-engineered-wood-bed-with-box-storage-56101515sd00687"
- },
- {
-  "id": "irene-engineered-wood-bed-with-box-storage-gint030",
-  "sku": "",
-  "name": "Irene Engineered Wood Bed with Box Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 26490,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/irene-engineered-wood-bed-with-box-storage-GINT030"
- },
- {
-  "id": "morpheus-metal-bed-gint031",
-  "sku": "",
-  "name": "Morpheus Metal Bed",
-  "room": "bedroom",
-  "type": "",
-  "from": 0,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/morpheus-metal-bed-GINT031"
+  "source": "https://interio.com/product/irene-queen-size-engineered-wood-bed-with-box-storage-56101515sd00687",
+  "family": "Irene Engineered Wood Bed with Box Storage",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "pavo-engineered-wood-bed-with-pull-out-storage-gint032",
@@ -443,19 +161,9 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "mrp": null,
   "note": "",
   "image": "",
-  "source": "https://interio.com/product/pavo-engineered-wood-bed-with-pull-out-storage-GINT032"
- },
- {
-  "id": "56101515sd00424",
-  "sku": "56101515SD00424",
-  "name": "Ray Engineered Wood Bed with Motorized Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 125490,
-  "mrp": null,
-  "note": "Shop Ray King Size Wooden Bed with Motorized Storage 1-Year Warranty, Swiss White, Prelaminated Particle Board Online from Interio by Godrej",
-  "image": "https://interio.com/media/catalog/product/5/6/56101515sd00424_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/ray-king-size-engineered-wood-bed-with-motorized-storage-56101515sd00424"
+  "source": "https://interio.com/product/pavo-engineered-wood-bed-with-pull-out-storage-GINT032",
+  "family": "Pavo Engineered Wood Bed with Pull-Out Storage",
+  "variants": 2
  },
  {
   "id": "56101515sd00425",
@@ -465,21 +173,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 111390,
   "mrp": null,
-  "note": "Shop Ray Queen Size Wooden Bed with Motorized Storage 1-Year Warranty, Swiss White, Prelaminated Particle Board Online from Interio by Godre",
+  "note": "1-Year Warranty, Swiss White, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00425_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/ray-queen-size-engineered-wood-bed-with-motorized-storage-56101515sd00425"
- },
- {
-  "id": "ray-engineered-wood-bed-with-motorized-storage-gint033",
-  "sku": "",
-  "name": "Ray Engineered Wood Bed with Motorized Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 111390,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/ray-engineered-wood-bed-with-motorized-storage-GINT033"
+  "source": "https://interio.com/product/ray-queen-size-engineered-wood-bed-with-motorized-storage-56101515sd00425",
+  "family": "Ray Engineered Wood Bed with Motorized Storage",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101719sd00090",
@@ -489,45 +188,11 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 12790,
   "mrp": null,
-  "note": "Ray Prelaminated Particle Board Bedside Table 1-Year Warranty, Brown, Knock Down Online from Interio by Godrej. Get great deals on Bedside T",
+  "note": "1-Year Warranty, Brown, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101719sd00090_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/ray-prelaminated-particle-board-bedside-table-56101719SD00090"
- },
- {
-  "id": "56101719sd00106",
-  "sku": "56101719SD00106",
-  "name": "Ray Prelaminated Particle Board Bedside Table",
-  "room": "bedroom",
-  "type": "",
-  "from": 12790,
-  "mrp": null,
-  "note": "Ray Prelaminated Particle Board Bedside Table 1-Year Warranty, Swiss White, Knock Down Online from Interio by Godrej. Get great deals on Bed",
-  "image": "https://interio.com/media/catalog/product/5/6/56101719sd00106_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/ray-prelaminated-particle-board-bedside-table-56101719SD00106"
- },
- {
-  "id": "ray-prelaminated-particle-board-bedside-table-gint042",
-  "sku": "",
-  "name": "Ray Prelaminated Particle Board Bedside Table",
-  "room": "bedroom",
-  "type": "",
-  "from": 12790,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/ray-prelaminated-particle-board-bedside-table-GINT042"
- },
- {
-  "id": "56101515sd00617",
-  "sku": "56101515SD00617",
-  "name": "Sketch Solid Wood Bed",
-  "room": "bedroom",
-  "type": "",
-  "from": 46090,
-  "mrp": null,
-  "note": "Shop Sketch King Size Solid Wood Bed 1-Year Warranty, Black, Rubber Wood Online from Interio by Godrej. Get great deals on Wooden Beds with ",
-  "image": "https://interio.com/media/catalog/product/5/6/56101515sd00617_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/sketch-king-size-solid-wood-bed-56101515sd00617"
+  "source": "https://interio.com/product/ray-prelaminated-particle-board-bedside-table-56101719SD00090",
+  "family": "Ray Prelaminated Particle Board Bedside Table",
+  "variants": 3
  },
  {
   "id": "56101515sd00618",
@@ -537,33 +202,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 39790,
   "mrp": null,
-  "note": "Shop Sketch Queen Size Solid Wood Bed 1-Year Warranty, Black, Rubber Wood Online from Interio by Godrej. Get great deals on Wooden Beds with",
+  "note": "1-Year Warranty, Black, Rubber Wood",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00618_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/sketch-queen-size-solid-wood-bed-56101515sd00618"
- },
- {
-  "id": "sketch-solid-wood-bed-gint034",
-  "sku": "",
-  "name": "Sketch Solid Wood Bed",
-  "room": "bedroom",
-  "type": "",
-  "from": 39790,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/sketch-solid-wood-bed-GINT034"
- },
- {
-  "id": "30161803sd00315",
-  "sku": "30161803SD00315",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 36390,
-  "mrp": null,
-  "note": "Shop Slide N Store Compact 2-Door Steel Wardrobe (Textured Phiroja Blue) 1-Year Warranty, 1 Drawer, 5 Shelves Online from Interio by Godrej.",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00315_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-compact-2-door-steel-wardrobe-tex-phiroja-blue-30161803sd00315"
+  "source": "https://interio.com/product/sketch-queen-size-solid-wood-bed-56101515sd00618",
+  "family": "Sketch Solid Wood Bed",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "30161803sd00325",
@@ -573,285 +217,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 31790,
   "mrp": null,
-  "note": "Shop Slide N Store Compact 2-Door Steel Wardrobe (Textured Bond White) 1-Year Warranty, 1 Drawer, 5 Shelves Online from Interio by Godrej. G",
+  "note": "1-Year Warranty, 1 Drawer, 5 Shelves",
   "image": "https://interio.com/media/catalog/product/3/0/30161803sd00325_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-compact-2-door-steel-wardrobe-tex-bond-white-30161803sd00325"
- },
- {
-  "id": "30161803sd00332",
-  "sku": "30161803SD00332",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 51090,
-  "mrp": null,
-  "note": "Shop Slide N Store Pro Plus 2-Door Steel Wardrobe (Textured ShellWine Red) 1-Year Warranty, 2 Drawers, 7 Shelves Online from Interio by Godr",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00332_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-pro-plus-2-door-steel-wardrobe-tex-shellwine-red-30161803sd00332"
- },
- {
-  "id": "30161803sd00338",
-  "sku": "30161803SD00338",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 51090,
-  "mrp": null,
-  "note": "Shop Slide N Store Pro Plus 2-Door Steel Wardrobe (Textured Bond White) 1-Year Warranty, 2 Drawers, 7 Shelves Online from Interio by Godrej.",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00338_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-pro-plus-2-door-steel-wardrobe-tex-bond-white-30161803sd00338"
- },
- {
-  "id": "30161803sd00344",
-  "sku": "30161803SD00344",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 44390,
-  "mrp": null,
-  "note": "Shop Slide N Store Pro 2-Door Steel Wardrobe (Textured ShellWine Red) 1-Year Warranty, 2 Drawers, 5 Shelves Online from Interio by Godrej. G",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00344_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-pro-2-door-steel-wardrobe-tex-shellwine-red-30161803sd00344"
- },
- {
-  "id": "30161803sd00346",
-  "sku": "30161803SD00346",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 44390,
-  "mrp": null,
-  "note": "Shop Slide N Store Pro 2-Door Steel Wardrobe (Textured Phiroja Blue) 1-Year Warranty, 2 Drawers, 5 Shelves Online from Interio by Godrej. Ge",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00346_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-pro-2-door-steel-wardrobe-tex-phiroja-blue-30161803sd00346"
- },
- {
-  "id": "30161803sd00349",
-  "sku": "30161803SD00349",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 44390,
-  "mrp": null,
-  "note": "Shop Slide N Store Pro 2-Door Steel Wardrobe (Textured Bond White) 1-Year Warranty, 2 Drawers, 5 Shelves Online from Interio by Godrej. Get ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00349_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-pro-2-door-steel-wardrobe-tex-bond-white-30161803sd00349"
- },
- {
-  "id": "30161803sd00458",
-  "sku": "30161803SD00458",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 36390,
-  "mrp": null,
-  "note": "Shop Slide N Store Compact 2-Door Steel Wardrobe (Textured ShellWine Red) 1-Year Warranty, 1 Drawer, 5 Shelves Online from Interio by Godrej",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00458_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-compact-2-door-steel-wardrobe-tex-shellwine-red-30161803sd00458"
- },
- {
-  "id": "30161803sd00637",
-  "sku": "30161803SD00637",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 51090,
-  "mrp": null,
-  "note": "Shop Slide N Store Pro Plus 2-Door Steel Wardrobe (Textured Phiroja Blue) 1-Year Warranty, 2 Drawers, 7 Shelves Online from Interio by Godre",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00637_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-pro-plus-2-door-steel-wardrobe-tex-phiroja-blue-30161803sd00637"
- },
- {
-  "id": "30161803sd00694",
-  "sku": "30161803SD00694",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 31790,
-  "mrp": null,
-  "note": "Shop Slide N Store Compact 2-Door Steel Wardrobe (Textured Blush Red) 1-Year Warranty, 1 Drawer, 5 Shelves Online from Interio by Godrej. Ge",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00694_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-compact-2-door-steel-wardrobe-tex-blush-red-30161803sd00694"
- },
- {
-  "id": "30161803sd00695",
-  "sku": "30161803SD00695",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 44390,
-  "mrp": null,
-  "note": "Shop Slide N Store Pro 2-Door Steel Wardrobe (Textured Blush Red) 1-Year Warranty, 2 Drawers, 5 Shelves Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00695_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-pro-2-door-steel-wardrobe-tex-blush-red-30161803sd00695"
- },
- {
-  "id": "30161803sd00696",
-  "sku": "30161803SD00696",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 44690,
-  "mrp": null,
-  "note": "Shop Slide N Store Pro Plus 2-Door Steel Wardrobe (Textured Blush Red) 1-Year Warranty, 2 Drawers, 7 Shelves Online from Interio by Godrej. ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00696_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-pro-plus-2-door-steel-wardrobe-tex-blush-red-30161803sd00696"
- },
- {
-  "id": "30161803sd01619",
-  "sku": "30161803SD01619",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 69990,
-  "mrp": null,
-  "note": "Shop Slide N Store XL Plus 2-Door Steel Wardrobe (Shell Wine Red) 1-Year Warranty, 2 Drawers, 7 Shelves Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01619_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-xl-plus-2-door-steel-wardrobe-shell-wine-red-30161803sd01619"
- },
- {
-  "id": "30161803sd01620",
-  "sku": "30161803SD01620",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 69990,
-  "mrp": null,
-  "note": "Shop Slide N Store XL Plus 2-Door Steel Wardrobe (Bond White) 1-Year Warranty, 2 Drawers, 7 Shelves Online from Interio by Godrej. Get great",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01620_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-xl-plus-2-door-steel-wardrobe-bond-white-30161803sd01620"
- },
- {
-  "id": "30161803sd01621",
-  "sku": "30161803SD01621",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 69990,
-  "mrp": null,
-  "note": "Shop Slide N Store XL Plus 2-Door Steel Wardrobe (Sepia Brown) 1-Year Warranty, 2 Drawers, 7 Shelves Online from Interio by Godrej. Get grea",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01621_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-xl-plus-2-door-steel-wardrobe-sepia-brown-30161803sd01621"
- },
- {
-  "id": "30161803sd01625",
-  "sku": "30161803SD01625",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 69990,
-  "mrp": null,
-  "note": "Shop Slide N Store XL Plus 2-Door Steel Wardrobe (Phiroja Blue) 1-Year Warranty, 2 Drawers, 7 Shelves Online from Interio by Godrej. Get gre",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01625_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-xl-plus-2-door-steel-wardrobe-phiroja-blue-30161803sd01625"
- },
- {
-  "id": "30161803sd01626",
-  "sku": "30161803SD01626",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 61190,
-  "mrp": null,
-  "note": "Shop Slide N Store XL Plus 2-Door Steel Wardrobe (Blush Red) 1-Year Warranty, 2 Drawers, 7 Shelves Online from Interio by Godrej. Get great ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01626_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-xl-plus-2-door-steel-wardrobe-blush-red-30161803sd01626"
- },
- {
-  "id": "30161803sd01672",
-  "sku": "30161803SD01672",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 44390,
-  "mrp": null,
-  "note": "Shop Slide N Store Pro 2-Door Steel Wardrobe (Textured Oatmeal) 1-Year Warranty, 2 Drawers, 5 Shelves Online from Interio by Godrej. Get gre",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01672_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-pro-2-door-steel-wardrobe-textured-oatmeal-30161803sd01672"
- },
- {
-  "id": "30161803sd01673",
-  "sku": "30161803SD01673",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 51090,
-  "mrp": null,
-  "note": "Shop Slide N Store Pro Plus 2-Door Steel Wardrobe (Textured Oatmeal) 1-Year Warranty, 2 Drawers, 7 Shelves Online from Interio by Godrej. Ge",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01673_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-pro-plus-2-door-steel-wardrobe-textured-oatmeal-30161803sd01673"
- },
- {
-  "id": "30161803sd01674",
-  "sku": "30161803SD01674",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 31790,
-  "mrp": null,
-  "note": "Shop Slide N Store Compact 2-Door Steel Wardrobe (Textured Lilac Glaze) 1-Year Warranty, 1 Drawer, 5 Shelves Online from Interio by Godrej. ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01674_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-compact-2-door-steel-wardrobe-textured-lilac-glaze-30161803sd01674"
- },
- {
-  "id": "30161803sd01676",
-  "sku": "30161803SD01676",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 44390,
-  "mrp": null,
-  "note": "Shop Slide N Store Pro 2-Door Steel Wardrobe (Textured Lilac Glaze) 1-Year Warranty, 2 Drawers, 5 Shelves Online from Interio by Godrej. Get",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01676_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-pro-2-door-steel-wardrobe-textured-lilac-glaze-30161803sd01676"
- },
- {
-  "id": "30161803sd01677",
-  "sku": "30161803SD01677",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 51090,
-  "mrp": null,
-  "note": "Shop Slide N Store Pro Plus 2-Door Steel Wardrobe (Textured Lilac Glaze) 1-Year Warranty, 2 Drawers, 7 Shelves Online from Interio by Godrej",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01677_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-pro-plus-2-door-steel-wardrobe-textured-lilac-glaze-30161803sd01677"
- },
- {
-  "id": "30161803sd01729",
-  "sku": "30161803SD01729",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 69990,
-  "mrp": null,
-  "note": "Shop Slide N Store XL Plus 2-Door Steel Wardrobe (Lilac) 1-Year Warranty, 2 Drawers Online from Interio by Godrej. Get great deals on Steel ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01729_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-xl-plus-2-door-steel-wardrobe-lilac-30161803sd01729"
- },
- {
-  "id": "30161803sd01731",
-  "sku": "30161803SD01731",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "",
-  "from": 69990,
-  "mrp": null,
-  "note": "Shop Slide N Store XL Plus 2-Door Steel Wardrobe (Textured Oatmeal) 1-Year Warranty, 2 Drawers, 7 Shelves Online from Interio by Godrej. Get",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01731_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-xl-plus-2-door-steel-wardrobe-oatmeal-30161803sd01731"
- },
- {
-  "id": "56101515sd00657",
-  "sku": "56101515SD00657",
-  "name": "Stud Engineered Wood Bed with Pullout Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 37990,
-  "mrp": null,
-  "note": "Shop Stud King Size Wooden Bed with Pullout Storage 1-Year Warranty, Sonoma Oak, Particle Board Online from Interio by Godrej. Get great dea",
-  "image": "https://interio.com/media/catalog/product/5/6/56101515sd00657_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/stud-king-size-engineered-wood-bed-with-pullout-storage-56101515sd00657"
+  "source": "https://interio.com/product/slide-n-store-compact-2-door-steel-wardrobe-tex-bond-white-30161803sd00325",
+  "family": "Slide N Store 2-Door Steel Wardrobe",
+  "variants": 25,
+  "fromPrice": true
  },
  {
   "id": "56101515sd00658",
@@ -861,33 +232,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 34490,
   "mrp": null,
-  "note": "Shop Stud Queen Size Wooden Bed with Pullout Storage 1-Year Warranty, Sonoma Oak, Particle Board Online from Interio by Godrej. Get great de",
+  "note": "1-Year Warranty, Sonoma Oak, Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00658_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/stud-queen-size-engineered-wood-bed-with-pullout-storage-56101515sd00658"
- },
- {
-  "id": "stud-engineered-wood-bed-with-pullout-storage-gint035",
-  "sku": "",
-  "name": "Stud Engineered Wood Bed with Pullout Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 34490,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/stud-engineered-wood-bed-with-pullout-storage-GINT035"
- },
- {
-  "id": "56101502sd01848",
-  "sku": "56101502SD01848",
-  "name": "Twogether Diwan Fabric Sofa Cum Bed with Mattress",
-  "room": "bedroom",
-  "type": "",
-  "from": 58690,
-  "mrp": null,
-  "note": "Twogether Diwan Fabric Sofa Cum Bed with Mattress 1-Year Warranty, Engineered Wood, Dark Walnut Online from Interio by Godrej. Get great dea",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01848_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/twogether-diwan-fabric-sofa-cum-bed-with-mattress-56101502sd01848"
+  "source": "https://interio.com/product/stud-queen-size-engineered-wood-bed-with-pullout-storage-56101515sd00658",
+  "family": "Stud Engineered Wood Bed with Pullout Storage",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101502sd01849",
@@ -897,21 +247,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 57390,
   "mrp": null,
-  "note": "Twogether Diwan Fabric Sofa Cum Bed with Mattress 1-Year Warranty, Engineered Wood, Cinnamon Online from Interio by Godrej. Get great deals ",
+  "note": "1-Year Warranty, Engineered Wood, Cinnamon",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01849_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/twogether-diwan-fabric-sofa-cum-bed-with-mattress-56101502sd01849"
- },
- {
-  "id": "twogether-diwan-fabric-sofa-cum-bed-with-mattress-gint071",
-  "sku": "",
-  "name": "Twogether Diwan Fabric Sofa Cum Bed with Mattress",
-  "room": "bedroom",
-  "type": "",
-  "from": 57390,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/twogether-diwan-fabric-sofa-cum-bed-with-mattress-GINT071"
+  "source": "https://interio.com/product/twogether-diwan-fabric-sofa-cum-bed-with-mattress-56101502sd01849",
+  "family": "Twogether Diwan Fabric Sofa Cum Bed with Mattress",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "30161803sd00248",
@@ -921,33 +262,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 37790,
   "mrp": null,
-  "note": "Shop Wardrobe H1 2-Door Steel Almirah (Graphite Grey) 1-Year Warranty, 1 Drawer, 1 Locker, 4 Shelves Online from Interio by Godrej. Get grea",
+  "note": "1-Year Warranty, 1 Drawer, 1 Locker, 4 Shelves",
   "image": "https://interio.com/media/catalog/product/3/0/30161803sd00248_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/wardrobe-h1-2-door-steel-almirah-graphite-grey-30161803sd00248"
- },
- {
-  "id": "30161803sd00251",
-  "sku": "30161803SD00251",
-  "name": "Wardrobe H1 2-Door Steel Almirah",
-  "room": "bedroom",
-  "type": "",
-  "from": 39690,
-  "mrp": null,
-  "note": "Shop Wardrobe H1 2-Door Steel Almirah (Textured ShellWine Red) 1-Year Warranty, 1 Drawer, 1 Locker, 4 Shelves Online from Interio by Godrej.",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00251_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/wardrobe-h1-2-door-steel-almirah-tex-shellwine-red-30161803sd00251"
- },
- {
-  "id": "56101515sd00783",
-  "sku": "56101515SD00783",
-  "name": "Zion Advance Engineered Wood Bed with Hydraulic Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 41390,
-  "mrp": null,
-  "note": "Shop Zion Advance King Size Wooden Bed with Hydraulic Storage 1-Year Warranty, Brown, Particle Board Online from Interio by Godrej. Get grea",
-  "image": "https://interio.com/media/catalog/product/5/6/56101515sd00783_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/zion-advance-king-size-engineered-wood-bed-with-hydraulic-storage-56101515sd00783"
+  "source": "https://interio.com/product/wardrobe-h1-2-door-steel-almirah-graphite-grey-30161803sd00248",
+  "family": "Wardrobe H1 2-Door Steel Almirah",
+  "variants": 2,
+  "fromPrice": true
  },
  {
   "id": "56101515sd00739",
@@ -957,105 +277,90 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 37790,
   "mrp": null,
-  "note": "Shop Zion Advance Queen Size Wooden Bed with Hydraulic Storage 1-Year Warranty, Brown, Particle Board Online from Interio by Godrej. Get gre",
+  "note": "1-Year Warranty, Brown, Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00739_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/zion-advance-queen-size-engineered-wood-bed-with-hydraulic-storage-56101515sd00739"
- },
- {
-  "id": "zion-advance-engineered-wood-bed-with-hydraulic-storage-gint036",
-  "sku": "",
-  "name": "Zion Advance Engineered Wood Bed with Hydraulic Storage",
-  "room": "bedroom",
-  "type": "",
-  "from": 37790,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/zion-advance-engineered-wood-bed-with-hydraulic-storage-GINT036"
+  "source": "https://interio.com/product/zion-advance-queen-size-engineered-wood-bed-with-hydraulic-storage-56101515sd00739",
+  "family": "Zion Advance Engineered Wood Bed with Hydraulic Storage",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101537sd00067",
   "sku": "56101537SD00067",
-  "name": "Aero Prelaminated Particle Board Dressing Table with Stool",
+  "name": "Aero Prelaminated Particle Board Dressing Table With Stool",
   "room": "bedroom",
   "type": "Dressing tables",
   "from": 53790,
   "mrp": null,
-  "note": "Aero Prelaminated Particle Board Dressing Table with Stool 1-Year Warranty, Valigny Oak, Knock Down Online from Interio by Godrej. Get great",
+  "note": "1-Year Warranty, Valigny Oak, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101537sd00067_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/aero-prelaminated-particle-board-dressing-table-with-stool-56101537sd00067"
+  "source": "https://interio.com/product/aero-prelaminated-particle-board-dressing-table-with-stool-56101537sd00067",
+  "family": "Aero Prelaminated Particle Board Dressing Table with Stool"
  },
  {
   "id": "56101537sd00081",
   "sku": "56101537SD00081",
-  "name": "Apex Prelaminated Particle Board and MDF Board Dressing Table",
+  "name": "Apex Prelaminated Particle Board And Mdf Board Dressing Table",
   "room": "bedroom",
   "type": "Dressing tables",
   "from": 15190,
   "mrp": null,
-  "note": "Apex Prelaminated Particle Board and MDF Board Dressing Table 1-Year Warranty, Cola Rain, Knock Down Online from Interio by Godrej. Get grea",
+  "note": "1-Year Warranty, Cola Rain, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101537sd00081_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/apex-prelaminated-particle-board-and-mdf-board-dressing-table-56101537sd00081"
+  "source": "https://interio.com/product/apex-prelaminated-particle-board-and-mdf-board-dressing-table-56101537sd00081",
+  "family": "Apex Prelaminated Particle Board and MDF Board Dressing Table"
  },
  {
   "id": "56101537sd00080",
   "sku": "56101537SD00080",
-  "name": "Grove Prelaminated Particle Board and MDF Board Dressing Table",
+  "name": "Grove Prelaminated Particle Board And Mdf Board Dressing Table",
   "room": "bedroom",
   "type": "Dressing tables",
   "from": 15190,
   "mrp": null,
-  "note": "Grove Prelaminated Particle Board and MDF Board Dressing Table 1-Year Warranty, Brown, Knock Down Online from Interio by Godrej. Get great d",
+  "note": "1-Year Warranty, Brown, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101537sd00080_01_1920x1080v1.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/grove-prelaminated-particle-board-and-mdf-board-dressing-table-56101537sd00080"
+  "source": "https://interio.com/product/grove-prelaminated-particle-board-and-mdf-board-dressing-table-56101537sd00080",
+  "family": "Grove Prelaminated Particle Board and MDF Board Dressing Table"
  },
  {
   "id": "56101537sd00009",
   "sku": "56101537SD00009",
-  "name": "Zurina Particle Board Dressing Table with Stool",
+  "name": "Zurina Particle Board Dressing Table With Stool",
   "room": "bedroom",
   "type": "Dressing tables",
   "from": 18690,
   "mrp": null,
-  "note": "Zurina Particle Board Dressing Table with Stool 1-Year Warranty, Wenge, Knock Down Online from Interio by Godrej. Get great deals on Dresser",
+  "note": "1-Year Warranty, Wenge, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101537sd00009_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/zurina-particle-board-dressing-table-with-stool-56101537sd00009"
+  "source": "https://interio.com/product/zurina-particle-board-dressing-table-with-stool-56101537sd00009",
+  "family": "Zurina Particle Board Dressing Table with Stool"
  },
  {
   "id": "56101515sd00615",
   "sku": "56101515SD00615",
-  "name": "Grande Advance King Size Solid Wood Bed with Box Storage",
+  "name": "Grande Advance King Size Solid Wood Bed With Box Storage",
   "room": "bedroom",
   "type": "King beds",
   "from": 118290,
   "mrp": null,
-  "note": "Grande Advance King Size Solid Wood Bed with Box Storage 1-Year Warranty, Brown, Sheesham Wood Online from Interio by Godrej. Get great deal",
+  "note": "1-Year Warranty, Brown, Sheesham Wood",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00615_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/grande-advance-king-size-solid-wood-bed-with-box-storage-56101515sd00615"
- },
- {
-  "id": "56101515sd00576",
-  "sku": "56101515SD00576",
-  "name": "Pavo Engineered Wood Bed with Pull-Out Storage",
-  "room": "bedroom",
-  "type": "King beds",
-  "from": 24790,
-  "mrp": null,
-  "note": "Pavo Queen Size Wooden Bed with Pull-Out Storage 1-Year Warranty, Frosting Cream, Particle Board Online from Interio by Godrej. Get great de",
-  "image": "https://interio.com/media/catalog/product/5/6/56101515sd00576_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pavo-queen-size-engineered-wood-bed-with-pull-out-storage-56101515sd00576"
+  "source": "https://interio.com/product/grande-advance-king-size-solid-wood-bed-with-box-storage-56101515sd00615",
+  "family": "Grande Advance King Size Solid Wood Bed with Box Storage"
  },
  {
   "id": "56101515sd00045",
   "sku": "56101515SD00045",
-  "name": "Zurina King Size Wooden Bed with Box Storage",
+  "name": "Zurina King Size Engineered Wood Bed With Box Storage",
   "room": "bedroom",
   "type": "King beds",
   "from": 59990,
   "mrp": null,
-  "note": "Zurina King Size Wooden Bed with Box Storage 1-Year Warranty, Wenge, Particle Board Online from Interio by Godrej. Get great deals on Wooden",
+  "note": "1-Year Warranty, Wenge, Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00045_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/zurina-king-size-engineered-wood-bed-with-box-storage-56101515sd00045"
+  "source": "https://interio.com/product/zurina-king-size-engineered-wood-bed-with-box-storage-56101515sd00045",
+  "family": "Zurina King Size Wooden Bed with Box Storage"
  },
  {
   "id": "56101515sd00122",
@@ -1065,9 +370,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Single beds",
   "from": 16490,
   "mrp": null,
-  "note": "Shop Esca Single Size Metal Bed 1-Year Warranty, Black Online from Interio by Godrej. Get great deals on Metal Beds with ✔Free Delivery ✔No ",
+  "note": "1-Year Warranty, Black",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00122_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/esca-single-size-metal-bed-56101515sd00122"
+  "source": "https://interio.com/product/esca-single-size-metal-bed-56101515sd00122",
+  "family": "Esca Single Size Metal Bed"
  },
  {
   "id": "56101515sd00364",
@@ -1077,33 +383,62 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Single beds",
   "from": 21290,
   "mrp": null,
-  "note": "Shop Opal Pro Single Size Mild Steel Bed 1-Year Warranty, Black Online from Interio by Godrej. Get great deals on Metal Beds with ✔Free Deli",
+  "note": "1-Year Warranty, Black",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00364_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/opal-pro-single-size-mild-steel-bed-56101515sd00364"
+  "source": "https://interio.com/product/opal-pro-single-size-mild-steel-bed-56101515sd00364",
+  "family": "Opal Pro Single Size Mild Steel Bed"
  },
  {
   "id": "56101515sd00169",
   "sku": "56101515SD00169",
-  "name": "Pearl Single Size Wooden Bed with Box Storage",
+  "name": "Pearl Single Size Engineered Wood Bed With Box Storage",
   "room": "bedroom",
   "type": "Single beds",
   "from": 34090,
   "mrp": null,
-  "note": "Pearl Single Size Wooden Bed with Box Storage 1-Year Warranty, Cola Rain, Particle Board Online from Interio by Godrej. Get great deals on W",
+  "note": "1-Year Warranty, Cola Rain, Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00169_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pearl-single-size-engineered-wood-bed-with-box-storage-56101515sd00169"
+  "source": "https://interio.com/product/pearl-single-size-engineered-wood-bed-with-box-storage-56101515sd00169",
+  "family": "Pearl Single Size Wooden Bed with Box Storage"
  },
  {
-  "id": "30161803sd01608",
-  "sku": "30161803SD01608",
-  "name": "Centurion 2-Door Steel Almirah",
+  "id": "56101502sd01691",
+  "sku": "56101502SD01691",
+  "name": "Cubicon 3-Seater Fabric Sofa Cum Bed",
   "room": "bedroom",
-  "type": "Steel almirahs",
-  "from": 78890,
+  "type": "Sofa cum beds",
+  "from": 52190,
   "mrp": null,
-  "note": "Shop Centurion Plus 2-Door Steel Almirah with Motion Sensor Lights (Bond White) 1-Year Warranty, 1 Locker, 2 Drawers, 4 Shelves Online from ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01608_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/centurion-plus-2-door-steel-almirah-with-motion-sensor-lights-bond-white-30161803sd01608"
+  "note": "Shop Cubicon 3-Seater Fabric Sofa Cum Bed3-Years Warranty, Pinewood, Purple Online. Get great deals & offers on various",
+  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01691_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
+  "source": "https://interio.com/product/cubicon-3-seater-fabric-sofa-cum-bed-56101502sd01691",
+  "family": "Cubicon 3-Seater Fabric Sofa Cum Bed"
+ },
+ {
+  "id": "56101502sd04420",
+  "sku": "56101502SD04420",
+  "name": "Vurv Wooden Diwan Sofa Bed With Queen Size Mattress",
+  "room": "bedroom",
+  "type": "Sofa cum beds",
+  "from": 39490,
+  "mrp": null,
+  "note": "1-Year Warranty, Brown, Pull-Out Storage",
+  "image": "https://interio.com/media/catalog/product/5/6/56101502sd04420_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
+  "source": "https://interio.com/product/vurv-wooden-diwan-sofa-bed-with-queen-size-mattress-56101502sd04420",
+  "family": "Vurv Wooden Diwan Sofa Bed with Queen Size Mattress"
+ },
+ {
+  "id": "56101502sd01411",
+  "sku": "56101502SD01411",
+  "name": "Windsor 2-Seater Fabric Sofa Cum Bed",
+  "room": "bedroom",
+  "type": "Sofa cum beds",
+  "from": 44090,
+  "mrp": null,
+  "note": "1-Year Warranty, Engineered Wood, Brown",
+  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01411_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
+  "source": "https://interio.com/product/windsor-2-seater-fabric-sofa-cum-bed-56101502sd01411",
+  "family": "Windsor 2-Seater Fabric Sofa Cum Bed"
  },
  {
   "id": "56101515sd00298",
@@ -1113,9 +448,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 9290,
   "mrp": null,
-  "note": "Aero Particle Board Bedside Table 1-Year Warranty, Valigny Oak, Knock Down Online from Interio by Godrej. Get great deals on Bedside Tables ",
+  "note": "1-Year Warranty, Valigny Oak, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00298_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/aero-particle-board-bedside-table-56101515SD00298"
+  "source": "https://interio.com/product/aero-particle-board-bedside-table-56101515SD00298",
+  "family": "Aero Particle Board Bedside Table"
  },
  {
   "id": "56101719sd00173",
@@ -1125,21 +461,23 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 4390,
   "mrp": null,
-  "note": "Alina Engineered Wood Bedside Table 1-Year Warranty, Walnut, Particle Board Online from Interio by Godrej. Get great deals on Bedside Tables",
+  "note": "1-Year Warranty, Walnut, Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101719sd00173_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/alina-engineered-wood-bedside-table-56101719SD00173"
+  "source": "https://interio.com/product/alina-engineered-wood-bedside-table-56101719SD00173",
+  "family": "Alina Engineered Wood Bedside Table"
  },
  {
   "id": "56101719sd00111",
   "sku": "56101719SD00111",
-  "name": "Apex Prelaminated Particle Board and MDF Board Bedside Table",
+  "name": "Apex Prelaminated Particle Board And Mdf Board Bedside Table",
   "room": "bedroom",
   "type": "Tables",
   "from": 8890,
   "mrp": null,
-  "note": "Apex Prelaminated Particle Board and MDF Board Bedside Table 1-Year Warranty, Cola Rain, Knock Down Online from Interio by Godrej. Get great",
+  "note": "1-Year Warranty, Cola Rain, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101719sd00111_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/apex-prelaminated-particle-board-and-mdf-board-bedside-table-56101719SD00111"
+  "source": "https://interio.com/product/apex-prelaminated-particle-board-and-mdf-board-bedside-table-56101719SD00111",
+  "family": "Apex Prelaminated Particle Board and MDF Board Bedside Table"
  },
  {
   "id": "56101719sd00176",
@@ -1149,21 +487,23 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 6790,
   "mrp": null,
-  "note": "Genesys V2 Engineered Wood Bedside Table 1-Year Warranty, Cola-Rain, Knockdown Online from Interio by Godrej. Get great deals on Bedside Tab",
+  "note": "1-Year Warranty, Cola-Rain, Knockdown",
   "image": "https://interio.com/media/catalog/product/5/6/56101719sd00176_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/genesys-v2-engineered-wood-bedside-table-56101719SD00176"
+  "source": "https://interio.com/product/genesys-v2-engineered-wood-bedside-table-56101719SD00176",
+  "family": "Genesys V2 Engineered Wood Bedside Table"
  },
  {
   "id": "56101719sd00110",
   "sku": "56101719SD00110",
-  "name": "Grove Prelaminated Particle Board and MDF Board Bedside Table",
+  "name": "Grove Prelaminated Particle Board And Mdf Board Bedside Table",
   "room": "bedroom",
   "type": "Tables",
   "from": 8790,
   "mrp": null,
-  "note": "Grove Prelaminated Particle Board and MDF Board Bedside Table 1-Year Warranty, Brown, Knock Down Online from Interio by Godrej. Get great de",
+  "note": "1-Year Warranty, Brown, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101719sd00110_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/grove-prelaminated-particle-board-and-mdf-board-bedside-table-56101719SD00110"
+  "source": "https://interio.com/product/grove-prelaminated-particle-board-and-mdf-board-bedside-table-56101719SD00110",
+  "family": "Grove Prelaminated Particle Board and MDF Board Bedside Table"
  },
  {
   "id": "56101719sd00147",
@@ -1173,9 +513,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 10490,
   "mrp": null,
-  "note": "Pavo Particle Board Bedside Table 1-Year Warranty, Frosting Cream, Knock Down Online from Interio by Godrej. Get great deals on Bedside Tabl",
+  "note": "1-Year Warranty, Frosting Cream, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101719sd00147_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pavo-particle-board-bedside-table-56101719SD00147"
+  "source": "https://interio.com/product/pavo-particle-board-bedside-table-56101719SD00147",
+  "family": "Pavo Particle Board Bedside Table"
  },
  {
   "id": "56101719sd00157",
@@ -1185,9 +526,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 8590,
   "mrp": null,
-  "note": "Sketch Solid Wood Bedside Table 1-Year Warranty, Black, Knockdown Online from Interio by Godrej. Get great deals on Bedside Tables with ✔Fre",
+  "note": "1-Year Warranty, Black, Knockdown",
   "image": "https://interio.com/media/catalog/product/5/6/56101719sd00157_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/sketch-solid-wood-bedside-table-56101719SD00157"
+  "source": "https://interio.com/product/sketch-solid-wood-bedside-table-56101719SD00157",
+  "family": "Sketch Solid Wood Bedside Table"
  },
  {
   "id": "56101719sd00089",
@@ -1197,9 +539,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 11990,
   "mrp": null,
-  "note": "Utopia Solid Wood Sheesham Bedside Table 1-Year Warranty, Natural Brown, Knock Down Online from Interio by Godrej. Get great deals on Bedsid",
+  "note": "1-Year Warranty, Natural Brown, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101719sd00089_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/utopia-solid-wood-sheesham-bedside-table-56101719SD00089"
+  "source": "https://interio.com/product/utopia-solid-wood-sheesham-bedside-table-56101719SD00089",
+  "family": "Utopia Solid Wood Sheesham Bedside Table"
  },
  {
   "id": "56101515sd00173",
@@ -1209,93 +552,88 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 8490,
   "mrp": null,
-  "note": "Zurina Particle Board Bedside Table 1-Year Warranty, Wenge, Knock Down Online from Interio by Godrej. Get great deals on Bedside Tables with",
+  "note": "1-Year Warranty, Wenge, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101515sd00173_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/zurina-particle-board-bedside-table-56101515SD00173"
- },
- {
-  "id": "30161803sd01624",
-  "sku": "30161803SD01624",
-  "name": "Slide N Store 2-Door Steel Wardrobe",
-  "room": "bedroom",
-  "type": "Three door wardrobes",
-  "from": 54390,
-  "mrp": null,
-  "note": "Shop Slide N Store XL 2-Door Steel Wardrobe (Blush Red) 1-Year Warranty, 2 Drawers, 5 Shelves Online from Interio by Godrej. Get great deals",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01624_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slide-n-store-xl-2-door-steel-wardrobe-blush-red-30161803sd01624"
+  "source": "https://interio.com/product/zurina-particle-board-bedside-table-56101515SD00173",
+  "family": "Zurina Particle Board Bedside Table"
  },
  {
   "id": "56101509sd00218",
   "sku": "56101509SD00218",
-  "name": "Adria 2-Door Wooden Wardrobe/Almirah (Imperial Oak)",
+  "name": "Adria 2-Door Wooden Wardrobe Imperial Oak",
   "room": "bedroom",
   "type": "Wooden wardrobes",
   "from": 42890,
   "mrp": null,
-  "note": "Shop Adria 2-Door Wooden Wardrobe (Imperial Oak) 1-Year Warranty, 1 Drawer Online from Interio by Godrej. Get great deals on Wooden Wardrobe",
+  "note": "1-Year Warranty, 1 Drawer",
   "image": "https://interio.com/media/catalog/product/5/6/56101509sd00218_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/adria-2-door-wooden-wardrobe-imperial-oak-56101509sd00218"
+  "source": "https://interio.com/product/adria-2-door-wooden-wardrobe-imperial-oak-56101509sd00218",
+  "family": "Adria 2-Door Wooden Wardrobe/Almirah (Imperial Oak)"
  },
  {
   "id": "56101509sd00260",
   "sku": "56101509SD00260",
-  "name": "Element General Unit 1 - 2-Door Wooden Wardrobe/Almirah (White & Grey)",
+  "name": "Element General Unit 1 2-Door Wooden Wardrobe White Grey",
   "room": "bedroom",
   "type": "Wooden wardrobes",
   "from": 148090,
   "mrp": null,
-  "note": "Shop Element General Unit 1 - 2-Door Wooden Wardrobe (White & Grey) 1-Year Warranty, 5 Drawers Online from Interio by Godrej. Get great deal",
+  "note": "1-Year Warranty, 5 Drawers",
   "image": "https://interio.com/media/catalog/product/5/6/56101509sd00260_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/element-general-unit-1-2-door-wooden-wardrobe-white-grey-56101509sd00260"
+  "source": "https://interio.com/product/element-general-unit-1-2-door-wooden-wardrobe-white-grey-56101509sd00260",
+  "family": "Element General Unit 1 - 2-Door Wooden Wardrobe/Almirah (White & Grey)"
  },
  {
   "id": "56101509sd00261",
   "sku": "56101509SD00261",
-  "name": "Element General Unit 2-Door Wooden Wardrobe/Almirah (White, Grey)",
+  "name": "Element General Unit 2-Door Wooden Wardrobe White Grey",
   "room": "bedroom",
   "type": "Wooden wardrobes",
   "from": 148090,
   "mrp": null,
-  "note": "Shop Element General Unit 2-Door Wooden Wardrobe (White, Grey) 1-Year Warranty, 5 Drawers Online from Interio by Godrej. Get great deals on ",
+  "note": "1-Year Warranty, 5 Drawers",
   "image": "https://interio.com/media/catalog/product/5/6/56101509sd00261_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/element-general-unit-2-door-wooden-wardrobe-white-grey-56101509sd00261"
+  "source": "https://interio.com/product/element-general-unit-2-door-wooden-wardrobe-white-grey-56101509sd00261",
+  "family": "Element General Unit 2-Door Wooden Wardrobe/Almirah (White, Grey)"
  },
  {
   "id": "56101509sd00384",
   "sku": "56101509SD00384",
-  "name": "Grove 2-Door Wooden Wardrobe/Almirah (Brown)",
+  "name": "Grove 2-Door Wooden Wardrobe Brown",
   "room": "bedroom",
   "type": "Wooden wardrobes",
   "from": 25790,
   "mrp": null,
-  "note": "Shop Grove 2-Door Wooden Wardrobe (Brown) 1-Year Warranty, 1 Drawer Online from Interio by Godrej. Get great deals on Wooden Wardrobes with ",
+  "note": "1-Year Warranty, 1 Drawer",
   "image": "https://interio.com/media/catalog/product/5/6/56101509sd00384_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/grove-2-door-wooden-wardrobe-brown-56101509sd00384"
+  "source": "https://interio.com/product/grove-2-door-wooden-wardrobe-brown-56101509sd00384",
+  "family": "Grove 2-Door Wooden Wardrobe/Almirah (Brown)"
  },
  {
   "id": "56101509sd00639",
   "sku": "56101509SD00639",
-  "name": "Stack 2 Door Engineered Wooden Wardrobe/Almirah (Brown)",
+  "name": "Stack 2-Door Engineered Wooden Wardrobe Brown",
   "room": "bedroom",
   "type": "Wooden wardrobes",
   "from": 13990,
   "mrp": null,
-  "note": "Shop Stack 2 Door Engineered Wooden Wardrobe (Brown) 1-Year Warranty, 1 Drawer Online from Interio by Godrej. Get great deals on Wooden Ward",
+  "note": "1-Year Warranty, 1 Drawer",
   "image": "https://interio.com/media/catalog/product/5/6/56101509sd00639_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/stack-2-door-engineered-wooden-wardrobe-brown-56101509sd00639"
+  "source": "https://interio.com/product/stack-2-door-engineered-wooden-wardrobe-brown-56101509sd00639",
+  "family": "Stack 2 Door Engineered Wooden Wardrobe/Almirah (Brown)"
  },
  {
   "id": "56101509sd00136",
   "sku": "56101509SD00136",
-  "name": "Zurina 2-Door Wooden Wardrobe/Almirah (Wenge)",
+  "name": "Zurina 2-Door Wooden Wardrobe Wenge",
   "room": "bedroom",
   "type": "Wooden wardrobes",
   "from": 42290,
   "mrp": null,
-  "note": "Shop Zurina 2-Door Wooden Wardrobe (Wenge) 1-Year Warranty, 1 Drawer Online from Interio by Godrej. Get great deals on Wooden Wardrobes with",
+  "note": "1-Year Warranty, 1 Drawer",
   "image": "https://interio.com/media/catalog/product/5/6/56101509sd00136_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/zurina-2-door-wooden-wardrobe-wenge-56101509sd00136"
+  "source": "https://interio.com/product/zurina-2-door-wooden-wardrobe-wenge-56101509sd00136",
+  "family": "Zurina 2-Door Wooden Wardrobe/Almirah (Wenge)"
  },
  {
   "id": "56101543sd00231",
@@ -1305,33 +643,11 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 9490,
   "mrp": null,
-  "note": "Franky 4-Seater Engineered Wood Square Dining Table 1-Year Warranty, White Online from Interio by Godrej. Get great deals on Dining Tables w",
+  "note": "1-Year Warranty, White",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00231_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-4-seater-engineered-wood-square-dining-table-56101543sd00231"
- },
- {
-  "id": "56101543sd00235",
-  "sku": "56101543SD00235",
-  "name": "Franky 4-Seater Engineered Wood Square Dining Table",
-  "room": "dining",
-  "type": "",
-  "from": 9490,
-  "mrp": null,
-  "note": "Franky 4-Seater Engineered Wood Square Dining Table 1-Year Warranty, Black Online from Interio by Godrej. Get great deals on Dining Tables w",
-  "image": "https://interio.com/media/catalog/product/5/6/56101543sd00235_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-4-seater-engineered-wood-square-dining-table-56101543sd00235"
- },
- {
-  "id": "franky-4-seater-engineered-wood-square-dining-table-gint038",
-  "sku": "",
-  "name": "Franky 4-Seater Engineered Wood Square Dining Table",
-  "room": "dining",
-  "type": "",
-  "from": 9490,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/franky-4-seater-engineered-wood-square-dining-table-GINT038"
+  "source": "https://interio.com/product/franky-4-seater-engineered-wood-square-dining-table-56101543sd00231",
+  "family": "Franky 4-Seater Engineered Wood Square Dining Table",
+  "variants": 3
  },
  {
   "id": "56101543sd00232",
@@ -1341,81 +657,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 11690,
   "mrp": null,
-  "note": "Franky 4-Seater Engineered Wood Rectangular Dining Table 1-Year Warranty, White Online from Interio by Godrej. Get great deals on Dining Tab",
+  "note": "1-Year Warranty, White",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00232_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-4-seater-engineered-wood-rectangular-dining-table-56101543sd00232"
- },
- {
-  "id": "56101543sd00233",
-  "sku": "56101543SD00233",
-  "name": "Franky Engineered Wood Rectangular Dining Table",
-  "room": "dining",
-  "type": "",
-  "from": 13190,
-  "mrp": null,
-  "note": "Franky 6-Seater Engineered Wood Rectangular Dining Table 1-Year Warranty, White Online from Interio by Godrej. Get great deals on Dining Tab",
-  "image": "https://interio.com/media/catalog/product/5/6/56101543sd00233_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-6-seater-engineered-wood-rectangular-dining-table-56101543sd00233"
- },
- {
-  "id": "56101543sd00234",
-  "sku": "56101543SD00234",
-  "name": "Franky Engineered Wood Rectangular Dining Table",
-  "room": "dining",
-  "type": "",
-  "from": 16590,
-  "mrp": null,
-  "note": "Franky 8-Seater Engineered Wood Rectangular Dining Table 1-Year Warranty, White Online from Interio by Godrej. Get great deals on Dining Tab",
-  "image": "https://interio.com/media/catalog/product/5/6/56101543sd00234_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-8-seater-engineered-wood-rectangular-dining-table-56101543sd00234"
- },
- {
-  "id": "56101543sd00236",
-  "sku": "56101543SD00236",
-  "name": "Franky Engineered Wood Rectangular Dining Table",
-  "room": "dining",
-  "type": "",
-  "from": 11690,
-  "mrp": null,
-  "note": "Franky 4-Seater Engineered Wood Rectangular Dining Table 1-Year Warranty, Black Online from Interio by Godrej. Get great deals on Dining Tab",
-  "image": "https://interio.com/media/catalog/product/5/6/56101543sd00236_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-4-seater-engineered-wood-rectangular-dining-table-56101543sd00236"
- },
- {
-  "id": "56101543sd00237",
-  "sku": "56101543SD00237",
-  "name": "Franky Engineered Wood Rectangular Dining Table",
-  "room": "dining",
-  "type": "",
-  "from": 13190,
-  "mrp": null,
-  "note": "Franky 6-Seater Engineered Wood Rectangular Dining Table 1-Year Warranty, Black Online from Interio by Godrej. Get great deals on Dining Tab",
-  "image": "https://interio.com/media/catalog/product/5/6/56101543sd00237_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-6-seater-engineered-wood-rectangular-dining-table-56101543sd00237"
- },
- {
-  "id": "56101543sd00238",
-  "sku": "56101543SD00238",
-  "name": "Franky Engineered Wood Rectangular Dining Table",
-  "room": "dining",
-  "type": "",
-  "from": 16590,
-  "mrp": null,
-  "note": "Franky 8-Seater Engineered Wood Rectangular Dining Table 1-Year Warranty, Black Online from Interio by Godrej. Get great deals on Dining Tab",
-  "image": "https://interio.com/media/catalog/product/5/6/56101543sd00238_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-8-seater-engineered-wood-rectangular-dining-table-56101543sd00238"
- },
- {
-  "id": "franky-engineered-wood-rectangular-dining-table-gint039",
-  "sku": "",
-  "name": "Franky Engineered Wood Rectangular Dining Table",
-  "room": "dining",
-  "type": "",
-  "from": 11690,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/franky-engineered-wood-rectangular-dining-table-GINT039"
+  "source": "https://interio.com/product/franky-4-seater-engineered-wood-rectangular-dining-table-56101543sd00232",
+  "family": "Franky Engineered Wood Rectangular Dining Table",
+  "variants": 7,
+  "fromPrice": true
  },
  {
   "id": "fran4ssblkal",
@@ -1425,81 +672,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 23690,
   "mrp": null,
-  "note": "Shop Franky and Kalyx 4-Seater Wooden Square Dining Set1-Year Warranty, Table with 4 Chairs, Black Online. Get great deals & offers on vario",
+  "note": "Shop Franky and Kalyx 4-Seater Wooden Square Dining Set1-Year Warranty, Table with 4 Chairs, Black Online. Get great dea",
   "image": "https://interio.com/media/catalog/product/f/r/fran4ssblkal_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-and-kalyx-4-seater-wooden-square-dining-set-fran4ssblkal"
- },
- {
-  "id": "fran4sswhkal",
-  "sku": "FRAN4SSWHKAL",
-  "name": "Franky and Kalyx Wooden Dining Set",
-  "room": "dining",
-  "type": "",
-  "from": 23690,
-  "mrp": null,
-  "note": "Shop Franky and Kalyx 4-Seater Wooden Square Dining Set1-Year Warranty, Table with 4 Chairs, White Online. Get great deals & offers on vario",
-  "image": "https://interio.com/media/catalog/product/f/r/fran4sswhkal_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-and-kalyx-4-seater-wooden-square-dining-set-fran4sswhkal"
- },
- {
-  "id": "fran6ssblkal",
-  "sku": "FRAN6SSBLKAL",
-  "name": "Franky and Kalyx Wooden Dining Set",
-  "room": "dining",
-  "type": "",
-  "from": 34490,
-  "mrp": null,
-  "note": "Shop Franky and Kalyx 6-Seater Wooden Square Dining Set1-Year Warranty, Table with 6 Chairs, Black Online. Get great deals & offers on vario",
-  "image": "https://interio.com/media/catalog/product/f/r/fran6ssblkal_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-and-kalyx-6-seater-wooden-rectangular-dining-set-fran6ssblkal"
- },
- {
-  "id": "fran6sswhkal",
-  "sku": "FRAN6SSWHKAL",
-  "name": "Franky and Kalyx Wooden Dining Set",
-  "room": "dining",
-  "type": "",
-  "from": 34490,
-  "mrp": null,
-  "note": "Shop Franky and Kalyx 6-Seater Wooden Square Dining Set1-Year Warranty, Table with 6 Chairs, White Online. Get great deals & offers on vario",
-  "image": "https://interio.com/media/catalog/product/f/r/fran6sswhkal_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-and-kalyx-6-seater-wooden-rectangular-dining-set-fran6sswhkal"
- },
- {
-  "id": "fran8ssblkal",
-  "sku": "FRAN8SSBLKAL",
-  "name": "Franky and Kalyx Wooden Dining Set",
-  "room": "dining",
-  "type": "",
-  "from": 44990,
-  "mrp": null,
-  "note": "Shop Franky and Kalyx 8-Seater Wooden Square Dining Set1-Year Warranty, Table with 8 Chairs, Black Online. Get great deals & offers on vario",
-  "image": "https://interio.com/media/catalog/product/f/r/fran8ssblkal_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-and-kalyx-8-seater-wooden-rectangular-dining-set-fran8ssblkal"
- },
- {
-  "id": "fran8sswhkal",
-  "sku": "FRAN8SSWHKAL",
-  "name": "Franky and Kalyx Wooden Dining Set",
-  "room": "dining",
-  "type": "",
-  "from": 44990,
-  "mrp": null,
-  "note": "Shop Franky and Kalyx 8-Seater Wooden Square Dining Set1-Year Warranty, Table with 8 Chairs, White Online. Get great deals & offers on vario",
-  "image": "https://interio.com/media/catalog/product/f/r/fran8sswhkal_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/franky-and-kalyx-8-seater-wooden-rectangular-dining-set-fran8sswhkal"
- },
- {
-  "id": "franky-and-kalyx-wooden-dining-set-gint040",
-  "sku": "",
-  "name": "Franky and Kalyx Wooden Dining Set",
-  "room": "dining",
-  "type": "",
-  "from": 23690,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/franky-and-kalyx-wooden-dining-set-GINT040"
+  "source": "https://interio.com/product/franky-and-kalyx-4-seater-wooden-square-dining-set-fran4ssblkal",
+  "family": "Franky and Kalyx Wooden Dining Set",
+  "variants": 7,
+  "fromPrice": true
  },
  {
   "id": "56101522sd04871",
@@ -1509,141 +687,153 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining benches",
   "from": 4090,
   "mrp": null,
-  "note": "Kalyx Fabric Dining Bench 1-Year Warranty, Dark Brown Online from Interio by Godrej. Get great deals on Dining Benches with ✔Free Delivery ✔",
+  "note": "1-Year Warranty, Dark Brown",
   "image": "https://interio.com/media/catalog/product/5/6/56101522sd04871_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/kalyx-fabric-dining-bench-56101522sd04871"
+  "source": "https://interio.com/product/kalyx-fabric-dining-bench-56101522sd04871",
+  "family": "Kalyx Fabric Dining Bench"
  },
  {
   "id": "dinchr052",
   "sku": "DINCHR052",
-  "name": "Creamtreat Leatherette Dining Chair (Set of 2)",
+  "name": "Creamtreat Leatherette Dining Chair Set Of 2",
   "room": "dining",
   "type": "Dining chairs",
   "from": 17690,
   "mrp": null,
-  "note": "Creamtreat Leatherette Dining Chair (Set of 2) 1-Year Warranty, Ivory Online from Interio by Godrej. Get great deals on Dining Chairs with ✔",
+  "note": "1-Year Warranty, Ivory",
   "image": "https://interio.com/media/catalog/product/d/i/dinchr052_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/creamtreat-leatherette-dining-chair-set-of-2-dinchr052"
+  "source": "https://interio.com/product/creamtreat-leatherette-dining-chair-set-of-2-dinchr052",
+  "family": "Creamtreat Leatherette Dining Chair (Set of 2)"
  },
  {
   "id": "dinchr125",
   "sku": "DINCHR125",
-  "name": "Ellie Fabric Dining Chair (Set of 2)",
+  "name": "Ellie Fabric Dining Chair Set Of 2",
   "room": "dining",
   "type": "Dining chairs",
   "from": 9590,
   "mrp": null,
-  "note": "Ellie Fabric Dining Chair (Set of 2) 1-Year Warranty, Dark Brown Online from Interio by Godrej. Get great deals on Dining Chairs with ✔Free ",
+  "note": "1-Year Warranty, Dark Brown",
   "image": "https://interio.com/media/catalog/product/d/i/dinchr125_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/ellie-fabric-dining-chair-set-of-2-dinchr125"
+  "source": "https://interio.com/product/ellie-fabric-dining-chair-set-of-2-dinchr125",
+  "family": "Ellie Fabric Dining Chair (Set of 2)"
  },
  {
   "id": "dinchr055",
   "sku": "DINCHR055",
-  "name": "Honey Fabric Dining Chair (Set of 2)",
+  "name": "Honey Fabric Dining Chair Set Of 2",
   "room": "dining",
   "type": "Dining chairs",
   "from": 9890,
   "mrp": null,
-  "note": "Honey Fabric Dining Chair (Set of 2) 1-Year Warranty, Cappuccino Online from Interio by Godrej. Get great deals on Dining Chairs with ✔Free ",
+  "note": "1-Year Warranty, Cappuccino",
   "image": "https://interio.com/media/catalog/product/d/i/dinchr055_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/honey-fabric-dining-chair-set-of-2-dinchr055"
+  "source": "https://interio.com/product/honey-fabric-dining-chair-set-of-2-dinchr055",
+  "family": "Honey Fabric Dining Chair (Set of 2)"
  },
  {
   "id": "dinchr126",
   "sku": "DINCHR126",
-  "name": "Kalyx Fabric Dining Chair (Set of 2)",
+  "name": "Kalyx Fabric Dining Chair Set Of 2",
   "room": "dining",
   "type": "Dining chairs",
   "from": 7190,
   "mrp": null,
-  "note": "Kalyx Fabric Dining Chair (Set of 2) 1-Year Warranty, Dark Brown Online from Interio by Godrej. Get great deals on Dining Chairs with ✔Free ",
+  "note": "1-Year Warranty, Dark Brown",
   "image": "https://interio.com/media/catalog/product/d/i/dinchr126_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/kalyx-fabric-dining-chair-set-of-2-dinchr126"
+  "source": "https://interio.com/product/kalyx-fabric-dining-chair-set-of-2-dinchr126",
+  "family": "Kalyx Fabric Dining Chair (Set of 2)"
  },
  {
   "id": "dinchr069",
   "sku": "DINCHR069",
-  "name": "Pause Fabric Dining Chair (Set of 2)",
+  "name": "Pause Fabric Dining Chair Set Of 2",
   "room": "dining",
   "type": "Dining chairs",
   "from": 10190,
   "mrp": null,
-  "note": "Pause Fabric Dining Chair (Set of 2) 1-Year Warranty, Mahogany Online from Interio by Godrej. Get great deals on Dining Chairs with ✔Free De",
+  "note": "1-Year Warranty, Mahogany",
   "image": "https://interio.com/media/catalog/product/d/i/dinchr069_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pause-fabric-dining-chair-set-of-2-dinchr069"
+  "source": "https://interio.com/product/pause-fabric-dining-chair-set-of-2-dinchr069",
+  "family": "Pause Fabric Dining Chair (Set of 2)"
  },
  {
   "id": "dinchr012",
   "sku": "DINCHR012",
-  "name": "Radiance NX Leatherette Dining Chair (Set of 2)",
+  "name": "Radiance Nx Leatherette Dining Chair Set Of 2",
   "room": "dining",
   "type": "Dining chairs",
   "from": 14890,
   "mrp": null,
-  "note": "Radiance NX Leatherette Dining Chair (Set of 2) 1-Year Warranty, Black Online from Interio by Godrej. Get great deals on Dining Chairs with ",
+  "note": "1-Year Warranty, Black",
   "image": "https://interio.com/media/catalog/product/d/i/dinchr012_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/radiance-nx-leatherette-dining-chair-set-of-2-dinchr012"
+  "source": "https://interio.com/product/radiance-nx-leatherette-dining-chair-set-of-2-dinchr012",
+  "family": "Radiance NX Leatherette Dining Chair (Set of 2)"
  },
  {
   "id": "dinchr031",
   "sku": "DINCHR031",
-  "name": "Rose Leatherette Dining Chair (Set of 2)",
+  "name": "Rose Leatherette Dining Chair Set Of 2",
   "room": "dining",
   "type": "Dining chairs",
   "from": 11590,
   "mrp": null,
-  "note": "Rose Leatherette Dining Chair (Set of 2) 1-Year Warranty, Dark Chocolate Online from Interio by Godrej. Get great deals on Dining Chairs wit",
+  "note": "1-Year Warranty, Dark Chocolate",
   "image": "https://interio.com/media/catalog/product/d/i/dinchr031_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/rose-leatherette-dining-chair-set-of-2-dinchr031"
+  "source": "https://interio.com/product/rose-leatherette-dining-chair-set-of-2-dinchr031",
+  "family": "Rose Leatherette Dining Chair (Set of 2)"
  },
  {
   "id": "dinchr034",
   "sku": "DINCHR034",
-  "name": "Swish Fabric Dining Chair (Set of 2)",
+  "name": "Swish Fabric Dining Chair Set Of 2",
   "room": "dining",
   "type": "Dining chairs",
   "from": 11190,
   "mrp": null,
-  "note": "Swish Fabric Dining Chair (Set of 2) 1-Year Warranty, Mahogany Online from Interio by Godrej. Get great deals on Dining Chairs with ✔Free De",
+  "note": "1-Year Warranty, Mahogany",
   "image": "https://interio.com/media/catalog/product/d/i/dinchr034_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/swish-fabric-dining-chair-set-of-2-dinchr034"
+  "source": "https://interio.com/product/swish-fabric-dining-chair-set-of-2-dinchr034",
+  "family": "Swish Fabric Dining Chair (Set of 2)"
  },
  {
   "id": "dinchr035",
   "sku": "DINCHR035",
-  "name": "Terrene Plus Leatherette Dining Chair (Set of 2)",
+  "name": "Terrene Plus Leatherette Dining Chair Set Of 2",
   "room": "dining",
   "type": "Dining chairs",
   "from": 32390,
   "mrp": null,
-  "note": "Terrene Plus Leatherette Dining Chair (Set of 2) 1-Year Warranty, Beige Online from Interio by Godrej. Get great deals on Dining Chairs with",
+  "note": "1-Year Warranty, Beige",
   "image": "https://interio.com/media/catalog/product/d/i/dinchr035_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/terrene-plus-leatherette-dining-chair-set-of-2-dinchr035"
+  "source": "https://interio.com/product/terrene-plus-leatherette-dining-chair-set-of-2-dinchr035",
+  "family": "Terrene Plus Leatherette Dining Chair (Set of 2)"
  },
  {
   "id": "dinchr036",
   "sku": "DINCHR036",
-  "name": "Tia Leather Dining Chair (Set of 6)",
+  "name": "Tia Leather Dining Chair Set Of 6",
   "room": "dining",
   "type": "Dining chairs",
   "from": 37690,
   "mrp": null,
-  "note": "Tia Leather Dining Chair (Set of 6) 1-Year Warranty, Black Online from Interio by Godrej. Get great deals on Dining Chairs with ✔Free Delive",
+  "note": "1-Year Warranty, Black",
   "image": "https://interio.com/media/catalog/product/d/i/dinchr036_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/tia-leather-dining-chair-set-of-6-dinchr036"
+  "source": "https://interio.com/product/tia-leather-dining-chair-set-of-6-dinchr036",
+  "family": "Tia Leather Dining Chair (Set of 6)"
  },
  {
   "id": "56101543sd00226",
   "sku": "56101543SD00226",
-  "name": "Ace Pro 4-Seater Solid Rubberwood Square Dining Set",
+  "name": "Ace Pro 4-Seater Wooden Square Dining Set",
   "room": "dining",
   "type": "Dining sets",
   "from": 22990,
   "mrp": null,
-  "note": "Ace Pro 4-Seater Solid Rubberwood Square Dining Set 1-Year Warranty, Table with 4 Chairs Online from Interio by Godrej. Get great deals on D",
+  "note": "1-Year Warranty, Table with 4 Chairs",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00226_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/ace-pro-4-seater-wooden-square-dining-set-56101543sd00226"
+  "source": "https://interio.com/product/ace-pro-4-seater-wooden-square-dining-set-56101543sd00226",
+  "family": "Ace Pro 4-Seater Solid Rubberwood Square Dining Set"
  },
  {
   "id": "tabchr012",
@@ -1653,33 +843,36 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining sets",
   "from": 71990,
   "mrp": null,
-  "note": "Brawn 6-Seater Tempered Glass Rectangular Dining Set 1-Year Warranty, Table with 6 Chairs Online from Interio by Godrej. Get great deals on ",
+  "note": "1-Year Warranty, Table with 6 Chairs",
   "image": "https://interio.com/media/catalog/product/t/a/tabchr012_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/brawn-6-seater-tempered-glass-rectangular-dining-set-tabchr012"
+  "source": "https://interio.com/product/brawn-6-seater-tempered-glass-rectangular-dining-set-tabchr012",
+  "family": "Brawn 6-Seater Tempered Glass Rectangular Dining Set"
  },
  {
   "id": "56101543sd00004",
   "sku": "56101543SD00004",
-  "name": "Estana 4-Seater Solid Rubberwood Rectangular Dining Set",
+  "name": "Estana 4-Seater Wooden Rectangular Dining Set",
   "room": "dining",
   "type": "Dining sets",
   "from": 19590,
   "mrp": null,
-  "note": "Estana 4-Seater Solid Rubberwood Rectangular Dining Set 1-Year Warranty, Table with 4 Chairs Online from Interio by Godrej. Get great deals ",
+  "note": "1-Year Warranty, Table with 4 Chairs",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00004_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/estana-4-seater-wooden-rectangular-dining-set-56101543sd00004"
+  "source": "https://interio.com/product/estana-4-seater-wooden-rectangular-dining-set-56101543sd00004",
+  "family": "Estana 4-Seater Solid Rubberwood Rectangular Dining Set"
  },
  {
   "id": "tabchr018",
   "sku": "TABCHR018",
-  "name": "Jack 6-Seater MDF Engineered Wood Rectangular Dining Set",
+  "name": "Jack 6-Seater Mdf Engineered Wood Rectangular Dining Set",
   "room": "dining",
   "type": "Dining sets",
   "from": 48190,
   "mrp": null,
-  "note": "Jack 6-Seater MDF Engineered Wood Rectangular Dining Set 1-Year Warranty, Table with 6 Chairs Online from Interio by Godrej. Get great deals",
+  "note": "1-Year Warranty, Table with 6 Chairs",
   "image": "https://interio.com/media/catalog/product/t/a/tabchr018_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/jack-6-seater-mdf-engineered-wood-rectangular-dining-set-tabchr018"
+  "source": "https://interio.com/product/jack-6-seater-mdf-engineered-wood-rectangular-dining-set-tabchr018",
+  "family": "Jack 6-Seater MDF Engineered Wood Rectangular Dining Set"
  },
  {
   "id": "tabchr014",
@@ -1689,9 +882,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining sets",
   "from": 150390,
   "mrp": null,
-  "note": "Terrene 6-Seater Synthetic Marble Rectangular Dining Set 1-Year Warranty, Table with 6 Chairs Online from Interio by Godrej. Get great deals",
+  "note": "1-Year Warranty, Table with 6 Chairs",
   "image": "https://interio.com/media/catalog/product/t/a/tabchr014_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/terrene-6-seater-synthetic-marble-rectangular-dining-set-tabchr014"
+  "source": "https://interio.com/product/terrene-6-seater-synthetic-marble-rectangular-dining-set-tabchr014",
+  "family": "Terrene 6-Seater Synthetic Marble Rectangular Dining Set"
  },
  {
   "id": "56101543sd00164",
@@ -1701,9 +895,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining tables",
   "from": 25790,
   "mrp": null,
-  "note": "Allure 6-Seater Rubber Wood Rectangular Dining Table 1-Year Warranty, Brownish Black Online from Interio by Godrej. Get great deals on Dinin",
+  "note": "1-Year Warranty, Brownish Black",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00164_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/allure-6-seater-rubber-wood-rectangular-dining-table-56101543sd00164"
+  "source": "https://interio.com/product/allure-6-seater-rubber-wood-rectangular-dining-table-56101543sd00164",
+  "family": "Allure 6-Seater Rubber Wood Rectangular Dining Table"
  },
  {
   "id": "56101543sd00122",
@@ -1713,9 +908,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining tables",
   "from": 18890,
   "mrp": null,
-  "note": "Amber 6-Seater Engineered Wood Rectangular Dining Table 1-Year Warranty, Cappuccino Online from Interio by Godrej. Get great deals on Dining",
+  "note": "1-Year Warranty, Cappuccino",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00122_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/amber-6-seater-engineered-wood-rectangular-dining-table-56101543sd00122"
+  "source": "https://interio.com/product/amber-6-seater-engineered-wood-rectangular-dining-table-56101543sd00122",
+  "family": "Amber 6-Seater Engineered Wood Rectangular Dining Table"
  },
  {
   "id": "56101543sd00165",
@@ -1725,9 +921,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining tables",
   "from": 23290,
   "mrp": null,
-  "note": "Arctic 4-Seater Rubber Wood Circular Dining Table 1-Year Warranty, Brownish Black Online from Interio by Godrej. Get great deals on Dining T",
+  "note": "1-Year Warranty, Brownish Black",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00165_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/arctic-4-seater-rubber-wood-circular-dining-table-56101543sd00165"
+  "source": "https://interio.com/product/arctic-4-seater-rubber-wood-circular-dining-table-56101543sd00165",
+  "family": "Arctic 4-Seater Rubber Wood Circular Dining Table"
  },
  {
   "id": "56101543sd00035",
@@ -1737,9 +934,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining tables",
   "from": 33590,
   "mrp": null,
-  "note": "Astral 4-Seater Tempered Glass Circular Dining Table 1-Year Warranty, Chrome Online from Interio by Godrej. Get great deals on Dining Tables",
+  "note": "1-Year Warranty, Chrome",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00035_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/astral-4-seater-tempered-glass-circular-dining-table-56101543sd00035"
+  "source": "https://interio.com/product/astral-4-seater-tempered-glass-circular-dining-table-56101543sd00035",
+  "family": "Astral 4-Seater Tempered Glass Circular Dining Table"
  },
  {
   "id": "56101543sd00194",
@@ -1749,9 +947,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining tables",
   "from": 20190,
   "mrp": null,
-  "note": "Atlanta Plus 6-Seater Rubber Wood Rectangular Dining Table 1-Year Warranty, Dark Brown Online from Interio by Godrej. Get great deals on Din",
+  "note": "1-Year Warranty, Dark Brown",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00194_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/atlanta-plus-6-seater-rubber-wood-rectangular-dining-table-56101543sd00194"
+  "source": "https://interio.com/product/atlanta-plus-6-seater-rubber-wood-rectangular-dining-table-56101543sd00194",
+  "family": "Atlanta Plus 6-Seater Rubber Wood Rectangular Dining Table"
  },
  {
   "id": "56101543sd00001",
@@ -1761,9 +960,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining tables",
   "from": 34390,
   "mrp": null,
-  "note": "Brawn 6-Seater Tempered Glass Rectangular Dining Table 1-Year Warranty, Black Online from Interio by Godrej. Get great deals on Dining Table",
+  "note": "1-Year Warranty, Black",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00001_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/brawn-6-seater-tempered-glass-rectangular-dining-table-56101543sd00001"
+  "source": "https://interio.com/product/brawn-6-seater-tempered-glass-rectangular-dining-table-56101543sd00001",
+  "family": "Brawn 6-Seater Tempered Glass Rectangular Dining Table"
  },
  {
   "id": "56101543sd00173",
@@ -1773,9 +973,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining tables",
   "from": 63590,
   "mrp": null,
-  "note": "Elixir 4-Seater Marble Circular Dining Table 1-Year Warranty, Walnut Online from Interio by Godrej. Get great deals on Dining Tables with ✔F",
+  "note": "1-Year Warranty, Walnut",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00173_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/elixir-4-seater-marble-circular-dining-table-56101543sd00173"
+  "source": "https://interio.com/product/elixir-4-seater-marble-circular-dining-table-56101543sd00173",
+  "family": "Elixir 4-Seater Marble Circular Dining Table"
  },
  {
   "id": "56101543sd00017",
@@ -1785,9 +986,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining tables",
   "from": 13490,
   "mrp": null,
-  "note": "Jack 6-Seater Engineered Wood Rectangular Dining Table 1-Year Warranty, Brownish Black Online from Interio by Godrej. Get great deals on Din",
+  "note": "1-Year Warranty, Brownish Black",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00017_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/jack-6-seater-engineered-wood-rectangular-dining-table-56101543sd00017"
+  "source": "https://interio.com/product/jack-6-seater-engineered-wood-rectangular-dining-table-56101543sd00017",
+  "family": "Jack 6-Seater Engineered Wood Rectangular Dining Table"
  },
  {
   "id": "56101543sd00010",
@@ -1797,9 +999,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining tables",
   "from": 15390,
   "mrp": null,
-  "note": "Mod Knight 6-Seater Tempered Glass Rectangular Dining Table 1-Year Warranty, Black Online from Interio by Godrej. Get great deals on Dining ",
+  "note": "1-Year Warranty, Black",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00010_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/mod-knight-6-seater-tempered-glass-rectangular-dining-table-56101543sd00010"
+  "source": "https://interio.com/product/mod-knight-6-seater-tempered-glass-rectangular-dining-table-56101543sd00010",
+  "family": "Mod Knight 6-Seater Tempered Glass Rectangular Dining Table"
  },
  {
   "id": "56101543sd00121",
@@ -1809,9 +1012,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining tables",
   "from": 15890,
   "mrp": null,
-  "note": "Onyx 6-Seater Engineered Wood Rectangular Dining Table 1-Year Warranty, Cappuccino Online from Interio by Godrej. Get great deals on Dining ",
+  "note": "1-Year Warranty, Cappuccino",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00121_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/onyx-6-seater-engineered-wood-rectangular-dining-table-56101543sd00121"
+  "source": "https://interio.com/product/onyx-6-seater-engineered-wood-rectangular-dining-table-56101543sd00121",
+  "family": "Onyx 6-Seater Engineered Wood Rectangular Dining Table"
  },
  {
   "id": "56101543sd00123",
@@ -1821,21 +1025,23 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining tables",
   "from": 28290,
   "mrp": null,
-  "note": "Premio 6-Seater Rubber Wood Rectangular Dining Table 1-Year Warranty, Mahogany Online from Interio by Godrej. Get great deals on Dining Tabl",
+  "note": "1-Year Warranty, Mahogany",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00123_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/premio-6-seater-rubber-wood-rectangular-dining-table-56101543sd00123"
+  "source": "https://interio.com/product/premio-6-seater-rubber-wood-rectangular-dining-table-56101543sd00123",
+  "family": "Premio 6-Seater Rubber Wood Rectangular Dining Table"
  },
  {
   "id": "56101543sd00214",
   "sku": "56101543SD00214",
-  "name": "Salt and Pepper NX 4-to-6 Seater Glass & Engineered Wood Dining Table",
+  "name": "Salt And Pepper Nx 4 To 6-Seater Glass Engineered Wood Dining Table",
   "room": "dining",
   "type": "Dining tables",
   "from": 37590,
   "mrp": null,
-  "note": "Salt and Pepper NX 4-to-6 Seater Glass & Engineered Wood Dining Table 1-Year Warranty, Black & White Online from Interio by Godrej. Get grea",
+  "note": "1-Year Warranty, Black & White",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00214_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/salt-and-pepper-nx-4-to-6-seater-glass-engineered-wood-dining-table-56101543sd00214"
+  "source": "https://interio.com/product/salt-and-pepper-nx-4-to-6-seater-glass-engineered-wood-dining-table-56101543sd00214",
+  "family": "Salt and Pepper NX 4-to-6 Seater Glass & Engineered Wood Dining Table"
  },
  {
   "id": "56101543sd00127",
@@ -1845,21 +1051,23 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining tables",
   "from": 68390,
   "mrp": null,
-  "note": "Snowflake 6-Seater Marble Rectangular Dining Table 1-Year Warranty, Walnut Online from Interio by Godrej. Get great deals on Dining Tables w",
+  "note": "1-Year Warranty, Walnut",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00127_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/snowflake-6-seater-marble-rectangular-dining-table-56101543sd00127"
+  "source": "https://interio.com/product/snowflake-6-seater-marble-rectangular-dining-table-56101543sd00127",
+  "family": "Snowflake 6-Seater Marble Rectangular Dining Table"
  },
  {
   "id": "56101543sd00023",
   "sku": "56101543SD00023",
-  "name": "Swish 6-Seater MDF Rubber Wood Rectangular Dining Table",
+  "name": "Swish 6-Seater Mdf Rubber Wood Rectangular Dining Table",
   "room": "dining",
   "type": "Dining tables",
   "from": 42090,
   "mrp": null,
-  "note": "Swish 6-Seater MDF Rubber Wood Rectangular Dining Table 1-Year Warranty, Mahogany Online from Interio by Godrej. Get great deals on Dining T",
+  "note": "1-Year Warranty, Mahogany",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00023_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/swish-6-seater-mdf-rubber-wood-rectangular-dining-table-56101543sd00023"
+  "source": "https://interio.com/product/swish-6-seater-mdf-rubber-wood-rectangular-dining-table-56101543sd00023",
+  "family": "Swish 6-Seater MDF Rubber Wood Rectangular Dining Table"
  },
  {
   "id": "56101543sd00026",
@@ -1869,9 +1077,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Dining tables",
   "from": 53390,
   "mrp": null,
-  "note": "Terrene 6-Seater Marble Rectangular Dining Table 1-Year Warranty, Beige Online from Interio by Godrej. Get great deals on Dining Tables with",
+  "note": "1-Year Warranty, Beige",
   "image": "https://interio.com/media/catalog/product/5/6/56101543sd00026_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/terrene-6-seater-marble-rectangular-dining-table-56101543sd00026"
+  "source": "https://interio.com/product/terrene-6-seater-marble-rectangular-dining-table-56101543sd00026",
+  "family": "Terrene 6-Seater Marble Rectangular Dining Table"
  },
  {
   "id": "56101502sd01337",
@@ -1881,33 +1090,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 51390,
   "mrp": null,
-  "note": "Shop Alantra 1-Seater Leatherette Recliner 1-Year Warranty, Solid Wood, Blue Online from Interio by Godrej. Get great deals on Recliners wit",
+  "note": "1-Year Warranty, Solid Wood, Blue",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01337_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/alantra-1-seater-leatherette-recliner-56101502sd01337"
- },
- {
-  "id": "56101502sd01338",
-  "sku": "56101502SD01338",
-  "name": "Alantra Leatherette Recliner",
-  "room": "living",
-  "type": "",
-  "from": 120590,
-  "mrp": null,
-  "note": "Shop Alantra 3-Seater Leatherette Recliner 1-Year Warranty, Solid Wood, Blue Online from Interio by Godrej. Get great deals on Recliners wit",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01338_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/alantra-3-seater-leatherette-recliner-56101502sd01338"
- },
- {
-  "id": "alantra-leatherette-recliner-gint044",
-  "sku": "",
-  "name": "Alantra Leatherette Recliner",
-  "room": "living",
-  "type": "",
-  "from": 51390,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/alantra-leatherette-recliner-GINT044"
+  "source": "https://interio.com/product/alantra-1-seater-leatherette-recliner-56101502sd01337",
+  "family": "Alantra Leatherette Recliner",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101502sd01869",
@@ -1917,81 +1105,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 42690,
   "mrp": null,
-  "note": "Shop Bayflow 1-Seater Leatherette Sofa 3-Years Warranty, Pinewood, Toffee Beige Online from Interio by Godrej. Get great deals on Sofas with",
+  "note": "3-Years Warranty, Pinewood, Toffee Beige",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01869_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/bayflow-1-seater-leatherette-sofa-56101502sd01869"
- },
- {
-  "id": "56101502sd01870",
-  "sku": "56101502SD01870",
-  "name": "Bayflow Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 57590,
-  "mrp": null,
-  "note": "Bayflow 2-Seater Leatherette Sofa 1-Year Warranty, Pinewood, Toffee Beige Online from Interio by Godrej. Get great deals on Sofas with ✔Free",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01870_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/bayflow-2-seater-leatherette-sofa-56101502sd01870"
- },
- {
-  "id": "56101502sd01871",
-  "sku": "56101502SD01871",
-  "name": "Bayflow Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 69390,
-  "mrp": null,
-  "note": "Shop Bayflow 3-Seater Leatherette Sofa 3-Years Warranty, Pinewood, Toffee Beige Online from Interio by Godrej. Get great deals on Sofas with",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01871_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/bayflow-3-seater-leatherette-sofa-56101502sd01871"
- },
- {
-  "id": "56101502sd01875",
-  "sku": "56101502SD01875",
-  "name": "Bayflow Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 42690,
-  "mrp": null,
-  "note": "Shop Bayflow 1-Seater Leatherette Sofa 3-Years Warranty, Pinewood, Black Online from Interio by Godrej. Get great deals on Sofas with ✔Free ",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01875_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/bayflow-1-seater-leatherette-sofa-56101502sd01875"
- },
- {
-  "id": "56101502sd01876",
-  "sku": "56101502SD01876",
-  "name": "Bayflow Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 57590,
-  "mrp": null,
-  "note": "Shop Bayflow 2-Seater Leatherette Sofa 3-Years Warranty, Pinewood, Black Online from Interio by Godrej. Get great deals on Sofas with ✔Free ",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01876_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/bayflow-2-seater-leatherette-sofa-56101502sd01876"
- },
- {
-  "id": "56101502sd01877",
-  "sku": "56101502SD01877",
-  "name": "Bayflow Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 69390,
-  "mrp": null,
-  "note": "Shop Bayflow 3-Seater Leatherette Sofa 3-Years Warranty, Pinewood, Black Online from Interio by Godrej. Get great deals on Sofas with ✔Free ",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01877_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/bayflow-3-seater-leatherette-sofa-56101502sd01877"
- },
- {
-  "id": "bayflow-leatherette-sofa-gint049",
-  "sku": "",
-  "name": "Bayflow Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 42690,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/bayflow-leatherette-sofa-GINT049"
+  "source": "https://interio.com/product/bayflow-1-seater-leatherette-sofa-56101502sd01869",
+  "family": "Bayflow Leatherette Sofa",
+  "variants": 7,
+  "fromPrice": true
  },
  {
   "id": "56101502sd01959",
@@ -2001,57 +1120,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 28190,
   "mrp": null,
-  "note": "Shop Bevelark 2-Seater Fabric Sofa 3-Years Warranty, Pinewood, Green Online from Interio by Godrej. Get great deals on Sofas with ✔Free Deli",
+  "note": "3-Years Warranty, Pinewood, Green",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01959_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/bevelark-2-seater-fabric-sofa-56101502sd01959"
- },
- {
-  "id": "56101502sd01960",
-  "sku": "56101502SD01960",
-  "name": "Bevelark Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 34990,
-  "mrp": null,
-  "note": "Shop Bevelark 3-Seater Fabric Sofa 3-Years Warranty, Pinewood, Green Online from Interio by Godrej. Get great deals on Sofas with ✔Free Deli",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01960_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/bevelark-3-seater-fabric-sofa-56101502sd01960"
- },
- {
-  "id": "56101502sd01962",
-  "sku": "56101502SD01962",
-  "name": "Bevelark Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 28190,
-  "mrp": null,
-  "note": "Shop Bevelark 2-Seater Fabric Sofa 3-Years Warranty, Pinewood, Taupe Online from Interio by Godrej. Get great deals on Sofas with ✔Free Deli",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01962_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/bevelark-2-seater-fabric-sofa-56101502sd01962"
- },
- {
-  "id": "56101502sd01963",
-  "sku": "56101502SD01963",
-  "name": "Bevelark Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 34990,
-  "mrp": null,
-  "note": "Shop Bevelark 3-Seater Fabric Sofa 3-Years Warranty, Pinewood, Taupe Online from Interio by Godrej. Get great deals on Sofas with ✔Free Deli",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01963_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/bevelark-3-seater-fabric-sofa-56101502sd01963"
- },
- {
-  "id": "bevelark-fabric-sofa-gint050",
-  "sku": "",
-  "name": "Bevelark Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 28190,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/bevelark-fabric-sofa-GINT050"
+  "source": "https://interio.com/product/bevelark-2-seater-fabric-sofa-56101502sd01959",
+  "family": "Bevelark Fabric Sofa",
+  "variants": 5,
+  "fromPrice": true
  },
  {
   "id": "56101502sd01774",
@@ -2061,21 +1135,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 39790,
   "mrp": null,
-  "note": "Cedar 1-Seater Fabric Sofa 1-Year Warranty, Sheesham Wood, Beige Online from Interio by Godrej. Get great deals on Sofas with ✔Free Delivery",
+  "note": "1-Year Warranty, Sheesham Wood, Beige",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01774_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/cedar-1-seater-fabric-sofa-56101502sd01774"
- },
- {
-  "id": "56101502sd01775",
-  "sku": "56101502SD01775",
-  "name": "Cedar Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 83490,
-  "mrp": null,
-  "note": "Cedar 3-Seater Fabric Sofa 1-Year Warranty, Sheesham, Beige Color Online from Interio by Godrej. Get great deals on Sofas with ✔Free Deliver",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01775_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/cedar-3-seater-fabric-sofa-56101502sd01775"
+  "source": "https://interio.com/product/cedar-1-seater-fabric-sofa-56101502sd01774",
+  "family": "Cedar Fabric Sofa",
+  "variants": 2,
+  "fromPrice": true
  },
  {
   "id": "56101502sd01339",
@@ -2085,33 +1150,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 37490,
   "mrp": null,
-  "note": "Shop Clermont 1-Seater Leatherette Recliner 1-Year Warranty, Solid Wood, Brown Online from Interio by Godrej. Get great deals on Recliners w",
+  "note": "1-Year Warranty, Solid Wood, Brown",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01339_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/clermont-1-seater-leatherette-recliner-56101502sd01339"
- },
- {
-  "id": "56101502sd01340",
-  "sku": "56101502SD01340",
-  "name": "Clermont Leatherette Recliner",
-  "room": "living",
-  "type": "",
-  "from": 121590,
-  "mrp": null,
-  "note": "Shop Clermont 3-Seater Leatherette Recliner 1-Year Warranty, Solid Wood, Brown Online from Interio by Godrej. Get great deals on Recliners w",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01340_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/clermont-3-seater-leatherette-recliner-56101502sd01340"
- },
- {
-  "id": "clermont-leatherette-recliner-gint051",
-  "sku": "",
-  "name": "Clermont Leatherette Recliner",
-  "room": "living",
-  "type": "",
-  "from": 37490,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/clermont-leatherette-recliner-GINT051"
+  "source": "https://interio.com/product/clermont-1-seater-leatherette-recliner-56101502sd01339",
+  "family": "Clermont Leatherette Recliner",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101502sd04406",
@@ -2121,45 +1165,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 8990,
   "mrp": null,
-  "note": "Shop Cresco 1-Seater Fabric Sofa 1-Year Warranty, Solid Wood, Camel and Taupe Online from Interio by Godrej. Get great deals on Sofas with ✔",
+  "note": "1-Year Warranty, Solid Wood, Camel and Taupe",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd04406_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/cresco-1-seater-fabric-sofa-56101502sd04406"
- },
- {
-  "id": "56101502sd04407",
-  "sku": "56101502SD04407",
-  "name": "Cresco Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 12990,
-  "mrp": null,
-  "note": "Shop Cresco 2-Seater Fabric Sofa 1-Year Warranty, Solid Wood, Camel and Taupe Online from Interio by Godrej. Get great deals on Sofas with ✔",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd04407_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/cresco-2-seater-fabric-sofa-56101502sd04407"
- },
- {
-  "id": "56101502sd04408",
-  "sku": "56101502SD04408",
-  "name": "Cresco Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 15990,
-  "mrp": null,
-  "note": "Shop Cresco 3-Seater Fabric Sofa 1-Year Warranty, Solid Wood, Camel and Taupe Online from Interio by Godrej. Get great deals on Sofas with ✔",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd04408_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/cresco-3-seater-fabric-sofa-56101502sd04408"
- },
- {
-  "id": "cresco-fabric-sofa-gint052",
-  "sku": "",
-  "name": "Cresco Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 8990,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/cresco-fabric-sofa-GINT052"
+  "source": "https://interio.com/product/cresco-1-seater-fabric-sofa-56101502sd04406",
+  "family": "Cresco Fabric Sofa",
+  "variants": 4,
+  "fromPrice": true
  },
  {
   "id": "56101502sd00893",
@@ -2169,45 +1180,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 25990,
   "mrp": null,
-  "note": "Encardo Annexe 1-Seater Leatherette Sofa 1-Year Warranty, Rubberwood, Cappuccino Online from Interio by Godrej. Get great deals on Sofas wit",
+  "note": "1-Year Warranty, Rubberwood, Cappuccino",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd00893_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/encardo-annexe-1-seater-leatherette-sofa-56101502sd00893"
- },
- {
-  "id": "56101502sd00894",
-  "sku": "56101502SD00894",
-  "name": "Encardo Annexe Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 45390,
-  "mrp": null,
-  "note": "Encardo Annexe 3-Seater Leatherette Sofa 1-Year Warranty, Solid Wood, Cappuccino Online from Interio by Godrej. Get great deals on Sofas wit",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd00894_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/encardo-annexe-3-seater-leatherette-sofa-56101502sd00894"
- },
- {
-  "id": "encardo-annexe-leatherette-sofa-gint053",
-  "sku": "",
-  "name": "Encardo Annexe Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 25990,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/encardo-annexe-leatherette-sofa-GINT053"
- },
- {
-  "id": "flight-fabric-sofa-gint054",
-  "sku": "",
-  "name": "Flight Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 0,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/flight-fabric-sofa-GINT054"
+  "source": "https://interio.com/product/encardo-annexe-1-seater-leatherette-sofa-56101502sd00893",
+  "family": "Encardo Annexe Leatherette Sofa",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "highrol04",
@@ -2217,21 +1195,11 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 39390,
   "mrp": null,
-  "note": "Highrolla 2-Seater Fabric Sofa with Chaise 3-Years Warranty, Pinewood, Purple Haze Online from Interio by Godrej. Get great deals on Sofas w",
+  "note": "3-Years Warranty, Pinewood, Purple Haze",
   "image": "https://interio.com/media/catalog/product/h/i/highrol04_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/highrolla-2-seater-fabric-sofa-with-chaise-HIGHROL04"
- },
- {
-  "id": "highrol06",
-  "sku": "HIGHROL06",
-  "name": "Highrolla Fabric Sofa with Chaise",
-  "room": "living",
-  "type": "",
-  "from": 39390,
-  "mrp": null,
-  "note": "Highrolla 2-Seater Fabric Sofa with Chaise 3-Years Warranty, Pinewood, Purple Online from Interio by Godrej. Get great deals on Sofas with ✔",
-  "image": "https://interio.com/media/catalog/product/h/i/highrol06_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/highrolla-2-seater-fabric-sofa-with-chaise-HIGHROL06"
+  "source": "https://interio.com/product/highrolla-2-seater-fabric-sofa-with-chaise-HIGHROL04",
+  "family": "Highrolla Fabric Sofa with Chaise",
+  "variants": 2
  },
  {
   "id": "56101502sd01469",
@@ -2241,21 +1209,11 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 33090,
   "mrp": null,
-  "note": "Shop Jinerio Nx 1-Seater Fabric Sofa1-Year Warranty, Pinewood, Espresso Online. Get great deals & offers on various Sofa by Interio by Godre",
+  "note": "Shop Jinerio Nx 1-Seater Fabric Sofa1-Year Warranty, Pinewood, Espresso Online. Get great deals & offers on various Sofa",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01469_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/jinerio-nx-1-seater-fabric-sofa-56101502sd01469"
- },
- {
-  "id": "jinerio-nx-fabric-sofa-gint055",
-  "sku": "",
-  "name": "Jinerio Nx Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 33090,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/jinerio-nx-fabric-sofa-GINT055"
+  "source": "https://interio.com/product/jinerio-nx-1-seater-fabric-sofa-56101502sd01469",
+  "family": "Jinerio Nx Fabric Sofa",
+  "variants": 2
  },
  {
   "id": "56101502sd01838",
@@ -2265,45 +1223,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 60990,
   "mrp": null,
-  "note": "Shop Majesta Plus 1-Seater Leather Sofa 1-Year Warranty, Solid Wood, Cherry Online from Interio by Godrej. Get great deals on Sofas with ✔Fr",
+  "note": "1-Year Warranty, Solid Wood, Cherry",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01838_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/majesta-plus-1-seater-leather-sofa-56101502sd01838"
- },
- {
-  "id": "56101502sd01839",
-  "sku": "56101502SD01839",
-  "name": "Majesta Plus Leather Sofa",
-  "room": "living",
-  "type": "",
-  "from": 76090,
-  "mrp": null,
-  "note": "Shop Majesta Plus 2-Seater Leather Sofa 1-Year Warranty, Solid Wood, Cherry Online from Interio by Godrej. Get great deals on Sofas with ✔Fr",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01839_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/majesta-plus-2-seater-leather-sofa-56101502sd01839"
- },
- {
-  "id": "56101502sd01840",
-  "sku": "56101502SD01840",
-  "name": "Majesta Plus Leather Sofa",
-  "room": "living",
-  "type": "",
-  "from": 101390,
-  "mrp": null,
-  "note": "Shop Majesta Plus 3-Seater Leather Sofa 1-Year Warranty, Solid Wood, Cherry Online from Interio by Godrej. Get great deals on Sofas with ✔Fr",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01840_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/majesta-plus-3-seater-leather-sofa-56101502sd01840"
- },
- {
-  "id": "majesta-plus-leather-sofa-gint056",
-  "sku": "",
-  "name": "Majesta Plus Leather Sofa",
-  "room": "living",
-  "type": "",
-  "from": 60990,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/majesta-plus-leather-sofa-GINT056"
+  "source": "https://interio.com/product/majesta-plus-1-seater-leather-sofa-56101502sd01838",
+  "family": "Majesta Plus Leather Sofa",
+  "variants": 4,
+  "fromPrice": true
  },
  {
   "id": "56101502sd00697",
@@ -2313,33 +1238,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 14890,
   "mrp": null,
-  "note": "Shop Monarch 1-Seater Leatherette Sofa 1-Year Warranty, Pinewood, Burgundy Online from Interio by Godrej. Get great deals on Sofas with ✔Fre",
+  "note": "1-Year Warranty, Pinewood, Burgundy",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd00697_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/monarch-1-seater-leatherette-sofa-56101502sd00697"
- },
- {
-  "id": "56101502sd00698",
-  "sku": "56101502SD00698",
-  "name": "Monarch Sofa",
-  "room": "living",
-  "type": "",
-  "from": 25490,
-  "mrp": null,
-  "note": "Shop Monarch 3-Seater Leatherette Sofa 1-Year Warranty, Pinewood, Burgundy Online from Interio by Godrej. Get great deals on Sofas with ✔Fre",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd00698_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/monarch-3-seater-leatherette-sofa-56101502sd00698"
- },
- {
-  "id": "monarch-leatherette-sofa-gint057",
-  "sku": "",
-  "name": "Monarch Sofa",
-  "room": "living",
-  "type": "",
-  "from": 14890,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/monarch-leatherette-sofa-GINT057"
+  "source": "https://interio.com/product/monarch-1-seater-leatherette-sofa-56101502sd00697",
+  "family": "Monarch Sofa",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101502sd00943",
@@ -2349,33 +1253,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 35290,
   "mrp": null,
-  "note": "Shop Opulent Advance 1-Seater Leatherette Sofa 1-Year Warranty, Solid Wood, Beige & Black Online from Interio by Godrej. Get great deals on ",
+  "note": "1-Year Warranty, Solid Wood, Beige & Black",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd00943_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/opulent-advance-1-seater-leatherette-sofa-56101502sd00943"
- },
- {
-  "id": "opulent-advance-leatherette-sofa-gint059",
-  "sku": "",
-  "name": "Opulent Advance Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 35290,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/opulent-advance-leatherette-sofa-GINT059"
- },
- {
-  "id": "opulent-leatherette-sofa-gint058",
-  "sku": "",
-  "name": "Opulent Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 0,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/opulent-leatherette-sofa-GINT058"
+  "source": "https://interio.com/product/opulent-advance-1-seater-leatherette-sofa-56101502sd00943",
+  "family": "Opulent Advance Leatherette Sofa",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "56101502sd01785",
@@ -2385,45 +1268,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 57190,
   "mrp": null,
-  "note": "Shop Orlando Plus 1-Seater Leather Sofa 1-Year Warranty, Solid Wood, Brown Online from Interio by Godrej. Get great deals on Sofas with ✔Fre",
+  "note": "1-Year Warranty, Solid Wood, Brown",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01785_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/orlando-plus-1-seater-leather-sofa-56101502sd01785"
- },
- {
-  "id": "56101502sd01786",
-  "sku": "56101502SD01786",
-  "name": "Orlando Plus Leather Sofa",
-  "room": "living",
-  "type": "",
-  "from": 71590,
-  "mrp": null,
-  "note": "Shop Orlando Plus 2-Seater Leather Sofa 1-Year Warranty, Solid Wood, Brown Online from Interio by Godrej. Get great deals on Sofas with ✔Fre",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01786_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/orlando-plus-2-seater-leather-sofa-56101502sd01786"
- },
- {
-  "id": "56101502sd01787",
-  "sku": "56101502SD01787",
-  "name": "Orlando Plus Leather Sofa",
-  "room": "living",
-  "type": "",
-  "from": 86990,
-  "mrp": null,
-  "note": "Shop Orlando Plus 3-Seater Leather Sofa 1-Year Warranty, Solid Wood, Brown Online from Interio by Godrej. Get great deals on Sofas with ✔Fre",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01787_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/orlando-plus-3-seater-leather-sofa-56101502sd01787"
- },
- {
-  "id": "orlando-plus-leather-sofa-gint060",
-  "sku": "",
-  "name": "Orlando Plus Leather Sofa",
-  "room": "living",
-  "type": "",
-  "from": 57190,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/orlando-plus-leather-sofa-GINT060"
+  "source": "https://interio.com/product/orlando-plus-1-seater-leather-sofa-56101502sd01785",
+  "family": "Orlando Plus Leather Sofa",
+  "variants": 4,
+  "fromPrice": true
  },
  {
   "id": "56101502sd01788",
@@ -2433,33 +1283,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 41790,
   "mrp": null,
-  "note": "Shop Orleans Plus 1-Seater Leather Sofa 1-Year Warranty, Solid Wood, Brown Online from Interio by Godrej. Get great deals on Sofas with ✔Fre",
+  "note": "1-Year Warranty, Solid Wood, Brown",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01788_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/orleans-plus-1-seater-leather-sofa-56101502sd01788"
- },
- {
-  "id": "56101502sd01789",
-  "sku": "56101502SD01789",
-  "name": "Orleans Plus Leather Sofa",
-  "room": "living",
-  "type": "",
-  "from": 62590,
-  "mrp": null,
-  "note": "Orleans Plus 3-Seater Leather Sofa 3-Years Warranty, Solid Wood, Black Online from Interio by Godrej. Get great deals on Sofas with ✔Free De",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01789_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/orleans-plus-3-seater-leather-sofa-56101502sd01789"
- },
- {
-  "id": "orleans-plus-leather-sofa-gint061",
-  "sku": "",
-  "name": "Orleans Plus Leather Sofa",
-  "room": "living",
-  "type": "",
-  "from": 41790,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/orleans-plus-leather-sofa-GINT061"
+  "source": "https://interio.com/product/orleans-plus-1-seater-leather-sofa-56101502sd01788",
+  "family": "Orleans Plus Leather Sofa",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "pan5sbrown",
@@ -2469,33 +1298,11 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 48990,
   "mrp": null,
-  "note": "Shop Pangram 5-Seater Fabric L-Shape Sofa with Storage3-Year Warranty, Solid Wood, Dark Brown Online. Get great deals & offers on various So",
+  "note": "Shop Pangram 5-Seater Fabric L-Shape Sofa with Storage3-Year Warranty, Solid Wood, Dark Brown Online. Get great deals &",
   "image": "https://interio.com/media/catalog/product/p/a/pan5sbrown_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pangram-5-seater-fabric-l-shape-sofa-with-storage-pan5sbrown"
- },
- {
-  "id": "pan5staupe",
-  "sku": "PAN5STAUPE",
-  "name": "Pangram 5-Seater Fabric L-Shape Sofa with Storage",
-  "room": "living",
-  "type": "",
-  "from": 48990,
-  "mrp": null,
-  "note": "Shop Pangram 5-Seater Fabric L-Shape Sofa with Storage3-Year Warranty, Solid Wood, Taupe Online. Get great deals & offers on various Sofa by",
-  "image": "https://interio.com/media/catalog/product/p/a/pan5staupe_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pangram-5-seater-fabric-l-shape-sofa-with-storage-pan5staupe"
- },
- {
-  "id": "pangram-5-seater-fabric-l-shape-sofa-with-storage-gint063",
-  "sku": "",
-  "name": "Pangram 5-Seater Fabric L-Shape Sofa with Storage",
-  "room": "living",
-  "type": "",
-  "from": 48990,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/pangram-5-seater-fabric-l-shape-sofa-with-storage-GINT063"
+  "source": "https://interio.com/product/pangram-5-seater-fabric-l-shape-sofa-with-storage-pan5sbrown",
+  "family": "Pangram 5-Seater Fabric L-Shape Sofa with Storage",
+  "variants": 3
  },
  {
   "id": "56101502sd02253",
@@ -2505,81 +1312,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 10490,
   "mrp": null,
-  "note": "Shop Pangram 1-Seater Fabric Sofa 3-Years Warranty, Solid Wood, Dark Brown Online from Interio by Godrej. Get great deals on Sofas with ✔Fre",
+  "note": "3-Years Warranty, Solid Wood, Dark Brown",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd02253_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pangram-1-seater-fabric-sofa-56101502sd02253"
- },
- {
-  "id": "56101502sd02254",
-  "sku": "56101502SD02254",
-  "name": "Pangram Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 14390,
-  "mrp": null,
-  "note": "Shop Pangram 2-Seater Fabric Sofa 3-Years Warranty, Solid Wood, Dark Brown Online from Interio by Godrej. Get great deals on Sofas with ✔Fre",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd02254_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pangram-2-seater-fabric-sofa-56101502sd02254"
- },
- {
-  "id": "56101502sd02255",
-  "sku": "56101502SD02255",
-  "name": "Pangram Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 18990,
-  "mrp": null,
-  "note": "Shop Pangram 3-Seater Fabric Sofa 3-Years Warranty, Solid Wood, Dark Brown Online from Interio by Godrej. Get great deals on Sofas with ✔Fre",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd02255_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pangram-3-seater-fabric-sofa-56101502sd02255"
- },
- {
-  "id": "56101502sd02260",
-  "sku": "56101502SD02260",
-  "name": "Pangram Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 10490,
-  "mrp": null,
-  "note": "Shop Pangram 1-Seater Fabric Sofa 3-Years Warranty, Solid Wood, Taupe Online from Interio by Godrej. Get great deals on Sofas with ✔Free Del",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd02260_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pangram-1-seater-fabric-sofa-56101502sd02260"
- },
- {
-  "id": "56101502sd02261",
-  "sku": "56101502SD02261",
-  "name": "Pangram Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 14390,
-  "mrp": null,
-  "note": "Shop Pangram 2-Seater Fabric Sofa 3-Years Warranty, Solid Wood, Taupe Online from Interio by Godrej. Get great deals on Sofas with ✔Free Del",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd02261_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pangram-2-seater-fabric-sofa-56101502sd02261"
- },
- {
-  "id": "56101502sd02262",
-  "sku": "56101502SD02262",
-  "name": "Pangram Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 18990,
-  "mrp": null,
-  "note": "Shop Pangram 3-Seater Fabric Sofa 3-Years Warranty, Solid Wood, Taupe Online from Interio by Godrej. Get great deals on Sofas with ✔Free Del",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd02262_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pangram-3-seater-fabric-sofa-56101502sd02262"
- },
- {
-  "id": "pangram-fabric-sofa-gint062",
-  "sku": "",
-  "name": "Pangram Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 10490,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/pangram-fabric-sofa-GINT062"
+  "source": "https://interio.com/product/pangram-1-seater-fabric-sofa-56101502sd02253",
+  "family": "Pangram Fabric Sofa",
+  "variants": 7,
+  "fromPrice": true
  },
  {
   "id": "pan6sbrown",
@@ -2589,21 +1327,11 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 43690,
   "mrp": null,
-  "note": "Pangram 6-Seater Fabric Sofa Set (3+2+1) 3-Year Warranty, Solid Wood, Dark Brown Online from Interio by Godrej. Get great deals on Sofa Sets",
+  "note": "3-Year Warranty, Solid Wood, Dark Brown",
   "image": "https://interio.com/media/catalog/product/p/a/pan6sbrown_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pangram-6-seater-fabric-sofa-set-3-2-1-pan6sbrown"
- },
- {
-  "id": "pan6staupe",
-  "sku": "PAN6STAUPE",
-  "name": "Pangram Fabric Sofa Set",
-  "room": "living",
-  "type": "",
-  "from": 43690,
-  "mrp": null,
-  "note": "Pangram 6-Seater Fabric Sofa Set (3+2+1) 3-Year Warranty, Solid Wood, Taupe Online from Interio by Godrej. Get great deals on Sofa Sets with",
-  "image": "https://interio.com/media/catalog/product/p/a/pan6staupe_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pangram-6-seater-fabric-sofa-set-3-2-1-pan6staupe"
+  "source": "https://interio.com/product/pangram-6-seater-fabric-sofa-set-3-2-1-pan6sbrown",
+  "family": "Pangram Fabric Sofa Set",
+  "variants": 2
  },
  {
   "id": "56101502sd01842",
@@ -2613,45 +1341,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 24290,
   "mrp": null,
-  "note": "Shop Parto Plus 1-Seater Leatherette Sofa 1-Year Warranty, Pinewood, Black Online from Interio by Godrej. Get great deals on Sofas with ✔Fre",
+  "note": "1-Year Warranty, Pinewood, Black",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01842_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/parto-plus-1-seater-leatherette-sofa-56101502sd01842"
- },
- {
-  "id": "56101502sd01843",
-  "sku": "56101502SD01843",
-  "name": "Parto Plus Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 34090,
-  "mrp": null,
-  "note": "Shop Parto Plus 2-Seater Leatherette Sofa 1-Year Warranty, Pinewood, Black Online from Interio by Godrej. Get great deals on Sofas with ✔Fre",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01843_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/parto-plus-2-seater-leatherette-sofa-56101502sd01843"
- },
- {
-  "id": "56101502sd01844",
-  "sku": "56101502SD01844",
-  "name": "Parto Plus Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 40390,
-  "mrp": null,
-  "note": "Shop Parto Plus 3-Seater Leatherette Sofa 1-Year Warranty, Pinewood, Black Online from Interio by Godrej. Get great deals on Sofas with ✔Fre",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01844_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/parto-plus-3-seater-leatherette-sofa-56101502sd01844"
- },
- {
-  "id": "parto-plus-leatherette-sofa-gint064",
-  "sku": "",
-  "name": "Parto Plus Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 24290,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/parto-plus-leatherette-sofa-GINT064"
+  "source": "https://interio.com/product/parto-plus-1-seater-leatherette-sofa-56101502sd01842",
+  "family": "Parto Plus Leatherette Sofa",
+  "variants": 4,
+  "fromPrice": true
  },
  {
   "id": "56101502sd01897",
@@ -2661,45 +1356,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 20890,
   "mrp": null,
-  "note": "Shop Rejoice 1-Seater Leatherette Sofa 1-Year Warranty, Pinewood, Coffee Brown Online from Interio by Godrej. Get great deals on Sofas with ",
+  "note": "1-Year Warranty, Pinewood, Coffee Brown",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01897_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/rejoice-1-seater-leatherette-sofa-56101502sd01897"
- },
- {
-  "id": "56101502sd01898",
-  "sku": "56101502SD01898",
-  "name": "Rejoice Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 28690,
-  "mrp": null,
-  "note": "Shop Rejoice 2-Seater Leatherette Sofa 1-Year Warranty, Pinewood, Coffee Brown Online from Interio by Godrej. Get great deals on Sofas with ",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01898_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/rejoice-2-seater-leatherette-sofa-56101502sd01898"
- },
- {
-  "id": "56101502sd01899",
-  "sku": "56101502SD01899",
-  "name": "Rejoice Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 35690,
-  "mrp": null,
-  "note": "Shop Rejoice 3-Seater Leatherette Sofa 1-Year Warranty, Pinewood, Coffee Brown Online from Interio by Godrej. Get great deals on Sofas with ",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01899_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/rejoice-3-seater-leatherette-sofa-56101502sd01899"
- },
- {
-  "id": "rejoice-leatherette-sofa-gint065",
-  "sku": "",
-  "name": "Rejoice Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 20890,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/rejoice-leatherette-sofa-GINT065"
+  "source": "https://interio.com/product/rejoice-1-seater-leatherette-sofa-56101502sd01897",
+  "family": "Rejoice Leatherette Sofa",
+  "variants": 4,
+  "fromPrice": true
  },
  {
   "id": "56101502sd01891",
@@ -2709,45 +1371,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 18490,
   "mrp": null,
-  "note": "Shop Rewind 1-Seater Fabric Sofa 1-Year Warranty, Pinewood, Brown Online from Interio by Godrej. Get great deals on Sofas with ✔Free Deliver",
+  "note": "1-Year Warranty, Pinewood, Brown",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01891_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/rewind-1-seater-fabric-sofa-56101502sd01891"
- },
- {
-  "id": "56101502sd01892",
-  "sku": "56101502SD01892",
-  "name": "Rewind Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 25290,
-  "mrp": null,
-  "note": "Shop Rewind 2-Seater Fabric Sofa 1-Year Warranty, Pinewood, Brown Online from Interio by Godrej. Get great deals on Sofas with ✔Free Deliver",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01892_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/rewind-2-seater-fabric-sofa-56101502sd01892"
- },
- {
-  "id": "56101502sd01893",
-  "sku": "56101502SD01893",
-  "name": "Rewind Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 31390,
-  "mrp": null,
-  "note": "Shop Rewind 3-Seater Fabric Sofa 1-Year Warranty, Pinewood, Brown Online from Interio by Godrej. Get great deals on Sofas with ✔Free Deliver",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01893_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/rewind-3-seater-fabric-sofa-56101502sd01893"
- },
- {
-  "id": "rewind-fabric-sofa-gint066",
-  "sku": "",
-  "name": "Rewind Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 25290,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/rewind-fabric-sofa-GINT066"
+  "source": "https://interio.com/product/rewind-1-seater-fabric-sofa-56101502sd01891",
+  "family": "Rewind Fabric Sofa",
+  "variants": 4,
+  "fromPrice": true
  },
  {
   "id": "56101502sd01888",
@@ -2757,57 +1386,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 18490,
   "mrp": null,
-  "note": "Shop Rewind 1-Seater Leatherette Sofa 1-Year Warranty, Pinewood, Crush Brown Online from Interio by Godrej. Get great deals on Sofas with ✔F",
+  "note": "1-Year Warranty, Pinewood, Crush Brown",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01888_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/rewind-1-seater-leatherette-sofa-56101502sd01888"
- },
- {
-  "id": "56101502sd01889",
-  "sku": "56101502SD01889",
-  "name": "Rewind Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 25290,
-  "mrp": null,
-  "note": "Shop Rewind 2-Seater Leatherette Sofa 1-Year Warranty, Pinewood, Crush Brown Online from Interio by Godrej. Get great deals on Sofas with ✔F",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01889_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/rewind-2-seater-leatherette-sofa-56101502sd01889"
- },
- {
-  "id": "56101502sd01890",
-  "sku": "56101502SD01890",
-  "name": "Rewind Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 31390,
-  "mrp": null,
-  "note": "Shop Rewind 3-Seater Leatherette Sofa 1-Year Warranty, Pinewood, Crush Brown Online from Interio by Godrej. Get great deals on Sofas with ✔F",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01890_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/rewind-3-seater-leatherette-sofa-56101502sd01890"
- },
- {
-  "id": "rewind-leatherette-sofa-gint067",
-  "sku": "",
-  "name": "Rewind Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 18490,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/rewind-leatherette-sofa-GINT067"
- },
- {
-  "id": "rhine-v3-leatherette-recliner-gint068",
-  "sku": "",
-  "name": "Rhine V3 Leatherette Recliner",
-  "room": "living",
-  "type": "",
-  "from": 0,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/rhine-v3-leatherette-recliner-GINT068"
+  "source": "https://interio.com/product/rewind-1-seater-leatherette-sofa-56101502sd01888",
+  "family": "Rewind Leatherette Sofa",
+  "variants": 4,
+  "fromPrice": true
  },
  {
   "id": "56101502sd02244",
@@ -2817,45 +1401,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 5690,
   "mrp": null,
-  "note": "Shop Suez 1-Seater Leatherette Sofa 3-Years Warranty, Solid Wood, Tobac Online from Interio by Godrej. Get great deals on Sofas with ✔Free D",
+  "note": "3-Years Warranty, Solid Wood, Tobac",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd02244_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/suez-1-seater-leatherette-sofa-56101502sd02244"
- },
- {
-  "id": "56101502sd02245",
-  "sku": "56101502SD02245",
-  "name": "Suez Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 11290,
-  "mrp": null,
-  "note": "Shop Suez 2-Seater Leatherette Sofa 3-Years Warranty, Solid Wood, Tobac Online from Interio by Godrej. Get great deals on Sofas with ✔Free D",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd02245_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/suez-2-seater-leatherette-sofa-56101502sd02245"
- },
- {
-  "id": "56101502sd02246",
-  "sku": "56101502SD02246",
-  "name": "Suez Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 9890,
-  "mrp": null,
-  "note": "Shop Suez 3-Seater Leatherette Sofa 3-Years Warranty, Solid Wood, Tobac Online from Interio by Godrej. Get great deals on Sofas with ✔Free D",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd02246_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/suez-3-seater-leatherette-sofa-56101502sd02246"
- },
- {
-  "id": "suez-leatherette-sofa-gint069",
-  "sku": "",
-  "name": "Suez Leatherette Sofa",
-  "room": "living",
-  "type": "",
-  "from": 5690,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/suez-leatherette-sofa-GINT069"
+  "source": "https://interio.com/product/suez-1-seater-leatherette-sofa-56101502sd02244",
+  "family": "Suez Leatherette Sofa",
+  "variants": 4,
+  "fromPrice": true
  },
  {
   "id": "56101502sd01695",
@@ -2865,33 +1416,26 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 13390,
   "mrp": null,
-  "note": "Shop Supreme Advance 1-Seater Fabric Sofa 3-Years Warranty, Solid Wood, Dark Brown Online from Interio by Godrej. Get great deals on Sofas w",
+  "note": "3-Years Warranty, Solid Wood, Dark Brown",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01695_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/supreme-advance-1-seater-fabric-sofa-56101502sd01695"
+  "source": "https://interio.com/product/supreme-advance-1-seater-fabric-sofa-56101502sd01695",
+  "family": "Supreme Advance Fabric Sofa",
+  "variants": 3,
+  "fromPrice": true
  },
  {
-  "id": "56101502sd01696",
-  "sku": "56101502SD01696",
-  "name": "Supreme Advance Fabric Sofa",
+  "id": "56121403sd00061",
+  "sku": "56121403SD00061",
+  "name": "Vegas Tempered Glass Corner Table",
   "room": "living",
   "type": "",
-  "from": 22790,
+  "from": 10890,
   "mrp": null,
-  "note": "Supreme Advance 3-Seater Fabric Sofa 1-Year Warranty, Tropical Wood, Dark Brown Online from Interio by Godrej. Get great deals on Sofas with",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01696_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/supreme-advance-3-seater-fabric-sofa-56101502sd01696"
- },
- {
-  "id": "supreme-advance-fabric-sofa-gint070",
-  "sku": "",
-  "name": "Supreme Advance Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 13390,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/supreme-advance-fabric-sofa-GINT070"
+  "note": "1-Year Warranty, Black, Knock Down",
+  "image": "https://interio.com/media/catalog/product/5/6/56121403sd00061_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
+  "source": "https://interio.com/product/vegas-tempered-glass-corner-table-56121403SD00061",
+  "family": "Vegas Tempered Glass Corner Table",
+  "variants": 2
  },
  {
   "id": "56101502sd04421",
@@ -2901,45 +1445,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 9490,
   "mrp": null,
-  "note": "Shop Windle 1-Seater Fabric Sofa 1-Year Warranty, Solid Wood, Taupe and Camel Online from Interio by Godrej. Get great deals on Sofas with ✔",
+  "note": "1-Year Warranty, Solid Wood, Taupe and Camel",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd04421_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/windle-1-seater-fabric-sofa-56101502sd04421"
- },
- {
-  "id": "56101502sd04422",
-  "sku": "56101502SD04422",
-  "name": "Windle Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 12990,
-  "mrp": null,
-  "note": "Shop Windle 2-Seater Fabric Sofa 1-Year Warranty, Solid Wood, Taupe and Camel Online from Interio by Godrej. Get great deals on Sofas with ✔",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd04422_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/windle-2-seater-fabric-sofa-56101502sd04422"
- },
- {
-  "id": "56101502sd04423",
-  "sku": "56101502SD04423",
-  "name": "Windle Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 15990,
-  "mrp": null,
-  "note": "Shop Windle 3-Seater Fabric Sofa 1-Year Warranty, Solid Wood, Taupe and Camel Online from Interio by Godrej. Get great deals on Sofas with ✔",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd04423_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/windle-3-seater-fabric-sofa-56101502sd04423"
- },
- {
-  "id": "windle-fabric-sofa-gint072",
-  "sku": "",
-  "name": "Windle Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 9490,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/windle-fabric-sofa-GINT072"
+  "source": "https://interio.com/product/windle-1-seater-fabric-sofa-56101502sd04421",
+  "family": "Windle Fabric Sofa",
+  "variants": 4,
+  "fromPrice": true
  },
  {
   "id": "zompy5sbrn",
@@ -2949,33 +1460,11 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 53490,
   "mrp": null,
-  "note": "Zompy 5-Seater Fabric L-Shape Sofa 3-Year Warranty, Solid Wood, Dark Brown Online from Interio by Godrej. Get great deals on L shaped sofas ",
+  "note": "3-Year Warranty, Solid Wood, Dark Brown",
   "image": "https://interio.com/media/catalog/product/z/o/zompy5sbrn_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/zompy-5-seater-fabric-l-shape-sofa-zompy5sbrn"
- },
- {
-  "id": "zompy5scamel",
-  "sku": "ZOMPY5SCAMEL",
-  "name": "Zompy 5-Seater Fabric L-Shape Sofa",
-  "room": "living",
-  "type": "",
-  "from": 53490,
-  "mrp": null,
-  "note": "Zompy 5-Seater Fabric L-Shape Sofa 3-Year Warranty, Solid Wood, Camel Online from Interio by Godrej. Get great deals on L shaped sofas with ",
-  "image": "https://interio.com/media/catalog/product/z/o/zompy5scamel_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/zompy-5-seater-fabric-l-shape-sofa-zompy5scamel"
- },
- {
-  "id": "zompy-5-seater-fabric-l-shape-sofa-gint073",
-  "sku": "",
-  "name": "Zompy 5-Seater Fabric L-Shape Sofa",
-  "room": "living",
-  "type": "",
-  "from": 53490,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/zompy-5-seater-fabric-l-shape-sofa-GINT073"
+  "source": "https://interio.com/product/zompy-5-seater-fabric-l-shape-sofa-zompy5sbrn",
+  "family": "Zompy 5-Seater Fabric L-Shape Sofa",
+  "variants": 3
  },
  {
   "id": "56101502sd02218",
@@ -2985,69 +1474,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 15090,
   "mrp": null,
-  "note": "Shop Zompy Advance 1-Seater Fabric Sofa 3-Years Warranty, Solid Wood, Dark Brown Online from Interio by Godrej. Get great deals on Sofas wit",
+  "note": "3-Years Warranty, Solid Wood, Dark Brown",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd02218_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/zompy-advance-1-seater-fabric-sofa-56101502sd02218"
- },
- {
-  "id": "56101502sd02219",
-  "sku": "56101502SD02219",
-  "name": "Zompy Advance Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 20390,
-  "mrp": null,
-  "note": "Shop Zompy Advance 2-Seater Fabric Sofa 3-Years Warranty, Solid Wood, Dark Brown Online from Interio by Godrej. Get great deals on Sofas wit",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd02219_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/zompy-advance-2-seater-fabric-sofa-56101502sd02219"
- },
- {
-  "id": "56101502sd02220",
-  "sku": "56101502SD02220",
-  "name": "Zompy Advance Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 26290,
-  "mrp": null,
-  "note": "Shop Zompy Advance 3-Seater Fabric Sofa 3-Years Warranty, Solid Wood, Dark Brown Online from Interio by Godrej. Get great deals on Sofas wit",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd02220_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/zompy-advance-3-seater-fabric-sofa-56101502sd02220"
- },
- {
-  "id": "56101502sd02228",
-  "sku": "56101502SD02228",
-  "name": "Zompy Advance Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 26290,
-  "mrp": null,
-  "note": "Shop Zompy Advance 3-Seater Fabric Sofa 3-Years Warranty, Solid Wood, Camel Online from Interio by Godrej. Get great deals on Sofas with ✔Fr",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd02228_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/zompy-advance-3-seater-fabric-sofa-56101502sd02228"
- },
- {
-  "id": "56101502sd02235",
-  "sku": "56101502SD02235",
-  "name": "Zompy Advance Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 20390,
-  "mrp": null,
-  "note": "Shop Zompy Advance 2-Seater Fabric Sofa 3-Years Warranty, Solid Wood, Camel Online from Interio by Godrej. Get great deals on Sofas with ✔Fr",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd02235_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/zompy-advance-2-seater-fabric-sofa-56101502sd02235"
- },
- {
-  "id": "zompy-advance-fabric-sofa-gint074",
-  "sku": "",
-  "name": "Zompy Advance Fabric Sofa",
-  "room": "living",
-  "type": "",
-  "from": 15090,
-  "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/zompy-advance-fabric-sofa-GINT074"
+  "source": "https://interio.com/product/zompy-advance-1-seater-fabric-sofa-56101502sd02218",
+  "family": "Zompy Advance Fabric Sofa",
+  "variants": 6,
+  "fromPrice": true
  },
  {
   "id": "56101502sd02247",
@@ -3057,9 +1489,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Bean bags and pouffes",
   "from": 4590,
   "mrp": null,
-  "note": "Suez Synthetic Leather Ottoman 3-Years Warranty, Tobac Online from Interio by Godrej. Get great deals on Ottoman with ✔Free Delivery ✔No Cos",
+  "note": "3-Years Warranty, Tobac",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd02247_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/suez-synthetic-leather-ottoman-56101502SD02247"
+  "source": "https://interio.com/product/suez-synthetic-leather-ottoman-56101502SD02247",
+  "family": "Suez Synthetic Leather Ottoman"
  },
  {
   "id": "56121403sd00265",
@@ -3069,9 +1502,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Coffee tables",
   "from": 15390,
   "mrp": null,
-  "note": "Lean Engineered Wood Coffee Table 1-Year Warranty, Silver Oak, Knock Down Online from Interio by Godrej. Get great deals on Coffee Tables wi",
+  "note": "1-Year Warranty, Silver Oak, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00265_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/lean-engineered-wood-coffee-table-56121403SD00265"
+  "source": "https://interio.com/product/lean-engineered-wood-coffee-table-56121403SD00265",
+  "family": "Lean Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00114",
@@ -3081,9 +1515,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Coffee tables",
   "from": 21490,
   "mrp": null,
-  "note": "Meraki Particle Board Coffee Table 1-Year Warranty, Brown, Knock Down Online from Interio by Godrej. Get great deals on Coffee Tables with ✔",
+  "note": "1-Year Warranty, Brown, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00114_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/meraki-particle-board-coffee-table-56121403SD00114"
+  "source": "https://interio.com/product/meraki-particle-board-coffee-table-56121403SD00114",
+  "family": "Meraki Particle Board Coffee Table"
  },
  {
   "id": "56121403sd00269",
@@ -3093,9 +1528,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Coffee tables",
   "from": 7990,
   "mrp": null,
-  "note": "Nebue Engineered Wood Coffee Table 1-Year Warranty, Remini Walnut, Knock Down Online from Interio by Godrej. Get great deals on Coffee Table",
+  "note": "1-Year Warranty, Remini Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00269_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/nebue-engineered-wood-coffee-table-56121403SD00269"
+  "source": "https://interio.com/product/nebue-engineered-wood-coffee-table-56121403SD00269",
+  "family": "Nebue Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00264",
@@ -3105,9 +1541,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Coffee tables",
   "from": 27590,
   "mrp": null,
-  "note": "Silv Engineered Wood Coffee Table 1-Year Warranty, Cherry, Knock Down Online from Interio by Godrej. Get great deals on Coffee Tables with ✔",
+  "note": "1-Year Warranty, Cherry, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00264_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/silv-engineered-wood-coffee-table-56121403SD00264"
+  "source": "https://interio.com/product/silv-engineered-wood-coffee-table-56121403SD00264",
+  "family": "Silv Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00207",
@@ -3117,9 +1554,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Coffee tables",
   "from": 30990,
   "mrp": null,
-  "note": "Skyline Prelaminated Particle Board Coffee Table 1-Year Warranty, Black, Knock Down Online from Interio by Godrej. Get great deals on Coffee",
+  "note": "1-Year Warranty, Black, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00207_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/skyline-prelaminated-particle-board-coffee-table-56121403SD00207"
+  "source": "https://interio.com/product/skyline-prelaminated-particle-board-coffee-table-56121403SD00207",
+  "family": "Skyline Prelaminated Particle Board Coffee Table"
  },
  {
   "id": "56101505sd00200",
@@ -3129,9 +1567,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Display units",
   "from": 30590,
   "mrp": null,
-  "note": "Shop Alessa Engineered Wood Left Hand Display Unit 1-Year Warranty, Brown Walnut, Prelaminated Particle Board Online from Interio by Godrej.",
+  "note": "1-Year Warranty, Brown Walnut, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00200_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/alessa-engineered-wood-left-hand-display-unit-56101505sd00200"
+  "source": "https://interio.com/product/alessa-engineered-wood-left-hand-display-unit-56101505sd00200",
+  "family": "Alessa Engineered Wood Left Hand Display Unit"
  },
  {
   "id": "56101505sd00201",
@@ -3141,9 +1580,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Display units",
   "from": 30590,
   "mrp": null,
-  "note": "Shop Alessa Engineered Wood Right Hand Display Unit 1-Year Warranty, Brown Walnut, Prelaminated Particle Board Online from Interio by Godrej",
+  "note": "1-Year Warranty, Brown Walnut, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00201_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/alessa-engineered-wood-right-hand-display-unit-56101505sd00201"
+  "source": "https://interio.com/product/alessa-engineered-wood-right-hand-display-unit-56101505sd00201",
+  "family": "Alessa Engineered Wood Right Hand Display Unit"
  },
  {
   "id": "56101505sd00187",
@@ -3153,21 +1593,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Display units",
   "from": 28090,
   "mrp": null,
-  "note": "Shop Display Engineered Wood Display Unit and Book Shelf 1-Year Warranty, Cherry, 1 Drawer, Prelaminated Particle Board Online from Interio ",
+  "note": "1-Year Warranty, Cherry, 1 Drawer, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00187_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/display-engineered-wood-display-unit-and-book-shelf-56101505SD00187"
- },
- {
-  "id": "56101505sd00188",
-  "sku": "56101505SD00188",
-  "name": "Display Engineered Wood Display Unit and Book Shelf",
-  "room": "living",
-  "type": "Display units",
-  "from": 36990,
-  "mrp": null,
-  "note": "Shop Display Engineered Wood Display Unit and Book Shelf 1-Year Warranty, Cherry, 2 Drawers, Prelaminated Particle Board Online from Interio",
-  "image": "https://interio.com/media/catalog/product/5/6/56101505sd00188_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/display-engineered-wood-display-unit-and-book-shelf-56101505SD00188"
+  "source": "https://interio.com/product/display-engineered-wood-display-unit-and-book-shelf-56101505SD00187",
+  "family": "Display Engineered Wood Display Unit and Book Shelf",
+  "variants": 2,
+  "fromPrice": true
  },
  {
   "id": "56101505sd00177",
@@ -3177,9 +1608,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Display units",
   "from": 20690,
   "mrp": null,
-  "note": "Shop Europa Engineered Wood Display Unit 1-Year Warranty, Cinnamon, Prelaminated Particle Board Online from Interio by Godrej. Get great dea",
+  "note": "1-Year Warranty, Cinnamon, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00177_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/europa-engineered-wood-display-unit-56101505SD00177"
+  "source": "https://interio.com/product/europa-engineered-wood-display-unit-56101505SD00177",
+  "family": "Europa Engineered Wood Display Unit"
  },
  {
   "id": "56101505sd00185",
@@ -3189,9 +1621,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Display units",
   "from": 33790,
   "mrp": null,
-  "note": "Shop Expo Engineered Wood Large Display Unit 1-Year Warranty, Cherry, Prelaminated Particle Board Online from Interio by Godrej. Get great d",
+  "note": "1-Year Warranty, Cherry, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00185_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/expo-engineered-wood-large-display-unit-56101505sd00185"
+  "source": "https://interio.com/product/expo-engineered-wood-large-display-unit-56101505sd00185",
+  "family": "Expo Engineered Wood Large Display Unit"
  },
  {
   "id": "56101505sd00186",
@@ -3201,9 +1634,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Display units",
   "from": 29490,
   "mrp": null,
-  "note": "Shop Expo Engineered Wood Small Display Unit 1-Year Warranty, Cherry, Prelaminated Particle Board Online from Interio by Godrej. Get great d",
+  "note": "1-Year Warranty, Cherry, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00186_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/expo-engineered-wood-small-display-unit-56101505SD00186"
+  "source": "https://interio.com/product/expo-engineered-wood-small-display-unit-56101505SD00186",
+  "family": "Expo Engineered Wood Small Display Unit"
  },
  {
   "id": "56101505sd00123",
@@ -3213,9 +1647,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Display units",
   "from": 37590,
   "mrp": null,
-  "note": "Shop Meraki Engineered Wood Display Unit 1-Year Warranty, Brown, Particle Board Online from Interio by Godrej. Get great deals on Display Un",
+  "note": "1-Year Warranty, Brown, Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00123_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/meraki-engineered-wood-display-unit-56101505SD00123"
+  "source": "https://interio.com/product/meraki-engineered-wood-display-unit-56101505SD00123",
+  "family": "Meraki Engineered Wood Display Unit"
  },
  {
   "id": "56101505sd00192",
@@ -3225,9 +1660,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Display units",
   "from": 46490,
   "mrp": null,
-  "note": "Shop Osiris Engineered Wood Display Unit 1-Year Warranty, Brown & Cream, Prelaminated Particle Board Online from Interio by Godrej. Get grea",
+  "note": "1-Year Warranty, Brown & Cream, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00192_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/osiris-engineered-wood-display-unit-56101505sd00192"
+  "source": "https://interio.com/product/osiris-engineered-wood-display-unit-56101505sd00192",
+  "family": "Osiris Engineered Wood Display Unit"
  },
  {
   "id": "56101505sd00195",
@@ -3237,141 +1673,49 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Display units",
   "from": 49390,
   "mrp": null,
-  "note": "Shop Senate Engineered Wood Display Unit 1-Year Warranty, Brown & Cream, Prelaminated Particle Board Online from Interio by Godrej. Get grea",
+  "note": "1-Year Warranty, Brown & Cream, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00195_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/senate-engineered-wood-display-unit-56101505SD00195"
+  "source": "https://interio.com/product/senate-engineered-wood-display-unit-56101505SD00195",
+  "family": "Senate Engineered Wood Display Unit"
  },
  {
   "id": "56101505sd00180",
   "sku": "56101505SD00180",
-  "name": "Sienna Engineered Wood Display Unit and Bookshelf",
+  "name": "Sienna Engineered Wood Display Unit And Bookshelf",
   "room": "living",
   "type": "Display units",
   "from": 14890,
   "mrp": null,
-  "note": "Shop Sienna Engineered Wood Display Unit and Bookshelf 1-Year Warranty, Cinnamon, Prelaminated Particle Board Online from Interio by Godrej.",
+  "note": "1-Year Warranty, Cinnamon, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00180_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/sienna-engineered-wood-display-unit-and-bookshelf-56101505SD00180"
+  "source": "https://interio.com/product/sienna-engineered-wood-display-unit-and-bookshelf-56101505SD00180",
+  "family": "Sienna Engineered Wood Display Unit and Bookshelf"
  },
  {
   "id": "suez5stobac",
   "sku": "SUEZ5STOBAC",
-  "name": "Suez 5-Seater Leatherette L-Shape Sofa",
+  "name": "Suez 5-Seater Leatherette L Shape Sofa",
   "room": "living",
   "type": "L shaped and corner sofa",
   "from": 35590,
   "mrp": null,
-  "note": "Suez 5-Seater Leatherette L-Shape Sofa 3-Year Warranty, Solid Wood, Tobac Online from Interio by Godrej. Get great deals on L shaped sofas w",
+  "note": "3-Year Warranty, Solid Wood, Tobac",
   "image": "https://interio.com/media/catalog/product/s/u/suez5stobac_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/suez-5-seater-leatherette-l-shape-sofa-suez5stobac"
- },
- {
-  "id": "56101531sd00020",
-  "sku": "56101531SD00020",
-  "name": "Meraki 16-Pairs Engineered Wood Shoe Cabinet",
-  "room": "living",
-  "type": "Shoe racks",
-  "from": 22990,
-  "mrp": null,
-  "note": "Meraki 16-Pairs Engineered Wood Shoe Cabinet 1-Year Warranty, Brown & Beige Online from Interio by Godrej. Get great deals on Shoe Racks wit",
-  "image": "https://interio.com/media/catalog/product/5/6/56101531sd00020_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/meraki-16-pairs-engineered-wood-shoe-cabinet-56101531sd00020"
- },
- {
-  "id": "56101531sd00044",
-  "sku": "56101531SD00044",
-  "name": "Sienna 16-Pairs Engineered Wood Shoe Cabinet",
-  "room": "living",
-  "type": "Shoe racks",
-  "from": 17190,
-  "mrp": null,
-  "note": "Sienna 16-Pairs Engineered Wood Shoe Cabinet 1-Year Warranty, Cinnamon Online from Interio by Godrej. Get great deals on Shoe Racks with ✔Fr",
-  "image": "https://interio.com/media/catalog/product/5/6/56101531sd00044_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/sienna-16-pairs-engineered-wood-shoe-cabinet-56101531sd00044"
- },
- {
-  "id": "56101531sd00048",
-  "sku": "56101531SD00048",
-  "name": "Step-In 12-Pairs Steel Shoe Cabinet",
-  "room": "living",
-  "type": "Shoe racks",
-  "from": 14790,
-  "mrp": null,
-  "note": "Step-In 12-Pairs Steel Shoe Cabinet 1-Year Warranty, White Online from Interio by Godrej. Get great deals on Shoe Racks with ✔Free Delivery ",
-  "image": "https://interio.com/media/catalog/product/5/6/56101531sd00048_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/step-in-12-pairs-steel-shoe-cabinet-56101531SD00048"
- },
- {
-  "id": "56101531sd00049",
-  "sku": "56101531SD00049",
-  "name": "Step-In 16-Pairs Steel Shoe Cabinet",
-  "room": "living",
-  "type": "Shoe racks",
-  "from": 18390,
-  "mrp": null,
-  "note": "Step-In 16-Pairs Steel Shoe Cabinet 1-Year Warranty, White Online from Interio by Godrej. Get great deals on Shoe Racks with ✔Free Delivery ",
-  "image": "https://interio.com/media/catalog/product/5/6/56101531sd00049_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/step-in-16-pairs-steel-shoe-cabinet-56101531SD00049"
- },
- {
-  "id": "56101531sd00054",
-  "sku": "56101531SD00054",
-  "name": "Waves Advance 16-Pairs Engineered Wood Shoe Cabinet",
-  "room": "living",
-  "type": "Shoe racks",
-  "from": 15790,
-  "mrp": null,
-  "note": "Waves Advance 16-Pairs Engineered Wood Shoe Cabinet 1-Year Warranty, Brown Maple Online from Interio by Godrej. Get great deals on Shoe Rack",
-  "image": "https://interio.com/media/catalog/product/5/6/56101531sd00054_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/waves-advance-16-pairs-engineered-wood-shoe-cabinet-56101531sd00054"
- },
- {
-  "id": "56101502sd01691",
-  "sku": "56101502SD01691",
-  "name": "Cubicon 3-Seater Fabric Sofa Cum Bed",
-  "room": "living",
-  "type": "Sofa cum beds",
-  "from": 52190,
-  "mrp": null,
-  "note": "Shop Cubicon 3-Seater Fabric Sofa Cum Bed3-Years Warranty, Pinewood, Purple Online. Get great deals & offers on various Sofa Cum Bed by Inte",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01691_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/cubicon-3-seater-fabric-sofa-cum-bed-56101502sd01691"
- },
- {
-  "id": "56101502sd04420",
-  "sku": "56101502SD04420",
-  "name": "Vurv Wooden Diwan Sofa Bed with Queen Size Mattress",
-  "room": "living",
-  "type": "Sofa cum beds",
-  "from": 39490,
-  "mrp": null,
-  "note": "Vurv Wooden Diwan Sofa Bed with Queen Size Mattress 1-Year Warranty, Brown, Pull-Out Storage Online from Interio by Godrej. Get great deals ",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd04420_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/vurv-wooden-diwan-sofa-bed-with-queen-size-mattress-56101502sd04420"
- },
- {
-  "id": "56101502sd01411",
-  "sku": "56101502SD01411",
-  "name": "Windsor 2-Seater Fabric Sofa Cum Bed",
-  "room": "living",
-  "type": "Sofa cum beds",
-  "from": 44090,
-  "mrp": null,
-  "note": "Windsor 2-Seater Fabric Sofa Cum Bed 1-Year Warranty, Engineered Wood, Brown Online from Interio by Godrej. Get great deals on Sofa cum Beds",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd01411_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/windsor-2-seater-fabric-sofa-cum-bed-56101502sd01411"
+  "source": "https://interio.com/product/suez-5-seater-leatherette-l-shape-sofa-suez5stobac",
+  "family": "Suez 5-Seater Leatherette L-Shape Sofa"
  },
  {
   "id": "monarch6s",
   "sku": "MONARCH6S",
-  "name": "Monarch 5-Seater Leatherette Sofa Set (3+1+1)",
+  "name": "Monarch 5-Seater Leatherette Sofa Set 3 1 1",
   "room": "living",
   "type": "Sofa sets",
   "from": 55190,
   "mrp": null,
-  "note": "Monarch 5-Seater Leatherette Sofa Set (3+1+1) 1-Year Warranty, Pinewood, Burgundy Online from Interio by Godrej. Get great deals on Sofa Set",
+  "note": "1-Year Warranty, Pinewood, Burgundy",
   "image": "https://interio.com/media/catalog/product/_/0/_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/monarch-5-seater-leatherette-sofa-set-3-1-1-monarch6s"
+  "source": "https://interio.com/product/monarch-5-seater-leatherette-sofa-set-3-1-1-monarch6s",
+  "family": "Monarch 5-Seater Leatherette Sofa Set (3+1+1)"
  },
  {
   "id": "56101502sd01501",
@@ -3381,45 +1725,36 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Sofas",
   "from": 23290,
   "mrp": null,
-  "note": "Highrolla 2-Seater Fabric Sofa 3-Years Warranty, Pinewood, Purple Online from Interio by Godrej. Get great deals on Sofas with ✔Free Deliver",
+  "note": "3-Years Warranty, Pinewood, Purple",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd01501_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/highrolla-2-seater-fabric-sofa-56101502SD01501"
+  "source": "https://interio.com/product/highrolla-2-seater-fabric-sofa-56101502SD01501",
+  "family": "Highrolla 2-Seater Fabric Sofa"
  },
  {
   "id": "highrol05",
   "sku": "HIGHROL05",
-  "name": "Highrolla 2-Seater Fabric Sofa with Console",
+  "name": "Highrolla 2-Seater Fabric Sofa With Console",
   "room": "living",
   "type": "Sofas",
   "from": 27090,
   "mrp": null,
-  "note": "Highrolla 2-Seater Fabric Sofa with Console 3-Years Warranty, Pinewood, Purple Online from Interio by Godrej. Get great deals on Sofas with ",
+  "note": "3-Years Warranty, Pinewood, Purple",
   "image": "https://interio.com/media/catalog/product/h/i/highrol05_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/highrolla-2-seater-fabric-sofa-with-console-HIGHROL05"
+  "source": "https://interio.com/product/highrolla-2-seater-fabric-sofa-with-console-HIGHROL05",
+  "family": "Highrolla 2-Seater Fabric Sofa with Console"
  },
  {
   "id": "56101502sd02243",
   "sku": "56101502SD02243",
-  "name": "Suez 3-Seater Leatherette Sofa with Arms",
+  "name": "Suez 3-Seater Leatherette Sofa With Arms",
   "room": "living",
   "type": "Sofas",
   "from": 24390,
   "mrp": null,
-  "note": "Shop Suez 3-Seater Leatherette Sofa with Arms 3-Years Warranty, Solid Wood, Tobac Online from Interio by Godrej. Get great deals on Sofas wi",
+  "note": "3-Years Warranty, Solid Wood, Tobac",
   "image": "https://interio.com/media/catalog/product/5/6/56101502sd02243_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/suez-3-seater-leatherette-sofa-with-arms-56101502sd02243"
- },
- {
-  "id": "56101502sd00944",
-  "sku": "56101502SD00944",
-  "name": "Opulent Advance Leatherette Sofa",
-  "room": "living",
-  "type": "Sofas loungers",
-  "from": 57390,
-  "mrp": null,
-  "note": "Shop Opulent Advance 3-Seater Leatherette Sofa 1-Year Warranty, Solid Wood, Beige & Black Online from Interio by Godrej. Get great deals on ",
-  "image": "https://interio.com/media/catalog/product/5/6/56101502sd00944_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/opulent-advance-3-seater-leatherette-sofa-56101502sd00944"
+  "source": "https://interio.com/product/suez-3-seater-leatherette-sofa-with-arms-56101502sd02243",
+  "family": "Suez 3-Seater Leatherette Sofa with Arms"
  },
  {
   "id": "56121403sd00236",
@@ -3429,9 +1764,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 17690,
   "mrp": null,
-  "note": "Acura Pro Engineered Wood Coffee Table 1-Year Warranty, Wenge, Knock Down Online from Interio by Godrej. Get great deals on Coffee Tables wi",
+  "note": "1-Year Warranty, Wenge, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00236_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/acura-pro-engineered-wood-coffee-table-56121403SD00236"
+  "source": "https://interio.com/product/acura-pro-engineered-wood-coffee-table-56121403SD00236",
+  "family": "Acura Pro Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00231",
@@ -3441,9 +1777,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 21690,
   "mrp": null,
-  "note": "Alice Pro Solid Wood Coffee Table 1-Year Warranty, Walnut, Knock Down Online from Interio by Godrej. Get great deals on Coffee Tables with ✔",
+  "note": "1-Year Warranty, Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00231_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/alice-pro-solid-wood-coffee-table-56121403SD00231"
+  "source": "https://interio.com/product/alice-pro-solid-wood-coffee-table-56121403SD00231",
+  "family": "Alice Pro Solid Wood Coffee Table"
  },
  {
   "id": "56121403sd00203",
@@ -3453,9 +1790,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 9790,
   "mrp": null,
-  "note": "Arbor Engineered Wood Corner Table 1-Year Warranty, Remini Walnut, Knock Down Online from Interio by Godrej. Get great deals on Corner Table",
+  "note": "1-Year Warranty, Remini Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00203_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/arbor-engineered-wood-corner-table-56121403SD00203"
+  "source": "https://interio.com/product/arbor-engineered-wood-corner-table-56121403SD00203",
+  "family": "Arbor Engineered Wood Corner Table"
  },
  {
   "id": "56121403sd00202",
@@ -3465,9 +1803,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 13090,
   "mrp": null,
-  "note": "Arbor Prelaminated Particle Board Coffee Table 1-Year Warranty, Remini Walnut, Knock Down Online from Interio by Godrej. Get great deals on ",
+  "note": "1-Year Warranty, Remini Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00202_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/arbor-prelaminated-particle-board-coffee-table-56121403SD00202"
+  "source": "https://interio.com/product/arbor-prelaminated-particle-board-coffee-table-56121403SD00202",
+  "family": "Arbor Prelaminated Particle Board Coffee Table"
  },
  {
   "id": "56121403sd00254",
@@ -3477,9 +1816,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 10290,
   "mrp": null,
-  "note": "Davy Engineered Wood Corner Table 1-Year Warranty, Walnut, Knock Down Online from Interio by Godrej. Get great deals on Corner Tables with ✔",
+  "note": "1-Year Warranty, Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00254_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/davy-engineered-wood-corner-table-56121403SD00254"
+  "source": "https://interio.com/product/davy-engineered-wood-corner-table-56121403SD00254",
+  "family": "Davy Engineered Wood Corner Table"
  },
  {
   "id": "56121403sd00259",
@@ -3489,9 +1829,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 18790,
   "mrp": null,
-  "note": "Diante Engineered Wood Coffee Table 1-Year Warranty, Black & White, Knock Down Online from Interio by Godrej. Get great deals on Coffee Tabl",
+  "note": "1-Year Warranty, Black & White, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00259_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/diante-engineered-wood-coffee-table-56121403SD00259"
+  "source": "https://interio.com/product/diante-engineered-wood-coffee-table-56121403SD00259",
+  "family": "Diante Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00235",
@@ -3501,21 +1842,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 16290,
   "mrp": null,
-  "note": "Dual Pro Engineered Wood Coffee Table 1-Year Warranty, Wenge, Knock Down Online from Interio by Godrej. Get great deals on Coffee Tables wit",
+  "note": "1-Year Warranty, Wenge, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00235_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/dual-pro-engineered-wood-coffee-table-56121403SD00235"
- },
- {
-  "id": "56121403sd00262",
-  "sku": "56121403SD00262",
-  "name": "EOS Engineered Wood Coffee Table",
-  "room": "living",
-  "type": "Tables",
-  "from": 21090,
-  "mrp": null,
-  "note": "EOS Engineered Wood Coffee Table 1-Year Warranty, Cherry, Knock Down Online from Interio by Godrej. Get great deals on Coffee Tables with ✔F",
-  "image": "https://interio.com/media/catalog/product/5/6/56121403sd00262_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/eos-engineered-wood-coffee-table-56121403SD00262"
+  "source": "https://interio.com/product/dual-pro-engineered-wood-coffee-table-56121403SD00235",
+  "family": "Dual Pro Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00065",
@@ -3525,9 +1855,23 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 16390,
   "mrp": null,
-  "note": "Shop Edward Plywood Corner Table1-Year Warranty, Walnut, Knock Down Online. Get great deals & offers on various Corner Table by Interio by G",
+  "note": "Shop Edward Plywood Corner Table1-Year Warranty, Walnut, Knock Down Online. Get great deals & offers on various Corner T",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00065_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/edward-plywood-corner-table-56121403SD00065"
+  "source": "https://interio.com/product/edward-plywood-corner-table-56121403SD00065",
+  "family": "Edward Plywood Corner Table"
+ },
+ {
+  "id": "56121403sd00262",
+  "sku": "56121403SD00262",
+  "name": "Eos Engineered Wood Coffee Table",
+  "room": "living",
+  "type": "Tables",
+  "from": 21090,
+  "mrp": null,
+  "note": "1-Year Warranty, Cherry, Knock Down",
+  "image": "https://interio.com/media/catalog/product/5/6/56121403sd00262_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
+  "source": "https://interio.com/product/eos-engineered-wood-coffee-table-56121403SD00262",
+  "family": "EOS Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00032",
@@ -3537,9 +1881,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 15190,
   "mrp": null,
-  "note": "Gayle Tempered Glass Coffee Table 1-Year Warranty, Black, Knock Down Online from Interio by Godrej. Get great deals on Coffee Tables with ✔F",
+  "note": "1-Year Warranty, Black, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00032_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/gayle-tempered-glass-coffee-table-56121403SD00032"
+  "source": "https://interio.com/product/gayle-tempered-glass-coffee-table-56121403SD00032",
+  "family": "Gayle Tempered Glass Coffee Table"
  },
  {
   "id": "56121403sd00258",
@@ -3549,9 +1894,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 7390,
   "mrp": null,
-  "note": "Gracia Engineered Wood Corner Table 1-Year Warranty, Brown, Knock Down Online from Interio by Godrej. Get great deals on Corner Tables with ",
+  "note": "1-Year Warranty, Brown, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00258_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/gracia-engineered-wood-corner-table-56121403SD00258"
+  "source": "https://interio.com/product/gracia-engineered-wood-corner-table-56121403SD00258",
+  "family": "Gracia Engineered Wood Corner Table"
  },
  {
   "id": "56121403sd00206",
@@ -3561,9 +1907,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 8790,
   "mrp": null,
-  "note": "Harmony Engineered Wood Corner Table 1-Year Warranty, Remini Walnut, Knock Down Online from Interio by Godrej. Get great deals on Corner Tab",
+  "note": "1-Year Warranty, Remini Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00206_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/harmony-engineered-wood-corner-table-56121403SD00206"
+  "source": "https://interio.com/product/harmony-engineered-wood-corner-table-56121403SD00206",
+  "family": "Harmony Engineered Wood Corner Table"
  },
  {
   "id": "56121403sd00204",
@@ -3573,9 +1920,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 12690,
   "mrp": null,
-  "note": "Harmony Large Engineered Wood Coffee Table 1-Year Warranty, Remini Walnut, Knock Down Online from Interio by Godrej. Get great deals on Coff",
+  "note": "1-Year Warranty, Remini Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00204_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/harmony-large-engineered-wood-coffee-table-56121403SD00204"
+  "source": "https://interio.com/product/harmony-large-engineered-wood-coffee-table-56121403SD00204",
+  "family": "Harmony Large Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00205",
@@ -3585,9 +1933,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 11190,
   "mrp": null,
-  "note": "Harmony Small Engineered Wood Coffee Table 1-Year Warranty, Remini Walnut, Knock Down Online from Interio by Godrej. Get great deals on Coff",
+  "note": "1-Year Warranty, Remini Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00205_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/harmony-small-engineered-wood-coffee-table-56121403SD00205"
+  "source": "https://interio.com/product/harmony-small-engineered-wood-coffee-table-56121403SD00205",
+  "family": "Harmony Small Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00266",
@@ -3597,9 +1946,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 5290,
   "mrp": null,
-  "note": "Lean Engineered Wood Corner Table 1-Year Warranty, Silver Oak, Knock Down Online from Interio by Godrej. Get great deals on Corner Tables wi",
+  "note": "1-Year Warranty, Silver Oak, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00266_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/lean-engineered-wood-corner-table-56121403SD00266"
+  "source": "https://interio.com/product/lean-engineered-wood-corner-table-56121403SD00266",
+  "family": "Lean Engineered Wood Corner Table"
  },
  {
   "id": "56121403sd00255",
@@ -3609,9 +1959,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 12390,
   "mrp": null,
-  "note": "Luna Engineered Wood Coffee Table 1-Year Warranty, Remini Walnut, Knock Down Online from Interio by Godrej. Get great deals on Coffee Tables",
+  "note": "1-Year Warranty, Remini Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00255_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/luna-engineered-wood-coffee-table-56121403SD00255"
+  "source": "https://interio.com/product/luna-engineered-wood-coffee-table-56121403SD00255",
+  "family": "Luna Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00256",
@@ -3621,9 +1972,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 6690,
   "mrp": null,
-  "note": "Luna Engineered Wood Corner Table 1-Year Warranty, Brown, Knock Down Online from Interio by Godrej. Get great deals on Corner Tables with ✔F",
+  "note": "1-Year Warranty, Brown, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00256_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/luna-engineered-wood-corner-table-56121403SD00256"
+  "source": "https://interio.com/product/luna-engineered-wood-corner-table-56121403SD00256",
+  "family": "Luna Engineered Wood Corner Table"
  },
  {
   "id": "56121403sd00115",
@@ -3633,9 +1985,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 6590,
   "mrp": null,
-  "note": "Meraki Particle Board Corner Table 1-Year Warranty, Brown, Knock Down Online from Interio by Godrej. Get great deals on Corner Tables with ✔",
+  "note": "1-Year Warranty, Brown, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00115_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/meraki-particle-board-corner-table-56121403SD00115"
+  "source": "https://interio.com/product/meraki-particle-board-corner-table-56121403SD00115",
+  "family": "Meraki Particle Board Corner Table"
  },
  {
   "id": "56121403sd00270",
@@ -3645,9 +1998,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 6090,
   "mrp": null,
-  "note": "Nebue Engineered Wood Corner Tables 1-Year Warranty, Remini Walnut, Knock Down Online from Interio by Godrej. Get great deals on Corner Tabl",
+  "note": "1-Year Warranty, Remini Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00270_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/nebue-engineered-wood-corner-tables-56121403SD00270"
+  "source": "https://interio.com/product/nebue-engineered-wood-corner-tables-56121403SD00270",
+  "family": "Nebue Engineered Wood Corner Tables"
  },
  {
   "id": "56121403sd00272",
@@ -3657,9 +2011,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 2790,
   "mrp": null,
-  "note": "Nebue Engineered Wood Corner Tabless 1-Year Warranty, Remini Walnut, Knock Down Online from Interio by Godrej. Get great deals on Corner Tab",
+  "note": "1-Year Warranty, Remini Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00272_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/nebue-engineered-wood-corner-tabless-56121403SD00272"
+  "source": "https://interio.com/product/nebue-engineered-wood-corner-tabless-56121403SD00272",
+  "family": "Nebue Engineered Wood Corner Tabless"
  },
  {
   "id": "56121403sd00261",
@@ -3669,9 +2024,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 4790,
   "mrp": null,
-  "note": "Nefer Engineered Wood Corner Table 1-Year Warranty, Black, Knock Down Online from Interio by Godrej. Get great deals on Corner Tables with ✔",
+  "note": "1-Year Warranty, Black, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00261_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/nefer-engineered-wood-corner-table-56121403SD00261"
+  "source": "https://interio.com/product/nefer-engineered-wood-corner-table-56121403SD00261",
+  "family": "Nefer Engineered Wood Corner Table"
  },
  {
   "id": "56121403sd00251",
@@ -3681,9 +2037,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 16990,
   "mrp": null,
-  "note": "Ontar Engineered Wood Coffee Table 1-Year Warranty, Black & White, Knock Down Online from Interio by Godrej. Get great deals on Coffee Table",
+  "note": "1-Year Warranty, Black & White, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00251_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/ontar-engineered-wood-coffee-table-56121403SD00251"
+  "source": "https://interio.com/product/ontar-engineered-wood-coffee-table-56121403SD00251",
+  "family": "Ontar Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00267",
@@ -3693,9 +2050,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 9590,
   "mrp": null,
-  "note": "Shop Orth Engineered Wood Coffee Table1-Year Warranty, Sonoma Oak, Knock Down Online. Get great deals & offers on various Coffee Table by In",
+  "note": "Shop Orth Engineered Wood Coffee Table1-Year Warranty, Sonoma Oak, Knock Down Online. Get great deals & offers on variou",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00267_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/orth-engineered-wood-coffee-table-56121403SD00267"
+  "source": "https://interio.com/product/orth-engineered-wood-coffee-table-56121403SD00267",
+  "family": "Orth Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00268",
@@ -3705,9 +2063,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 5890,
   "mrp": null,
-  "note": "Orth Engineered Wood Corner Table 1-Year Warranty, Sonoma Oak, Knock Down Online from Interio by Godrej. Get great deals on Corner Tables wi",
+  "note": "1-Year Warranty, Sonoma Oak, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00268_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/orth-engineered-wood-corner-table-56121403SD00268"
+  "source": "https://interio.com/product/orth-engineered-wood-corner-table-56121403SD00268",
+  "family": "Orth Engineered Wood Corner Table"
  },
  {
   "id": "56121403sd00211",
@@ -3717,9 +2076,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 7190,
   "mrp": null,
-  "note": "Osaka Engineered Wood Corner Table 1-Year Warranty, Remini Walnut, Knock Down Online from Interio by Godrej. Get great deals on Corner Table",
+  "note": "1-Year Warranty, Remini Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00211_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/osaka-engineered-wood-corner-table-56121403SD00211"
+  "source": "https://interio.com/product/osaka-engineered-wood-corner-table-56121403SD00211",
+  "family": "Osaka Engineered Wood Corner Table"
  },
  {
   "id": "56121403sd00210",
@@ -3729,9 +2089,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 8090,
   "mrp": null,
-  "note": "Osaka Small Engineered Wood Coffee Table 1-Year Warranty, Remini Walnut, Knock Down Online from Interio by Godrej. Get great deals on Coffee",
+  "note": "1-Year Warranty, Remini Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00210_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/osaka-small-engineered-wood-coffee-table-56121403SD00210"
+  "source": "https://interio.com/product/osaka-small-engineered-wood-coffee-table-56121403SD00210",
+  "family": "Osaka Small Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00292",
@@ -3741,9 +2102,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 6190,
   "mrp": null,
-  "note": "Pangram Engineered Wood Coffee Table 1-Year Warranty, Brown Black, Knockdown Online from Interio by Godrej. Get great deals on Coffee Tables",
+  "note": "1-Year Warranty, Brown Black, Knockdown",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00292_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/pangram-engineered-wood-coffee-table-56121403SD00292"
+  "source": "https://interio.com/product/pangram-engineered-wood-coffee-table-56121403SD00292",
+  "family": "Pangram Engineered Wood Coffee Table"
  },
  {
   "id": "56121403sd00276",
@@ -3753,9 +2115,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 8890,
   "mrp": null,
-  "note": "Reson Engineered Wood Corner Table 1-Year Warranty, Brown, Knock Down Online from Interio by Godrej. Get great deals on Corner Tables with ✔",
+  "note": "1-Year Warranty, Brown, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00276_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/reson-engineered-wood-corner-table-56121403SD00276"
+  "source": "https://interio.com/product/reson-engineered-wood-corner-table-56121403SD00276",
+  "family": "Reson Engineered Wood Corner Table"
  },
  {
   "id": "56121403sd00208",
@@ -3765,21 +2128,23 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 12890,
   "mrp": null,
-  "note": "Skyline Engineered Wood Corner Table 1-Year Warranty, Black, Knock Down Online from Interio by Godrej. Get great deals on Corner Tables with",
+  "note": "1-Year Warranty, Black, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00208_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/skyline-engineered-wood-corner-table-56121403SD00208"
+  "source": "https://interio.com/product/skyline-engineered-wood-corner-table-56121403SD00208",
+  "family": "Skyline Engineered Wood Corner Table"
  },
  {
   "id": "56121403sd00226",
   "sku": "56121403SD00226",
-  "name": "Transpose V2 Engineered Wood Convertible Coffe Table",
+  "name": "Transpose V2 Engineered Wood Coffee Table",
   "room": "living",
   "type": "Tables",
   "from": 16290,
   "mrp": null,
-  "note": "Transpose V2 Engineered Wood Convertible Coffe Table 1-Year Warranty, Brown, Knockdown Online from Interio by Godrej. Get great deals on Cof",
+  "note": "1-Year Warranty, Brown, Knockdown",
   "image": "https://interio.com/media/catalog/product/u/n/untitled_design_5_.png?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/transpose-v2-engineered-wood-coffee-table-56121403SD00226"
+  "source": "https://interio.com/product/transpose-v2-engineered-wood-coffee-table-56121403SD00226",
+  "family": "Transpose V2 Engineered Wood Convertible Coffe Table"
  },
  {
   "id": "56121403sd00274",
@@ -3789,9 +2154,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 6790,
   "mrp": null,
-  "note": "Travit Engineered Wood Corner Table 1-Year Warranty, Remini Walnut, Knock Down Online from Interio by Godrej. Get great deals on Corner Tabl",
+  "note": "1-Year Warranty, Remini Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00274_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/travit-engineered-wood-corner-table-56121403SD00274"
+  "source": "https://interio.com/product/travit-engineered-wood-corner-table-56121403SD00274",
+  "family": "Travit Engineered Wood Corner Table"
  },
  {
   "id": "56121403sd00054",
@@ -3801,9 +2167,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 19990,
   "mrp": null,
-  "note": "Victoria Plywood Coffee Table 1-Year Warranty, Walnut, Knock Down Online from Interio by Godrej. Get great deals on Coffee Tables with ✔Free",
+  "note": "1-Year Warranty, Walnut, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121403sd00054_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/victoria-plywood-coffee-table-56121403SD00054"
+  "source": "https://interio.com/product/victoria-plywood-coffee-table-56121403SD00054",
+  "family": "Victoria Plywood Coffee Table"
  },
  {
   "id": "56101505sd00199",
@@ -3813,9 +2180,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tv units",
   "from": 20890,
   "mrp": null,
-  "note": "Shop Alessa Engineered Wood Media Unit 1-Year Warranty, Brown Walnut, Prelaminated Particle Board Online from Interio by Godrej. Get great d",
+  "note": "1-Year Warranty, Brown Walnut, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00199_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/alessa-engineered-wood-media-unit-56101505SD00199"
+  "source": "https://interio.com/product/alessa-engineered-wood-media-unit-56101505SD00199",
+  "family": "Alessa Engineered Wood Media Unit"
  },
  {
   "id": "56101505sd00197",
@@ -3825,21 +2193,23 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tv units",
   "from": 40590,
   "mrp": null,
-  "note": "Shop Alessa Engineered Wood TV Unit 1-Year Warranty, Brown Walnut, Prelaminated Particle Board Online from Interio by Godrej. Get great deal",
+  "note": "1-Year Warranty, Brown Walnut, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00197_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/alessa-engineered-wood-tv-unit-56101505sd00197"
+  "source": "https://interio.com/product/alessa-engineered-wood-tv-unit-56101505sd00197",
+  "family": "Alessa Engineered Wood TV Unit"
  },
  {
   "id": "56101505sd00125",
   "sku": "56101505SD00125",
-  "name": "Meraki Engineered Wood Media Unit",
+  "name": "Meraki Engineered Wood TV Unit",
   "room": "living",
   "type": "Tv units",
   "from": 48890,
   "mrp": null,
-  "note": "Shop Meraki Engineered Wood Media Unit 1-Year Warranty, Brown, Particle Board Online from Interio by Godrej. Get great deals on TV Units wit",
+  "note": "1-Year Warranty, Brown, Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00125_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/meraki-engineered-wood-tv-unit-56101505sd00125"
+  "source": "https://interio.com/product/meraki-engineered-wood-tv-unit-56101505sd00125",
+  "family": "Meraki Engineered Wood Media Unit"
  },
  {
   "id": "56101505sd00122",
@@ -3849,9 +2219,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tv units",
   "from": 49190,
   "mrp": null,
-  "note": "Shop Meraki Engineered Wood TV Unit 1-Year Warranty, Brown, Particle Board Online from Interio by Godrej. Get great deals on TV Units with ✔",
+  "note": "1-Year Warranty, Brown, Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00122_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/meraki-engineered-wood-tv-unit-56101505sd00122"
+  "source": "https://interio.com/product/meraki-engineered-wood-tv-unit-56101505sd00122",
+  "family": "Meraki Engineered Wood TV Unit"
  },
  {
   "id": "56101505sd00196",
@@ -3861,9 +2232,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tv units",
   "from": 28590,
   "mrp": null,
-  "note": "Shop Senate Engineered Wood Media Unit 1-Year Warranty, Brown & Cream, Prelaminated Particle Board Online from Interio by Godrej. Get great ",
+  "note": "1-Year Warranty, Brown & Cream, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00196_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/senate-engineered-wood-media-unit-56101505sd00196"
+  "source": "https://interio.com/product/senate-engineered-wood-media-unit-56101505sd00196",
+  "family": "Senate Engineered Wood Media Unit"
  },
  {
   "id": "56101505sd00194",
@@ -3873,9 +2245,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tv units",
   "from": 51390,
   "mrp": null,
-  "note": "Shop Senate Engineered Wood TV Unit 1-Year Warranty, Brown & Cream, Prelaminated Particle Board Online from Interio by Godrej. Get great dea",
+  "note": "1-Year Warranty, Brown & Cream, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00194_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/senate-engineered-wood-tv-unit-56101505SD00194"
+  "source": "https://interio.com/product/senate-engineered-wood-tv-unit-56101505SD00194",
+  "family": "Senate Engineered Wood TV Unit"
  },
  {
   "id": "56101505sd00181",
@@ -3885,9 +2258,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tv units",
   "from": 13990,
   "mrp": null,
-  "note": "Shop Sienna Engineered Wood Media Unit 1-Year Warranty, Cinnamon, Prelaminated Particle Board Online from Interio by Godrej. Get great deals",
+  "note": "1-Year Warranty, Cinnamon, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00181_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/sienna-engineered-wood-media-unit-56101505sd00181"
+  "source": "https://interio.com/product/sienna-engineered-wood-media-unit-56101505sd00181",
+  "family": "Sienna Engineered Wood Media Unit"
  },
  {
   "id": "56101505sd00179",
@@ -3897,9 +2271,38 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tv units",
   "from": 25390,
   "mrp": null,
-  "note": "Shop Sienna Engineered Wood TV Unit 1-Year Warranty, Cinnamon, Prelaminated Particle Board Online from Interio by Godrej. Get great deals on",
+  "note": "1-Year Warranty, Cinnamon, Prelaminated Particle Board",
   "image": "https://interio.com/media/catalog/product/5/6/56101505sd00179_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/sienna-engineered-wood-tv-unit-56101505sd00179"
+  "source": "https://interio.com/product/sienna-engineered-wood-tv-unit-56101505sd00179",
+  "family": "Sienna Engineered Wood TV Unit"
+ },
+ {
+  "id": "56121509sd00033",
+  "sku": "56121509SD00033",
+  "name": "Buddy Computer Engineered Wood Study Table",
+  "room": "office",
+  "type": "",
+  "from": 10190,
+  "mrp": null,
+  "note": "1-Year Warranty, Beech, Knock Down",
+  "image": "https://interio.com/media/catalog/product/5/6/56121509sd00033_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
+  "source": "https://interio.com/product/buddy-computer-engineered-wood-study-table-56121509SD00033",
+  "family": "Buddy Engineered Wood Computer Table"
+ },
+ {
+  "id": "56121509sd00051",
+  "sku": "56121509SD00051",
+  "name": "Caliber 202 Engineered Wood Computer Table",
+  "room": "office",
+  "type": "",
+  "from": 8190,
+  "mrp": null,
+  "note": "1-Year Warranty, Black, Knock Down",
+  "image": "https://interio.com/media/catalog/product/5/6/56121509sd00051_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
+  "source": "https://interio.com/product/caliber-202-engineered-wood-computer-table-56121509SD00051",
+  "family": "Caliber 202 Engineered Wood Computer Table",
+  "variants": 2,
+  "fromPrice": true
  },
  {
   "id": "56101597sd00068",
@@ -3909,9 +2312,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 11190,
   "mrp": null,
-  "note": "Adria Particle Board Study Table 1-Year Warranty, Imperial Oak, Knock Down Online from Interio by Godrej. Get great deals on Work desks & St",
+  "note": "1-Year Warranty, Imperial Oak, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101597sd00068_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/adria-particle-board-study-table-56101597SD00068"
+  "source": "https://interio.com/product/adria-particle-board-study-table-56101597SD00068",
+  "family": "Adria Particle Board Study Table"
  },
  {
   "id": "56101597sd00063",
@@ -3921,9 +2325,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 27990,
   "mrp": null,
-  "note": "Bay Engineered Wood Workdesk 1-Year Warranty, Brown, Knock Down Online from Interio by Godrej. Get great deals on Work desks & Study Tables ",
+  "note": "1-Year Warranty, Brown, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101597sd00063_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/bay-engineered-wood-workdesk-56101597SD00063"
+  "source": "https://interio.com/product/bay-engineered-wood-workdesk-56101597SD00063",
+  "family": "Bay Engineered Wood Workdesk"
  },
  {
   "id": "56121509sd00073",
@@ -3933,9 +2338,10 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 14090,
   "mrp": null,
-  "note": "Companion C2 Ind Engineered Wood Computer Table 1-Year Warranty, Baverian Beech, Knock Down Online from Interio by Godrej. Get great deals o",
+  "note": "1-Year Warranty, Baverian Beech, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121509sd00073_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/companion-c2-ind-engineered-wood-computer-table-56121509SD00073"
+  "source": "https://interio.com/product/companion-c2-ind-engineered-wood-computer-table-56121509SD00073",
+  "family": "Companion C2 Ind Engineered Wood Computer Table"
  },
  {
   "id": "56121509sd00074",
@@ -3945,21 +2351,23 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 10290,
   "mrp": null,
-  "note": "Companion C9 Ind Engineered Wood Computer Table 1-Year Warranty, Baverian Beech, Knock Down Online from Interio by Godrej. Get great deals o",
+  "note": "1-Year Warranty, Baverian Beech, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56121509sd00074_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/companion-c9-ind-engineered-wood-computer-table-56121509SD00074"
+  "source": "https://interio.com/product/companion-c9-ind-engineered-wood-computer-table-56121509SD00074",
+  "family": "Companion C9 Ind Engineered Wood Computer Table"
  },
  {
   "id": "56101597sd00036",
   "sku": "56101597SD00036",
-  "name": "EQ-Economic Particle Board Study Table",
+  "name": "Eq Economic Particle Board Study Table",
   "room": "office",
   "type": "Tables",
   "from": 14390,
   "mrp": null,
-  "note": "EQ-Economic Particle Board Study Table 1-Year Warranty, Cinnamon, Knock Down Online from Interio by Godrej. Get great deals on Work desks & ",
+  "note": "1-Year Warranty, Cinnamon, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101597sd00036_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/eq-economic-particle-board-study-table-56101597SD00036"
+  "source": "https://interio.com/product/eq-economic-particle-board-study-table-56101597SD00036",
+  "family": "EQ-Economic Particle Board Study Table"
  },
  {
   "id": "56101597sd00023",
@@ -3969,57 +2377,23 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "Tables",
   "from": 14090,
   "mrp": null,
-  "note": "Floyd Particle Board Study Table 1-Year Warranty, Valigny Oak, Knock Down Online from Interio by Godrej. Get great deals on Work desks & Stu",
+  "note": "1-Year Warranty, Valigny Oak, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101597sd00023_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/floyd-particle-board-study-table-56101597SD00023"
- },
- {
-  "id": "wom000003-56101703apo0380",
-  "sku": "WOM000003-56101703APO0380",
-  "name": "Rejoice Engineered Wood Work from Home (WFH) Table",
-  "room": "office",
-  "type": "Tables",
-  "from": 9390,
-  "mrp": null,
-  "note": "Rejoice Engineered Wood Work from Home (WFH) Table 1-Year Warranty, Savoy Beech, Knock Down Online from Interio by Godrej. Get great deals o",
-  "image": "https://interio.com/media/catalog/product/w/o/wom000003-56101703apo0380_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/rejoice-engineered-wood-work-from-home-wfh-table-WOM000003-56101703APO0380"
+  "source": "https://interio.com/product/floyd-particle-board-study-table-56101597SD00023",
+  "family": "Floyd Particle Board Study Table"
  },
  {
   "id": "56101597sd00030",
   "sku": "56101597SD00030",
-  "name": "Uno Engineered Wood Study Table",
+  "name": "Uno Engineered Wood Wood Study Table",
   "room": "office",
   "type": "Tables",
   "from": 7290,
   "mrp": null,
-  "note": "Uno Engineered Wood Study Table 1-Year Warranty, Granite Black, Knock Down Online from Interio by Godrej. Get great deals on Work desks & St",
+  "note": "1-Year Warranty, Granite Black, Knock Down",
   "image": "https://interio.com/media/catalog/product/5/6/56101597sd00030_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/uno-engineered-wood-wood-study-table-56101597SD00030"
- },
- {
-  "id": "30161803sd00980",
-  "sku": "30161803SD00980",
-  "name": "Aceline® 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 34390,
-  "mrp": null,
-  "note": "Shop Aceline® 2-Door Steel Almirah (Teal) 1-Year Warranty, 1 Half Locker, 5 Shelves Online from Interio by Godrej. Get great deals on Steel ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00980_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/aceline-2-door-steel-almirah-teal-30161803sd00980"
- },
- {
-  "id": "30161803sd00981",
-  "sku": "30161803SD00981",
-  "name": "Aceline® 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 34390,
-  "mrp": null,
-  "note": "Shop Aceline® 2-Door Steel Almirah (Berry Red) 1-Year Warranty, 1 Half Locker, 5 Shelves Online from Interio by Godrej. Get great deals on S",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00981_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/aceline-2-door-steel-almirah-berry-red-30161803sd00981"
+  "source": "https://interio.com/product/uno-engineered-wood-wood-study-table-56101597SD00030",
+  "family": "Uno Engineered Wood Study Table"
  },
  {
   "id": "30161803sd00982",
@@ -4029,369 +2403,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 33590,
   "mrp": null,
-  "note": "Shop Aceline® 2-Door Steel Almirah (Teal) 1-Year Warranty, 1 Full Locker, 2 Shelves Online from Interio by Godrej. Get great deals on Steel ",
+  "note": "1-Year Warranty, 1 Full Locker, 2 Shelves",
   "image": "https://interio.com/media/catalog/product/3/0/30161803sd00982_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/aceline-2-door-steel-almirah-teal-30161803sd00982"
- },
- {
-  "id": "30161803sd00983",
-  "sku": "30161803SD00983",
-  "name": "Aceline® 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 33590,
-  "mrp": null,
-  "note": "Shop Aceline® 2-Door Steel Almirah (Berry Red) 1-Year Warranty, 1 Full Locker, 2 Shelves Online from Interio by Godrej. Get great deals on S",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00983_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/aceline-2-door-steel-almirah-berry-red-30161803sd00983"
- },
- {
-  "id": "30161803sd01694",
-  "sku": "30161803SD01694",
-  "name": "Aceline® 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 34390,
-  "mrp": null,
-  "note": "Shop Aceline® 2-Door Steel Almirah (Textured Foliage Green) 1-Year Warranty, 1 Half Locker, 5 Shelves Online from Interio by Godrej. Get gre",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01694_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/aceline-2-door-steel-almirah-textured-foliage-green-30161803sd01694"
- },
- {
-  "id": "30161803sd01695",
-  "sku": "30161803SD01695",
-  "name": "Aceline® 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 33590,
-  "mrp": null,
-  "note": "Shop Aceline® 2-Door Steel Almirah (Textured Foliage Green) 1-Year Warranty, 1 Full Locker, 2 Shelves Online from Interio by Godrej. Get gre",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01695_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/aceline-2-door-steel-almirah-textured-foliage-green-30161803sd01695"
- },
- {
-  "id": "30161803sd00834",
-  "sku": "30161803SD00834",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 40390,
-  "mrp": null,
-  "note": "Shop Auraline® Men Basic 2-Door Steel Almirah (Textured Coffee Brown) 1-Year Warranty, 1 Drawer, 3 Shelves Online from Interio by Godrej. Ge",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00834_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-textured-coffee-brown-30161803sd00834"
- },
- {
-  "id": "30161803sd00835",
-  "sku": "30161803SD00835",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 47690,
-  "mrp": null,
-  "note": "Shop Auraline® Men Premium 2-Door Steel Almirah (Textured Coffee Brown) 1-Year Warranty, 2 Drawers, 1 Locker, 2 Shelves Online from Interio ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00835_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-premium-2-door-steel-almirah-textured-coffee-brown-30161803sd00835"
- },
- {
-  "id": "30161803sd00836",
-  "sku": "30161803SD00836",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 41690,
-  "mrp": null,
-  "note": "Shop Auraline® Women Basic 2-Door Steel Almirah (Textured Coffee Brown) 1-Year Warranty, 1 Drawer, 7 Shelves Online from Interio by Godrej. ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00836_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-basic-2-door-steel-almirah-textured-coffee-brown-30161803sd00836"
- },
- {
-  "id": "30161803sd00837",
-  "sku": "30161803SD00837",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 59290,
-  "mrp": null,
-  "note": "Shop Auraline® Women Premium 2-Door Steel Almirah (Textured Coffee Brown) 1-Year Warranty, 4 Drawers, 4 Shelves Online from Interio by Godre",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00837_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-premium-2-door-steel-almirah-coffee-brown-30161803sd00837"
- },
- {
-  "id": "30161803sd00838",
-  "sku": "30161803SD00838",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 40390,
-  "mrp": null,
-  "note": "Shop Auraline® Men Basic 2-Door Steel Almirah (Textured Berry) 1-Year Warranty, 1 Drawer, 3 Shelves Online from Interio by Godrej. Get great",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00838_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-textured-berry-30161803sd00838"
- },
- {
-  "id": "30161803sd00839",
-  "sku": "30161803SD00839",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 47690,
-  "mrp": null,
-  "note": "Shop Auraline® Men Premium 2-Door Steel Almirah (Textured Berry) 1-Year Warranty, 2 Drawers, 1 Locker, 2 Shelves Online from Interio by Godr",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00839_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-premium-2-door-steel-almirah-textured-berry-30161803sd00839"
- },
- {
-  "id": "30161803sd00840",
-  "sku": "30161803SD00840",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 41690,
-  "mrp": null,
-  "note": "Shop Auraline® Women Basic 2-Door Steel Almirah (Textured Berry) 1-Year Warranty, 1 Drawer, 7 Shelves Online from Interio by Godrej. Get gre",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00840_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-basic-2-door-steel-almirah-textured-berry-30161803sd00840"
- },
- {
-  "id": "30161803sd00841",
-  "sku": "30161803SD00841",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 59290,
-  "mrp": null,
-  "note": "Shop Auraline® Women Premium 2-Door Steel Almirah (Textured Berry) 1-Year Warranty, 4 Drawers, 4 Shelves Online from Interio by Godrej. Get ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00841_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-premium-2-door-steel-almirah-berry-30161803sd00841"
- },
- {
-  "id": "30161803sd00842",
-  "sku": "30161803SD00842",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 40390,
-  "mrp": null,
-  "note": "Shop Auraline® Men Basic 2-Door Steel Almirah (Textured Navy Blue) 1-Year Warranty, 1 Drawer, 3 Shelves Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00842_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-textured-navy-blue-30161803sd00842"
- },
- {
-  "id": "30161803sd00843",
-  "sku": "30161803SD00843",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 47690,
-  "mrp": null,
-  "note": "Shop Auraline® Men Premium 2-Door Steel Almirah (Textured Navy Blue) 1-Year Warranty, 2 Drawers, 1 Locker, 2 Shelves Online from Interio by ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00843_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-premium-2-door-steel-almirah-textured-navy-blue-30161803sd00843"
- },
- {
-  "id": "30161803sd00844",
-  "sku": "30161803SD00844",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 41690,
-  "mrp": null,
-  "note": "Shop Auraline® Women Basic 2-Door Steel Almirah (Textured Navy Blue) 1-Year Warranty, 1 Drawer, 7 Shelves Online from Interio by Godrej. Get",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00844_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-basic-2-door-steel-almirah-textured-navy-blue-30161803sd00844"
- },
- {
-  "id": "30161803sd00845",
-  "sku": "30161803SD00845",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 59290,
-  "mrp": null,
-  "note": "Shop Auraline® Women Premium 2-Door Steel Almirah (Textured Navy Blue) 1-Year Warranty, 4 Drawers, 4 Shelves Online from Interio by Godrej. ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00845_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-premium-2-door-steel-almirah-navy-blue-30161803sd00845"
- },
- {
-  "id": "30161803sd00846",
-  "sku": "30161803SD00846",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 40390,
-  "mrp": null,
-  "note": "Shop Auraline® Men Basic 2-Door Steel Almirah (Textured Bond White) 1-Year Warranty, 1 Drawer, 3 Shelves Online from Interio by Godrej. Get ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00846_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-textured-bond-white-30161803sd00846"
- },
- {
-  "id": "30161803sd00847",
-  "sku": "30161803SD00847",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 47690,
-  "mrp": null,
-  "note": "Shop Auraline® Men Premium 2-Door Steel Almirah (Textured Bond White) 1-Year Warranty, 2 Drawers, 1 Locker, 2 Shelves Online from Interio by",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00847_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-premium-2-door-steel-almirah-textured-bond-white-30161803sd00847"
- },
- {
-  "id": "30161803sd00848",
-  "sku": "30161803SD00848",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 41690,
-  "mrp": null,
-  "note": "Shop Auraline® Women Basic 2-Door Steel Almirah (Textured Bond White) 1-Year Warranty, 1 Drawer, 7 Shelves Online from Interio by Godrej. Ge",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00848_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-basic-2-door-steel-almirah-textured-bond-white-30161803sd00848"
- },
- {
-  "id": "30161803sd00849",
-  "sku": "30161803SD00849",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 59290,
-  "mrp": null,
-  "note": "Shop Auraline® Women Premium 2-Door Steel Almirah (Textured Bond White) 1-Year Warranty, 4 Drawers, 4 Shelves Online from Interio by Godrej.",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00849_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-premium-2-door-steel-almirah-white-30161803sd00849"
- },
- {
-  "id": "30161803sd00850",
-  "sku": "30161803SD00850",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 45290,
-  "mrp": null,
-  "note": "Shop Auraline® Men Basic 2-Door Steel Almirah (Walnut) 1-Year Warranty, 1 Drawer, 3 Shelves Online from Interio by Godrej. Get great deals o",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00850_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-walnut-30161803sd00850"
- },
- {
-  "id": "30161803sd00851",
-  "sku": "30161803SD00851",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 53190,
-  "mrp": null,
-  "note": "Shop Auraline® Men Premium 2-Door Steel Almirah (Walnut) 1-Year Warranty, 2 Drawers, 1 Locker, 2 Shelves Online from Interio by Godrej. Get ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00851_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-premium-2-door-steel-almirah-walnut-30161803sd00851"
- },
- {
-  "id": "30161803sd00852",
-  "sku": "30161803SD00852",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 45990,
-  "mrp": null,
-  "note": "Shop Auraline® Women Basic 2-Door Steel Almirah (Walnut) 1-Year Warranty, 1 Drawer, 7 Shelves Online from Interio by Godrej. Get great deals",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00852_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-basic-2-door-steel-almirah-walnut-30161803sd00852"
- },
- {
-  "id": "30161803sd01595",
-  "sku": "30161803SD01595",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 40390,
-  "mrp": null,
-  "note": "Shop Auraline® Men Basic 2-Door Steel Almirah (Matte Tree Mist) 1-Year Warranty, 1 Drawer, 3 Shelves Online from Interio by Godrej. Get grea",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01595_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-matte-tree-mist-30161803sd01595"
- },
- {
-  "id": "30161803sd01596",
-  "sku": "30161803SD01596",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 47690,
-  "mrp": null,
-  "note": "Shop Auraline® Men Premium 2-Door Steel Almirah (Matte Tree Mist) 1-Year Warranty, 2 Drawers, 1 Locker, 2 Shelves Online from Interio by God",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01596_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-premium-2-door-steel-almirah-matte-tree-mist-30161803sd01596"
- },
- {
-  "id": "30161803sd01597",
-  "sku": "30161803SD01597",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 41690,
-  "mrp": null,
-  "note": "Shop Auraline® Women Basic 2-Door Steel Almirah (Matte Tree Mist) 1-Year Warranty, 1 Drawer, 7 Shelves Online from Interio by Godrej. Get gr",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01597_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-basic-2-door-steel-almirah-matte-tree-mist-30161803sd01597"
- },
- {
-  "id": "30161803sd01598",
-  "sku": "30161803SD01598",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 59290,
-  "mrp": null,
-  "note": "Shop Auraline® Women Premium 2-Door Steel Almirah (Matte Tree Mist) 1-Year Warranty, 4 Drawers, 4 Shelves Online from Interio by Godrej. Get",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01598_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-premium-2-door-steel-almirah-matte-tree-mist-30161803sd01598"
- },
- {
-  "id": "30161803sd01682",
-  "sku": "30161803SD01682",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 40390,
-  "mrp": null,
-  "note": "Shop Auraline® Men Basic 2-Door Steel Almirah (Textured Affogato) 1-Year Warranty, 1 Drawer, 3 Shelves Online from Interio by Godrej. Get gr",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01682_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-textured-affogato-30161803sd01682"
- },
- {
-  "id": "30161803sd01683",
-  "sku": "30161803SD01683",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 47690,
-  "mrp": null,
-  "note": "Shop Auraline® Men Premium 2-Door Steel Almirah (Textured Affogato) 1-Year Warranty, 2 Drawers, 1 Locker, 2 Shelves Online from Interio by G",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01683_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-premium-2-door-steel-almirah-textured-affogato-30161803sd01683"
- },
- {
-  "id": "30161803sd01684",
-  "sku": "30161803SD01684",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 41690,
-  "mrp": null,
-  "note": "Shop Auraline® Women Basic 2-Door Steel Almirah (Textured Affogato) 1-Year Warranty, 1 Drawer, 7 Shelves Online from Interio by Godrej. Get ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01684_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-basic-2-door-steel-almirah-textured-affogato-30161803sd01684"
- },
- {
-  "id": "30161803sd01685",
-  "sku": "30161803SD01685",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 59290,
-  "mrp": null,
-  "note": "Shop Auraline® Women Premium 2-Door Steel Almirah (Textured Affogato) 1-Year Warranty, 4 Drawers, 4 Shelves Online from Interio by Godrej. G",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01685_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-premium-2-door-steel-almirah-textured-affogato-30161803sd01685"
+  "source": "https://interio.com/product/aceline-2-door-steel-almirah-teal-30161803sd00982",
+  "family": "Aceline® 2-Door Steel Almirah",
+  "variants": 6,
+  "fromPrice": true
  },
  {
   "id": "30161803sd01686",
@@ -4401,237 +2418,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 35290,
   "mrp": null,
-  "note": "Shop Auraline® Men Basic 2-Door Steel Almirah (Matte Sepia Rose) 1-Year Warranty, 1 Drawer, 3 Shelves Online from Interio by Godrej. Get gre",
+  "note": "1-Year Warranty, 1 Drawer, 3 Shelves",
   "image": "https://interio.com/media/catalog/product/3/0/30161803sd01686_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-matte-sepia-rose-30161803sd01686"
- },
- {
-  "id": "30161803sd01688",
-  "sku": "30161803SD01688",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 41690,
-  "mrp": null,
-  "note": "Shop Auraline® Women Basic 2-Door Steel Almirah (Matte Sepia Rose) 1-Year Warranty, 1 Drawer, 7 Shelves Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01688_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-basic-2-door-steel-almirah-matte-sepia-rose-30161803sd01688"
- },
- {
-  "id": "aurlin001",
-  "sku": "AURLIN001",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 44590,
-  "mrp": null,
-  "note": "Auraline® Men Basic 2-Door Steel Almirah with Mirror (Textured Coffee Brown) 1-Year Warranty, 1 Drawer, 3 Shelves Online from Interio by God",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin001_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-with-mirror-textured-coffee-brown-aurlin001"
- },
- {
-  "id": "aurlin002",
-  "sku": "AURLIN002",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 51890,
-  "mrp": null,
-  "note": "Auraline® Men Premium 2-Door Steel Almirah with Mirror (Textured Coffee Brown) 1-Year Warranty, 2 Drawers, 1 Locker, 2 Shelves Online from I",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin002_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-premium-2-door-steel-almirah-with-mirror-textured-coffee-brown-aurlin002"
- },
- {
-  "id": "aurlin003",
-  "sku": "AURLIN003",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 45790,
-  "mrp": null,
-  "note": "Auraline® Women Basic 2-Door Steel Almirah with Mirror (Textured Coffee Brown) 1-Year Warranty, 1 Drawer, 7 Shelves Online from Interio by G",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin003_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-basic-2-door-steel-almirah-with-mirror-textured-coffee-brown-aurlin003"
- },
- {
-  "id": "aurlin004",
-  "sku": "AURLIN004",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 44590,
-  "mrp": null,
-  "note": "Auraline® Men Basic 2-Door Steel Almirah with Mirror (Textured Berry) 1-Year Warranty, 1 Drawer, 3 Shelves Online from Interio by Godrej. Ge",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin004_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-with-mirror-textured-berry-aurlin004"
- },
- {
-  "id": "aurlin005",
-  "sku": "AURLIN005",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 51890,
-  "mrp": null,
-  "note": "Auraline® Men Premium 2-Door Steel Almirah with Mirror (Textured Berry) 1-Year Warranty, 2 Drawers, 1 Locker, 2 Shelves Online from Interio ",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin005_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-premium-2-door-steel-almirah-with-mirror-textured-berry-aurlin005"
- },
- {
-  "id": "aurlin006",
-  "sku": "AURLIN006",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 45790,
-  "mrp": null,
-  "note": "Auraline® Women Basic 2-Door Steel Almirah with Mirror (Textured Berry) 1-Year Warranty, 1 Drawer, 7 Shelves Online from Interio by Godrej. ",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin006_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-basic-2-door-steel-almirah-with-mirror-textured-berry-aurlin006"
- },
- {
-  "id": "aurlin007",
-  "sku": "AURLIN007",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 44590,
-  "mrp": null,
-  "note": "Auraline® Men Basic 2-Door Steel Almirah with Mirror (Textured Navy Blue) 1-Year Warranty, 1 Drawer, 3 Shelves Online from Interio by Godrej",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin007_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-with-mirror-textured-navy-blue-aurlin007"
- },
- {
-  "id": "aurlin008",
-  "sku": "AURLIN008",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 51890,
-  "mrp": null,
-  "note": "Auraline® Men Premium 2-Door Steel Almirah with Mirror (Textured Navy Blue) 1-Year Warranty, 2 Drawers, 1 Locker, 2 Shelves Online from Inte",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin008_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-premium-2-door-steel-almirah-with-mirror-textured-navy-blue-aurlin008"
- },
- {
-  "id": "aurlin009",
-  "sku": "AURLIN009",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 45790,
-  "mrp": null,
-  "note": "Auraline® Women Basic 2-Door Steel Almirah with Mirror (Textured Navy Blue) 1-Year Warranty, 1 Drawer, 7 Shelves Online from Interio by Godr",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin009_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-basic-2-door-steel-almirah-with-mirror-textured-navy-blue-aurlin009"
- },
- {
-  "id": "aurlin010",
-  "sku": "AURLIN010",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 44590,
-  "mrp": null,
-  "note": "Auraline® Men Basic 2-Door Steel Almirah with Mirror (Textured Bond White) 1-Year Warranty, 1 Drawer, 3 Shelves Online from Interio by Godre",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin010_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-with-mirror-textured-bond-white-aurlin010"
- },
- {
-  "id": "aurlin011",
-  "sku": "AURLIN011",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 51890,
-  "mrp": null,
-  "note": "Auraline® Men Premium 2-Door Steel Almirah with Mirror (Textured Bond White) 1-Year Warranty, 2 Drawers, 1 Locker, 2 Shelves Online from Int",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin011_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-premium-2-door-steel-almirah-with-mirror-textured-bond-white-aurlin011"
- },
- {
-  "id": "aurlin012",
-  "sku": "AURLIN012",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 45790,
-  "mrp": null,
-  "note": "Auraline® Women Basic 2-Door Steel Almirah with Mirror (Textured Bond White) 1-Year Warranty, 1 Drawer, 7 Shelves Online from Interio by God",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin012_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-basic-2-door-steel-almirah-with-mirror-textured-bond-white-aurlin012"
- },
- {
-  "id": "aurlin013",
-  "sku": "AURLIN013",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 49490,
-  "mrp": null,
-  "note": "Auraline® Men Basic 2-Door Steel Almirah with Mirror (Walnut) 1-Year Warranty, 1 Drawer, 3 Shelves Online from Interio by Godrej. Get great ",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin013_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-with-mirror-walnut-aurlin013"
- },
- {
-  "id": "aurlin014",
-  "sku": "AURLIN014",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 57390,
-  "mrp": null,
-  "note": "Auraline® Men Premium 2-Door Steel Almirah with Mirror (Walnut) 1-Year Warranty, 2 Drawers, 1 Locker, 2 Shelves Online from Interio by Godre",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin014_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-men-premium-2-door-steel-almirah-with-mirror-walnut-aurlin014"
- },
- {
-  "id": "aurlin015",
-  "sku": "AURLIN015",
-  "name": "Auraline 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 50190,
-  "mrp": null,
-  "note": "Auraline® Women Basic 2-Door Steel Almirah with Mirror (Walnut) 1-Year Warranty, 1 Drawer, 7 Shelves Online from Interio by Godrej. Get grea",
-  "image": "https://interio.com/media/catalog/product/a/u/aurlin015_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/auraline-women-basic-2-door-steel-almirah-with-mirror-walnut-aurlin015"
- },
- {
-  "id": "56121509sd00033",
-  "sku": "56121509SD00033",
-  "name": "Buddy Engineered Wood Computer Table",
-  "room": "storage",
-  "type": "",
-  "from": 10190,
-  "mrp": null,
-  "note": "Buddy Computer Engineered Wood Study Table 1-Year Warranty, Beech, Knock Down Online from Interio by Godrej. Get great deals on Work desks &",
-  "image": "https://interio.com/media/catalog/product/5/6/56121509sd00033_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/buddy-computer-engineered-wood-study-table-56121509SD00033"
- },
- {
-  "id": "56121509sd00051",
-  "sku": "56121509SD00051",
-  "name": "Caliber 202 Engineered Wood Computer Table",
-  "room": "storage",
-  "type": "",
-  "from": 8190,
-  "mrp": null,
-  "note": "Caliber 202 Engineered Wood Computer Table 1-Year Warranty, Black, Knock Down Online from Interio by Godrej. Get great deals on Work desks &",
-  "image": "https://interio.com/media/catalog/product/5/6/56121509sd00051_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/caliber-202-engineered-wood-computer-table-56121509SD00051"
- },
- {
-  "id": "56121509sd00052",
-  "sku": "56121509SD00052",
-  "name": "Caliber 202 Engineered Wood Computer Table",
-  "room": "storage",
-  "type": "",
-  "from": 9790,
-  "mrp": null,
-  "note": "Caliber 203 Engineered Wood Computer Table 1-Year Warranty, Yellow Walnut, Knockdown Online from Interio by Godrej. Get great deals on Work ",
-  "image": "https://interio.com/media/catalog/product/5/6/56121509sd00052_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/caliber-203-engineered-wood-computer-table-56121509SD00052"
+  "source": "https://interio.com/product/auraline-men-basic-2-door-steel-almirah-matte-sepia-rose-30161803sd01686",
+  "family": "Auraline 2-Door Steel Almirah",
+  "variants": 44,
+  "fromPrice": true
  },
  {
   "id": "30161803sd00024",
@@ -4641,57 +2433,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 62090,
   "mrp": null,
-  "note": "Shop Centurion 2-Door Steel Almirah (Burgundy) 1-Year Warranty, 1 Locker, 2 Shelves Online from Interio by Godrej. Get great deals on Steel ",
+  "note": "1-Year Warranty, 1 Locker, 2 Shelves",
   "image": "https://interio.com/media/catalog/product/3/0/30161803sd00024_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/centurion-2-door-steel-almirah-burgundy-30161803sd00024"
- },
- {
-  "id": "30161803sd00650",
-  "sku": "30161803SD00650",
-  "name": "Centurion 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 62090,
-  "mrp": null,
-  "note": "Shop Centurion 2-Door Steel Almirah (Midnight Blue) 1-Year Warranty, 1 Locker, 2 Shelves Online from Interio by Godrej. Get great deals on S",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00650_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/centurion-2-door-steel-almirah-midnight-blue-30161803sd00650"
- },
- {
-  "id": "cenplw01",
-  "sku": "CENPLW01",
-  "name": "Centurion 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 81090,
-  "mrp": null,
-  "note": "Centurion Plus 2-Door Steel Almirah with Mirror and Motion Sensor Lights (Bond White) 1-Year Warranty, 1 Locker, 2 Drawers, 4 Shelves Online",
-  "image": "https://interio.com/media/catalog/product/c/e/cenplw01_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/centurion-plus-2-door-steel-almirah-with-mirror-and-motion-sensor-lights-bond-white-cenplw01"
- },
- {
-  "id": "30161803sd01755",
-  "sku": "30161803SD01755",
-  "name": "Neolite Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 37190,
-  "mrp": null,
-  "note": "Shop Neolite 3-Door Steel Almirah (Textured Denim Blue) 1-Year Warranty, 1 Locker, 5 Shelves Online from Interio by Godrej. Get great deals ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01755_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/neolite-3-door-steel-almirah-textured-denim-blue-30161803sd01755"
- },
- {
-  "id": "30161803sd01756",
-  "sku": "30161803SD01756",
-  "name": "Neolite Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 37190,
-  "mrp": null,
-  "note": "Shop Neolite 3-Door Steel Almirah (Textured Blush Red) 1-Year Warranty, 1 Locker, 5 Shelves Online from Interio by Godrej. Get great deals o",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01756_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/neolite-3-door-steel-almirah-textured-blush-red-30161803sd01756"
+  "source": "https://interio.com/product/centurion-2-door-steel-almirah-burgundy-30161803sd00024",
+  "family": "Centurion 2-Door Steel Almirah",
+  "variants": 4,
+  "fromPrice": true
  },
  {
   "id": "30161803sd01757",
@@ -4701,21 +2448,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 23390,
   "mrp": null,
-  "note": "Shop Neolite 2-Door Steel Almirah (Textured Denim Blue) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals ",
+  "note": "1-Year Warranty, 1 Locker, 4 Shelves",
   "image": "https://interio.com/media/catalog/product/3/0/30161803sd01757_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/neolite-2-door-steel-almirah-textured-denim-blue-30161803sd01757"
- },
- {
-  "id": "30161803sd01758",
-  "sku": "30161803SD01758",
-  "name": "Neolite Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 23390,
-  "mrp": null,
-  "note": "Shop Neolite 2-Door Steel Almirah (Textured Blush Red) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals o",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd01758_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/neolite-2-door-steel-almirah-textured-blush-red-30161803sd01758"
+  "source": "https://interio.com/product/neolite-2-door-steel-almirah-textured-denim-blue-30161803sd01757",
+  "family": "Neolite Steel Almirah",
+  "variants": 4,
+  "fromPrice": true
  },
  {
   "id": "slim00242f",
@@ -4725,45 +2463,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 27490,
   "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah (Portabella Matte) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals on Stee",
+  "note": "1-Year Warranty, 1 Locker, 4 Shelves",
   "image": "https://interio.com/media/catalog/product/s/l/slim00242f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-portabella-matte-slim00242f"
- },
- {
-  "id": "slim00250f",
-  "sku": "SLIM00250F",
-  "name": "Slimline 2 Door Alpine White with Locker",
-  "room": "storage",
-  "type": "",
-  "from": 30890,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah with Star Design Mirror (Portabella Matte) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej.",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00250f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-design-mirror-portabella-matte-slim00250f"
- },
- {
-  "id": "slim00258f",
-  "sku": "SLIM00258F",
-  "name": "Slimline 2 Door Alpine White with Locker",
-  "room": "storage",
-  "type": "",
-  "from": 30390,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah with Curvy Mirror (Portabella Matte) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00258f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-portabella-matte-slim00258f"
- },
- {
-  "id": "slim00262f",
-  "sku": "SLIM00262F",
-  "name": "Slimline 2 Door Alpine White with Locker",
-  "room": "storage",
-  "type": "",
-  "from": 30790,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah with Plain Mirror (Portabella Matte) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00262f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-portabella-matte-slim00262f"
+  "source": "https://interio.com/product/slimline-2-door-steel-almirah-portabella-matte-slim00242f",
+  "family": "Slimline 2 Door Alpine White with Locker",
+  "variants": 4,
+  "fromPrice": true
  },
  {
   "id": "slim00001f",
@@ -4773,261 +2478,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 22990,
   "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah (Dusty Rose) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs with ",
+  "note": "1 Year Warranty, 2 Shelves",
   "image": "https://interio.com/media/catalog/product/s/l/slim00001f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-dusty-rose-slim00001f"
- },
- {
-  "id": "slim00019",
-  "sku": "SLIM00019",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 22990,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Royal Ivory) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs with",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00019_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-royal-ivory-slim00019"
- },
- {
-  "id": "slim00020",
-  "sku": "SLIM00020",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 22990,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Pacific Blue) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs wit",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00020_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-pac-blue-slim00020"
- },
- {
-  "id": "slim00021",
-  "sku": "SLIM00021",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 22990,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Russet) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs with ✔Fre",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00021_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-russet-slim00021"
- },
- {
-  "id": "slim00023",
-  "sku": "SLIM00023",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 23690,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Textured Purple) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00023_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-tex-purple-slim00023"
- },
- {
-  "id": "slim00024n",
-  "sku": "SLIM00024N",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 23690,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Carmine Red) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs with",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00024n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-red-slim00024n"
- },
- {
-  "id": "slim00049f",
-  "sku": "SLIM00049F",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 25890,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah with Curvy Mirror (Dusty Rose) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on St",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00049f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-dusty-rose-slim00049f"
- },
- {
-  "id": "slim00055",
-  "sku": "SLIM00055",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26290,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Royal Ivory) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on S",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00055_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-royal-ivory-slim00055"
- },
- {
-  "id": "slim00056",
-  "sku": "SLIM00056",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26290,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Pacific Blue) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00056_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-pac-blue-slim00056"
- },
- {
-  "id": "slim00057",
-  "sku": "SLIM00057",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26290,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Russet) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on Steel ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00057_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-russet-slim00057"
- },
- {
-  "id": "slim00059",
-  "sku": "SLIM00059",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26990,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Purple) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on Steel ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00059_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-purple-slim00059"
- },
- {
-  "id": "slim00060n",
-  "sku": "SLIM00060N",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26990,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Carmine Red) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on S",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00060n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-red-slim00060n"
- },
- {
-  "id": "slim00073f",
-  "sku": "SLIM00073F",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26290,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah with Plain Mirror (Dusty Rose) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on St",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00073f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-dusty-rose-slim00073f"
- },
- {
-  "id": "slim00091",
-  "sku": "SLIM00091",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26390,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Royal Ivory) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on St",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00091_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-royal-ivory-slim00091"
- },
- {
-  "id": "slim00093",
-  "sku": "SLIM00093",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26390,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Russet) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on Steel A",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00093_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-russet-slim00093"
- },
- {
-  "id": "slim00095",
-  "sku": "SLIM00095",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27090,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Purple) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on Steel A",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00095_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-purple-slim00095"
- },
- {
-  "id": "slim00096n",
-  "sku": "SLIM00096N",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27090,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Carmine Red) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on St",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00096n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-red-slim00096n"
- },
- {
-  "id": "slim00097f",
-  "sku": "SLIM00097F",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26390,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah with Star Design Mirror (Dusty Rose) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00097f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-design-mirror-dusty-rose-slim00097f"
- },
- {
-  "id": "slim00163",
-  "sku": "SLIM00163",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 25890,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Royal Ivory) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on S",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00163_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-royal-ivory-slim00163"
- },
- {
-  "id": "slim00165",
-  "sku": "SLIM00165",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 25890,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Russet) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on Steel ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00165_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-russet-slim00165"
- },
- {
-  "id": "slim00167",
-  "sku": "SLIM00167",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26590,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Purple) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on Steel ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00167_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-purple-slim00167"
- },
- {
-  "id": "slim00168n",
-  "sku": "SLIM00168N",
-  "name": "Slimline 2 Door with 2 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26590,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Carmine Red) 1 Year Warranty, 2 Shelves Online from Interio by Godrej. Get great deals on S",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00168n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-red-slim00168n"
+  "source": "https://interio.com/product/slimline-2-door-steel-almirah-dusty-rose-slim00001f",
+  "family": "Slimline 2 Door with 2 shelves, Mirror and OHU",
+  "variants": 22,
+  "fromPrice": true
  },
  {
   "id": "slim00005f",
@@ -5037,285 +2493,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 24490,
   "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah (Dusty Rose) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs with ",
+  "note": "1 Year Warranty, 4 Shelves",
   "image": "https://interio.com/media/catalog/product/s/l/slim00005f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-dusty-rose-slim00005f"
- },
- {
-  "id": "slim00028",
-  "sku": "SLIM00028",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 24490,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Royal Ivory) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs with",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00028_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-royal-ivory-slim00028"
- },
- {
-  "id": "slim00029",
-  "sku": "SLIM00029",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 24490,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Pacific Blue) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs wit",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00029_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-pac-blue-slim00029"
- },
- {
-  "id": "slim00030",
-  "sku": "SLIM00030",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 24490,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Russet) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs with ✔Fre",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00030_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-russet-slim00030"
- },
- {
-  "id": "slim00032",
-  "sku": "SLIM00032",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 25190,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Purple) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs with ✔Fre",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00032_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-purple-slim00032"
- },
- {
-  "id": "slim00033n",
-  "sku": "SLIM00033N",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 25190,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Carmine Red) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs with",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00033n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-red-slim00033n"
- },
- {
-  "id": "slim00053f",
-  "sku": "SLIM00053F",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27490,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah with Curvy Mirror (Dusty Rose) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on St",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00053f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-dusty-rose-slim00053f"
- },
- {
-  "id": "slim00064",
-  "sku": "SLIM00064",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27890,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Royal Ivory) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on S",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00064_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-royal-ivory-slim00064"
- },
- {
-  "id": "slim00065",
-  "sku": "SLIM00065",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27890,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Pacific Blue) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00065_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-pac-blue-slim00065"
- },
- {
-  "id": "slim00066",
-  "sku": "SLIM00066",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27890,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Russet) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on Steel ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00066_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-russet-slim00066"
- },
- {
-  "id": "slim00068",
-  "sku": "SLIM00068",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 28590,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Purple) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on Steel ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00068_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-purple-slim00068"
- },
- {
-  "id": "slim00069n",
-  "sku": "SLIM00069N",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 28590,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Carmine Red) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on S",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00069n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-red-slim00069n"
- },
- {
-  "id": "slim00077f",
-  "sku": "SLIM00077F",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27890,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah with Plain Mirror (Dusty Rose) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on St",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00077f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-dusty-rose-slim00077f"
- },
- {
-  "id": "slim00100",
-  "sku": "SLIM00100",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27890,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Royal Ivory) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on St",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00100_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-royal-ivory-slim00100"
- },
- {
-  "id": "slim00101",
-  "sku": "SLIM00101",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27890,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Pacific Blue) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on S",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00101_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-pac-blue-slim00101"
- },
- {
-  "id": "slim00101f",
-  "sku": "SLIM00101F",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27890,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah with Star Design Mirror (Dusty Rose) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00101f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-design-mirror-dusty-rose-slim00101f"
- },
- {
-  "id": "slim00102",
-  "sku": "SLIM00102",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27890,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Russet) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on Steel A",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00102_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-russet-slim00102"
- },
- {
-  "id": "slim00104",
-  "sku": "SLIM00104",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 28590,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Purple) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on Steel A",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00104_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-purple-slim00104"
- },
- {
-  "id": "slim00105n",
-  "sku": "SLIM00105N",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 28590,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Carmine Red) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on St",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00105n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-red-slim00105n"
- },
- {
-  "id": "slim00172",
-  "sku": "SLIM00172",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27490,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Royal Ivory) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on S",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00172_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-royal-ivory-slim00172"
- },
- {
-  "id": "slim00173",
-  "sku": "SLIM00173",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27490,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Pacific Blue) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00173_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-pac-blue-slim00173"
- },
- {
-  "id": "slim00174",
-  "sku": "SLIM00174",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27490,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Russet) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on Steel ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00174_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-russet-slim00174"
- },
- {
-  "id": "slim00176",
-  "sku": "SLIM00176",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 28190,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Purple) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on Steel ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00176_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-purple-slim00176"
- },
- {
-  "id": "slim00177n",
-  "sku": "SLIM00177N",
-  "name": "Slimline 2 Door with 4 shelves, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 28190,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Carmine Red) 1 Year Warranty, 4 Shelves Online from Interio by Godrej. Get great deals on S",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00177n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-red-slim00177n"
+  "source": "https://interio.com/product/slimline-2-door-steel-almirah-dusty-rose-slim00005f",
+  "family": "Slimline 2 Door with 4 shelves, Mirror and OHU",
+  "variants": 24,
+  "fromPrice": true
  },
  {
   "id": "slim00009f",
@@ -5325,285 +2508,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 29690,
   "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah (Dusty Rose) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. Get great deals on ",
+  "note": "1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves",
   "image": "https://interio.com/media/catalog/product/s/l/slim00009f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-dusty-rose-slim00009f"
- },
- {
-  "id": "slim00010",
-  "sku": "SLIM00010",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 29690,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Royal Ivory) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. Get great deals on",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00010_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-royal-ivory-slim00010"
- },
- {
-  "id": "slim00011",
-  "sku": "SLIM00011",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 29690,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Pacific Blue) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. Get great deals o",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00011_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-pac-blue-slim00011"
- },
- {
-  "id": "slim00012",
-  "sku": "SLIM00012",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 29690,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Russet) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. Get great deals on Stee",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00012_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-russet-slim00012"
- },
- {
-  "id": "slim00014",
-  "sku": "SLIM00014",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 30390,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Purple) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. Get great deals on Stee",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00014_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-purple-slim00014"
- },
- {
-  "id": "slim00015n",
-  "sku": "SLIM00015N",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 30390,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Carmine Red) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. Get great deals on",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00015n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-red-slim00015n"
- },
- {
-  "id": "slim00046",
-  "sku": "SLIM00046",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 32990,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Royal Ivory) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00046_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-royal-ivory-slim00046"
- },
- {
-  "id": "slim00047",
-  "sku": "SLIM00047",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 32990,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Pacific Blue) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej.",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00047_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-pac-blue-slim00047"
- },
- {
-  "id": "slim00048",
-  "sku": "SLIM00048",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 32990,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Russet) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00048_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-russet-slim00048"
- },
- {
-  "id": "slim00050",
-  "sku": "SLIM00050",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 33690,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Purple) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00050_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-purple-slim00050"
- },
- {
-  "id": "slim00051n",
-  "sku": "SLIM00051N",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 33690,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Carmine Red) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00051n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-red-slim00051n"
- },
- {
-  "id": "slim00057f",
-  "sku": "SLIM00057F",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 32590,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah with Curvy Mirror (Dusty Rose) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. G",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00057f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-dusty-rose-slim00057f"
- },
- {
-  "id": "slim00081f",
-  "sku": "SLIM00081F",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 32990,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah with Plain Mirror (Dusty Rose) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. G",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00081f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-dusty-rose-slim00081f"
- },
- {
-  "id": "slim00082",
-  "sku": "SLIM00082",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 33090,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Royal Ivory) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. G",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00082_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-royal-ivory-slim00082"
- },
- {
-  "id": "slim00083",
-  "sku": "SLIM00083",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 33090,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Pacific Blue) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00083_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-pac-blue-slim00083"
- },
- {
-  "id": "slim00084",
-  "sku": "SLIM00084",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 33090,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Russet) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. Get gr",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00084_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-russet-slim00084"
- },
- {
-  "id": "slim00086",
-  "sku": "SLIM00086",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 33790,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Purple) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. Get gr",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00086_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-purple-slim00086"
- },
- {
-  "id": "slim00087n",
-  "sku": "SLIM00087N",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 33790,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Carmine Red) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. G",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00087n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-red-slim00087n"
- },
- {
-  "id": "slim00105f",
-  "sku": "SLIM00105F",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 33090,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah with Star Design Mirror (Dusty Rose) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by God",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00105f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-design-mirror-dusty-rose-slim00105f"
- },
- {
-  "id": "slim00154",
-  "sku": "SLIM00154",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 32590,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Royal Ivory) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00154_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-royal-ivory-slim00154"
- },
- {
-  "id": "slim00155",
-  "sku": "SLIM00155",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 32590,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Pacific Blue) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej.",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00155_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-pac-blue-slim00155"
- },
- {
-  "id": "slim00156",
-  "sku": "SLIM00156",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 32590,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Russet) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00156_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-russet-slim00156"
- },
- {
-  "id": "slim00158",
-  "sku": "SLIM00158",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 33290,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Purple) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00158_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-purple-slim00158"
- },
- {
-  "id": "slim00159n",
-  "sku": "SLIM00159N",
-  "name": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 33290,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Carmine Red) 1-Year Warranty, 1 Drawer, 1 Locker, 5 Shelves Online from Interio by Godrej. ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00159n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-red-slim00159n"
+  "source": "https://interio.com/product/slimline-2-door-steel-almirah-dusty-rose-slim00009f",
+  "family": "Slimline 2 Door with Locker and Drawer, Mirror and OHU",
+  "variants": 24,
+  "fromPrice": true
  },
  {
   "id": "slim00001",
@@ -5613,261 +2523,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 26390,
   "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Royal Ivory) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals on Steel Alm",
+  "note": "1-Year Warranty, 1 Locker, 4 Shelves",
   "image": "https://interio.com/media/catalog/product/s/l/slim00001_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-royal-ivory-slim00001"
- },
- {
-  "id": "slim00002",
-  "sku": "SLIM00002",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26390,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Pacific Blue) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals on Steel Al",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00002_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-pac-blue-slim00002"
- },
- {
-  "id": "slim00003",
-  "sku": "SLIM00003",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26390,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Russet) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00003_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-russet-slim00003"
- },
- {
-  "id": "slim00005",
-  "sku": "SLIM00005",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27090,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Purple) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00005_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-purple-slim00005"
- },
- {
-  "id": "slim00006n",
-  "sku": "SLIM00006N",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 27090,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah (Carmine Red) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals on Steel Alm",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00006n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-red-slim00006n"
- },
- {
-  "id": "slim00013f",
-  "sku": "SLIM00013F",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 26390,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah (Dusty Rose) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals on Steel Almi",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00013f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-dusty-rose-slim00013f"
- },
- {
-  "id": "slim00037",
-  "sku": "SLIM00037",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 29690,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Royal Ivory) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00037_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-royal-ivory-slim00037"
- },
- {
-  "id": "slim00038",
-  "sku": "SLIM00038",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 29690,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Pacific Blue) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00038_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-pac-blue-slim00038"
- },
- {
-  "id": "slim00039",
-  "sku": "SLIM00039",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 29690,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Russet) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00039_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-russet-slim00039"
- },
- {
-  "id": "slim00041",
-  "sku": "SLIM00041",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 30390,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Purple) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00041_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-purple-slim00041"
- },
- {
-  "id": "slim00042n",
-  "sku": "SLIM00042N",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 30390,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Plain Mirror (Carmine Red) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00042n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-plain-mirror-red-slim00042n"
- },
- {
-  "id": "slim00061f",
-  "sku": "SLIM00061F",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 29390,
-  "mrp": null,
-  "note": "Slimline 2 Door Steel Almirah with Curvy Mirror (Dusty Rose) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great d",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00061f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-dusty-rose-slim00061f"
- },
- {
-  "id": "slim00073",
-  "sku": "SLIM00073",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 29790,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Royal Ivory) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great d",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00073_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-royal-ivory-slim00073"
- },
- {
-  "id": "slim00074",
-  "sku": "SLIM00074",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 29790,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Pacific Blue) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00074_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-pac-blue-slim00074"
- },
- {
-  "id": "slim00075",
-  "sku": "SLIM00075",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 29790,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Russet) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00075_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-russet-slim00075"
- },
- {
-  "id": "slim00077",
-  "sku": "SLIM00077",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 30490,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Purple) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00077_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-purple-slim00077"
- },
- {
-  "id": "slim00078n",
-  "sku": "SLIM00078N",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 30490,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Star Mirror (Carmine Red) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great d",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00078n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-star-mirror-red-slim00078n"
- },
- {
-  "id": "slim00145",
-  "sku": "SLIM00145",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 29390,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Royal Ivory) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00145_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-royal-ivory-slim00145"
- },
- {
-  "id": "slim00146",
-  "sku": "SLIM00146",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 29390,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Pacific Blue) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00146_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-pac-blue-slim00146"
- },
- {
-  "id": "slim00147",
-  "sku": "SLIM00147",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 29390,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Russet) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00147_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-russet-slim00147"
- },
- {
-  "id": "slim00149",
-  "sku": "SLIM00149",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 30090,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Purple) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great deals",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00149_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-purple-slim00149"
- },
- {
-  "id": "slim00150n",
-  "sku": "SLIM00150N",
-  "name": "Slimline 2 Door with Locker, Mirror and OHU",
-  "room": "storage",
-  "type": "",
-  "from": 30090,
-  "mrp": null,
-  "note": "Slimline 2-Door Steel Almirah with Curvy Mirror (Carmine Red) 1-Year Warranty, 1 Locker, 4 Shelves Online from Interio by Godrej. Get great ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00150n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-2-door-steel-almirah-with-curvy-mirror-red-slim00150n"
+  "source": "https://interio.com/product/slimline-2-door-steel-almirah-royal-ivory-slim00001",
+  "family": "Slimline 2 Door with Locker, Mirror and OHU",
+  "variants": 22,
+  "fromPrice": true
  },
  {
   "id": "slim00281f",
@@ -5877,45 +2538,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 42690,
   "mrp": null,
-  "note": "Slimline 3 Door Steel Almirah (Portabella Matte) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great deals on Stee",
+  "note": "1-Year Warranty, 1 Locker, 7 Shelves",
   "image": "https://interio.com/media/catalog/product/s/l/slim00281f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-portabella-matte-slim00281f"
- },
- {
-  "id": "slim00289f",
-  "sku": "SLIM00289F",
-  "name": "Slimline 3 Door Alpine White with Locker and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 46090,
-  "mrp": null,
-  "note": "Slimline 3 Door Steel Almirah with Star Design Mirror (Portabella Matte) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej.",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00289f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-design-mirror-portabella-matte-slim00289f"
- },
- {
-  "id": "slim00301f",
-  "sku": "SLIM00301F",
-  "name": "Slimline 3 Door Alpine White with Locker and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 45990,
-  "mrp": null,
-  "note": "Slimline 3 Door Steel Almirah with Plain Mirror (Portabella Matte) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00301f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-plain-mirror-portabella-matte-slim00301f"
- },
- {
-  "id": "slim00113f",
-  "sku": "SLIM00113F",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 47390,
-  "mrp": null,
-  "note": "Slimline 3 Door Steel Almirah with Star Design Mirror (Dusty Rose) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Go",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00113f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-design-mirror-dusty-rose-slim00113f"
+  "source": "https://interio.com/product/slimline-3-door-steel-almirah-portabella-matte-slim00281f",
+  "family": "Slimline 3 Door Alpine White with Locker and Mirror",
+  "variants": 3,
+  "fromPrice": true
  },
  {
   "id": "slim00310",
@@ -5925,249 +2553,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 43990,
   "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah (Royal Ivory) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. Get great deals o",
+  "note": "1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves",
   "image": "https://interio.com/media/catalog/product/s/l/slim00310_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-royal-ivory-slim00310"
- },
- {
-  "id": "slim00311",
-  "sku": "SLIM00311",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 43990,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah (Pacific Blue) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. Get great deals ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00311_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-pac-blue-slim00311"
- },
- {
-  "id": "slim00312",
-  "sku": "SLIM00312",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 43990,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah (Russet) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. Get great deals on Ste",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00312_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-russet-slim00312"
- },
- {
-  "id": "slim00314",
-  "sku": "SLIM00314",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44790,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah (Purple) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. Get great deals on Ste",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00314_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-purple-slim00314"
- },
- {
-  "id": "slim00315n",
-  "sku": "SLIM00315N",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44790,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah (Carmine Red) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. Get great deals o",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00315n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-red-slim00315n"
- },
- {
-  "id": "slim00328",
-  "sku": "SLIM00328",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 47290,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Plain Mirror (Royal Ivory) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej.",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00328_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-plain-mirror-royal-ivory-slim00328"
- },
- {
-  "id": "slim00329",
-  "sku": "SLIM00329",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 47290,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Plain Mirror (Pacific Blue) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00329_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-plain-mirror-pac-blue-slim00329"
- },
- {
-  "id": "slim00330",
-  "sku": "SLIM00330",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 47290,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Plain Mirror (Russet) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. Get ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00330_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-plain-mirror-russet-slim00330"
- },
- {
-  "id": "slim00332",
-  "sku": "SLIM00332",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 48090,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Plain Mirror (Purple) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. Get ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00332_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-plain-mirror-purple-slim00332"
- },
- {
-  "id": "slim00333n",
-  "sku": "SLIM00333N",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 48090,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Plain Mirror (Carmine Red) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej.",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00333n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-plain-mirror-red-slim00333n"
- },
- {
-  "id": "slim00346",
-  "sku": "SLIM00346",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 47390,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Star Mirror (Royal Ivory) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00346_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-mirror-royal-ivory-slim00346"
- },
- {
-  "id": "slim00347",
-  "sku": "SLIM00347",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 47390,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Star Mirror (Pacific Blue) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej.",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00347_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-mirror-pac-blue-slim00347"
- },
- {
-  "id": "slim00348",
-  "sku": "SLIM00348",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 47390,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Star Mirror (Russet) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00348_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-mirror-russet-slim00348"
- },
- {
-  "id": "slim00350",
-  "sku": "SLIM00350",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 48190,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Star Mirror (Purple) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. Get g",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00350_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-mirror-purple-slim00350"
- },
- {
-  "id": "slim00351n",
-  "sku": "SLIM00351N",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 48190,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Star Mirror (Carmine Red) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00351n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-mirror-red-slim00351n"
- },
- {
-  "id": "slim00382",
-  "sku": "SLIM00382",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 46990,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Curvy Mirror (Royal Ivory) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej.",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00382_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-curvy-mirror-royal-ivory-slim00382"
- },
- {
-  "id": "slim00383",
-  "sku": "SLIM00383",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 46990,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Curvy Mirror (Pacific Blue) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00383_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-curvy-mirror-pac-blue-slim00383"
- },
- {
-  "id": "slim00384",
-  "sku": "SLIM00384",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 46990,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Curvy Mirror (Russet) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. Get ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00384_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-curvy-mirror-russet-slim00384"
- },
- {
-  "id": "slim00386",
-  "sku": "SLIM00386",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 47790,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Curvy Mirror (Purple) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. Get ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00386_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-curvy-mirror-purple-slim00386"
- },
- {
-  "id": "slim00387n",
-  "sku": "SLIM00387N",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 47790,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Curvy Mirror (Carmine Red) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej.",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00387n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-curvy-mirror-red-slim00387n"
- },
- {
-  "id": "slim00761",
-  "sku": "SLIM00761",
-  "name": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44790,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah (Textured Sea Pine) 1-Year Warranty, 2 Drawers, 1 Locker, 6 Shelves Online from Interio by Godrej. Get great d",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00761_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-tex-sea-pine-slim00761"
+  "source": "https://interio.com/product/slimline-3-door-steel-almirah-royal-ivory-slim00310",
+  "family": "Slimline 3 Door with Locker, Drawer, Overhead Unit and Mirror",
+  "variants": 22,
+  "fromPrice": true
  },
  {
   "id": "slim00045f",
@@ -6177,285 +2568,12 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 41490,
   "mrp": null,
-  "note": "Slimline 3 Door Steel Almirah (Dusty Rose) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great deals on Steel Almi",
+  "note": "1-Year Warranty, 1 Locker, 7 Shelves",
   "image": "https://interio.com/media/catalog/product/s/l/slim00045f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-dusty-rose-slim00045f"
- },
- {
-  "id": "slim00069f",
-  "sku": "SLIM00069F",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44490,
-  "mrp": null,
-  "note": "Slimline 3 Door Steel Almirah with Curvy Mirror (Dusty Rose) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great d",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00069f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-curvy-mirror-dusty-rose-slim00069f"
- },
- {
-  "id": "slim00093f",
-  "sku": "SLIM00093F",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44790,
-  "mrp": null,
-  "note": "Shop Slimline 3 Door Steel Almirah with Curvilinear Design Mirror (Dusty Rose)1-Year Warranty, 1 Locker, 7 Shelves Online. Get great deals &",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00093f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-design-mirror-dusty-rose-slim00093f"
- },
- {
-  "id": "slim00117f",
-  "sku": "SLIM00117F",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44890,
-  "mrp": null,
-  "note": "Shop Slimline 3 Door Steel Almirah with Star Design Mirror (Dusty Rose)1-Year Warranty, 1 Locker, 7 Shelves Online. Get great deals & offers",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00117f_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-design-mirror-dusty-rose-slim00117f"
- },
- {
-  "id": "slim00301",
-  "sku": "SLIM00301",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 41490,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah (Royal Ivory) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great deals on Steel Alm",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00301_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-royal-ivory-slim00301"
- },
- {
-  "id": "slim00302",
-  "sku": "SLIM00302",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 41490,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah (Pacific Blue) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great deals on Steel Al",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00302_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-pac-blue-slim00302"
- },
- {
-  "id": "slim00303",
-  "sku": "SLIM00303",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 41490,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah (Russet) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great deals on Steel Almirahs",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00303_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-russet-slim00303"
- },
- {
-  "id": "slim00305",
-  "sku": "SLIM00305",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 42290,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah (Textured Purple) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great deals on Steel",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00305_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-tex-purple-slim00305"
- },
- {
-  "id": "slim00306n",
-  "sku": "SLIM00306N",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 42290,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah (Carmine Red) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great deals on Steel Alm",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00306n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-red-slim00306n"
- },
- {
-  "id": "slim00319",
-  "sku": "SLIM00319",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44790,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Plain Mirror (Royal Ivory) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00319_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-plain-mirror-royal-ivory-slim00319"
- },
- {
-  "id": "slim00320",
-  "sku": "SLIM00320",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44790,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Plain Mirror (Pacific Blue) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00320_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-plain-mirror-pac-blue-slim00320"
- },
- {
-  "id": "slim00321",
-  "sku": "SLIM00321",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44790,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Plain Mirror (Russet) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great deals",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00321_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-plain-mirror-russet-slim00321"
- },
- {
-  "id": "slim00323",
-  "sku": "SLIM00323",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 45590,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Plain Mirror (Purple) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great deals",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00323_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-plain-mirror-purple-slim00323"
- },
- {
-  "id": "slim00324n",
-  "sku": "SLIM00324N",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 45590,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Plain Mirror (Carmine Red) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00324n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-plain-mirror-red-slim00324n"
- },
- {
-  "id": "slim00337",
-  "sku": "SLIM00337",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44890,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Star Mirror (Royal Ivory) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great d",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00337_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-mirror-royal-ivory-slim00337"
- },
- {
-  "id": "slim00338",
-  "sku": "SLIM00338",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44890,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Star Mirror (Pacific Blue) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00338_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-mirror-blue-slim00338"
- },
- {
-  "id": "slim00339",
-  "sku": "SLIM00339",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44890,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Star Mirror (Russet) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great deals ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00339_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-mirror-russet-slim00339"
- },
- {
-  "id": "slim00341",
-  "sku": "SLIM00341",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 45690,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Star Mirror (Purple) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great deals ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00341_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-mirror-purple-slim00341"
- },
- {
-  "id": "slim00342n",
-  "sku": "SLIM00342N",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 45690,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Star Mirror (Carmine Red) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great d",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00342n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-star-mirror-red-slim00342n"
- },
- {
-  "id": "slim00373",
-  "sku": "SLIM00373",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44490,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Curvy Mirror (Royal Ivory) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00373_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-curvy-mirror-royal-ivory-slim00373"
- },
- {
-  "id": "slim00374",
-  "sku": "SLIM00374",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44490,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Curvy Mirror (Pacific Blue) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00374_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-curvy-mirror-pac-blue-slim00374"
- },
- {
-  "id": "slim00375",
-  "sku": "SLIM00375",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 44490,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Curvy Mirror (Russet) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great deals",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00375_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-curvy-mirror-russet-slim00375"
- },
- {
-  "id": "slim00377",
-  "sku": "SLIM00377",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 45290,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Curvy Mirror (Purple) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great deals",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00377_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-curvy-mirror-purple-slim00377"
- },
- {
-  "id": "slim00378n",
-  "sku": "SLIM00378N",
-  "name": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
-  "room": "storage",
-  "type": "",
-  "from": 45290,
-  "mrp": null,
-  "note": "Slimline 3-Door Steel Almirah with Curvy Mirror (Carmine Red) 1-Year Warranty, 1 Locker, 7 Shelves Online from Interio by Godrej. Get great ",
-  "image": "https://interio.com/media/catalog/product/s/l/slim00378n_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-3-door-steel-almirah-with-curvy-mirror-red-slim00378n"
+  "source": "https://interio.com/product/slimline-3-door-steel-almirah-dusty-rose-slim00045f",
+  "family": "Slimline 3 Door with Locker, Overhead Unit and Mirror",
+  "variants": 24,
+  "fromPrice": true
  },
  {
   "id": "30161803sd00279",
@@ -6465,45 +2583,11 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 56290,
   "mrp": null,
-  "note": "Shop Slimline Blend 3-Door Steel Almirah with Mirror (Russet) 1-Year Warranty, 1 Locker, 2 Drawers, 7 Shelves Online from Interio by Godrej.",
+  "note": "1-Year Warranty, 1 Locker, 2 Drawers, 7 Shelves",
   "image": "https://interio.com/media/catalog/product/3/0/30161803sd00279_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-blend-3-door-steel-almirah-with-mirror-russet-30161803sd00279"
- },
- {
-  "id": "30161803sd00280",
-  "sku": "30161803SD00280",
-  "name": "Slimline Blend 3-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 56290,
-  "mrp": null,
-  "note": "Shop Slimline Blend 3-Door Steel Almirah with Mirror (Textured Purple) 1-Year Warranty, 1 Locker, 2 Drawers, 7 Shelves Online from Interio b",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00280_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-blend-3-door-steel-almirah-with-mirror-textured-purple-30161803sd00280"
- },
- {
-  "id": "30161803sd00281",
-  "sku": "30161803SD00281",
-  "name": "Slimline Blend 3-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 56290,
-  "mrp": null,
-  "note": "Shop Slimline Blend 3-Door Steel Almirah with Mirror (Textured Carmine Red) 1-Year Warranty, 1 Locker, 2 Drawers, 7 Shelves Online from Inte",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00281_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-blend-3-door-steel-almirah-with-mirror-textured-carmine-red-30161803sd00281"
- },
- {
-  "id": "30161803sd00782",
-  "sku": "30161803SD00782",
-  "name": "Slimline Dual 2-Door Steel Almirah",
-  "room": "storage",
-  "type": "",
-  "from": 37490,
-  "mrp": null,
-  "note": "Shop Slimline Dual 2-Door Steel Almirah with Mirror (Russet) 1-Year Warranty, 1 Locker, 2 Drawers, 6 Shelves Online from Interio by Godrej. ",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00782_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-dual-2-door-steel-almirah-with-mirror-russet-30161803sd00782"
+  "source": "https://interio.com/product/slimline-blend-3-door-steel-almirah-with-mirror-russet-30161803sd00279",
+  "family": "Slimline Blend 3-Door Steel Almirah",
+  "variants": 3
  },
  {
   "id": "30161803sd00784",
@@ -6513,21 +2597,25 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 32790,
   "mrp": null,
-  "note": "Shop Slimline Dual 2-Door Steel Almirah with Mirror (Textured Carmine Red) 1-Year Warranty, 1 Locker, 2 Drawers, 6 Shelves Online from Inter",
+  "note": "1-Year Warranty, 1 Locker, 2 Drawers, 6 Shelves",
   "image": "https://interio.com/media/catalog/product/3/0/30161803sd00784_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/slimline-dual-2-door-steel-almirah-with-mirror-tex-carmine-red-30161803sd00784"
+  "source": "https://interio.com/product/slimline-dual-2-door-steel-almirah-with-mirror-tex-carmine-red-30161803sd00784",
+  "family": "Slimline Dual 2-Door Steel Almirah",
+  "variants": 2,
+  "fromPrice": true
  },
  {
   "id": "30161803sd01740",
   "sku": "30161803SD01740",
-  "name": "StorEase 2-Door Almirah",
+  "name": "Storease 2-Door Steel Locker Unit Rose",
   "room": "storage",
   "type": "",
   "from": 20390,
   "mrp": null,
-  "note": "Shop StorEase 2-Door Steel Locker Unit (Rose) 1-Year Warranty, 1 Locker Online from Interio by Godrej. Get great deals on Steel Almirahs wit",
+  "note": "1-Year Warranty, 1 Locker",
   "image": "https://interio.com/media/catalog/product/3/0/30161803sd01740_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/storease-2-door-steel-locker-unit-rose-30161803sd01740"
+  "source": "https://interio.com/product/storease-2-door-steel-locker-unit-rose-30161803sd01740",
+  "family": "StorEase 2-Door Almirah"
  },
  {
   "id": "30161803sd00205",
@@ -6537,44 +2625,88 @@ window.HDE_CATALOG = { updated: "2026-09-25", products: [
   "type": "",
   "from": 31890,
   "mrp": null,
-  "note": "Shop Storwel® M2 2-Door Steel Almirah (Prince Grey) 1-Year Warranty, 1 Locker, 3 Shelves Online from Interio by Godrej. Get great deals on S",
+  "note": "1-Year Warranty, 1 Locker, 3 Shelves",
   "image": "https://interio.com/media/catalog/product/3/0/30161803sd00205_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/storwel-m2-2-door-steel-almirah-prince-grey-30161803sd00205"
+  "source": "https://interio.com/product/storwel-m2-2-door-steel-almirah-prince-grey-30161803sd00205",
+  "family": "Storwel® M2 2-Door Steel Almirah",
+  "variants": 2
  },
  {
-  "id": "30161803sd00206",
-  "sku": "30161803SD00206",
-  "name": "Storwel® M2 2-Door Steel Almirah",
+  "id": "56101531sd00020",
+  "sku": "56101531SD00020",
+  "name": "Meraki 16 Pairs Engineered Wood Shoe Cabinet",
   "room": "storage",
-  "type": "",
-  "from": 31890,
+  "type": "Shoe racks",
+  "from": 22990,
   "mrp": null,
-  "note": "Shop Storwel® M2 2-Door Steel Almirah (Graphite Grey) 1-Year Warranty, 1 Locker Online from Interio by Godrej. Get great deals on Steel Almi",
-  "image": "https://interio.com/media/catalog/product/3/0/30161803sd00206_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/storwel-m2-2-door-steel-almirah-graphite-grey-30161803sd00206"
+  "note": "1-Year Warranty, Brown & Beige",
+  "image": "https://interio.com/media/catalog/product/5/6/56101531sd00020_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
+  "source": "https://interio.com/product/meraki-16-pairs-engineered-wood-shoe-cabinet-56101531sd00020",
+  "family": "Meraki 16-Pairs Engineered Wood Shoe Cabinet"
  },
  {
-  "id": "56121403sd00061",
-  "sku": "56121403SD00061",
-  "name": "Vegas Tempered Glass Corner Table",
+  "id": "56101531sd00044",
+  "sku": "56101531SD00044",
+  "name": "Sienna 16 Pairs Engineered Wood Shoe Cabinet",
   "room": "storage",
-  "type": "",
-  "from": 10890,
+  "type": "Shoe racks",
+  "from": 17190,
   "mrp": null,
-  "note": "Vegas Tempered Glass Corner Table 1-Year Warranty, Black, Knock Down Online from Interio by Godrej. Get great deals on Corner Tables with ✔F",
-  "image": "https://interio.com/media/catalog/product/5/6/56121403sd00061_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
-  "source": "https://interio.com/product/vegas-tempered-glass-corner-table-56121403SD00061"
+  "note": "1-Year Warranty, Cinnamon",
+  "image": "https://interio.com/media/catalog/product/5/6/56101531sd00044_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
+  "source": "https://interio.com/product/sienna-16-pairs-engineered-wood-shoe-cabinet-56101531sd00044",
+  "family": "Sienna 16-Pairs Engineered Wood Shoe Cabinet"
  },
  {
-  "id": "vegas-tempered-glass-corner-table-gint043",
-  "sku": "",
-  "name": "Vegas Tempered Glass Corner Table",
+  "id": "56101531sd00048",
+  "sku": "56101531SD00048",
+  "name": "Step In 12 Pairs Steel Shoe Cabinet",
   "room": "storage",
-  "type": "",
-  "from": 10890,
+  "type": "Shoe racks",
+  "from": 14790,
   "mrp": null,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/vegas-tempered-glass-corner-table-GINT043"
+  "note": "1-Year Warranty, White",
+  "image": "https://interio.com/media/catalog/product/5/6/56101531sd00048_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
+  "source": "https://interio.com/product/step-in-12-pairs-steel-shoe-cabinet-56101531SD00048",
+  "family": "Step-In 12-Pairs Steel Shoe Cabinet"
+ },
+ {
+  "id": "56101531sd00049",
+  "sku": "56101531SD00049",
+  "name": "Step In 16 Pairs Steel Shoe Cabinet",
+  "room": "storage",
+  "type": "Shoe racks",
+  "from": 18390,
+  "mrp": null,
+  "note": "1-Year Warranty, White",
+  "image": "https://interio.com/media/catalog/product/5/6/56101531sd00049_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
+  "source": "https://interio.com/product/step-in-16-pairs-steel-shoe-cabinet-56101531SD00049",
+  "family": "Step-In 16-Pairs Steel Shoe Cabinet"
+ },
+ {
+  "id": "56101531sd00054",
+  "sku": "56101531SD00054",
+  "name": "Waves Advance 16 Pairs Engineered Wood Shoe Cabinet",
+  "room": "storage",
+  "type": "Shoe racks",
+  "from": 15790,
+  "mrp": null,
+  "note": "1-Year Warranty, Brown Maple",
+  "image": "https://interio.com/media/catalog/product/5/6/56101531sd00054_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
+  "source": "https://interio.com/product/waves-advance-16-pairs-engineered-wood-shoe-cabinet-56101531sd00054",
+  "family": "Waves Advance 16-Pairs Engineered Wood Shoe Cabinet"
+ },
+ {
+  "id": "wom000003-56101703apo0380",
+  "sku": "WOM000003-56101703APO0380",
+  "name": "Rejoice Engineered Wood Work From Home Wfh Table",
+  "room": "storage",
+  "type": "Tables",
+  "from": 9390,
+  "mrp": null,
+  "note": "1-Year Warranty, Savoy Beech, Knock Down",
+  "image": "https://interio.com/media/catalog/product/w/o/wom000003-56101703apo0380_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640",
+  "source": "https://interio.com/product/rejoice-engineered-wood-work-from-home-wfh-table-WOM000003-56101703APO0380",
+  "family": "Rejoice Engineered Wood Work from Home (WFH) Table"
  }
 ] };

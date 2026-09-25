@@ -41,12 +41,14 @@ ROOM_BY_CATEGORY = {
 }
 # Fallback when a page has no usable breadcrumb: first keyword that matches the product name wins.
 ROOM_KEYWORDS = [
+    ("bedroom", ["bedside", "sofa cum bed", "diwan"]),
     ("kitchen", ["kitchen", "chimney", "hob "]),
     ("dining", ["dining", "crockery"]),
-    ("office", ["office chair", "chair", "study", "desk", "workstation", "bookshelf", "book shelf"]),
+    ("living", ["sofa", "recliner", "lounger", "tv unit", "centre table", "center table", "coffee table", "corner table",
+                "side table", "display unit", "bean bag", "pouffe", "ottoman"]),
+    ("office", ["office chair", "chair", "study", "desk", "workstation", "computer table", "bookshelf", "book shelf"]),
     ("bedroom", ["bed", "wardrobe", "mattress", "dresser", "dressing", "bedside", "pillow"]),
-    ("living", ["sofa", "recliner", "lounger", "tv unit", "centre table", "center table", "coffee table", "bean bag", "ottoman"]),
-    ("storage", ["almirah", "locker", "safe", "shoe", "cabinet", "rack", "storage", "cupboard"]),
+    ("storage", ["almirah", "locker", "safe", "shoe", "cabinet", "rack", "cupboard"]),
 ]
 
 
@@ -192,6 +194,27 @@ def room_for(cat_path, name):
     return "storage"
 
 
+def slug_name(url, sku):
+    """Full product name from the URL slug, e.g. 'Adria King Size Engineered Wood Bed'.
+
+    Interio's og:title drops size and colour, which makes variants look identical."""
+    slug = url.rstrip("/").rsplit("/", 1)[-1]
+    if sku and slug.lower().endswith("-" + sku.lower()):
+        slug = slug[: -len(sku) - 1]
+    # Any other trailing product code (letters and digits mixed, 6+ chars), e.g. "-gint045", "-slim00242f".
+    slug = re.sub(r"-(?=[0-9a-z]*\d)(?=[0-9a-z]*[a-z])[0-9a-z]{6,}$", "", slug, flags=re.I)
+    words = [w if w.isdigit() else w.capitalize() for w in slug.split("-") if w]
+    name = " ".join(words)
+    name = re.sub(r"\b(\d) (Seater|Door|Drawer)\b", r"\1-\2", name)
+    return re.sub(r"\b(Tv|Ohu|L)\b", lambda m: m.group(1).upper(), name)
+
+
+def deal_type(desc):
+    """Interio descriptions end with 'Get great deals on <Category> with ...'."""
+    m = re.search(r"great deals on (.+?)(?:\s+with\b|[.!]|$)", desc, re.I)
+    return m.group(1).strip() if m else ""
+
+
 def pretty(slug):
     return slug.replace("-", " ").strip().capitalize()
 
@@ -229,23 +252,59 @@ def parse_product(page_html, url, sitemap_images=(), width=640):
     img = m.get("og:image") or ld_img or (sitemap_images[0] if sitemap_images else "")
     desc = html.unescape(m.get("og:description") or m.get("description") or product_ld.get("description") or "").strip()
     cats = category_path(p)
+    kind = deal_type(desc) or (pretty(cats[-1]) if cats else "")
     if not name or price is None:
         return None
     return {
+        "slugName": slug_name(url, sku),
         "id": (sku or url.rstrip("/").rsplit("/", 1)[-1]).lower(),
         "sku": sku.upper(),
         "name": name,
-        "room": room_for(cats, name),
-        "type": pretty(cats[-1]) if cats else "",
+        "room": room_for(cats, kind + " " + name),
+        "type": kind[:1].upper() + kind[1:],
+        "family": name,
         "from": round(price),
         "mrp": round(mrp) if mrp and mrp > price else None,
-        "note": re.sub(r"\s+", " ", desc)[:140],
+        "note": short_note(desc),
         "image": image_url(img, width),
         "source": url,
     }
 
 
+def short_note(desc):
+    """Keep the useful middle of 'Shop X 1-Year Warranty, Oak, Particle Board Online from Interio ...'."""
+    d = re.sub(r"\s+", " ", desc)
+    m = re.search(r"(\d+[- ]Years?\s+Warranty.*?)\s+Online from", d, re.I)
+    return (m.group(1) if m else d)[:120].strip(" ,")
+
+
+def finalise(items):
+    """Drop unpriced items and fold sizes/colours/finishes of one design (same short name) into one card.
+
+    A folded card keeps the lowest price and says how many options exist; `fromPrice` marks
+    that the options are priced differently, so the site labels it "Starting from"."""
+    groups = {}
+    for it in items:
+        if it.get("from"):
+            groups.setdefault(it["family"].lower(), []).append(it)
+    out = []
+    for members in groups.values():
+        members.sort(key=lambda x: x["from"])
+        card = dict(members[0])
+        if len(members) > 1:
+            card["name"] = card["family"]
+            card["variants"] = len(members)
+            if members[-1]["from"] != members[0]["from"]:
+                card["fromPrice"] = True
+        else:
+            card["name"] = card.get("slugName") or card["name"]
+        card.pop("slugName", None)
+        out.append(card)
+    return out
+
+
 def write_catalog(items, path):
+    items = finalise(items)
     items.sort(key=lambda x: (x["room"], x["type"], x["name"]))
     stamp = dt.datetime.utcnow().strftime("%Y-%m-%d")
     body = json.dumps(items, ensure_ascii=False, indent=1)
@@ -306,7 +365,8 @@ def main():
         print("No products parsed; catalogue left unchanged.", file=sys.stderr)
         return 1
     write_catalog(items, a.out)
-    print("Wrote %d products to %s (%d failed, %d blocked by robots.txt)" % (len(items), a.out, failed, skipped))
+    print("Wrote %d product pages to %s as %d cards, colour variants folded (%d failed, %d blocked by robots.txt)"
+          % (len(items), a.out, len(finalise(list(items))), failed, skipped))
     return 0
 
 
