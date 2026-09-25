@@ -1,0 +1,4 @@
+# Deploys the static lead-capture site in /site (Netlify, zero build step).
+[build]
+  publish = "site"
+  command = ""
