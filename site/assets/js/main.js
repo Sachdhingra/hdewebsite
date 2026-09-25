@@ -68,8 +68,8 @@
         '<nav class="nav" id="site-nav" aria-label="Main">' +
           '<div class="nav-item"><button type="button" aria-expanded="false" aria-controls="mega">Shop by room ' + icon("chev") + "</button>" +
             '<div class="mega" id="mega">' + megaCols +
-              '<div class="mega-cta"><strong>Not sure where to start?</strong><p>Book a free home visit. We measure, suggest layouts and share a quote.</p>' +
-              '<button class="btn btn--primary" type="button" data-enquire data-interest="Full home interiors">Book free visit</button></div>' +
+              '<div class="mega-cta"><strong>Not sure where to start?</strong><p>Get a free consultation in our showroom or over the phone. We suggest layouts and share a quote.</p>' +
+              '<button class="btn btn--primary" type="button" data-enquire data-interest="Full home interiors">Free consultation</button></div>' +
             "</div></div>" +
           navLink("collections.html", "Collections", "collections") +
           navLink("stores.html", "Showrooms", "stores") +
@@ -86,7 +86,7 @@
           "<p class=\"footer-partner\"><img src=\"assets/img/interio-logo.png\" alt=\"interio by Godrej\" width=\"105\" height=\"55\"></p><p>Furniture, modular kitchens and wardrobes for homes and offices in " + esc(B.city) + " and nearby. " + esc(B.partnerLine) + " since " + esc(B.since) + ".</p>" +
           '<p><a href="' + esc(B.instagram) + '" target="_blank" rel="noopener">Instagram</a> &middot; <a href="' + esc(B.facebook) + '" target="_blank" rel="noopener">Facebook</a></p></div>' +
         "<div><h4>Shop</h4><ul>" + D.rooms.map(function (r) { return '<li><a href="collections.html#' + r.slug + '">' + esc(r.name) + "</a></li>"; }).join("") + "</ul></div>" +
-        '<div><h4>Help</h4><ul><li><a href="about.html">About us</a></li><li><a href="contact.html">Get a quote</a></li><li><a href="contact.html#visit">Book a home visit</a></li><li><a href="stores.html">Showrooms</a></li><li><a href="contact.html#faq">FAQs</a></li></ul></div>' +
+        '<div><h4>Help</h4><ul><li><a href="about.html">About us</a></li><li><a href="contact.html">Get a quote</a></li><li><a href="contact.html#visit">Free consultation</a></li><li><a href="stores.html">Showrooms</a></li><li><a href="contact.html#faq">FAQs</a></li></ul></div>' +
         '<div><h4>Talk to us</h4><ul><li><a href="tel:' + esc(B.phoneHref) + '">' + esc(B.phone) + '</a></li><li><a href="' + waLink("Hi, I have a question.") + '" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:' + esc(B.email) + '">' + esc(B.email) + "</a></li><li>" + esc(B.hours) + "</li></ul></div>" +
       "</div>" +
       '<div class="legal"><div class="wrap"><span>&copy; ' + new Date().getFullYear() + " " + esc(B.name) + ". All rights reserved.</span>" +
@@ -497,7 +497,7 @@
       var bar, current = [], shown = 0;
       function render() {
         grid.innerHTML = current.length ? current.slice(0, shown).map(productCard).join("") :
-          '<div class="empty"><p>These are designed and priced for your home, so we quote them after a free visit.</p><button class="btn btn--primary" type="button" data-enquire data-interest="' + esc((roomBySlug(location.hash.slice(1)) || {}).name || "Full home interiors") + '">Book a free home visit</button></div>';
+          '<div class="empty"><p>These are designed and priced for your home, so we quote them after a free consultation in our showroom or over the phone.</p><button class="btn btn--primary" type="button" data-enquire data-interest="' + esc((roomBySlug(location.hash.slice(1)) || {}).name || "Full home interiors") + '">Get a free consultation</button></div>';
         wireImages(grid);
         var left = current.length - shown;
         more.innerHTML = left > 0 ? '<p class="more-count">Showing ' + shown + " of " + current.length + '</p><button class="btn btn--ghost" type="button">Show ' + Math.min(left, PAGE_SIZE) + " more</button>" : "";
