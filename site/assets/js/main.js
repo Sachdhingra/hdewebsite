@@ -306,11 +306,26 @@
 
   /* ---------- catalogue ---------- */
   function roomBySlug(s) { return D.rooms.filter(function (r) { return r.slug === s; })[0]; }
+  // The synced interio.com catalogue (assets/js/catalog.js) replaces the sample products when present.
+  var CATALOG = window.HDE_CATALOG && window.HDE_CATALOG.products && window.HDE_CATALOG.products.length ? window.HDE_CATALOG.products : null;
+  var PRODUCTS = CATALOG || D.products;
+  var PAGE_SIZE = 24;
+
+  // Home page picks: round-robin across rooms so every room shows up.
+  function featured(n) {
+    var byRoom = D.rooms.map(function (r) { return PRODUCTS.filter(function (p) { return p.room === r.slug; }); });
+    var out = [];
+    for (var i = 0; out.length < n && i < 50; i++) {
+      byRoom.forEach(function (list) { if (list[i] && out.length < n) out.push(list[i]); });
+    }
+    return out;
+  }
+
   function productCard(p) {
-    var room = roomBySlug(p.room);
+    var room = roomBySlug(p.room) || D.rooms[0];
     return '<article class="card">' + ph(p.image, room.name, p.name) +
       '<div class="card-body"><span class="card-type">' + esc(p.type) + "</span><h3>" + esc(p.name) + '</h3><p class="card-note">' + esc(p.note) + "</p>" +
-      '<div class="card-foot"><span class="price"><small>Starting from</small><b>' + rupees(p.from) + "</b></span>" +
+      '<div class="card-foot"><span class="price"><small>' + (CATALOG ? "Price" : "Starting from") + "</small><b>" + rupees(p.from) + "</b>" + (p.mrp ? " <s>" + rupees(p.mrp) + "</s>" : "") + "</span>" +
       '<button class="btn btn--primary" type="button" data-enquire data-product="' + esc(p.name) + '" data-interest="' + esc(room.name) + '">Get best price</button></div></div></article>';
   }
 
@@ -329,12 +344,21 @@
       var withFilters = el.hasAttribute("data-filters");
       var grid = document.createElement("div");
       grid.className = "grid-products";
-      var bar;
-      function draw(slug) {
-        var list = D.products.filter(function (p) { return !slug || p.room === slug; });
-        if (limit) list = list.slice(0, limit);
-        grid.innerHTML = list.length ? list.map(productCard).join("") : '<p class="empty">New designs arriving soon. Ask us what is in store today.</p>';
+      var more = document.createElement("div");
+      more.className = "more";
+      var bar, current = [], shown = 0;
+      function render() {
+        grid.innerHTML = current.length ? current.slice(0, shown).map(productCard).join("") : '<p class="empty">New designs arriving soon. Ask us what is in store today.</p>';
         wireImages(grid);
+        var left = current.length - shown;
+        more.innerHTML = left > 0 ? '<p class="more-count">Showing ' + shown + " of " + current.length + '</p><button class="btn btn--ghost" type="button">Show ' + Math.min(left, PAGE_SIZE) + " more</button>" : "";
+      }
+      more.addEventListener("click", function (e) { if (e.target.closest("button")) { shown += PAGE_SIZE; render(); } });
+      function draw(slug) {
+        var all = limit && !withFilters ? featured(limit) : PRODUCTS.filter(function (p) { return !slug || p.room === slug; });
+        shown = withFilters ? PAGE_SIZE : all.length;
+        current = all;
+        render();
         if (bar) $all(".chip", bar).forEach(function (c) { c.setAttribute("aria-pressed", String(c.getAttribute("data-slug") === (slug || ""))); });
         var title = $("[data-room-title]");
         if (title) {
@@ -363,6 +387,7 @@
         window.addEventListener("hashchange", function () { draw(location.hash.slice(1)); });
       }
       el.appendChild(grid);
+      el.appendChild(more);
       draw(withFilters ? location.hash.slice(1) : "");
     });
   }
