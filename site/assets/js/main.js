@@ -480,8 +480,11 @@
 
   function mountRooms() {
     $all("[data-rooms]").forEach(function (el) {
+      // The weekly catalogue sync picks a fresh product photo for each room (catalog.js `rooms`).
+      var weekly = (window.HDE_CATALOG && window.HDE_CATALOG.rooms) || {};
       el.innerHTML = D.rooms.map(function (r, i) {
-        return '<a class="room" href="collections.html#' + r.slug + '">' + ph(r.image, r.name, "", i < 2) +
+        var pick = weekly[r.slug];
+        return '<a class="room" href="collections.html#' + r.slug + '">' + ph(pick ? pick.image : r.image, r.name, pick ? pick.name : "", i < 2) +
           '<span class="room-copy"><h3>' + esc(r.name) + "</h3><span>" + esc(r.blurb) + "</span></span></a>";
       }).join("");
     });
