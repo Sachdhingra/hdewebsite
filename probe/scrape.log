@@ -1,9 +1,0 @@
-/home/runner/work/hdewebsite/hdewebsite/tools/scrape_interio.py:583: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
-  stamp = dt.datetime.utcnow().strftime("%Y-%m-%d")
-   1  kitchen    166818  Modular Kitchen Complete Set with Countertop, Cabinets and Pull-out Drawers
-   2  kitchen     89053  Modular Kitchen Add-On Set with Countertop, Cabinets and Pull-out Drawers
-   3  kitchen     89053  Modular Kitchen Add-On Set with Countertop, Cabinets and Pull-out Drawers
-   4  kitchen     90651  Modular Kitchen Add-On Set with Countertop, Cabinets and Pull-out Drawers
-   5  kitchen    148970  Modular Kitchen Complete Set with Countertop, Cabinets and Pull-out Drawers
-   6  kitchen    163302  Modular Kitchen Complete Set with Countertop, Cabinets and Pull-out Drawers
-Wrote 6 product pages to probe/catalog.js as 2 cards, colour variants folded (0 failed, 0 blocked by robots.txt)

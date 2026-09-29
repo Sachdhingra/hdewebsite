@@ -452,6 +452,14 @@ def short_note(desc):
     return (m.group(1) if m else d)[:120].strip(" ,")
 
 
+def option_colour(item):
+    """The Colour spec of a product, used to tell apart options that share a name."""
+    for label, value in (item.get("details") or {}).get("specs", []):
+        if label == "Colour":
+            return value
+    return ""
+
+
 def finalise(items):
     """Drop unpriced items and fold sizes/colours/finishes of one design (same short name) into one card.
 
@@ -468,7 +476,11 @@ def finalise(items):
         card = dict(members[0])
         card.pop("details", None)
         if len(members) > 1:
-            card["options"] = [{"id": m["id"], "name": m.get("slugName") or m["name"], "price": m["from"]} for m in members]
+            names = [m.get("slugName") or m["name"] for m in members]
+            if len(set(n.lower() for n in names)) < len(names):
+                # Same name for every option (e.g. kitchen sets in different finishes): label them by colour.
+                names = [option_colour(m) or n for m, n in zip(members, names)]
+            card["options"] = [{"id": m["id"], "name": n, "price": m["from"]} for m, n in zip(members, names)]
             card["name"] = card["family"]
             card["variants"] = len(members)
             if members[-1]["from"] != members[0]["from"]:

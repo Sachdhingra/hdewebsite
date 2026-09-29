@@ -1,4 +1,4 @@
-name: Save Interio kitchen range pages (temporary)
+name: Save Interio kitchen range photos (temporary)
 
 # One-off helper: saves the kitchen range pages and their banner photos, and
 # test-parses the kitchen sets. Remove once done.
@@ -20,14 +20,11 @@ jobs:
         run: |
           mkdir -p probe
           UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
-          for r in steel-kitchen willow-wok-kitchen flavors-kitchen ark-kitchen; do
-            curl -sSL -A "$UA" --compressed -o "probe/$r.html" -w "%{http_code} %{size_download} $r\n" "https://interio.com/$r/" || true
+          for f in Steel_Chef_2 Steel_Chef_3 Willow_Wok_2 Willow_Wok_3 Flavours_2 Flavours_3; do
+            curl -sSL -A "$UA" -o "probe/$f.jpg" -w "%{http_code} %{size_download} $f\n" "https://interio.com/media/wysiwyg/$f.jpg" || true
             sleep 1
-            grep -oE 'https://interio\.com/media/[^"'"'"' )\\]+\.(jpe?g|png|webp)' "probe/$r.html" | sort -u > "probe/$r-images.txt" || true
-            wc -l "probe/$r-images.txt"
           done
-          python3 tools/scrape_interio.py --limit 6 --max-minutes 5 --out probe/catalog.js --details-dir probe/details --images-dir "" --rooms-dir "" > probe/scrape.log 2>&1 || true
-          tail -20 probe/scrape.log
+          file probe/*
       - name: Commit
         run: |
           git config user.name "hde-catalog-bot"
