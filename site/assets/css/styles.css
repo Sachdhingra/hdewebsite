@@ -150,6 +150,7 @@ p { margin: 0; }
 }
 .ph img { width: 100%; height: 100%; object-fit: cover; position: relative; transition: transform 500ms ease; }
 .ph img.is-broken { visibility: hidden; }
+.ph picture { display: contents; }
 
 /* Hero */
 .hero { background: var(--stone); }
@@ -164,6 +165,7 @@ p { margin: 0; }
   background: linear-gradient(0deg, rgba(20, 14, 10, 0.78), rgba(20, 14, 10, 0));
 }
 .slide-copy .eyebrow { color: #f2c877; }
+@media (min-width: 641px) { .slide-copy--narrow { max-width: 440px; padding-right: 80px; align-self: stretch; align-content: end; background: linear-gradient(90deg, rgba(20, 14, 10, 0.74) 55%, rgba(20, 14, 10, 0)); } }
 .slide-copy p { color: #f1e9e1; font-size: 1.05rem; }
 .slide-copy .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
 .slide-dots { position: absolute; z-index: 3; right: 20px; bottom: 20px; display: flex; gap: 4px; }
