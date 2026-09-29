@@ -1,7 +1,7 @@
-name: Save Interio kitchen pages (temporary)
+name: Save Interio kitchen photos (temporary)
 
-# One-off helper: saves Interio's modular kitchen pages so their banner photos
-# can be found. Remove once done.
+# One-off helper: downloads Interio's modular kitchen banner photos so an HDE
+# kitchen banner can be built from them. Remove once done.
 on:
   push:
     paths:
@@ -20,20 +20,16 @@ jobs:
         run: |
           mkdir -p probe
           UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
-          i=0
-          for u in "https://interio.com/" "https://interio.com/modular-kitchen" "https://interio.com/modular-kitchens" "https://interio.com/kitchen" "https://interio.com/home-furniture/modular-kitchen" "https://interio.com/modular-kitchen-design" "https://interio.com/kitchens"; do
-            i=$((i+1))
-            curl -sSL -A "$UA" --compressed -o "probe/p$i.html" -w "$i %{http_code} %{size_download} %{url_effective}\n" "$u" >> probe/index.txt || true
+          for p in wysiwyg/Kitchen_Desktop_1.jpg wysiwyg/Kitchen_Mobile.jpg wysiwyg/Modular_Kitchen_MK.jpg wysiwyg/Kitchen_design_expert_1_1_.jpg wysiwyg/Kitchens-updated/Steel_Chef.jpg wysiwyg/Kitchens-updated/Willow_Wok.jpg wysiwyg/Kitchens/Flavours.jpg wysiwyg/modular-kitchen-contact_1.jpg wysiwyg/modular-kitchen-getinspired_1.jpg .renditions/wysiwyg/Kitchens/7.jpg .renditions/wysiwyg/Kitchens/8.jpg catalog/product/k/i/kitchenmodel01_a2_413x440.jpg catalog/product/k/i/kitchenmodel03_a2_413x440.jpg catalog/product/k/i/kitchenmodel04_a2_413x440.jpg; do
+            out="probe/$(echo "$p" | tr '/' '_')"
+            curl -sSL -A "$UA" -o "$out" -w "%{http_code} %{size_download} $p\n" "https://interio.com/media/$p" || true
             sleep 1
           done
-          cat probe/index.txt
-          grep -ohiE 'https?://[^"'"'"' )]+kitchen[^"'"'"' )]*\.(jpe?g|png|webp)[^"'"'"' )]*' probe/*.html | sort -u > probe/kitchen_images.txt || true
-          grep -ohiE 'href="[^"]*kitchen[^"]*"' probe/*.html | sort -u > probe/kitchen_links.txt || true
-          wc -l probe/*.txt
+          file probe/*
       - name: Commit
         run: |
           git config user.name "hde-catalog-bot"
           git config user.email "hde-catalog-bot@users.noreply.github.com"
           git add probe
-          git commit -m "Add temporary kitchen pages" || exit 0
+          git commit -m "Add temporary kitchen photos" || exit 0
           git push origin "HEAD:${GITHUB_REF_NAME}"

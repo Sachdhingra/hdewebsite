@@ -1,7 +1,0 @@
-1 200 82364 https://interio.com/
-2 200 73146 https://interio.com/modular-kitchen
-3 200 73173 https://interio.com/modular-kitchens
-4 200 58637 https://interio.com/kitchen
-5 404 594668 https://interio.com/home-furniture/modular-kitchen
-6 404 594643 https://interio.com/modular-kitchen-design
-7 404 594601 https://interio.com/kitchens
