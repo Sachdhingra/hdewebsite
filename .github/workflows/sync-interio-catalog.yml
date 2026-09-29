@@ -46,7 +46,7 @@ jobs:
             --max-minutes 100
       - name: Commit catalogue if it changed
         run: |
-          git add -A site/assets/js/catalog.js site/assets/data/products site/assets/img/products
+          git add -A site/assets/js/catalog.js site/assets/data/products site/assets/img/products site/assets/img/rooms
           if git diff --cached --quiet; then
             echo "Catalogue unchanged."
             exit 0

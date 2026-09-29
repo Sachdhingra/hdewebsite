@@ -14,7 +14,7 @@ window.HDE_CONFIG = {
     // numbers; swap in your direct shop number if you prefer.
     phone: "+91 91679 90455",
     phoneHref: "+919167990455",
-    whatsapp: "919800000000",           // FILL IN: WhatsApp number, digits only with country code (no +)
+    whatsapp: "919837115799",            // WhatsApp number, digits only with country code (no +)
     email: "sachdhingra@gmail.com",     // From the Google listing. A business address (e.g. info@yourdomain) looks more professional
     hours: "Open every day, 11:00 AM to 8:00 PM", // From the Google listing
     instagram: "https://instagram.com/",   // FILL IN
