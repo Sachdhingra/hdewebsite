@@ -41,6 +41,9 @@ ROOM_BY_CATEGORY = {
     "office-and-study": "office", "modular-kitchen": "kitchen", "kitchen": "kitchen",
     "storage": "storage", "mattresses": "bedroom",
 }
+# Landing pages whose products are collected first (before the sitemap) and filed under the given room,
+# so ranges that sit late in the sitemap still make it into a time-limited sync.
+FEATURED_PAGES = [("/modular-kitchen", "kitchen")]
 # Fallback when a page has no usable breadcrumb: first keyword that matches the product name wins.
 ROOM_KEYWORDS = [
     ("bedroom", ["bedside", "sofa cum bed", "diwan"]),
@@ -84,6 +87,33 @@ def sitemap_products(index_url):
             seen.add(loc)
             imgs = [i.text.strip() for i in u.findall("image:image/image:loc", NS) if i.text]
             yield loc, imgs
+
+
+def featured_products(pages):
+    """Yield (product_url, [], room) for every /product/ link on the given landing pages."""
+    for path, room in pages:
+        try:
+            page = fetch(BASE + path)
+        except Exception as e:
+            print("  ! %s: %s" % (path, e), file=sys.stderr)
+            continue
+        seen = set()
+        for m in re.finditer(r'href="((?:https://interio\.com)?/product/[^"?#]+)"', page):
+            url = urllib.parse.urljoin(BASE, m.group(1))
+            if url not in seen:
+                seen.add(url)
+                yield url, [], room
+
+
+def all_products(index_url, pages):
+    """Featured landing-page products first, then the sitemap, each URL once."""
+    seen = set()
+    for url, imgs, room in featured_products(pages):
+        seen.add(url.lower())
+        yield url, imgs, room
+    for url, imgs in sitemap_products(index_url):
+        if url.lower() not in seen:
+            yield url, imgs, None
 
 
 class PageParser(HTMLParser):
@@ -588,7 +618,7 @@ def main():
 
     items, failed, skipped = [], 0, 0
     started = time.time()
-    for url, imgs in sitemap_products(SITEMAP_INDEX):
+    for url, imgs, room in all_products(SITEMAP_INDEX, FEATURED_PAGES):
         if a.limit and len(items) >= a.limit:
             break
         if time.time() - started > a.max_minutes * 60:
@@ -602,6 +632,8 @@ def main():
         except Exception as e:
             print("  ! %s: %s" % (url, e), file=sys.stderr)
             item = None
+        if item and room:
+            item["room"] = room
         if item and (not keep or item["room"] in keep):
             items.append(item)
             print("%4d  %-8s %8s  %s" % (len(items), item["room"], item["from"], item["name"]))

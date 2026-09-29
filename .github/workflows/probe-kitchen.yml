@@ -1,0 +1,38 @@
+name: Save Interio kitchen range pages (temporary)
+
+# One-off helper: saves the kitchen range pages and their banner photos, and
+# test-parses the kitchen sets. Remove once done.
+on:
+  push:
+    paths:
+      - .github/workflows/probe-kitchen.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch
+        run: |
+          mkdir -p probe
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
+          for r in steel-kitchen willow-wok-kitchen flavors-kitchen ark-kitchen; do
+            curl -sSL -A "$UA" --compressed -o "probe/$r.html" -w "%{http_code} %{size_download} $r\n" "https://interio.com/$r/" || true
+            sleep 1
+            grep -oE 'https://interio\.com/media/[^"'"'"' )\\]+\.(jpe?g|png|webp)' "probe/$r.html" | sort -u > "probe/$r-images.txt" || true
+            wc -l "probe/$r-images.txt"
+          done
+          python3 tools/scrape_interio.py --limit 6 --max-minutes 5 --out probe/catalog.js --details-dir probe/details --images-dir "" --rooms-dir "" > probe/scrape.log 2>&1 || true
+          tail -20 probe/scrape.log
+      - name: Commit
+        run: |
+          git config user.name "hde-catalog-bot"
+          git config user.email "hde-catalog-bot@users.noreply.github.com"
+          git add probe
+          git commit -m "Add temporary kitchen range pages" || exit 0
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"
