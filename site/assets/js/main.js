@@ -490,6 +490,18 @@
     });
   }
 
+  // Made-to-measure kitchen ranges, shown above the ready-made kitchen sets under Kitchen.
+  function kitchenRanges() {
+    return '<div class="section-head"><div><h2>Modular kitchen ranges</h2><p>Made to your room in the layout you need: ' +
+      esc(D.kitchenLayouts.join(", ")) + '. We plan it with you and give you a fixed quote.</p></div></div><div class="grid-products">' +
+      D.kitchenRanges.map(function (r) {
+        return '<article class="card"><div class="ph"><img src="' + esc(r.image) + '" alt="' + esc(r.name) + ' modular kitchen" loading="lazy" width="467" height="350"></div>' +
+          '<div class="card-body"><span class="card-type">' + esc(r.material) + "</span><h3>" + esc(r.name) + '</h3><p class="card-note">' + esc(r.text) + "</p>" +
+          (r.link ? '<a class="link-arrow" href="' + esc(r.link) + '" target="_blank" rel="noopener">Explore the range ' + icon("arrow") + "</a>" : "") +
+          '<div class="card-foot"><span class="price"><small>Price</small><b>On quote</b></span><button class="btn btn--primary" type="button" data-enquire data-interest="Modular Kitchen: ' + esc(r.name) + '">Get a quote</button></div></div></article>';
+      }).join("") + '</div><div class="section-head kitchen-sets-head"><div><h2>Ready-made kitchen sets</h2></div></div>';
+  }
+
   function mountProducts() {
     $all("[data-products]").forEach(function (el) {
       var limit = parseInt(el.getAttribute("data-limit") || "0", 10);
@@ -499,6 +511,8 @@
       var more = document.createElement("div");
       more.className = "more";
       var bar, current = [], shown = 0;
+      var ranges = document.createElement("div");
+      ranges.className = "kitchen-ranges";
       function render() {
         grid.innerHTML = current.length ? current.slice(0, shown).map(productCard).join("") :
           '<div class="empty"><p>These are designed and priced for your home, so we quote them after a free consultation in our showroom or over the phone.</p><button class="btn btn--primary" type="button" data-enquire data-interest="' + esc((roomBySlug(location.hash.slice(1)) || {}).name || "Full home interiors") + '">Get a free consultation</button></div>';
@@ -512,6 +526,8 @@
         shown = withFilters ? PAGE_SIZE : all.length;
         current = all;
         render();
+        ranges.innerHTML = withFilters && slug === "kitchen" && D.kitchenRanges ? kitchenRanges() : "";
+        wireImages(ranges);
         if (bar) $all(".chip", bar).forEach(function (c) { c.setAttribute("aria-pressed", String(c.getAttribute("data-slug") === (slug || ""))); });
         var title = $("[data-room-title]");
         if (title) {
@@ -539,6 +555,7 @@
         el.appendChild(bar);
         window.addEventListener("hashchange", function () { draw(location.hash.slice(1)); });
       }
+      el.appendChild(ranges);
       el.appendChild(grid);
       el.appendChild(more);
       draw(withFilters ? location.hash.slice(1) : "");
