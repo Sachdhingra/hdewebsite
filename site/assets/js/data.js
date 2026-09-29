@@ -4,6 +4,19 @@
  * "assets/img/your-photo.jpg"). Prices are indicative samples: FILL IN.
  */
 window.HDE_DATA = {
+  // Interio's modular kitchen ranges (interio.com/modular-kitchen). Made to measure, so they are quoted after a consultation.
+  kitchenRanges: [
+    { name: "Steel Chef 2.0", material: "Galvanised steel kitchens",
+      text: "A galvanised-steel carcass made for heavy utensils, oil and moisture, with laminate and wood-look finishes. Rust and termite resistant.",
+      image: "assets/img/kitchen/range-steel-chef.jpg" },
+    { name: "Willow Wok", material: "Boiling waterproof (BWP) ply",
+      text: "A warm wooden look in boiling waterproof ply, termite resistant and easy to keep clean.",
+      image: "assets/img/kitchen/range-willow-wok.jpg" },
+    { name: "Flavors", material: "HDHMR board",
+      text: "High density, high moisture resistant board with acrylic, glass, textured and powder-coated steel shutter options.",
+      image: "assets/img/kitchen/range-flavors.jpg" }
+  ],
+  kitchenLayouts: ["Straight", "L-shape", "U-shape", "Parallel", "Island"],
   rooms: [
     { slug: "living", name: "Living Room", blurb: "Sofas, recliners, TV units and centre tables",
       image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=70&auto=format",

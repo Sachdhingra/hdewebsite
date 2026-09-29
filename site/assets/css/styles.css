@@ -245,6 +245,9 @@ p { margin: 0; }
 .price small { display: block; font-size: 0.72rem; color: var(--ink-2); letter-spacing: 0.08em; text-transform: uppercase; }
 .price b { font-size: 1.12rem; }
 .price s { color: var(--ink-2); font-size: 0.85rem; margin-left: 4px; }
+.kitchen-ranges:empty { display: none; }
+.kitchen-ranges .section-head p { color: var(--ink-2); margin-top: 6px; max-width: 60ch; }
+.kitchen-sets-head { margin-top: 44px; }
 .more { display: grid; justify-items: center; gap: 10px; margin-top: 28px; }
 .more:empty { display: none; }
 .more-count { color: var(--ink-2); font-size: 0.9rem; }
