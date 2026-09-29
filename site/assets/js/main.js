@@ -426,7 +426,7 @@
               '<button class="btn btn--ghost" type="button" data-share>Share</button>' +
             "</div>" +
             '<ul class="pdp-perks">' +
-              "<li>" + icon("truck") + "Free delivery and installation in " + esc(B.city) + "</li>" +
+              "<li>" + icon("truck") + "Timely delivery by our local team in " + esc(B.city) + "</li>" +
               "<li>" + icon("shield") + "Genuine Godrej Interio warranty, serviced by our local team</li>" +
               "<li>" + icon("store") + "See it at our " + C.stores.map(function (st) { return esc(st.name.replace(" Showroom", "")); }).join(" or ") + " showroom</li>" +
             "</ul>" +
