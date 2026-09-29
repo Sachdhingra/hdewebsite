@@ -8,13 +8,13 @@ window.HDE_DATA = {
   kitchenRanges: [
     { name: "Steel Chef 2.0", material: "Galvanised steel kitchens",
       text: "A galvanised-steel carcass made for heavy utensils, oil and moisture, with laminate and wood-look finishes. Rust and termite resistant.",
-      image: "assets/img/kitchen/range-steel-chef.jpg" },
+      image: "assets/img/kitchen/range-steel-chef.jpg", link: "https://interio.com/steel-kitchen/" },
     { name: "Willow Wok", material: "Boiling waterproof (BWP) ply",
       text: "A warm wooden look in boiling waterproof ply, termite resistant and easy to keep clean.",
-      image: "assets/img/kitchen/range-willow-wok.jpg" },
+      image: "assets/img/kitchen/range-willow-wok.jpg", link: "https://interio.com/willow-wok-kitchen/" },
     { name: "Flavors", material: "HDHMR board",
       text: "High density, high moisture resistant board with acrylic, glass, textured and powder-coated steel shutter options.",
-      image: "assets/img/kitchen/range-flavors.jpg" }
+      image: "assets/img/kitchen/range-flavors.jpg", link: "https://interio.com/flavors-kitchen/" }
   ],
   kitchenLayouts: ["Straight", "L-shape", "U-shape", "Parallel", "Island"],
   rooms: [

@@ -497,6 +497,7 @@
       D.kitchenRanges.map(function (r) {
         return '<article class="card"><div class="ph"><img src="' + esc(r.image) + '" alt="' + esc(r.name) + ' modular kitchen" loading="lazy" width="467" height="350"></div>' +
           '<div class="card-body"><span class="card-type">' + esc(r.material) + "</span><h3>" + esc(r.name) + '</h3><p class="card-note">' + esc(r.text) + "</p>" +
+          (r.link ? '<a class="link-arrow" href="' + esc(r.link) + '" target="_blank" rel="noopener">Explore the range ' + icon("arrow") + "</a>" : "") +
           '<div class="card-foot"><span class="price"><small>Price</small><b>On quote</b></span><button class="btn btn--primary" type="button" data-enquire data-interest="Modular Kitchen: ' + esc(r.name) + '">Get a quote</button></div></div></article>';
       }).join("") + '</div><div class="section-head kitchen-sets-head"><div><h2>Ready-made kitchen sets</h2></div></div>';
   }

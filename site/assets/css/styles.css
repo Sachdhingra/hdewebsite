@@ -430,6 +430,8 @@ p { margin: 0; }
 }
 .pdp-thumbs img { background: var(--stone-2); }
 .section-head .link-arrow { white-space: nowrap; }
+.card .link-arrow { font-size: 0.92rem; justify-self: start; }
+.card .link-arrow svg { width: 16px; height: 16px; flex: none; }
 
 /* ---------- see it in your room ---------- */
 .planner { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(20px, 3vw, 36px); align-items: start; }
