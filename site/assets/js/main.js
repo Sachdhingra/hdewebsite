@@ -726,6 +726,61 @@
     });
   }
 
+  // "Install the app" popup. Chrome, Edge and Android fire beforeinstallprompt; iPhone and iPad Safari
+  // have no prompt, so they get Add to Home Screen steps instead. A dismissal is remembered for 14 days.
+  function mountInstall() {
+    if ("serviceWorker" in navigator && location.protocol !== "file:") {
+      navigator.serviceWorker.register("/sw.js").catch(function () {});
+    }
+    var standalone = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+    if (standalone) return;
+    var KEY = "hde-install-dismissed";
+    try { if (Date.now() - Number(localStorage.getItem(KEY) || 0) < 14 * 864e5) return; } catch (e) {}
+    var ua = navigator.userAgent;
+    var ios = /iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+    var iosSafari = ios && !/crios|fxios|edgios/i.test(ua);
+    var deferred = null;
+
+    function show() {
+      if (document.querySelector(".install")) return;
+      var el = document.createElement("div");
+      el.className = "install";
+      el.setAttribute("role", "dialog");
+      el.setAttribute("aria-label", "Install our app");
+      el.innerHTML = '<img src="assets/img/icons/icon-192.png" alt="" width="48" height="48">' +
+        '<div class="install-copy"><strong>Get the HDE app</strong><span>' +
+        (deferred ? "Add Home Decor Enterprises to your " + (/android|mobile/i.test(ua) ? "phone" : "computer") + " for one-tap browsing and WhatsApp."
+          : 'Tap Share <span class="install-share" aria-hidden="true">&#x2191;</span> and then "Add to Home Screen".') +
+        "</span></div>" +
+        '<div class="install-btns">' + (deferred ? '<button class="btn btn--primary" type="button" data-install>Install</button>' : "") +
+        '<button class="btn btn--ghost" type="button" data-install-close>' + (deferred ? "Not now" : "Got it") + "</button></div>";
+      document.body.appendChild(el);
+      requestAnimationFrame(function () { el.classList.add("is-open"); });
+      function close(remember) {
+        if (remember) { try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {} }
+        el.classList.remove("is-open");
+        setTimeout(function () { el.remove(); }, 300);
+      }
+      el.querySelector("[data-install-close]").addEventListener("click", function () { close(true); });
+      var go = el.querySelector("[data-install]");
+      if (go) go.addEventListener("click", function () {
+        deferred.prompt();
+        deferred.userChoice.then(function (r) { close(r.outcome !== "accepted"); deferred = null; });
+      });
+    }
+
+    window.addEventListener("beforeinstallprompt", function (e) {
+      e.preventDefault();
+      deferred = e;
+      setTimeout(show, 4000);
+    });
+    window.addEventListener("appinstalled", function () {
+      var el = document.querySelector(".install");
+      if (el) el.remove();
+    });
+    if (iosSafari) setTimeout(show, 4000);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     renderChrome();
     mountBiz();
@@ -737,5 +792,6 @@
     mountForms(document);
     mountSlides();
     wireImages(document);
+    mountInstall();
   });
 })();

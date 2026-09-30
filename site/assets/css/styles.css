@@ -518,3 +518,25 @@ p { margin: 0; }
 .pl-filter input, .pl-filter select { min-width: 0; }
 .pl-side, .pl-canvas { grid-template-columns: minmax(0, 1fr); }
 .pl-item img.is-cutout { mix-blend-mode: normal; filter: drop-shadow(0 6px 6px rgba(0,0,0,.25)); }
+
+/* Install-the-app popup */
+.install {
+  position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 80;
+  width: min(560px, calc(100% - 32px)); transform: translate(-50%, 140%); opacity: 0;
+  display: grid; grid-template-columns: 48px 1fr auto; gap: 14px; align-items: center;
+  padding: 14px 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow);
+  transition: transform .3s ease, opacity .3s ease;
+}
+.install.is-open { transform: translate(-50%, 0); opacity: 1; }
+.install img { width: 48px; height: 48px; border-radius: 12px; }
+.install-copy { display: grid; gap: 2px; font-size: .9rem; color: var(--ink-2); line-height: 1.35; }
+.install-copy strong { color: var(--ink); font-size: 1rem; }
+.install-share { display: inline-block; padding: 0 4px; border: 1px solid var(--line); border-radius: 4px; font-weight: 700; color: var(--walnut); }
+.install-btns { display: flex; gap: 8px; }
+.install-btns .btn { min-height: 40px; padding: 8px 14px; font-size: .85rem; }
+@media (max-width: 720px) {
+  .install { bottom: calc(80px + env(safe-area-inset-bottom, 0px)); grid-template-columns: 44px 1fr; }
+  .install img { width: 44px; height: 44px; }
+  .install-btns { grid-column: 1 / -1; justify-content: flex-end; }
+}
+@media (prefers-reduced-motion: reduce) { .install { transition: none; } }
