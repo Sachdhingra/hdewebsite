@@ -27,6 +27,7 @@
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
     menu: '<path d="M3 6h18M3 12h18M3 18h18"/>',
     close: '<path d="M18 6 6 18M6 6l12 12"/>',
+    search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-4.3-4.3"/>',
     check: '<path d="M20 6 9 17l-5-5"/>',
     ruler: '<path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2M11.5 9.5l2-2M8.5 6.5l2-2M17.5 15.5l2-2"/>',
     truck: '<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.6a1 1 0 0 0-.2-.6l-3.5-4.4A1 1 0 0 0 17.5 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
@@ -76,7 +77,13 @@
           navLink("about.html", "About us", "about") +
           navLink("contact.html", "Contact", "contact") +
         "</nav>" +
-        '<div class="header-cta"><button class="btn btn--primary" type="button" data-enquire>Get a free quote</button>' +
+        '<div class="header-cta">' +
+          '<form class="search" role="search" action="collections.html" id="site-search">' +
+            '<label class="sr-only" for="search-q">Search products</label>' +
+            '<span class="search-icon">' + icon("search") + '</span><input id="search-q" name="q" type="search" placeholder="Search products" autocomplete="off" aria-controls="search-results">' +
+            '<div class="search-results" id="search-results" role="listbox" hidden></div></form>' +
+          '<button class="search-toggle" type="button" aria-expanded="false" aria-controls="site-search" aria-label="Search products">' + icon("search") + "</button>" +
+          '<button class="btn btn--primary" type="button" data-enquire>Get a free quote</button>' +
           '<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">' + icon("menu") + "</button></div>" +
       "</div></header>";
 
@@ -122,6 +129,60 @@
     document.addEventListener("click", function (e) { if (!item.contains(e.target)) setMega(false); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") { setMega(false); closeModal(); } });
     $all(".nav a").forEach(function (a) { a.addEventListener("click", function () { setMega(false); headerEl.removeAttribute("data-menu"); }); });
+    mountSearch(headerEl);
+  }
+
+  /* ---------- product search (header) ---------- */
+  // Every word typed must appear in the product's name, type or room; name matches rank first.
+  function searchProducts(q, list) {
+    var words = q.toLowerCase().split(/\s+/).filter(Boolean);
+    if (!words.length) return [];
+    return list.map(function (p) {
+      var room = roomBySlug(p.room);
+      var name = (p.name || "").toLowerCase();
+      var hay = name + " " + (p.type || "").toLowerCase() + " " + (room ? room.name.toLowerCase() : "") + " " + (p.sku || "").toLowerCase();
+      if (!words.every(function (w) { return hay.indexOf(w) > -1; })) return null;
+      var score = words.reduce(function (s, w) { return s + (name.indexOf(w) === 0 ? 3 : name.indexOf(w) > -1 ? 2 : 0); }, 0);
+      return { p: p, score: score };
+    }).filter(Boolean).sort(function (a, b) { return b.score - a.score; }).map(function (r) { return r.p; });
+  }
+
+  function mountSearch(headerEl) {
+    var form = $("#site-search"), input = $("#search-q"), box = $("#search-results"), toggle = $(".search-toggle");
+    if (!form) return;
+    var q0 = new URLSearchParams(location.search).get("q");
+    if (q0 && page() === "collections") input.value = q0;
+    function close() { box.hidden = true; }
+    function show() {
+      var q = input.value.trim();
+      if (q.length < 2) { box.innerHTML = ""; close(); return; }
+      var hits = searchProducts(q, PRODUCTS);
+      box.innerHTML = (hits.length ? hits.slice(0, 6).map(function (p) {
+        return '<a class="search-hit" role="option" href="' + (CATALOG ? productHref(p) : "collections.html#" + p.room) + '"><img src="' + esc(p.image) + '" alt="" loading="lazy" width="64" height="48">' +
+          "<span><b>" + esc(p.name) + "</b><small>" + (p.type ? esc(p.type) + " · " : "") + priceLabel(p) + " " + rupees(p.from) + "</small></span></a>";
+      }).join("") : '<p class="search-none">No products match "' + esc(q) + '". Try another word, or ask us on WhatsApp.</p>') +
+        (hits.length > 6 ? '<a class="search-all" href="collections.html?q=' + encodeURIComponent(q) + '">See all ' + hits.length + " results " + icon("arrow") + "</a>" : "");
+      box.hidden = false;
+    }
+    input.addEventListener("input", show);
+    input.addEventListener("focus", show);
+    form.addEventListener("submit", function (e) { if (!input.value.trim()) e.preventDefault(); });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { close(); if (headerEl.hasAttribute("data-search")) toggle.click(); }
+      if (e.key === "ArrowDown") { var first = $(".search-hit, .search-all", box); if (first) { e.preventDefault(); first.focus(); } }
+    });
+    box.addEventListener("keydown", function (e) {
+      var links = $all("a", box), i = links.indexOf(document.activeElement);
+      if (e.key === "ArrowDown" && i < links.length - 1) { e.preventDefault(); links[i + 1].focus(); }
+      if (e.key === "ArrowUp") { e.preventDefault(); (i > 0 ? links[i - 1] : input).focus(); }
+    });
+    document.addEventListener("click", function (e) { if (!form.contains(e.target) && e.target !== toggle && !toggle.contains(e.target)) close(); });
+    toggle.addEventListener("click", function () {
+      var open = headerEl.toggleAttribute("data-search");
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.innerHTML = icon(open ? "close" : "search");
+      if (open) { headerEl.removeAttribute("data-menu"); input.focus(); } else close();
+    });
   }
 
   /* ---------- lead forms ---------- */
@@ -514,15 +575,17 @@
       var ranges = document.createElement("div");
       ranges.className = "kitchen-ranges";
       function render() {
-        grid.innerHTML = current.length ? current.slice(0, shown).map(productCard).join("") :
+        grid.innerHTML = current.length ? current.slice(0, shown).map(productCard).join("") : query ?
+          '<div class="empty"><p>We could not find "' + esc(query) + '" in our online range. We stock more than we list, so ask us and we will check for you.</p><button class="btn btn--primary" type="button" data-enquire data-product="' + esc(query) + '">Ask about it</button></div>' :
           '<div class="empty"><p>These are designed and priced for your home, so we quote them after a free consultation in our showroom or over the phone.</p><button class="btn btn--primary" type="button" data-enquire data-interest="' + esc((roomBySlug(location.hash.slice(1)) || {}).name || "Full home interiors") + '">Get a free consultation</button></div>';
         wireImages(grid);
         var left = current.length - shown;
         more.innerHTML = left > 0 ? '<p class="more-count">Showing ' + shown + " of " + current.length + '</p><button class="btn btn--ghost" type="button">Show ' + Math.min(left, PAGE_SIZE) + " more</button>" : "";
       }
       more.addEventListener("click", function (e) { if (e.target.closest("button")) { shown += PAGE_SIZE; render(); } });
+      var query = withFilters ? (new URLSearchParams(location.search).get("q") || "").trim() : "";
       function draw(slug) {
-        var all = limit && !withFilters ? featured(limit) : PRODUCTS.filter(function (p) { return !slug || p.room === slug; });
+        var all = limit && !withFilters ? featured(limit) : query ? searchProducts(query, PRODUCTS) : PRODUCTS.filter(function (p) { return !slug || p.room === slug; });
         shown = withFilters ? PAGE_SIZE : all.length;
         current = all;
         render();
@@ -532,9 +595,9 @@
         var title = $("[data-room-title]");
         if (title) {
           var r = roomBySlug(slug);
-          title.textContent = r ? r.name : "All collections";
+          title.textContent = r ? r.name : query ? 'Results for "' + query + '"' : "All collections";
           var sub = $("[data-room-sub]");
-          if (sub) sub.textContent = r ? r.blurb + ". Visit a showroom to see and feel the range, or ask for today's best price." : "Browse by room, then ask for today's best price. Prices below are starting points; offers change every month.";
+          if (sub) sub.textContent = query && !r ? all.length + (all.length === 1 ? " product matches" : " products match") + ". Ask us for today's best price on any of them." : r ? r.blurb + ". Visit a showroom to see and feel the range, or ask for today's best price." : "Browse by room, then ask for today's best price. Prices below are starting points; offers change every month.";
         }
       }
       el.innerHTML = "";
@@ -549,11 +612,12 @@
           var c = e.target.closest(".chip");
           if (!c) return;
           var s = c.getAttribute("data-slug");
-          history.replaceState(null, "", s ? "#" + s : location.pathname);
+          query = "";
+          history.replaceState(null, "", location.pathname + (s ? "#" + s : ""));
           draw(s);
         });
         el.appendChild(bar);
-        window.addEventListener("hashchange", function () { draw(location.hash.slice(1)); });
+        window.addEventListener("hashchange", function () { query = ""; draw(location.hash.slice(1)); });
       }
       el.appendChild(ranges);
       el.appendChild(grid);
