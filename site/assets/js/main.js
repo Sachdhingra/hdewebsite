@@ -17,6 +17,25 @@
   function waLink(text) { return "https://wa.me/" + B.whatsapp + "?text=" + encodeURIComponent(text); }
   function page() { return document.body.getAttribute("data-page") || "home"; }
 
+  /* ---------- salesperson link (?ref=<code>) ---------- */
+  // Each salesperson shares the site as https://.../?ref=<their code> (shown on their CRM page).
+  // Remember the code so any enquiry this visitor sends within 60 days is assigned to them.
+  // The most recent salesperson link a visitor opened wins.
+  var salesRef = (function () {
+    var KEY = "hde_ref", DAYS = 60, valid = /^[a-z0-9][a-z0-9-]{0,39}$/;
+    var code = "";
+    try { code = (new URLSearchParams(location.search).get("ref") || "").trim().toLowerCase(); } catch (e) {}
+    if (valid.test(code)) {
+      try { localStorage.setItem(KEY, JSON.stringify({ code: code, at: Date.now() })); } catch (e) {}
+      return code;
+    }
+    try {
+      var saved = JSON.parse(localStorage.getItem(KEY) || "null");
+      if (saved && valid.test(saved.code) && Date.now() - saved.at < DAYS * 864e5) return saved.code;
+    } catch (e) {}
+    return "";
+  })();
+
   var ICON = {
     phone: '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>',
     wa: '<path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 10c0 3 2 5 5 5l1.2-1.2-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/>',
@@ -253,13 +272,14 @@
       name: v("name"), phone: "+91" + phone, email: v("email"), interest: v("interest"),
       area: v("area"), store: v("store"), message: v("message"), product: v("product"),
       source: form.getAttribute("data-source"), page: location.pathname.split("/").pop() || "index.html",
-      submittedAt: new Date().toISOString()
+      ref: salesRef, submittedAt: new Date().toISOString()
     };
   }
 
   function waText(l) {
     return "Hi " + B.name + ", I'm " + l.name + ". I'm interested in " + (l.product || l.interest) +
-      (l.area ? " (" + l.area + ")" : "") + "." + (l.message ? " " + l.message : "") + " My number is " + l.phone + ".";
+      (l.area ? " (" + l.area + ")" : "") + "." + (l.message ? " " + l.message : "") + " My number is " + l.phone + "." +
+      (l.ref ? " (Ref: " + l.ref + ")" : "");
   }
 
   function send(lead) {
@@ -275,12 +295,18 @@
       return fetch("https://formspree.io/f/" + encodeURIComponent(L.formspreeId), { method: "POST", headers: json, body: JSON.stringify(lead) })
         .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); });
     }
+    if (L.provider === "omniflow" && L.omniflowUrl) {
+      // Omniflow's website-lead function assigns the lead to the salesperson whose link (ref) was used
+      return fetch(L.omniflowUrl, { method: "POST", headers: json, body: JSON.stringify(lead) })
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); });
+    }
     if (L.provider === "api" && L.apiBase) {
       var body = {
         name: lead.name, email: lead.email, phone: lead.phone,
         message: [lead.message, lead.area && "Area: " + lead.area, lead.store && "Showroom: " + lead.store].filter(Boolean).join(" | ") || null,
         productInterest: lead.product || lead.interest, category: lead.interest,
-        source: SOURCE_TO_API[lead.source] || "website"
+        source: SOURCE_TO_API[lead.source] || "website",
+        ref: lead.ref || null
       };
       return fetch(L.apiBase.replace(/\/$/, "") + "/api/leads", { method: "POST", headers: json, body: JSON.stringify(body) })
         .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); });
