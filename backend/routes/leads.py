@@ -2,41 +2,21 @@ from fastapi import APIRouter, HTTPException, Query
 from typing import Optional, List
 from models.lead import Lead, LeadCreate, LeadAssign, LeadStatusUpdate, LeadNote, LeadNoteAdd
 from database import db
-from routes.salespeople import find_by_ref
 from datetime import datetime
 from bson import ObjectId
 
 router = APIRouter()
-
-def salesperson_filter(sales_person_id: Optional[str]) -> dict:
-    if not sales_person_id or sales_person_id == 'all':
-        return {}
-    if sales_person_id == 'unassigned':
-        return {"$or": [{"assignedTo": None}, {"assignedTo.salesPersonId": None}]}
-    return {"assignedTo.salesPersonId": sales_person_id}
 
 @router.post("/leads", response_model=dict)
 async def create_lead(lead: LeadCreate):
     """Submit a new lead/inquiry"""
     try:
         lead_dict = lead.dict()
-        ref = lead_dict.pop('ref', None)
         lead_dict['status'] = 'new'
         lead_dict['createdAt'] = datetime.utcnow()
         lead_dict['updatedAt'] = datetime.utcnow()
         lead_dict['notes'] = []
         lead_dict['assignedTo'] = None
-        lead_dict['refCode'] = None
-
-        # Enquiry came through a salesperson's personal link: it goes straight to them
-        salesperson = await find_by_ref(ref) if ref else None
-        if salesperson:
-            lead_dict['refCode'] = salesperson['code']
-            lead_dict['assignedTo'] = {
-                "salesPersonId": str(salesperson['_id']),
-                "salesPersonName": salesperson['name'],
-                "assignedAt": datetime.utcnow()
-            }
         
         result = await db.leads.insert_one(lead_dict)
         
@@ -51,7 +31,6 @@ async def create_lead(lead: LeadCreate):
 @router.get("/leads", response_model=dict)
 async def get_leads(
     status: Optional[str] = Query(None, description="Filter by status"),
-    salesPersonId: Optional[str] = Query(None, description="Only this salesperson's leads, or 'unassigned'"),
     page: int = Query(1, ge=1),
     limit: int = Query(20, ge=1, le=100)
 ):
@@ -60,7 +39,6 @@ async def get_leads(
         query = {}
         if status and status != 'all':
             query['status'] = status
-        query.update(salesperson_filter(salesPersonId))
         
         skip = (page - 1) * limit
         
@@ -176,17 +154,14 @@ async def add_lead_note(lead_id: str, note_data: LeadNoteAdd):
         raise HTTPException(status_code=500, detail=f"Error adding note: {str(e)}")
 
 @router.get("/leads/stats/summary", response_model=dict)
-async def get_lead_stats(
-    salesPersonId: Optional[str] = Query(None, description="Only this salesperson's leads, or 'unassigned'")
-):
+async def get_lead_stats():
     """Get lead statistics for dashboard"""
     try:
-        base = salesperson_filter(salesPersonId)
-        total = await db.leads.count_documents(base)
-        new = await db.leads.count_documents({**base, "status": "new"})
-        contacted = await db.leads.count_documents({**base, "status": "contacted"})
-        interested = await db.leads.count_documents({**base, "status": "interested"})
-        converted = await db.leads.count_documents({**base, "status": "converted"})
+        total = await db.leads.count_documents({})
+        new = await db.leads.count_documents({"status": "new"})
+        contacted = await db.leads.count_documents({"status": "contacted"})
+        interested = await db.leads.count_documents({"status": "interested"})
+        converted = await db.leads.count_documents({"status": "converted"})
         
         return {
             "total": total,

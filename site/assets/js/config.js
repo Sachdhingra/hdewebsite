@@ -49,21 +49,24 @@ window.HDE_CONFIG = {
    *  "web3forms" — free, no server. Get an access key at https://web3forms.com
    *                (enter the email that should receive leads) and paste it below.
    *  "formspree" — free tier. Create a form at https://formspree.io and paste its id (e.g. "xyzabcd").
-   *  "api"       — your own CRM backend in /backend (POST {apiBase}/api/leads).
+   *  "omniflow"  — the Omniflow CRM (hdeomniflow). Leads land in Omniflow, assigned to the salesperson
+   *                whose link the customer used. Needs Omniflow's website-lead function deployed.
+   *  "api"       — the older CRM backend in /backend (POST {apiBase}/api/leads).
    *  "none"      — nothing is sent anywhere; visitors are asked to send the enquiry on WhatsApp instead.
    *
    * Until a provider is set, the site runs in "none" mode so no lead is silently lost.
    *
    * Salesperson links: https://hdefurniture.netlify.app/?ref=<code> tags every enquiry that visitor
-   * sends with the salesperson's code. With "api" the CRM assigns the lead to that salesperson; the
-   * other providers include it as "ref" in the email, and WhatsApp messages end with "(Ref: <code>)".
-   * Each salesperson's link is shown in the CRM under Admin > Salespeople.
+   * sends with the salesperson's code. Omniflow assigns the lead to that salesperson; the other
+   * providers include it as "ref", and WhatsApp messages end with "(Ref: <code>)".
+   * Each salesperson sees their own link on the Omniflow sales dashboard ("My website link").
    */
   leads: {
-    provider: "none",
+    provider: "omniflow",
     web3formsKey: "",
     formspreeId: "",
     apiBase: "",
+    omniflowUrl: "https://cdrgbhnntonyofqkhzpm.supabase.co/functions/v1/website-lead",
     // Also offer a one-tap WhatsApp follow-up after a successful submission.
     offerWhatsAppAfterSubmit: true
   }

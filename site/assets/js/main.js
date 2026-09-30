@@ -234,6 +234,11 @@
       return fetch("https://formspree.io/f/" + encodeURIComponent(L.formspreeId), { method: "POST", headers: json, body: JSON.stringify(lead) })
         .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); });
     }
+    if (L.provider === "omniflow" && L.omniflowUrl) {
+      // Omniflow's website-lead function assigns the lead to the salesperson whose link (ref) was used
+      return fetch(L.omniflowUrl, { method: "POST", headers: json, body: JSON.stringify(lead) })
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); });
+    }
     if (L.provider === "api" && L.apiBase) {
       var body = {
         name: lead.name, email: lead.email, phone: lead.phone,

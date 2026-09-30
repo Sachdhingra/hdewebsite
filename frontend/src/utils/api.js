@@ -83,33 +83,8 @@ export const addLeadNote = async (leadId, noteData) => {
   return response.data;
 };
 
-export const getLeadStats = async (params = {}) => {
-  const response = await apiClient.get('/leads/stats/summary', { params });
-  return response.data;
-};
-
-// Salespeople and their personal website links
-export const PUBLIC_SITE_URL = (process.env.REACT_APP_PUBLIC_SITE_URL || 'https://hdefurniture.netlify.app').replace(/\/$/, '');
-
-export const salespersonLink = (code) => `${PUBLIC_SITE_URL}/?ref=${encodeURIComponent(code)}`;
-
-export const getSalespeople = async () => {
-  const response = await apiClient.get('/salespeople');
-  return response.data.salespeople;
-};
-
-export const getSalesperson = async (idOrCode) => {
-  const response = await apiClient.get(`/salespeople/${encodeURIComponent(idOrCode)}`);
-  return response.data;
-};
-
-export const createSalesperson = async (data) => {
-  const response = await apiClient.post('/salespeople', data);
-  return response.data;
-};
-
-export const updateSalesperson = async (id, data) => {
-  const response = await apiClient.put(`/salespeople/${id}`, data);
+export const getLeadStats = async () => {
+  const response = await apiClient.get('/leads/stats/summary');
   return response.data;
 };
 

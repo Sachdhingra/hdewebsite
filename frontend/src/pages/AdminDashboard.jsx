@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { getLeads, getLeadStats, updateLeadStatus, assignLead, getSalespeople, getSalesperson } from '../utils/api';
+import { useNavigate } from 'react-router-dom';
+import { getLeads, getLeadStats, updateLeadStatus, assignLead } from '../utils/api';
 import { toast } from 'sonner';
-import { Users, Mail, Phone, Calendar, Filter, Upload, ShoppingCart, Package, UserCheck, ArrowLeft } from 'lucide-react';
+import { Users, Mail, Phone, Calendar, Filter, Upload, ShoppingCart, Package } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import SalesLinkBox from '../components/SalesLinkBox';
 
-// /admin/dashboard shows every lead; /admin/salespeople/:code is one salesperson's page:
-// their personal website link at the top and only the leads assigned to them.
 const AdminDashboard = () => {
   const navigate = useNavigate();
-  const { code } = useParams();
-  const [salesperson, setSalesperson] = useState(null);
-  const [salespeople, setSalespeople] = useState([]);
-  const [salesFilter, setSalesFilter] = useState('all');
   const [leads, setLeads] = useState([]);
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -22,30 +15,15 @@ const AdminDashboard = () => {
   const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
-    setSalesperson(null);
-    setCurrentPage(1);
-    if (code) {
-      getSalesperson(code)
-        .then(setSalesperson)
-        .catch(() => toast.error('Salesperson not found'));
-    } else {
-      getSalespeople().then(setSalespeople).catch(() => setSalespeople([]));
-    }
-  }, [code]);
-
-  useEffect(() => {
-    if (code && !salesperson) return;
     fetchData();
-  }, [statusFilter, currentPage, salesFilter, salesperson, code]);
-
-  const salesPersonId = code ? salesperson?._id : salesFilter;
+  }, [statusFilter, currentPage]);
 
   const fetchData = async () => {
     try {
       setLoading(true);
       const [leadsData, statsData] = await Promise.all([
-        getLeads({ status: statusFilter, salesPersonId, page: currentPage, limit: 20 }),
-        getLeadStats({ salesPersonId })
+        getLeads({ status: statusFilter, page: currentPage, limit: 20 }),
+        getLeadStats()
       ]);
       setLeads(leadsData.leads);
       setTotalPages(leadsData.pages || 1);
@@ -69,19 +47,6 @@ const AdminDashboard = () => {
     }
   };
 
-  const handleAssign = async (leadId, spId) => {
-    const sp = salespeople.find((p) => p._id === spId);
-    if (!sp) return;
-    try {
-      await assignLead(leadId, { salesPersonId: sp._id, salesPersonName: sp.name });
-      toast.success(`Lead assigned to ${sp.name}`);
-      fetchData();
-    } catch (error) {
-      console.error('Error assigning lead:', error);
-      toast.error('Failed to assign lead');
-    }
-  };
-
   const getStatusBadgeColor = (status) => {
     const colors = {
       new: 'bg-blue-100 text-blue-800',
@@ -100,27 +65,10 @@ const AdminDashboard = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
-              <h1 className="text-3xl font-bold text-gray-800">
-                {code ? `${salesperson?.name || 'Salesperson'}'s leads` : 'CRM Dashboard'}
-              </h1>
-              <p className="text-gray-600 mt-1">
-                {code ? 'Enquiries from your website link, and leads assigned to you' : 'Manage leads and track conversions'}
-              </p>
+              <h1 className="text-3xl font-bold text-gray-800">CRM Dashboard</h1>
+              <p className="text-gray-600 mt-1">Manage leads and track conversions</p>
             </div>
-            {code ? (
-              <Button onClick={() => navigate('/admin/salespeople')} variant="outline" className="flex items-center gap-2">
-                <ArrowLeft size={18} />
-                All salespeople
-              </Button>
-            ) : (
             <div className="flex gap-2 flex-wrap">
-              <Button
-                onClick={() => navigate('/admin/salespeople')}
-                className="bg-amber-600 hover:bg-amber-700 text-white flex items-center gap-2"
-              >
-                <UserCheck size={18} />
-                Salespeople & links
-              </Button>
               <Button
                 onClick={() => navigate('/admin/cart-inquiries')}
                 className="bg-purple-500 hover:bg-purple-600 text-white flex items-center gap-2"
@@ -143,13 +91,7 @@ const AdminDashboard = () => {
                 CSV Upload
               </Button>
             </div>
-            )}
           </div>
-          {salesperson && (
-            <div className="mt-4">
-              <SalesLinkBox salesperson={salesperson} />
-            </div>
-          )}
         </div>
       </div>
 
@@ -210,7 +152,7 @@ const AdminDashboard = () => {
               {['all', 'new', 'contacted', 'interested', 'converted', 'closed'].map((status) => (
                 <button
                   key={status}
-                  onClick={() => { setStatusFilter(status); setCurrentPage(1); }}
+                  onClick={() => setStatusFilter(status)}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     statusFilter === status
                       ? 'bg-red-500 text-white'
@@ -221,20 +163,6 @@ const AdminDashboard = () => {
                 </button>
               ))}
             </div>
-            {!code && (
-              <select
-                value={salesFilter}
-                onChange={(e) => { setSalesFilter(e.target.value); setCurrentPage(1); }}
-                className="ml-auto text-sm border border-gray-300 rounded-md px-3 py-2"
-                aria-label="Filter by salesperson"
-              >
-                <option value="all">All salespeople</option>
-                <option value="unassigned">Unassigned</option>
-                {salespeople.map((sp) => (
-                  <option key={sp._id} value={sp._id}>{sp.name}</option>
-                ))}
-              </select>
-            )}
           </div>
         </div>
 
@@ -253,7 +181,6 @@ const AdminDashboard = () => {
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Contact</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Interest</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Message</th>
-                    {!code && <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Salesperson</th>}
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
@@ -269,7 +196,7 @@ const AdminDashboard = () => {
                         <div className="flex flex-col gap-1 text-sm">
                           <div className="flex items-center gap-2 text-gray-600">
                             <Mail size={14} />
-                            <span>{lead.email || '-'}</span>
+                            <span>{lead.email}</span>
                           </div>
                           <div className="flex items-center gap-2 text-gray-600">
                             <Phone size={14} />
@@ -283,25 +210,6 @@ const AdminDashboard = () => {
                       <td className="px-6 py-4 text-sm text-gray-600 max-w-xs truncate">
                         {lead.message || '-'}
                       </td>
-                      {!code && (
-                        <td className="px-6 py-4 text-sm">
-                          <select
-                            value={lead.assignedTo?.salesPersonId || ''}
-                            onChange={(e) => handleAssign(lead._id, e.target.value)}
-                            className="text-sm border border-gray-300 rounded-md px-2 py-1"
-                            aria-label="Assign to salesperson"
-                          >
-                            <option value="" disabled>Unassigned</option>
-                            {lead.assignedTo?.salesPersonId && !salespeople.some((p) => p._id === lead.assignedTo.salesPersonId) && (
-                              <option value={lead.assignedTo.salesPersonId}>{lead.assignedTo.salesPersonName}</option>
-                            )}
-                            {salespeople.map((sp) => (
-                              <option key={sp._id} value={sp._id}>{sp.name}</option>
-                            ))}
-                          </select>
-                          {lead.refCode && <p className="text-xs text-green-700 mt-1">From their link</p>}
-                        </td>
-                      )}
                       <td className="px-6 py-4">
                         <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusBadgeColor(lead.status)}`}>
                           {lead.status}
