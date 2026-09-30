@@ -10,36 +10,36 @@ window.HDE_CONFIG = {
     since: "2006",
     partnerLine: "Authorised Godrej Interio channel partner", // FILL IN: confirm wording allowed by your partner agreement
     city: "Dehradun",
-    // From the Google Business listing (Karanpur showroom). These look like Godrej call-routing
-    // numbers; swap in your direct shop number if you prefer.
-    phone: "+91 91679 90455",
-    phoneHref: "+919167990455",
-    whatsapp: "919837115799",            // WhatsApp number, digits only with country code (no +)
+    // Main shop number (user, 2026-09-30), also used for WhatsApp enquiries that come without a salesperson link.
+    phone: "+91 99172 33664",
+    phoneHref: "+919917233664",
+    whatsapp: "919917233664",            // WhatsApp number, digits only with country code (no +)
     email: "sachdhingra@gmail.com",     // From the Google listing. A business address (e.g. info@yourdomain) looks more professional
     hours: "Open every day, 11:00 AM to 8:00 PM", // From the Google listing
     instagram: "https://instagram.com/",   // FILL IN
     facebook: "https://facebook.com/"      // FILL IN
   },
 
-  // From the Google Business listings (via stores.interio.com), September 2026.
+  // Patel Nagar is from its Google Business listing (September 2026). The Karanpur showroom closed in
+  // September 2026 and is moving to Subhash Road; `openingSoon` shows it as coming soon, not open for visits.
   stores: [
-    {
-      name: "Karanpur Showroom",
-      address: "No 9, Ashtley Hall, Irrigation Colony, Karanpur, Dehradun, Uttarakhand 248001",
-      landmark: "Near Parade Ground",
-      phone: "+91 91679 90455",
-      phoneHref: "+919167990455",
-      mapLink: "https://maps.google.com/maps?cid=1763858221292683378",
-      rating: "4.6"
-    },
     {
       name: "Patel Nagar Showroom",
       address: "No 23, Saharanpur Road, Patel Nagar, Dehradun, Uttarakhand 248001",
       landmark: "Opposite Kolhi Petrol Pump",
-      phone: "+91 96191 81957",
-      phoneHref: "+919619181957",
+      phone: "+91 99172 33664",
+      phoneHref: "+919917233664",
       mapLink: "https://maps.google.com/maps?cid=1477870679173429280",
       rating: "4.8"
+    },
+    {
+      name: "Subhash Road Showroom",
+      address: "46/1 Subhash Road, Near ICICI Bank, Dehradun, Uttarakhand 248001",
+      landmark: "Near ICICI Bank",
+      phone: "+91 99172 33664",
+      phoneHref: "+919917233664",
+      mapLink: "https://www.google.com/maps/search/?api=1&query=46%2F1+Subhash+Road+near+ICICI+Bank+Dehradun+248001",
+      openingSoon: true
     }
   ],
 

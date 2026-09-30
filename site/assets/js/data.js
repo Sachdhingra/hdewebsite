@@ -74,7 +74,7 @@ window.HDE_DATA = {
   // Real Google reviews from our listings (stores.interio.com), quoted as written.
   reviews: [
     { name: "Siddharth Kandari", area: "Patel Nagar showroom", date: "June 2026", text: "Experience was very good thanks to Neesha Maam for the hospitality the purchasing experience been great" },
-    { name: "Saurabh Rana", area: "Karanpur showroom", date: "September 2026", text: "Wonderful furniture.. lots of options and quality of the wood is fantastic." },
-    { name: "Surya Pal Singh Bisht", area: "Karanpur showroom", date: "September 2026", text: "Godrej interio all product are good and attractive" }
+    { name: "Saurabh Rana", area: "Google review", date: "September 2026", text: "Wonderful furniture.. lots of options and quality of the wood is fantastic." },
+    { name: "Surya Pal Singh Bisht", area: "Google review", date: "September 2026", text: "Godrej interio all product are good and attractive" }
   ]
 };

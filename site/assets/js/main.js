@@ -16,6 +16,7 @@
   function rupees(n) { return "₹" + Math.round(n).toLocaleString("en-IN"); }
   function waLink(text) { return "https://wa.me/" + B.whatsapp + "?text=" + encodeURIComponent(text); }
   function page() { return document.body.getAttribute("data-page") || "home"; }
+  function openStores() { return C.stores.filter(function (s) { return !s.openingSoon; }); }
 
   /* ---------- salesperson link (?ref=<code>) ---------- */
   // Each salesperson shares the site as https://.../?ref=<their code> (shown on their CRM page).
@@ -219,7 +220,7 @@
     var id = "lf" + (++formCount);
     var compact = el.hasAttribute("data-compact");
     var emailRequired = C.leads.provider === "api";
-    var storeOpts = '<option value="">Any showroom</option>' + C.stores.map(function (s) { return "<option>" + esc(s.name) + "</option>"; }).join("");
+    var storeOpts = '<option value="">Any showroom</option>' + openStores().map(function (s) { return "<option>" + esc(s.name) + "</option>"; }).join("");
     return '<form class="form" novalidate data-source="' + esc(el.getAttribute("data-source") || page()) + '">' +
       '<div class="form-row">' +
         '<div class="field"><label for="' + id + '-name">Your name</label><input id="' + id + '-name" name="name" autocomplete="name" required><p class="err" aria-live="polite"></p></div>' +
@@ -515,7 +516,7 @@
             '<ul class="pdp-perks">' +
               "<li>" + icon("truck") + "Timely delivery by our local team in " + esc(B.city) + "</li>" +
               "<li>" + icon("shield") + "Genuine Godrej Interio warranty, serviced by our local team</li>" +
-              "<li>" + icon("store") + "See it at our " + C.stores.map(function (st) { return esc(st.name.replace(" Showroom", "")); }).join(" or ") + " showroom</li>" +
+              "<li>" + icon("store") + "See it at our " + openStores().map(function (st) { return esc(st.name.replace(" Showroom", "")); }).join(" or ") + " showroom</li>" +
             "</ul>" +
           "</div>" +
         "</section>" +
@@ -655,6 +656,13 @@
   function mountStores() {
     $all("[data-stores]").forEach(function (el) {
       el.innerHTML = C.stores.map(function (s) {
+        if (s.openingSoon) {
+          return '<article class="store store--soon"><span class="tag">Opening soon</span><h3>' + esc(s.name) + "</h3>" +
+            "<p>We are opening soon at our favourite location. Until then, visit us in Patel Nagar or call us for a free consultation over the phone.</p>" +
+            "<dl><div><dt>Address</dt><dd>" + esc(s.address) + "</dd></div><div><dt>Phone</dt><dd>" + esc(s.phone) + "</dd></div></dl>" +
+            '<div class="btns"><a class="btn btn--ghost" href="' + esc(s.mapLink) + '" target="_blank" rel="noopener">' + icon("pin") + "See location</a>" +
+            '<a class="btn btn--ghost" href="tel:' + esc(s.phoneHref) + '">' + icon("phone") + "Call</a></div></article>";
+        }
         return '<article class="store"><span class="tag">' + esc(s.landmark) + "</span><h3>" + esc(s.name) + "</h3>" +
           (s.rating ? '<p class="store-rating"><span class="stars" aria-hidden="true">\u2605</span> ' + esc(s.rating) + " on Google</p>" : "") +
           "<dl><div><dt>Address</dt><dd>" + esc(s.address) + "</dd></div><div><dt>Phone</dt><dd>" + esc(s.phone) + "</dd></div><div><dt>Open</dt><dd>" + esc(B.hours) + "</dd></div></dl>" +
