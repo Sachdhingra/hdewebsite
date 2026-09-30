@@ -13,6 +13,7 @@ import CSVUploadPage from "@/pages/CSVUploadPage";
 import CartPage from "@/pages/CartPage";
 import CartInquiriesPage from "@/pages/CartInquiriesPage";
 import ProductEditPage from "@/pages/ProductEditPage";
+import SalespeoplePage from "@/pages/SalespeoplePage";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import { CartProvider } from "@/context/CartContext";
 import { Toaster } from "@/components/ui/sonner";
@@ -36,6 +37,8 @@ function App() {
               <Route path="/admin/csv-upload" element={<CSVUploadPage />} />
               <Route path="/admin/cart-inquiries" element={<CartInquiriesPage />} />
               <Route path="/admin/products" element={<ProductEditPage />} />
+              <Route path="/admin/salespeople" element={<SalespeoplePage />} />
+              <Route path="/admin/salespeople/:code" element={<AdminDashboard />} />
             </Routes>
           </main>
           <Footer />

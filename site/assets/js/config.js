@@ -53,6 +53,11 @@ window.HDE_CONFIG = {
    *  "none"      — nothing is sent anywhere; visitors are asked to send the enquiry on WhatsApp instead.
    *
    * Until a provider is set, the site runs in "none" mode so no lead is silently lost.
+   *
+   * Salesperson links: https://hdefurniture.netlify.app/?ref=<code> tags every enquiry that visitor
+   * sends with the salesperson's code. With "api" the CRM assigns the lead to that salesperson; the
+   * other providers include it as "ref" in the email, and WhatsApp messages end with "(Ref: <code>)".
+   * Each salesperson's link is shown in the CRM under Admin > Salespeople.
    */
   leads: {
     provider: "none",

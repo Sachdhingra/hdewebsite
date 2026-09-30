@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, EmailStr
+from pydantic import BaseModel, Field, EmailStr, field_validator
 from typing import Optional, List
 from datetime import datetime
 from enum import Enum
@@ -29,7 +29,7 @@ class LeadNote(BaseModel):
 class Lead(BaseModel):
     id: Optional[str] = Field(default=None, alias="_id")
     name: str
-    email: EmailStr
+    email: Optional[EmailStr] = None
     phone: str
     message: Optional[str] = None
     productInterest: Optional[str] = None
@@ -37,6 +37,7 @@ class Lead(BaseModel):
     source: LeadSource = LeadSource.WEBSITE
     status: LeadStatus = LeadStatus.NEW
     assignedTo: Optional[AssignedTo] = None
+    refCode: Optional[str] = None
     notes: List[LeadNote] = []
     createdAt: datetime = Field(default_factory=datetime.utcnow)
     updatedAt: datetime = Field(default_factory=datetime.utcnow)
@@ -47,12 +48,20 @@ class Lead(BaseModel):
 
 class LeadCreate(BaseModel):
     name: str
-    email: EmailStr
+    email: Optional[EmailStr] = None
     phone: str
     message: Optional[str] = None
     productInterest: Optional[str] = None
     category: Optional[str] = None
     source: LeadSource = LeadSource.WEBSITE
+    # Salesperson link code from the website (?ref=<code>); the lead is assigned to them
+    ref: Optional[str] = Field(default=None, max_length=60)
+
+    @field_validator("email", mode="before")
+    @classmethod
+    def blank_email_is_none(cls, v):
+        # The website's short forms have no email field and send ""
+        return v or None
 
 class LeadAssign(BaseModel):
     salesPersonId: str

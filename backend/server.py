@@ -7,7 +7,7 @@ import logging
 from pathlib import Path
 
 # Import route modules
-from routes import leads, products, categories, testimonials, csv_upload, cart
+from routes import leads, products, categories, testimonials, csv_upload, cart, salespeople
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -43,6 +43,7 @@ api_router.include_router(categories.router, tags=["Categories"])
 api_router.include_router(testimonials.router, tags=["Testimonials"])
 api_router.include_router(csv_upload.router, tags=["CSV Upload"])
 api_router.include_router(cart.router, tags=["Cart & Inquiries"])
+api_router.include_router(salespeople.router, tags=["Salespeople"])
 
 # Include the router in the main app
 app.include_router(api_router)
