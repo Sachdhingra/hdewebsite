@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>See it in your room | Home Decor Enterprises, Dehradun</title>
+  <meta name="description" content="Upload a photo of your room and see Godrej Interio sofas, beds and more placed at their real size.">
+  <meta property="og:title" content="Home Decor Enterprises, Dehradun">
+  <meta property="og:description" content="Furniture, modular kitchens and wardrobes. Free consultation in our showrooms or over the phone.">
+  <link rel="icon" type="image/png" href="assets/img/hde-logo-160.png">
+  <meta property="og:image" content="assets/img/hde-logo-160.png">
+  <meta name="theme-color" content="#7c4420">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/img/app/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="HDE Furniture">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="planner">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="crumbs"><a href="index.html">Home</a> / See it in your room</p>
+        <h1>See it in your room</h1>
+        <p>Upload a photo of your room, tell us how wide the wall is, and place products at their real size. Your photo stays on your phone.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="wrap planner" data-planner>
+        <div class="pl-canvas">
+          <div class="pl-setup">
+            <label class="btn btn--primary pl-upload">Upload room photo<input id="pl-photo" type="file" accept="image/*" hidden></label>
+            <div class="field pl-wall"><label for="pl-wall">Width of the wall in the photo</label>
+              <div class="pl-wall-row"><input id="pl-wall" type="number" inputmode="decimal" min="1" step="0.5" placeholder="e.g. 12"><select id="pl-unit" aria-label="Unit"><option value="ft">feet</option><option value="cm">cm</option></select></div></div>
+          </div>
+          <div class="pl-stage">
+            <img class="pl-photo" alt="Your room">
+            <div class="pl-items"></div>
+            <div class="pl-empty"><p>Take the photo straight on, standing back so the whole wall is in view. Then add products from the list.</p></div>
+          </div>
+          <div class="pl-tools" hidden>
+            <span class="pl-tools-name"></span>
+            <div class="btns">
+              <button class="btn btn--ghost" type="button" data-act="smaller" aria-label="Smaller, further away">Further</button>
+              <button class="btn btn--ghost" type="button" data-act="bigger" aria-label="Bigger, nearer">Nearer</button>
+              <button class="btn btn--ghost" type="button" data-act="flip">Flip</button>
+              <button class="btn btn--ghost" type="button" data-act="remove">Remove</button>
+            </div>
+          </div>
+          <p class="pl-note">Drag products to place them. Sizes are worked out from the wall width you enter, so the fit is approximate. We confirm the details during a free consultation in our showroom or over the phone.</p>
+        </div>
+        <aside class="pl-side">
+          <h2>Add products</h2>
+          <div class="pl-filter">
+            <input id="pl-search" type="search" placeholder="Search, e.g. sofa, bed, wardrobe" aria-label="Search products">
+            <select id="pl-room" aria-label="Room"></select>
+          </div>
+          <ul class="pl-list"></ul>
+          <div class="pl-summary">
+            <h3>In your room</h3>
+            <ul class="pl-chosen"></ul>
+            <p class="pl-total"></p>
+            <button class="btn btn--primary btn--block" type="button" data-enquire data-source="planner" data-plan-send disabled>Send this plan for the best price</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/catalog.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/install.js"></script>
+  <script src="assets/js/planner.js"></script>
+</body>
+</html>
