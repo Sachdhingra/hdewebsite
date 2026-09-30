@@ -37,6 +37,30 @@
     return "";
   })();
 
+  // Share links carry the salesperson's code, so a customer who opens a link a salesperson sent
+  // (or one they pass on to family) keeps that salesperson on the enquiry.
+  function withRef(url) { return salesRef ? url + (url.indexOf("?") > -1 ? "&" : "?") + "ref=" + encodeURIComponent(salesRef) : url; }
+
+  /* ---------- shortlist (saved on this phone or laptop) ---------- */
+  var shortlist = (function () {
+    var KEY = "hde_shortlist", MAX = 40;
+    var ids = [];
+    try { ids = JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) {}
+    if (!Array.isArray(ids)) ids = [];
+    ids = ids.filter(function (x) { return typeof x === "string"; }).slice(0, MAX);
+    function save() {
+      try { localStorage.setItem(KEY, JSON.stringify(ids)); } catch (e) {}
+      document.dispatchEvent(new CustomEvent("hde:shortlist"));
+    }
+    return {
+      all: function () { return ids.slice(); },
+      has: function (id) { return ids.indexOf(id) > -1; },
+      add: function (id) { if (ids.indexOf(id) < 0) { ids.unshift(id); ids = ids.slice(0, MAX); save(); } },
+      remove: function (id) { ids = ids.filter(function (x) { return x !== id; }); save(); },
+      toggle: function (id) { if (this.has(id)) { this.remove(id); return false; } this.add(id); return true; }
+    };
+  })();
+
   var ICON = {
     phone: '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>',
     wa: '<path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 10c0 3 2 5 5 5l1.2-1.2-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/>',
@@ -54,7 +78,9 @@
     shield: '<path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.7 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
     store: '<path d="m2 7 4.4-4.4A2 2 0 0 1 7.8 2h8.4a2 2 0 0 1 1.4.6L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20v2a3 3 0 0 1-5 2.2A3 3 0 0 1 12 12a3 3 0 0 1-5-.8A3 3 0 0 1 2 9z"/>',
     ig: '<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/>',
-    fb: '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>'
+    fb: '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+    heart: '<path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/>',
+    share: '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/>'
   };
   function icon(name) {
     return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICON[name] + "</svg>";
@@ -103,6 +129,7 @@
             '<span class="search-icon">' + icon("search") + '</span><input id="search-q" name="q" type="search" placeholder="Search products" autocomplete="off" aria-controls="search-results">' +
             '<div class="search-results" id="search-results" role="listbox" hidden></div></form>' +
           '<button class="search-toggle" type="button" aria-expanded="false" aria-controls="site-search" aria-label="Search products">' + icon("search") + "</button>" +
+          '<a class="sl-link" href="shortlist.html"' + (cur === "shortlist" ? ' aria-current="page"' : "") + ">" + icon("heart") + '<span class="sl-count" data-sl-count></span><span class="sr-only" data-sl-label>My shortlist</span></a>' +
           '<button class="btn btn--primary" type="button" data-enquire>Get a free quote</button>' +
           '<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">' + icon("menu") + "</button></div>" +
       "</div></header>";
@@ -113,7 +140,7 @@
           "<p class=\"footer-partner\"><img src=\"assets/img/interio-logo.png\" alt=\"interio by Godrej\" width=\"105\" height=\"55\"></p><p>Furniture, modular kitchens and wardrobes for homes and offices in " + esc(B.city) + " and nearby. " + esc(B.partnerLine) + " since " + esc(B.since) + ".</p>" +
           '<p><a href="' + esc(B.instagram) + '" target="_blank" rel="noopener">Instagram</a> &middot; <a href="' + esc(B.facebook) + '" target="_blank" rel="noopener">Facebook</a></p></div>' +
         "<div><h4>Shop</h4><ul>" + D.rooms.map(function (r) { return '<li><a href="collections.html#' + r.slug + '">' + esc(r.name) + "</a></li>"; }).join("") + "</ul></div>" +
-        '<div><h4>Help</h4><ul><li><a href="about.html">About us</a></li><li><a href="contact.html">Get a quote</a></li><li><a href="room-planner.html">See it in your room</a></li><li><a href="contact.html#visit">Free consultation</a></li><li><a href="stores.html">Showrooms</a></li><li><a href="contact.html#faq">FAQs</a></li></ul></div>' +
+        '<div><h4>Help</h4><ul><li><a href="shortlist.html">My shortlist</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Get a quote</a></li><li><a href="room-planner.html">See it in your room</a></li><li><a href="contact.html#visit">Free consultation</a></li><li><a href="stores.html">Showrooms</a></li><li><a href="contact.html#faq">FAQs</a></li></ul></div>' +
         '<div><h4>Talk to us</h4><ul><li><a href="tel:' + esc(B.phoneHref) + '">' + esc(B.phone) + '</a></li><li><a href="' + waLink("Hi, I have a question.") + '" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:' + esc(B.email) + '">' + esc(B.email) + "</a></li><li>" + esc(B.hours) + "</li></ul></div>" +
       "</div>" +
       '<div class="legal"><div class="wrap"><span>&copy; ' + new Date().getFullYear() + " " + esc(B.name) + ". All rights reserved.</span>" +
@@ -365,6 +392,7 @@
     slot.innerHTML = leadFormHTML(slot);
     var form = slot.querySelector("form");
     form.elements.product.value = opts.product || "";
+    if (opts.message && form.elements.message) form.elements.message.value = opts.message;
     bindForm(form);
     $("#modal-title").textContent = opts.product ? "Get the best price" : "Get a free quote";
     $("#modal-sub").textContent = opts.product
@@ -386,7 +414,7 @@
     var t = e.target.closest("[data-enquire]");
     if (t) {
       e.preventDefault();
-      openModal({ product: t.getAttribute("data-product"), interest: t.getAttribute("data-interest"), source: t.getAttribute("data-source") });
+      openModal({ product: t.getAttribute("data-product"), interest: t.getAttribute("data-interest"), source: t.getAttribute("data-source"), message: t.getAttribute("data-message") });
       return;
     }
     if (e.target.closest("[data-close]")) closeModal();
@@ -417,13 +445,20 @@
 
   function productHref(p) { return "product.html?id=" + encodeURIComponent(p.id); }
 
-  function productCard(p) {
+  function heartButton(id, name) {
+    var on = shortlist.has(id);
+    return '<button class="heart" type="button" data-heart="' + esc(id) + '" data-name="' + esc(name) + '" aria-pressed="' + on + '" aria-label="Shortlist ' + esc(name) + '">' + icon("heart") + "</button>";
+  }
+
+  // `label` replaces the type line, for example "Mattress" on a "complete the room" suggestion.
+  function productCard(p, label) {
     var room = roomBySlug(p.room) || D.rooms[0];
     // Synced products open their own page; the sample products have no details to show.
     var link = CATALOG ? productHref(p) : "";
     var pic = ph(p.image, room.name, p.name);
     return '<article class="card' + (link ? " card--link" : "") + '">' + (link ? '<a href="' + link + '" tabindex="-1" aria-hidden="true">' + pic + "</a>" : pic) +
-      '<div class="card-body"><span class="card-type">' + esc(p.type) + "</span><h3>" + (link ? '<a href="' + link + '">' + esc(p.name) + "</a>" : esc(p.name)) + '</h3><p class="card-note">' + (p.variants ? p.variants + " sizes, colours or finishes. " : "") + esc(p.note) + "</p>" +
+      (CATALOG ? heartButton(p.id, p.name) : "") +
+      '<div class="card-body"><span class="card-type">' + esc(typeof label === "string" ? label : p.type) + "</span><h3>" + (link ? '<a href="' + link + '">' + esc(p.name) + "</a>" : esc(p.name)) + '</h3><p class="card-note">' + (p.variants ? p.variants + " sizes, colours or finishes. " : "") + esc(p.note) + "</p>" +
       '<div class="card-foot"><span class="price"><small>' + priceLabel(p) + "</small><b>" + rupees(p.from) + "</b></span>" +
       '<button class="btn btn--primary" type="button" data-enquire data-product="' + esc(p.name) + '" data-interest="' + esc(room.name) + '">Get best price</button></div></div></article>';
   }
@@ -487,6 +522,13 @@
 
       var similar = CATALOG.filter(function (p) { return p !== card && p.room === card.room; });
       similar.sort(function (a, b) { return (b.type === card.type) - (a.type === card.type); });
+      card.chosenName = name; // so a queen bed gets a queen mattress
+      var S = window.HDE_SUGGEST;
+      var extras = S ? S.suggest([card], 6) : [];
+      var pitch = S ? S.pitch(card) : "";
+      var taken = {};
+      extras.forEach(function (x) { taken[x.product.id] = true; });
+      similar = similar.filter(function (p) { return !taken[p.id]; });
 
       root.innerHTML =
         '<div class="wrap pdp-crumbs"><p class="crumbs"><a href="index.html">Home</a> / <a href="collections.html#' + room.slug + '">' + esc(room.name) + "</a> / " + esc(name) + "</p></div>" +
@@ -511,7 +553,8 @@
               '<button class="btn btn--primary" type="button" data-enquire data-product="' + esc(name) + '" data-interest="' + esc(room.name) + '" data-source="product">Get best price</button>' +
               '<a class="btn btn--wa" href="' + esc(waLink(waText)) + '" target="_blank" rel="noopener">' + icon("wa") + "Ask on WhatsApp</a>" +
               '<a class="btn btn--ghost" href="room-planner.html?add=' + encodeURIComponent(optionId) + '">See it in your room</a>' +
-              '<button class="btn btn--ghost" type="button" data-share>Share</button>' +
+              heartToggle(optionId, name) +
+              '<button class="btn btn--ghost" type="button" data-share>' + icon("share") + "Share</button>" +
             "</div>" +
             '<ul class="pdp-perks">' +
               "<li>" + icon("truck") + "Timely delivery by our local team in " + esc(B.city) + "</li>" +
@@ -530,6 +573,10 @@
             specs.map(function (r) { return '<tr><th scope="row">' + esc(r[0]) + "</th><td>" + esc(r[1]) + "</td></tr>"; }).join("") + "</tbody></table></div>" +
             (d && d.care ? "<div><h2>Care</h2><p>" + esc(d.care) + "</p></div>" : "") +
           "</div></section>" : "") +
+        (extras.length ? '<section class="section"><div class="wrap"><div class="section-head"><div><h2>Complete the room</h2>' +
+          (pitch ? "<p>Customers who choose " + esc(aKind(card)) + " usually also need " + esc(pitch) + ". Here are picks matched to its size and budget.</p>" : "") +
+          '</div><a class="link-arrow" href="shortlist.html">My shortlist ' + icon("arrow") + '</a></div><div class="grid-products">' +
+          extras.map(function (x) { return productCard(x.product, x.label); }).join("") + "</div></div></section>" : "") +
         (similar.length ? '<section class="section section--stone"><div class="wrap"><div class="section-head"><div><h2>You may also like</h2></div><a class="link-arrow" href="collections.html#' + room.slug + '">All ' + esc(room.name.toLowerCase()) + " " + icon("arrow") + '</a></div><div class="grid-products">' +
           similar.slice(0, 4).map(productCard).join("") + "</div></div></section>" : "");
       wireImages(root);
@@ -551,11 +598,7 @@
         $all("[data-img]", root).forEach(function (b) { b.removeAttribute("aria-current"); });
         t.setAttribute("aria-current", "true");
       }
-      if (e.target.closest("[data-share]")) {
-        var data = { title: document.title, url: location.href };
-        if (navigator.share) navigator.share(data).catch(function () {});
-        else window.open("https://wa.me/?text=" + encodeURIComponent(document.title + " " + location.href), "_blank", "noopener");
-      }
+      if (e.target.closest("[data-share]")) shareLink(document.title, withRef(location.origin + location.pathname + location.search.replace(/[?&]ref=[^&]*/, "").replace(/^&/, "?")));
     });
     root.addEventListener("change", function (e) {
       if (e.target.id === "pdp-opt") {
@@ -564,6 +607,158 @@
       }
     });
     show(found.option);
+  }
+
+  /* ---------- shortlist: hearts, toast, shortlist page ---------- */
+  function heartToggle(id, name) {
+    var on = shortlist.has(id);
+    return '<button class="btn btn--ghost btn--heart" type="button" data-heart="' + esc(id) + '" data-name="' + esc(name) + '" aria-pressed="' + on + '">' +
+      icon("heart") + '<span data-heart-text>' + (on ? "Shortlisted" : "Add to shortlist") + "</span></button>";
+  }
+
+  function aKind(p) {
+    var S = window.HDE_SUGGEST;
+    return (S && S.article(S.label(p.kind))) || "this";
+  }
+
+  function shareLink(title, url) {
+    if (navigator.share) navigator.share({ title: title, url: url }).catch(function () {});
+    else window.open("https://wa.me/?text=" + encodeURIComponent(title + " " + url), "_blank", "noopener");
+  }
+
+  function syncShortlist() {
+    var n = shortlist.all().length;
+    $all("[data-sl-count]").forEach(function (el) { el.textContent = n ? String(n) : ""; });
+    $all("[data-sl-label]").forEach(function (el) { el.textContent = "My shortlist" + (n ? ", " + n + (n === 1 ? " item" : " items") : ""); });
+    $all("[data-heart]").forEach(function (b) {
+      var on = shortlist.has(b.getAttribute("data-heart"));
+      b.setAttribute("aria-pressed", String(on));
+      var t = $("[data-heart-text]", b);
+      if (t) t.textContent = on ? "Shortlisted" : "Add to shortlist";
+    });
+  }
+
+  var toastTimer = null;
+  function toast(html) {
+    var el = $(".toast") || document.body.appendChild(Object.assign(document.createElement("div"), { className: "toast" }));
+    el.setAttribute("role", "status");
+    el.innerHTML = html;
+    el.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { el.hidden = true; }, 6000);
+  }
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-heart]");
+    if (!b) return;
+    e.preventDefault();
+    var id = b.getAttribute("data-heart");
+    var added = shortlist.toggle(id);
+    if (!added) { toast("Removed from your shortlist."); return; }
+    var hit = findProduct(id);
+    var pitch = hit && window.HDE_SUGGEST ? window.HDE_SUGGEST.pitch(hit.card) : "";
+    toast("<strong>Added to your shortlist.</strong> " + (pitch ? "With " + esc(aKind(hit.card)) + " you may also need " + esc(pitch) + ". " : "") +
+      '<a href="shortlist.html">See shortlist and suggestions</a>');
+    if (window.dataLayer) window.dataLayer.push({ event: "shortlist_add", product_id: id });
+    // A shortlist is the moment someone is keen: offer to install the site as an app (install.js).
+    document.dispatchEvent(new CustomEvent("hde:engaged"));
+  });
+  document.addEventListener("hde:shortlist", syncShortlist);
+  // Keep other open tabs in step.
+  window.addEventListener("storage", function (e) { if (e.key === "hde_shortlist") location.reload(); });
+
+  function listItems(ids) {
+    return ids.map(function (id) {
+      var hit = findProduct(id);
+      if (!hit) return null;
+      var opt = (hit.card.options || []).filter(function (o) { return o.id === hit.option; })[0];
+      return { id: id, card: hit.card, name: opt ? opt.name : hit.card.name, price: opt ? opt.price : hit.card.from, mrp: hit.card.mrp };
+    }).filter(Boolean);
+  }
+
+  function listText(items) {
+    return items.map(function (it, i) { return (i + 1) + ". " + it.name + " (" + (it.mrp ? "MRP " : "") + rupees(it.price) + ")"; }).join("\n");
+  }
+
+  function listUrl(items) {
+    return withRef(location.origin + location.pathname.replace(/[^/]*$/, "") + "shortlist.html?items=" + items.map(function (it) { return encodeURIComponent(it.id); }).join(","));
+  }
+
+  function mountShortlist() {
+    var root = $("[data-shortlist]");
+    if (!root || !CATALOG) return;
+    var shared = (new URLSearchParams(location.search).get("items") || "").split(",").map(function (x) { return x.trim().toLowerCase(); }).filter(Boolean).slice(0, 40);
+
+    function draw() {
+      var viewingShared = shared.length > 0;
+      var items = listItems(viewingShared ? shared : shortlist.all());
+      var total = items.reduce(function (s, it) { return s + (it.price || 0); }, 0);
+      var anyMrp = items.some(function (it) { return it.mrp; });
+      $("[data-sl-title]").textContent = viewingShared ? "A shortlist shared with you" : "My shortlist";
+      $("[data-sl-sub]").textContent = viewingShared
+        ? "Someone picked these for you. Save them to your own shortlist, or ask us for the best price on all of them."
+        : items.length ? "Saved on this device. Send it to us for one combined price, or share it with family." : "";
+
+      if (!items.length) {
+        root.innerHTML = '<div class="wrap section"><div class="sl-empty">' + icon("heart") + "<h2>Your shortlist is empty</h2>" +
+          "<p>Tap the heart on any product to save it here. When you are ready, send the whole list to us and we will reply with one combined best price.</p>" +
+          '<a class="btn btn--primary" href="collections.html">Browse collections</a></div></div>';
+        return;
+      }
+
+      var S = window.HDE_SUGGEST;
+      items.forEach(function (it) { it.card.chosenName = it.name; });
+      var extras = S ? S.suggest(items.map(function (it) { return it.card; }), 6) : [];
+      var names = items.map(function (it) { return it.name; });
+      var product = names.length === 1 ? names[0] : names[0] + " and " + (names.length - 1) + " more";
+      var waMsg = "Hi " + B.name + ", please share your best price for my shortlist:\n" + listText(items) + "\n" + listUrl(items) + (salesRef ? "\n(Ref: " + salesRef + ")" : "");
+
+      root.innerHTML =
+        '<section class="section"><div class="wrap sl">' +
+          '<div class="sl-list"><ul class="sl-items">' + items.map(function (it) {
+            return '<li class="sl-item"><a class="sl-thumb" href="' + productHref({ id: it.id }) + '" tabindex="-1" aria-hidden="true">' + ph(it.card.image, "", "") + "</a>" +
+              '<div><span class="card-type">' + esc(S ? S.label(it.card.kind) || it.card.type : it.card.type) + '</span><h3><a href="' + productHref({ id: it.id }) + '">' + esc(it.name) + "</a></h3>" +
+              '<p class="price"><small>' + (it.mrp ? "MRP" : "Price") + "</small><b>" + rupees(it.price) + "</b></p></div>" +
+              (viewingShared ? "" : '<button class="sl-remove" type="button" data-sl-remove="' + esc(it.id) + '" aria-label="Remove ' + esc(it.name) + '">' + icon("close") + "</button>") +
+              "</li>";
+          }).join("") + "</ul></div>" +
+          '<aside class="sl-summary">' +
+            "<h2>" + items.length + (items.length === 1 ? " item" : " items") + "</h2>" +
+            '<p class="price"><small>' + (anyMrp ? "Total MRP" : "Total") + "</small><b>" + rupees(total) + "</b></p>" +
+            "<p>Buying several pieces together usually gets a better price. Send the list and we will call you with one combined offer.</p>" +
+            '<div class="sl-actions">' +
+              (viewingShared ? '<button class="btn btn--accent btn--block" type="button" data-sl-save>' + icon("heart") + "Save to my shortlist</button>" : "") +
+              '<button class="btn btn--primary btn--block" type="button" data-enquire data-source="shortlist" data-product="' + esc(product) + '" data-message="' + esc("My shortlist:\n" + listText(items) + "\n" + listUrl(items)) + '" data-interest="' + esc((roomBySlug(items[0].card.room) || D.rooms[0]).name) + '">Get best price for all</button>' +
+              '<a class="btn btn--wa btn--block" href="' + esc(waLink(waMsg)) + '" target="_blank" rel="noopener">' + icon("wa") + "Send list on WhatsApp</a>" +
+              '<button class="btn btn--ghost btn--block" type="button" data-sl-share>' + icon("share") + "Share with family</button>" +
+            "</div></aside>" +
+        "</div></section>" +
+        (extras.length ? '<section class="section section--stone"><div class="wrap"><div class="section-head"><div><h2>Complete your room</h2>' +
+          "<p>Our team usually suggests these with what you have picked, matched to your budget.</p></div></div>" +
+          '<div class="grid-products">' + extras.map(function (x) { return productCard(x.product, x.label); }).join("") + "</div></div></section>" : "");
+      wireImages(root);
+      root.setAttribute("data-list", JSON.stringify({ text: listText(items), url: listUrl(items) }));
+    }
+
+    root.addEventListener("click", function (e) {
+      var r = e.target.closest("[data-sl-remove]");
+      if (r) { shortlist.remove(r.getAttribute("data-sl-remove")); draw(); return; }
+      if (e.target.closest("[data-sl-save]")) {
+        shared.slice().reverse().forEach(function (id) { shortlist.add(id); });
+        shared = [];
+        history.replaceState(null, "", location.pathname);
+        draw();
+        toast("<strong>Saved to your shortlist.</strong>");
+        return;
+      }
+      if (e.target.closest("[data-sl-share]")) {
+        var d = JSON.parse(root.getAttribute("data-list") || "{}");
+        shareLink("My furniture shortlist from " + B.name, d.url);
+      }
+    });
+    // Hearts on the suggestions add to the list, so redraw to move them up and refresh the picks.
+    document.addEventListener("hde:shortlist", function () { if (!shared.length) draw(); });
+    draw();
   }
 
   function mountRooms() {
@@ -732,10 +927,12 @@
     mountRooms();
     mountProducts();
     mountProductPage();
+    mountShortlist();
     mountStores();
     mountReviews();
     mountForms(document);
     mountSlides();
     wireImages(document);
+    syncShortlist();
   });
 })();
