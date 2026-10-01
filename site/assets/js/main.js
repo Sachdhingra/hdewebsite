@@ -107,7 +107,9 @@
       '<div class="strip"><div class="wrap">' +
         '<span class="strip-partner"><span class="partner-pill"><img src="assets/img/interio-logo.png" alt="interio by Godrej" width="76" height="40"></span>' + esc(B.partnerLine) + " in " + esc(B.city) + " since " + esc(B.since) + "</span>" +
         '<span class="strip-contacts"><a href="tel:' + esc(B.phoneHref) + '">Call ' + esc(B.phone) + "</a>" +
-        '<a href="' + waLink("Hi, I would like to know more about your furniture.") + '" target="_blank" rel="noopener">WhatsApp us</a></span>' +
+        '<a href="' + waLink("Hi, I would like to know more about your furniture.") + '" target="_blank" rel="noopener">WhatsApp us</a>' +
+          (B.service ? '<span class="strip-service"><a href="tel:' + esc(B.service.phoneHref) + '">Service ' + esc(B.service.phone) + '</a> <span class="strip-note">' + esc(B.service.hours) + "</span></span>" : "") +
+        "</span>" +
       "</div></div>" +
       '<header class="site-header"><div class="wrap">' +
         '<a class="brand" href="index.html" aria-label="' + esc(B.name) + ' home"><img class="brand-logo" src="assets/img/hde-logo-160.webp" alt="" width="56" height="56">' +
@@ -141,7 +143,8 @@
           '<p><a href="' + esc(B.instagram) + '" target="_blank" rel="noopener">Instagram</a> &middot; <a href="' + esc(B.facebook) + '" target="_blank" rel="noopener">Facebook</a></p></div>' +
         "<div><h4>Shop</h4><ul>" + D.rooms.map(function (r) { return '<li><a href="collections.html#' + r.slug + '">' + esc(r.name) + "</a></li>"; }).join("") + "</ul></div>" +
         '<div><h4>Help</h4><ul><li><a href="shortlist.html">My shortlist</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Get a quote</a></li><li><a href="room-planner.html">See it in your room</a></li><li><a href="contact.html#visit">Free consultation</a></li><li><a href="stores.html">Showrooms</a></li><li><a href="contact.html#faq">FAQs</a></li></ul></div>' +
-        '<div><h4>Talk to us</h4><ul><li><a href="tel:' + esc(B.phoneHref) + '">' + esc(B.phone) + '</a></li><li><a href="' + waLink("Hi, I have a question.") + '" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:' + esc(B.email) + '">' + esc(B.email) + "</a></li><li>" + esc(B.hours) + "</li></ul></div>" +
+        '<div><h4>Talk to us</h4><ul><li><a href="tel:' + esc(B.phoneHref) + '">' + esc(B.phone) + '</a></li><li><a href="' + waLink("Hi, I have a question.") + '" target="_blank" rel="noopener">WhatsApp</a></li>' +
+          (B.service ? '<li>Service: <a href="tel:' + esc(B.service.phoneHref) + '">' + esc(B.service.phone) + "</a><br>" + esc(B.service.hours) + "</li>" : "") + '<li><a href="mailto:' + esc(B.email) + '">' + esc(B.email) + "</a></li><li>" + esc(B.hours) + "</li></ul></div>" +
       "</div>" +
       '<div class="legal"><div class="wrap"><span>&copy; ' + new Date().getFullYear() + " " + esc(B.name) + ". All rights reserved.</span>" +
         "<span>Godrej and Interio are trademarks of their respective owners.</span></div></div></footer>" +
