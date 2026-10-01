@@ -1,8 +1,8 @@
 /* Home Decor Enterprises: "Install our app" pop-up.
  * Chrome / Edge / Samsung (Android and desktop) get a one-tap Install button;
  * iPhone and iPad Safari, which have no install prompt, get the Share → Add to Home Screen steps.
- * Shown once the visitor has spent a little time on the site, never when already installed,
- * and not again for 14 days after "Not now". Sits above the phone call/WhatsApp bar and,
+ * Shown once the visitor has spent a little time on the site or right after they shortlist a product,
+ * never when already installed, and not again for 14 days after "Not now". Sits above the phone call/WhatsApp bar and,
  * on laptops, bottom left so it doesn't cover the WhatsApp button. */
 (function () {
   "use strict";
@@ -90,4 +90,6 @@
     if (box) box.remove();
   });
   if (isIOSSafari) setTimeout(show, WAIT_MS);
+  // Shortlisting a product (main.js) is a good moment to offer the app, without waiting.
+  document.addEventListener("hde:engaged", function () { setTimeout(show, 1200); });
 })();
