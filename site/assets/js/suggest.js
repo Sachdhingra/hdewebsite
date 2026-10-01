@@ -3,6 +3,7 @@
  * because the synced room and type labels are not always right. PAIRS then says what goes with
  * each kind, and pick() chooses the item of that kind closest to the customer's budget:
  * a premium bed gets a premium mattress, a budget sofa gets a budget coffee table.
+ * Wooden pieces also match the wood tone: a walnut bed gets dark bedside tables, and the other way round.
  * Edit PAIRS to change what is suggested; the first kinds listed show first. */
 (function () {
   "use strict";
@@ -101,9 +102,34 @@
     return n <= 36 ? "single" : n <= 48 ? "double" : n <= 66 ? "queen" : "king";
   }
 
+  // Wood and finish tones, so a walnut bed gets walnut-toned bedside tables and the other way round.
+  // The colour is in the product note ("1-Year Warranty, Fine Walnut, Solid Wood") or the name.
+  // The earliest match wins, so "Brown & Cream" is medium and "Sonoma Oak" is light.
+  var TONES = [
+    ["dark", /walnut|wenge|mahogany|dark|black|brownish|coffee|chocolate|espresso|rosewood|sheesham|sepia|noce|ebony|cola[ -]?rain/i],
+    ["grey", /grey|gray|gunmetal|chrome|granite|gargoyle|silver|tree mist/i],
+    ["light", /white|cream|ivory|beige|frost|maple|beech|pine|sonoma|\bash\b|light|vanilla|taupe/i],
+    ["medium", /oak|teak|cherry|cinnamon|cappuccino|honey|gordion|brown|\btan\b/i]
+  ];
+  var TONE_NAME = { dark: "dark wood", medium: "medium wood", light: "light finish", grey: "grey finish" };
+  // Tones that still sit well together when there is no exact match.
+  var NEAR = { dark: ["medium", "grey"], medium: ["dark", "light"], light: ["medium", "grey"], grey: ["light", "dark"] };
+  // Kinds where the finish has to match; mattresses, rugs and cushions are left alone.
+  var WOOD = { bed: 1, bedside: 1, dresser: 1, wardrobe: 1, coffee: 1, corner: 1, tv: 1, display: 1, shoerack: 1,
+    diningtable: 1, diningset: 1, diningchair: 1, buffet: 1, bench: 1, desk: 1, officestorage: 1 };
+
+  function toneOf(text) {
+    var best = "", at = Infinity;
+    TONES.forEach(function (t) { var m = t[1].exec(text || ""); if (m && m.index < at) { at = m.index; best = t[0]; } });
+    return best;
+  }
+  // The tone of the finish the customer chose (the product page passes its Colour), else the product's own.
+  function anchorTone(a) { return toneOf(a.chosenColour) || toneOf(a.chosenName) || a.tone || ""; }
+
   var byKind = {};
   CAT.forEach(function (p) {
     p.kind = kindOf(p);
+    p.tone = toneOf((p.note || "").replace(/(\d+-year|no) warranty,?\s*/i, "")) || toneOf(p.name);
     // Put clearly misfiled products back in their room (for example office chairs listed under Bedroom).
     if (p.kind && ROOM[p.kind] && p.room !== ROOM[p.kind] && !(p.kind === "almirah" || p.kind === "locker")) p.room = ROOM[p.kind];
     if (!p.kind) return;
@@ -119,7 +145,7 @@
     return (i < 0 ? 0.5 * list.length : i) / (list.length - 1);
   }
 
-  // Pick the product of a kind at the same price tier as the anchor, matching bed size where it applies.
+  // Pick the product of a kind at the same price tier as the anchor, matching bed size and wood tone where they apply.
   function pick(kind, anchors, skip) {
     var list = (byKind[kind] || []).filter(function (p) { return !skip[p.id]; });
     if (!list.length) return null;
@@ -133,6 +159,19 @@
         if (fit.length) list = fit;
       }
     }
+    var tone = "";
+    if (WOOD[kind]) anchors.some(function (a) { if (WOOD[a.kind]) tone = anchorTone(a); return !!tone; });
+    // Wooden pieces go with wooden pieces: a walnut bedside table should not bring up a metal bed.
+    if (WOOD[kind] && !anchors.some(function (a) { return /\b(metal|steel)\b/i.test(a.name); })) {
+      var wooden = list.filter(function (p) { return !/\b(metal|steel)\b/i.test(p.name); });
+      if (wooden.length) list = wooden;
+    }
+    var matched = false;
+    if (tone) {
+      var same = list.filter(function (p) { return p.tone === tone; });
+      var near = list.filter(function (p) { return NEAR[tone].indexOf(p.tone) > -1; });
+      if (same.length) { list = same; matched = true; } else if (near.length) list = near;
+    }
     var t = anchors.reduce(function (s, a) { return s + tier(a); }, 0) / anchors.length;
     var hit = list[Math.round(t * (list.length - 1))];
     // An add-on should not cost more than what the customer already chose, where a cheaper one exists.
@@ -141,11 +180,11 @@
       var under = list.filter(function (p) { return p.from <= cap; });
       if (under.length) hit = under[under.length - 1];
     }
-    return hit;
+    return { product: hit, tone: matched ? tone : "" };
   }
 
   // Suggestions for a set of products (one product page, or a whole shortlist).
-  // Returns [{kind, label, product}] with at most one product per kind, skipping kinds already chosen.
+  // Returns [{kind, label, tone, product}] with at most one product per kind, skipping kinds already chosen.
   function suggest(anchors, limit) {
     anchors = anchors.filter(function (a) { return a && a.kind; });
     var have = {}, skip = {}, out = [];
@@ -159,8 +198,12 @@
     queue.forEach(function (k) {
       if (out.length >= (limit || 6)) return;
       var group = anchors.filter(function (a) { return (PAIRS[a.kind] || []).indexOf(k) > -1; });
-      var p = pick(k, group, skip);
-      if (p) { skip[p.id] = true; out.push({ kind: k, label: LABEL[k], product: p }); }
+      var r = pick(k, group, skip);
+      if (r) {
+        skip[r.product.id] = true;
+        // "Bedside table, dark wood" tells the customer why this one was picked.
+        out.push({ kind: k, label: LABEL[k] + (r.tone ? ", " + TONE_NAME[r.tone] : ""), tone: r.tone, product: r.product });
+      }
     });
     return out;
   }
@@ -179,5 +222,6 @@
     return pairs.length === 1 ? pairs[0] : pairs.slice(0, -1).join(", ") + " and " + pairs[pairs.length - 1];
   }
 
-  window.HDE_SUGGEST = { kindOf: kindOf, label: function (k) { return LABEL[k] || ""; }, article: article, suggest: suggest, pitch: pitch, sizeOf: sizeOf };
+  window.HDE_SUGGEST = { kindOf: kindOf, label: function (k) { return LABEL[k] || ""; }, article: article, suggest: suggest, pitch: pitch, sizeOf: sizeOf,
+    tone: function (p) { return TONE_NAME[anchorTone(p)] || ""; } };
 })();
