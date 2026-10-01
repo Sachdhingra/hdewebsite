@@ -30,7 +30,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 190
     steps:
       - uses: actions/checkout@v4
         with:
@@ -43,7 +43,7 @@ jobs:
           python3 tools/scrape_interio.py \
             --limit "${{ github.event.inputs.limit || '0' }}" \
             --rooms "${{ github.event.inputs.rooms || '' }}" \
-            --max-minutes 100
+            --max-minutes 170
       - name: Commit catalogue if it changed
         run: |
           git add -A site/assets/js/catalog.js site/assets/data/products site/assets/img/products site/assets/img/rooms

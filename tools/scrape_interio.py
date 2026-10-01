@@ -41,16 +41,32 @@ ROOM_BY_CATEGORY = {
     "office-and-study": "office", "modular-kitchen": "kitchen", "kitchen": "kitchen",
     "storage": "storage", "mattresses": "bedroom",
 }
+# Interio files almirahs and lockers under Bedroom and shoe racks and display units under Living Room;
+# the website shows them in its own Storage room, so these slugs win over the top-level category.
+STORAGE_CATEGORIES = {
+    "steel-almirahs", "home-lockers", "digital-lockers", "biometric-lockers", "manual-lockers",
+    "shoe-racks", "storage-cabinets", "display-units",
+}
 # Landing pages whose products are collected first (before the sitemap) and filed under the given room,
-# so ranges that sit late in the sitemap still make it into a time-limited sync.
-FEATURED_PAGES = [("/modular-kitchen", "kitchen")]
+# so ranges that sit late in the sitemap still make it into a time-limited sync. Listing pages are
+# followed through ?p=2, 3, ... until a page shows no new products.
+FEATURED_PAGES = [
+    ("/modular-kitchen", "kitchen"),
+    ("/all-products/almirahs-wardrobes/steel-almirahs", "storage"),
+    ("/all-products/home-lockers", "storage"),
+    ("/all-products/cabinets/shoe-racks", "storage"),
+    ("/all-products/cabinets/storage-cabinets", "storage"),
+    ("/all-products/cabinets/display-units", "storage"),
+]
+MAX_LISTING_PAGES = 40
 # Fallback when a page has no usable breadcrumb: first keyword that matches the product name wins.
 ROOM_KEYWORDS = [
     ("bedroom", ["bedside", "sofa cum bed", "diwan"]),
+    ("storage", ["almirah", "locker", "shoe rack", "shoe cabinet", "display unit", "display cabinet", "storage cabinet"]),
     ("kitchen", ["kitchen", "chimney", "hob "]),
     ("dining", ["dining", "crockery"]),
     ("living", ["sofa", "recliner", "lounger", "tv unit", "centre table", "center table", "coffee table", "corner table",
-                "side table", "display unit", "bean bag", "pouffe", "ottoman"]),
+                "side table", "bean bag", "pouffe", "ottoman"]),
     ("office", ["office chair", "chair", "study", "desk", "workstation", "computer table", "bookshelf", "book shelf"]),
     ("bedroom", ["bed", "wardrobe", "mattress", "dresser", "dressing", "bedside", "pillow"]),
     ("storage", ["almirah", "locker", "safe", "shoe", "cabinet", "rack", "cupboard"]),
@@ -89,20 +105,29 @@ def sitemap_products(index_url):
             yield loc, imgs
 
 
-def featured_products(pages):
-    """Yield (product_url, [], room) for every /product/ link on the given landing pages."""
+def featured_products(pages, delay=1.0):
+    """Yield (product_url, [], room) for every /product/ link on the given landing pages and their next pages."""
     for path, room in pages:
-        try:
-            page = fetch(BASE + path)
-        except Exception as e:
-            print("  ! %s: %s" % (path, e), file=sys.stderr)
-            continue
         seen = set()
-        for m in re.finditer(r'href="((?:https://interio\.com)?/product/[^"?#]+)"', page):
-            url = urllib.parse.urljoin(BASE, m.group(1))
-            if url not in seen:
-                seen.add(url)
-                yield url, [], room
+        for n in range(1, MAX_LISTING_PAGES + 1):
+            url = BASE + path + ("?product_list_limit=36&p=%d" % n if n > 1 else "?product_list_limit=36")
+            try:
+                page = fetch(url)
+            except Exception as e:
+                print("  ! %s: %s" % (url, e), file=sys.stderr)
+                break
+            new = []
+            for m in re.finditer(r'href="((?:https://interio\.com)?/product/[^"?#]+)"', page):
+                link = urllib.parse.urljoin(BASE, m.group(1))
+                if link.lower() not in seen:
+                    seen.add(link.lower())
+                    new.append(link)
+            for link in new:
+                yield link, [], room
+            if not new:
+                break
+            time.sleep(delay)
+        print("  %s: %d products listed" % (path, len(seen)), file=sys.stderr)
 
 
 def all_products(index_url, pages):
@@ -216,6 +241,8 @@ def category_path(parser):
 
 
 def room_for(cat_path, name):
+    if any(slug in STORAGE_CATEGORIES for slug in cat_path):
+        return "storage"
     for slug in cat_path:
         if slug in ROOM_BY_CATEGORY:
             return ROOM_BY_CATEGORY[slug]
