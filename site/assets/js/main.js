@@ -523,6 +523,7 @@
       var similar = CATALOG.filter(function (p) { return p !== card && p.room === card.room; });
       similar.sort(function (a, b) { return (b.type === card.type) - (a.type === card.type); });
       card.chosenName = name; // so a queen bed gets a queen mattress
+      card.chosenColour = ((specs.filter(function (r) { return r[0] === "Colour"; })[0]) || [])[1] || ""; // and walnut gets walnut
       var S = window.HDE_SUGGEST;
       var extras = S ? S.suggest([card], 6) : [];
       var pitch = S ? S.pitch(card) : "";
@@ -574,7 +575,7 @@
             (d && d.care ? "<div><h2>Care</h2><p>" + esc(d.care) + "</p></div>" : "") +
           "</div></section>" : "") +
         (extras.length ? '<section class="section"><div class="wrap"><div class="section-head"><div><h2>Complete the room</h2>' +
-          (pitch ? "<p>Customers who choose " + esc(aKind(card)) + " usually also need " + esc(pitch) + ". Here are picks matched to its size and budget.</p>" : "") +
+          (pitch ? "<p>Customers who choose " + esc(aKind(card)) + " usually also need " + esc(pitch) + ". Here are picks matched to its " + (S.tone(card) ? esc(S.tone(card)) + " tone, " : "") + "size and budget.</p>" : "") +
           '</div><a class="link-arrow" href="shortlist.html">My shortlist ' + icon("arrow") + '</a></div><div class="grid-products">' +
           extras.map(function (x) { return productCard(x.product, x.label); }).join("") + "</div></div></section>" : "") +
         (similar.length ? '<section class="section section--stone"><div class="wrap"><div class="section-head"><div><h2>You may also like</h2></div><a class="link-arrow" href="collections.html#' + room.slug + '">All ' + esc(room.name.toLowerCase()) + " " + icon("arrow") + '</a></div><div class="grid-products">' +
@@ -734,7 +735,7 @@
             "</div></aside>" +
         "</div></section>" +
         (extras.length ? '<section class="section section--stone"><div class="wrap"><div class="section-head"><div><h2>Complete your room</h2>' +
-          "<p>Our team usually suggests these with what you have picked, matched to your budget.</p></div></div>" +
+          "<p>Our team usually suggests these with what you have picked, matched to its wood tone and your budget.</p></div></div>" +
           '<div class="grid-products">' + extras.map(function (x) { return productCard(x.product, x.label); }).join("") + "</div></div></section>" : "");
       wireImages(root);
       root.setAttribute("data-list", JSON.stringify({ text: listText(items), url: listUrl(items) }));
