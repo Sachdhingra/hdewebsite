@@ -109,6 +109,7 @@
         '<span class="strip-contacts"><a href="tel:' + esc(B.phoneHref) + '">Call ' + esc(B.phone) + "</a>" +
         '<a href="' + waLink("Hi, I would like to know more about your furniture.") + '" target="_blank" rel="noopener">WhatsApp us</a>' +
           (B.service ? '<span class="strip-service"><a href="tel:' + esc(B.service.phoneHref) + '">Service ' + esc(B.service.phone) + '</a> <span class="strip-note">' + esc(B.service.hours) + "</span></span>" : "") +
+          (B.stripHours ? '<span class="strip-service">' + esc(B.stripHours) + "</span>" : "") +
         "</span>" +
       "</div></div>" +
       '<header class="site-header"><div class="wrap">' +
