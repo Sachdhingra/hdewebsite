@@ -33,9 +33,9 @@ window.HDE_DATA = {
     { slug: "office", name: "Home Office", blurb: "Ergonomic chairs, study tables and bookshelves",
       image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=900&q=70&auto=format",
       types: ["Office chairs", "Study tables", "Bookshelves", "Filing storage"] },
-    { slug: "storage", name: "Storage", blurb: "Steel almirahs, shoe racks and display units",
+    { slug: "storage", name: "Storage", blurb: "Steel almirahs, home lockers, shoe racks and display units",
       image: "https://images.unsplash.com/photo-1595428773491-ae4a0b7e3a4a?w=900&q=70&auto=format",
-      types: ["Almirahs", "Shoe racks", "Cabinets", "Display units"] }
+      types: ["Almirahs", "Home lockers", "Shoe racks", "Cabinets", "Display units"] }
   ],
 
   products: [
