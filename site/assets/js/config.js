@@ -18,6 +18,7 @@ window.HDE_CONFIG = {
     service: { phone: "+91 90121 06106", phoneHref: "+919012106106", hours: "Mon to Sat, 11 AM to 7 PM" },            // WhatsApp number, digits only with country code (no +)
     email: "sachdhingra@gmail.com",     // From the Google listing. A business address (e.g. info@yourdomain) looks more professional
     hours: "Open every day, 11:00 AM to 8:00 PM", // From the Google listing
+    stripHours: "Showroom open 7 days, 11 AM to 8 PM", // Short version for the header strip (user, 2026-10-01)
     instagram: "https://instagram.com/",   // FILL IN
     facebook: "https://facebook.com/"      // FILL IN
   },
