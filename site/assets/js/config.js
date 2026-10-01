@@ -13,7 +13,9 @@ window.HDE_CONFIG = {
     // Main shop number (user, 2026-09-30), also used for WhatsApp enquiries that come without a salesperson link.
     phone: "+91 99172 33664",
     phoneHref: "+919917233664",
-    whatsapp: "919917233664",            // WhatsApp number, digits only with country code (no +)
+    whatsapp: "919917233664",
+    // After-sales service line (user, 2026-10-01), shown in the header strip and footer.
+    service: { phone: "+91 90121 06106", phoneHref: "+919012106106", hours: "Mon to Sat, 11 AM to 7 PM" },            // WhatsApp number, digits only with country code (no +)
     email: "sachdhingra@gmail.com",     // From the Google listing. A business address (e.g. info@yourdomain) looks more professional
     hours: "Open every day, 11:00 AM to 8:00 PM", // From the Google listing
     instagram: "https://instagram.com/",   // FILL IN

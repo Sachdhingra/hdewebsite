@@ -78,7 +78,10 @@ p { margin: 0; }
 .strip .wrap { display: flex; flex-wrap: wrap; gap: 6px 24px; justify-content: space-between; align-items: center; padding-block: 8px; }
 .strip a { color: #fff; text-decoration: none; }
 .strip a:hover { text-decoration: underline; }
-.strip-contacts { display: flex; gap: 20px; flex-wrap: wrap; }
+.strip-contacts { display: flex; gap: 6px 20px; flex-wrap: wrap; }
+.strip-service { white-space: nowrap; }
+@media (max-width: 380px) { .strip-service { white-space: normal; } }
+.strip-note { color: #c9bcae; font-size: 0.8rem; }
 
 /* Header */
 .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(255, 255, 255, 0.97); border-bottom: 1px solid var(--line); backdrop-filter: saturate(1.4) blur(8px); }
