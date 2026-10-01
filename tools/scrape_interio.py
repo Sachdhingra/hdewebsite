@@ -47,16 +47,17 @@ STORAGE_CATEGORIES = {
     "steel-almirahs", "home-lockers", "digital-lockers", "biometric-lockers", "manual-lockers",
     "shoe-racks", "storage-cabinets", "display-units",
 }
-# Landing pages whose products are collected first (before the sitemap) and filed under the given room,
-# so ranges that sit late in the sitemap still make it into a time-limited sync. Listing pages are
+# Landing pages whose products are collected first (before the sitemap), so ranges that sit late in the
+# sitemap still make it into a time-limited sync. A room files every product under that room; None keeps
+# each product's own room (listing pages also show related items from other rooms). Listing pages are
 # followed through ?p=2, 3, ... until a page shows no new products.
 FEATURED_PAGES = [
     ("/modular-kitchen", "kitchen"),
-    ("/all-products/almirahs-wardrobes/steel-almirahs", "storage"),
-    ("/all-products/home-lockers", "storage"),
-    ("/all-products/cabinets/shoe-racks", "storage"),
-    ("/all-products/cabinets/storage-cabinets", "storage"),
-    ("/all-products/cabinets/display-units", "storage"),
+    ("/all-products/almirahs-wardrobes/steel-almirahs", None),
+    ("/all-products/home-lockers", None),
+    ("/all-products/cabinets/shoe-racks", None),
+    ("/all-products/cabinets/storage-cabinets", None),
+    ("/all-products/cabinets/display-units", None),
 ]
 MAX_LISTING_PAGES = 40
 # Fallback when a page has no usable breadcrumb: first keyword that matches the product name wins.
@@ -241,7 +242,7 @@ def category_path(parser):
 
 
 def room_for(cat_path, name):
-    if any(slug in STORAGE_CATEGORIES for slug in cat_path):
+    if any(slug in STORAGE_CATEGORIES for slug in cat_path) or "almirah" in name.lower():
         return "storage"
     for slug in cat_path:
         if slug in ROOM_BY_CATEGORY:
@@ -407,6 +408,9 @@ def parse_product(page_html, url, sitemap_images=(), width=640):
     if cid and not desc:
         desc = html.unescape((cfg.get("metaDescriptions") or {}).get(cid) or "")
     kind = deal_type(desc) or details["category"] or (pretty(cats[-1]) if cats else "")
+    # Some almirah pages carry another category's text ("Bed", "Mattress") or none at all.
+    if "almirah" in name.lower() and "almirah" not in kind.lower():
+        kind = "Steel Almirahs"
     if not name or price is None:
         return None
     details.pop("category")
