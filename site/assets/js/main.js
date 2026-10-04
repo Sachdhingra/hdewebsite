@@ -926,11 +926,49 @@
     });
   }
 
+  // Google reviews: a random handful on each visit, then one card at a time swaps for an unseen review.
+  // Pauses on hover, focus, touch and hidden tabs; reduced-motion visitors get a still, shuffled set.
+  function reviewHTML(r) {
+    return '<span class="stars" aria-label="5 out of 5">★★★★★</span><blockquote>' + esc(r.text) + "</blockquote><figcaption><strong>" + esc(r.name) + "</strong><br>Google review, " + esc(r.area) + (r.date ? ", " + esc(r.date) : "") + "</figcaption>";
+  }
+
+  function shuffled(list) {
+    var a = list.slice();
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+
   function mountReviews() {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     $all("[data-reviews]").forEach(function (el) {
-      el.innerHTML = D.reviews.map(function (r) {
-        return '<figure class="review"><span class="stars" aria-label="5 out of 5">★★★★★</span><blockquote>' + esc(r.text) + "</blockquote><figcaption><strong>" + esc(r.name) + "</strong><br>Google review, " + esc(r.area) + (r.date ? ", " + esc(r.date) : "") + "</figcaption></figure>";
-      }).join("");
+      var pool = shuffled(D.reviews || []);
+      var narrow = window.matchMedia && window.matchMedia("(max-width: 900px)").matches;
+      var shown = Math.min(pool.length, narrow ? 1 : 3);
+      var queue = pool.slice(shown);
+      el.innerHTML = pool.slice(0, shown).map(function (r) { return '<figure class="review">' + reviewHTML(r) + "</figure>"; }).join("");
+      if (reduce || !queue.length) return;
+
+      var cards = $all(".review", el), slot = 0, paused = false;
+      cards.forEach(function (card, i) { card._review = pool[i]; });
+      var pause = function () { paused = true; }, resume = function () { paused = false; };
+      el.addEventListener("mouseenter", pause);
+      el.addEventListener("mouseleave", resume);
+      el.addEventListener("focusin", pause);
+      el.addEventListener("focusout", resume);
+      el.addEventListener("touchstart", function () { pause(); clearTimeout(el._resume); el._resume = setTimeout(resume, 8000); }, { passive: true });
+
+      setInterval(function () {
+        if (paused || document.hidden) return;
+        var card = cards[slot];
+        card.classList.add("is-out");
+        setTimeout(function () {
+          queue.push(card._review);
+          card._review = queue.shift();
+          card.innerHTML = reviewHTML(card._review);
+          card.classList.remove("is-out");
+        }, 450);
+        slot = (slot + 1) % cards.length;
+      }, 6000);
     });
   }
 
