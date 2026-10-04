@@ -934,6 +934,23 @@
     });
   }
 
+  // Delivery photos published from Omniflow (Website Gallery). Hidden until at least one loads.
+  function mountDelivered() {
+    var section = $("[data-delivered]");
+    var G = C.gallery || {};
+    if (!section || !G.url || !window.fetch) return;
+    fetch(G.url).then(function (r) { return r.ok ? r.json() : { photos: [] }; }).then(function (data) {
+      var photos = (data && data.photos || []).filter(function (p) { return p && /^https:\/\//.test(p.image); }).slice(0, G.max || 8);
+      if (!photos.length) return;
+      $("[data-delivered-grid]", section).innerHTML = photos.map(function (p) {
+        var when = p.date ? new Date(p.date + "T00:00:00").toLocaleDateString("en-IN", { month: "short", year: "numeric" }) : "";
+        return '<figure class="delivered-item"><img src="' + esc(p.image) + '" alt="' + esc(p.caption || "Furniture delivered in Dehradun") + '" loading="lazy" width="400" height="300">' +
+          "<figcaption>" + esc(p.caption || "") + (when ? "<small>" + esc(when) + "</small>" : "") + "</figcaption></figure>";
+      }).join("");
+      section.hidden = false;
+    }).catch(function () { /* feed unreachable: keep the section hidden */ });
+  }
+
   function mountBiz() {
     $all("[data-biz]").forEach(function (el) {
       var k = el.getAttribute("data-biz");
@@ -989,6 +1006,7 @@
     mountShortlist();
     mountStores();
     mountReviews();
+    mountDelivered();
     mountForms(document);
     mountSlides();
     wireImages(document);
