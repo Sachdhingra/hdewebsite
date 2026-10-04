@@ -72,5 +72,15 @@ window.HDE_CONFIG = {
     omniflowUrl: "https://cdrgbhnntonyofqkhzpm.supabase.co/functions/v1/website-lead",
     // Also offer a one-tap WhatsApp follow-up after a successful submission.
     offerWhatsAppAfterSubmit: true
+  },
+
+  /*
+   * "Recently delivered in Dehradun" on the home page. Photos come from Omniflow > Website Gallery,
+   * where an admin publishes delivery photos. The section stays hidden while there are none
+   * or the feed can't be reached. Set url to "" to switch it off.
+   */
+  gallery: {
+    url: "https://cdrgbhnntonyofqkhzpm.supabase.co/functions/v1/website-gallery",
+    max: 8
   }
 };

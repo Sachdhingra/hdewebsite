@@ -380,6 +380,14 @@ p { margin: 0; }
 .stars { color: var(--brass); letter-spacing: 2px; }
 @media (max-width: 900px) { .reviews { grid-template-columns: 1fr; } }
 
+/* Recently delivered (photos published from Omniflow) */
+.delivered { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.delivered-item { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.delivered-item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.delivered-item figcaption { padding: 12px 14px; font-size: 0.92rem; display: grid; gap: 2px; }
+.delivered-item small { color: var(--ink-2); font-size: 0.8rem; }
+@media (max-width: 900px) { .delivered { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+
 /* Big enquiry section */
 .enquire { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
 .enquire-copy { display: grid; gap: 18px; }
