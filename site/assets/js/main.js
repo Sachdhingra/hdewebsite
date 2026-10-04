@@ -853,6 +853,59 @@
     });
   }
 
+  /* ---------- budget packages on the home page (bundles.js) ---------- */
+  function mountBundles() {
+    var root = $("[data-bundles]");
+    var BU = window.HDE_BUNDLES;
+    if (!root || !BU || !CATALOG) { if (root) root.hidden = true; return; }
+    var tabs = $("[data-bundle-tiers]", root), grid = $("[data-bundle-grid]", root);
+    var tier = BU.tiers[1].key;
+
+    tabs.innerHTML = BU.tiers.map(function (t) {
+      return '<button class="chip" type="button" data-tier="' + t.key + '" aria-pressed="' + (t.key === tier) + '">' + esc(t.label) + "</button>";
+    }).join("");
+
+    function card(b) {
+      var link = listUrl(b.items);
+      var list = b.items.map(function (x, i) { return (i + 1) + ". " + x.name + " (MRP " + rupees(x.price) + ")"; }).join("\n");
+      var title = b.name + " package, " + b.tier.label.toLowerCase();
+      var waMsg = "Hi " + B.name + ", I'm interested in this " + title + ":\n" + list + "\nTotal MRP " + rupees(b.total) +
+        ".\nPlease share your package price. " + link + (salesRef ? "\n(Ref: " + salesRef + ")" : "");
+      return '<article class="bundle">' +
+        '<div class="bundle-pics bundle-pics--' + b.items.length + '">' + b.items.map(function (x) { return ph(x.image, BU.label(x), ""); }).join("") +
+          '<span class="bundle-tier">' + esc(b.tier.label) + "</span></div>" +
+        '<div class="bundle-body"><h3>' + esc(b.name) + "</h3>" +
+          '<ul class="bundle-items">' + b.items.map(function (x) {
+            return '<li><span class="card-type">' + esc(BU.label(x)) + '</span><a href="' + productHref(x) + '">' + esc(x.name) + "</a><b>" + rupees(x.price) + "</b></li>";
+          }).join("") + "</ul>" +
+          '<div class="bundle-total price"><small>Total MRP, ' + b.items.length + " pieces</small><b>" + rupees(b.total) + "</b></div>" +
+          '<p class="bundle-note">Buying together gets a better price. Ask us for this package price.</p>' +
+          '<a class="btn btn--wa btn--block" href="' + esc(waLink(waMsg)) + '" target="_blank" rel="noopener" data-bundle-wa="' + esc(b.key) + '">' + icon("wa") + "WhatsApp for package price</a>" +
+          '<button class="btn btn--ghost btn--block" type="button" data-enquire data-source="bundle" data-interest="' + esc((roomBySlug(b.items[0].card.room) || D.rooms[0]).name) + '" data-product="' + esc(title) + '" data-message="' + esc(title + ":\n" + list + "\nTotal MRP " + rupees(b.total) + "\n" + link) + '">Request a call back</button>' +
+        "</div></article>";
+    }
+
+    function draw() {
+      var packs = BU.make(tier, 3);
+      grid.innerHTML = packs.length ? packs.map(card).join("") : '<p class="bundle-empty">Ask us and we will put a package together for this budget.</p>';
+      wireImages(grid);
+    }
+
+    root.addEventListener("click", function (e) {
+      var t = e.target.closest("[data-tier]");
+      if (t) {
+        tier = t.getAttribute("data-tier");
+        $all("[data-tier]", tabs).forEach(function (b) { b.setAttribute("aria-pressed", String(b === t)); });
+        draw();
+        return;
+      }
+      if (e.target.closest("[data-bundle-shuffle]")) { draw(); return; }
+      var w = e.target.closest("[data-bundle-wa]");
+      if (w && window.dataLayer) window.dataLayer.push({ event: "bundle_whatsapp", bundle: w.getAttribute("data-bundle-wa"), tier: tier });
+    });
+    draw();
+  }
+
   function mountStores() {
     $all("[data-stores]").forEach(function (el) {
       el.innerHTML = C.stores.map(function (s) {
@@ -931,6 +984,7 @@
     mountBiz();
     mountRooms();
     mountProducts();
+    mountBundles();
     mountProductPage();
     mountShortlist();
     mountStores();
