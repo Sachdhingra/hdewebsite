@@ -11,7 +11,9 @@
   var TIERS = [
     { key: "50k", cap: 50000, floor: 30000, label: "Under ₹50,000" },
     { key: "75k", cap: 75000, floor: 50000, label: "Under ₹75,000" },
-    { key: "1l", cap: 100000, floor: 75000, label: "Under ₹1 lakh" }
+    { key: "1l", cap: 100000, floor: 75000, label: "Under ₹1 lakh" },
+    { key: "1.5l", cap: 150000, floor: 100000, label: "Under ₹1.5 lakh" },
+    { key: "2l", cap: 200000, floor: 150000, label: "Under ₹2 lakh" }
   ];
 
   // The mixes. A budget only shows the mixes that fit it.
