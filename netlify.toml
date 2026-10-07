@@ -2,3 +2,15 @@
 [build]
   publish = "site"
   command = ""
+
+# Omniflow (HDE's CRM) reads the product catalogue and photos for quotations.
+# They are public anyway; this only lets the CRM's browser fetch them.
+[[headers]]
+  for = "/assets/js/catalog.js"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/assets/img/products/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
