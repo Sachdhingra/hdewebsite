@@ -455,14 +455,15 @@
   }
 
   // `label` replaces the type line, for example "Mattress" on a "complete the room" suggestion.
-  function productCard(p, label) {
+  // label replaces the type line ("Dining chairs"); why says what it goes with ("Same Bliss range as your dining table").
+  function productCard(p, label, why) {
     var room = roomBySlug(p.room) || D.rooms[0];
     // Synced products open their own page; the sample products have no details to show.
     var link = CATALOG ? productHref(p) : "";
     var pic = ph(p.image, room.name, p.name);
     return '<article class="card' + (link ? " card--link" : "") + '">' + (link ? '<a href="' + link + '" tabindex="-1" aria-hidden="true">' + pic + "</a>" : pic) +
       (CATALOG ? heartButton(p.id, p.name) : "") +
-      '<div class="card-body"><span class="card-type">' + esc(typeof label === "string" ? label : p.type) + "</span><h3>" + (link ? '<a href="' + link + '">' + esc(p.name) + "</a>" : esc(p.name)) + '</h3><p class="card-note">' + (p.variants ? p.variants + " sizes, colours or finishes. " : "") + esc(p.note) + "</p>" +
+      '<div class="card-body"><span class="card-type">' + esc(typeof label === "string" ? label : p.type) + "</span><h3>" + (link ? '<a href="' + link + '">' + esc(p.name) + "</a>" : esc(p.name)) + "</h3>" + (typeof why === "string" && why ? '<p class="card-why">' + esc(why) + "</p>" : "") + '<p class="card-note">' + (p.variants ? p.variants + " sizes, colours or finishes. " : "") + esc(p.note) + "</p>" +
       '<div class="card-foot"><span class="price"><small>' + priceLabel(p) + "</small><b>" + rupees(p.from) + "</b></span>" +
       '<button class="btn btn--primary" type="button" data-enquire data-product="' + esc(p.name) + '" data-interest="' + esc(room.name) + '">Get best price</button></div></div></article>';
   }
@@ -579,9 +580,9 @@
             (d && d.care ? "<div><h2>Care</h2><p>" + esc(d.care) + "</p></div>" : "") +
           "</div></section>" : "") +
         (extras.length ? '<section class="section"><div class="wrap"><div class="section-head"><div><h2>Complete the room</h2>' +
-          (pitch ? "<p>Customers who choose " + esc(aKind(card)) + " usually also need " + esc(pitch) + ". Here are picks matched to its " + (S.tone(card) ? esc(S.tone(card)) + " tone, " : "") + "size and budget.</p>" : "") +
+          (pitch ? "<p>Customers who choose " + esc(aKind(card)) + " usually also need " + esc(pitch) + ". These are picked to go with it: the same range where Interio makes one, else a matching colour and finish, in a similar budget.</p>" : "") +
           '</div><a class="link-arrow" href="shortlist.html">My shortlist ' + icon("arrow") + '</a></div><div class="grid-products">' +
-          extras.map(function (x) { return productCard(x.product, x.label); }).join("") + "</div></div></section>" : "") +
+          extras.map(function (x) { return productCard(x.product, x.label, x.why); }).join("") + "</div></div></section>" : "") +
         (similar.length ? '<section class="section section--stone"><div class="wrap"><div class="section-head"><div><h2>You may also like</h2></div><a class="link-arrow" href="collections.html#' + room.slug + '">All ' + esc(room.name.toLowerCase()) + " " + icon("arrow") + '</a></div><div class="grid-products">' +
           similar.slice(0, 4).map(productCard).join("") + "</div></div></section>" : "");
       wireImages(root);
@@ -739,8 +740,8 @@
             "</div></aside>" +
         "</div></section>" +
         (extras.length ? '<section class="section section--stone"><div class="wrap"><div class="section-head"><div><h2>Complete your room</h2>' +
-          "<p>Our team usually suggests these with what you have picked, matched to its wood tone and your budget.</p></div></div>" +
-          '<div class="grid-products">' + extras.map(function (x) { return productCard(x.product, x.label); }).join("") + "</div></div></section>" : "");
+          "<p>Picked to go with your shortlist: the same range where Interio makes one, else a matching colour and finish, in a similar budget.</p></div></div>" +
+          '<div class="grid-products">' + extras.map(function (x) { return productCard(x.product, x.label, x.why); }).join("") + "</div></div></section>" : "");
       wireImages(root);
       root.setAttribute("data-list", JSON.stringify({ text: listText(items), url: listUrl(items) }));
     }
