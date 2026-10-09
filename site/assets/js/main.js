@@ -122,6 +122,7 @@
               '<button class="btn btn--primary" type="button" data-enquire data-interest="Full home interiors">Free consultation</button></div>' +
             "</div></div>" +
           navLink("collections.html", "Collections", "collections") +
+          navLink("elite-card.html", "Elite Card", "elite") +
           navLink("stores.html", "Showrooms", "stores") +
           navLink("about.html", "About us", "about") +
           navLink("contact.html", "Contact", "contact") +
@@ -143,7 +144,7 @@
           "<p class=\"footer-partner\"><img src=\"assets/img/interio-logo.png\" alt=\"interio by Godrej\" width=\"105\" height=\"55\"></p><p>Furniture, modular kitchens and wardrobes for homes and offices in " + esc(B.city) + " and nearby. " + esc(B.partnerLine) + " since " + esc(B.since) + ".</p>" +
           '<p><a href="' + esc(B.instagram) + '" target="_blank" rel="noopener">Instagram</a> &middot; <a href="' + esc(B.facebook) + '" target="_blank" rel="noopener">Facebook</a></p></div>' +
         "<div><h4>Shop</h4><ul>" + D.rooms.map(function (r) { return '<li><a href="collections.html#' + r.slug + '">' + esc(r.name) + "</a></li>"; }).join("") + "</ul></div>" +
-        '<div><h4>Help</h4><ul><li><a href="shortlist.html">My shortlist</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Get a quote</a></li><li><a href="room-planner.html">See it in your room</a></li><li><a href="contact.html#visit">Free consultation</a></li><li><a href="stores.html">Showrooms</a></li><li><a href="contact.html#faq">FAQs</a></li></ul></div>' +
+        '<div><h4>Help</h4><ul><li><a href="shortlist.html">My shortlist</a></li><li><a href="elite-card.html">Elite Card Programme</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Get a quote</a></li><li><a href="room-planner.html">See it in your room</a></li><li><a href="contact.html#visit">Free consultation</a></li><li><a href="stores.html">Showrooms</a></li><li><a href="contact.html#faq">FAQs</a></li></ul></div>' +
         '<div><h4>Talk to us</h4><ul><li><a href="tel:' + esc(B.phoneHref) + '">' + esc(B.phone) + '</a></li><li><a href="' + waLink("Hi, I have a question.") + '" target="_blank" rel="noopener">WhatsApp</a></li>' +
           (B.service ? '<li>Service: <a href="tel:' + esc(B.service.phoneHref) + '">' + esc(B.service.phone) + "</a><br>" + esc(B.service.hours) + "</li>" : "") + '<li><a href="mailto:' + esc(B.email) + '">' + esc(B.email) + "</a></li><li>" + esc(B.hours) + "</li></ul></div>" +
       "</div>" +
@@ -238,10 +239,12 @@
 
   /* ---------- lead forms ---------- */
   var formCount = 0;
-  var SOURCE_TO_API = { home: "website", hero: "website", popup: "website", band: "website", collections: "category-page", contact: "contact-form", stores: "showroom-page" };
+  var SOURCE_TO_API = { home: "website", hero: "website", popup: "website", band: "website", collections: "category-page", contact: "contact-form", stores: "showroom-page", "elite-card": "website" };
+  var ELITE = "Elite Card programme";
+  var ELITE_WA = "Hi, I would like to join the Elite Card programme. Please share the details of each level.";
 
   function interestOptions(selected) {
-    var list = D.rooms.map(function (r) { return r.name; }).concat(["Full home interiors", "Office or commercial project", "Something else"]);
+    var list = D.rooms.map(function (r) { return r.name; }).concat(["Full home interiors", "Office or commercial project", ELITE, "Something else"]);
     return '<option value="">Choose one</option>' + list.map(function (n) {
       return "<option" + (n === selected ? " selected" : "") + ">" + esc(n) + "</option>";
     }).join("");
@@ -398,8 +401,8 @@
     form.elements.product.value = opts.product || "";
     if (opts.message && form.elements.message) form.elements.message.value = opts.message;
     bindForm(form);
-    $("#modal-title").textContent = opts.product ? "Get the best price" : "Get a free quote";
-    $("#modal-sub").textContent = opts.product
+    $("#modal-title").textContent = opts.title || (opts.product ? "Get the best price" : "Get a free quote");
+    $("#modal-sub").textContent = opts.sub ? opts.sub : opts.product
       ? "For " + opts.product + ". We will call you back with today's price, offers and stock."
       : "Tell us what you need. We will call you back with ideas, prices and offers.";
     lastFocus = document.activeElement;
@@ -416,6 +419,17 @@
   }
   document.addEventListener("click", function (e) {
     var t = e.target.closest("[data-enquire]");
+    if (t && t.hasAttribute("data-elite")) {
+      // Elite Card programme: the lead lands in Omniflow with the level the visitor asked about
+      e.preventDefault();
+      var level = t.getAttribute("data-elite");
+      openModal({
+        interest: ELITE, product: ELITE + (level ? " (" + level + ")" : ""), source: "elite-card",
+        title: "Join the Elite Card programme",
+        sub: "Share your details and our team will call you about " + (level ? "the " + level + " level" : "the three levels") + " and how to join."
+      });
+      return;
+    }
     if (t) {
       e.preventDefault();
       openModal({ product: t.getAttribute("data-product"), interest: t.getAttribute("data-interest"), source: t.getAttribute("data-source"), message: t.getAttribute("data-message") });
@@ -998,7 +1012,16 @@
       else if (k === "mail") { el.href = "mailto:" + B.email; el.textContent = B.email; }
       else if (B[k] != null) el.textContent = B[k];
     });
+    $all("[data-elite-wa]").forEach(function (el) { el.href = waLink(ELITE_WA + (salesRef ? " (Ref: " + salesRef + ")" : "")); });
   }
+
+  // Elite Card benefits: a link to #early-access etc. opens that benefit (Safari doesn't on its own).
+  function openHashedDetails() {
+    var id = location.hash.slice(1);
+    var d = id && document.getElementById(id);
+    if (d && d.tagName === "DETAILS") { d.open = true; d.scrollIntoView({ block: "center" }); }
+  }
+  window.addEventListener("hashchange", openHashedDetails);
 
   /* ---------- hero carousel ---------- */
   function mountSlides() {
@@ -1050,5 +1073,6 @@
     mountSlides();
     wireImages(document);
     syncShortlist();
+    openHashedDetails();
   });
 })();
