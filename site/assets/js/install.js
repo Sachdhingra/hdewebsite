@@ -14,7 +14,21 @@
   }
 
   var standalone = (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || window.navigator.standalone === true;
-  if (standalone) return;
+
+  // "Install the app" buttons on the page (e.g. the Elite Card page): install now, or show how to.
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-install-app]");
+    if (!b) return;
+    e.preventDefault();
+    if (standalone) return;
+    if (deferred) promptInstall(); else { var old = document.querySelector(".hde-install"); if (old) old.remove(); shown = false; show(true); }
+  });
+  if (standalone) {
+    document.addEventListener("DOMContentLoaded", function () {
+      Array.prototype.forEach.call(document.querySelectorAll("[data-install-app]"), function (b) { b.disabled = true; b.textContent = "You are using the app"; });
+    });
+    return;
+  }
 
   function snoozed() {
     try { var t = Number(localStorage.getItem(KEY) || 0); return t && Date.now() - t < SNOOZE_DAYS * 864e5; } catch (e) { return false; }
@@ -41,13 +55,29 @@
     "@keyframes hde-install-in{from{transform:translateY(12px);opacity:0}to{transform:none;opacity:1}}" +
     "@media (prefers-reduced-motion:reduce){.hde-install{animation:none}}";
 
-  function show() {
-    if (shown || snoozed()) return;
-    if (!deferred && !isIOSSafari) return;
+  function promptInstall() {
+    var p = deferred; deferred = null;
+    var box = document.querySelector(".hde-install");
+    if (box) box.remove();
+    p.prompt();
+    p.userChoice.then(function (c) {
+      if (c.outcome !== "accepted") snooze();
+      if (window.dataLayer) window.dataLayer.push({ event: "app_install_prompt", outcome: c.outcome });
+    }).catch(function () {});
+  }
+
+  var styled = false;
+  // force: the visitor asked for the app, so skip the timers and snooze and always say how to install.
+  function show(force) {
+    if (!force && (shown || snoozed())) return;
+    if (!force && !deferred && !isIOSSafari) return;
     shown = true;
-    var style = document.createElement("style");
-    style.textContent = css;
-    document.head.appendChild(style);
+    if (!styled) {
+      styled = true;
+      var style = document.createElement("style");
+      style.textContent = css;
+      document.head.appendChild(style);
+    }
 
     var box = document.createElement("div");
     box.className = "hde-install";
@@ -59,7 +89,10 @@
       (deferred
         ? "<p>Add Home Decor Enterprises to your phone or laptop for one-tap access to our furniture and offers.</p>" +
           '<div class="row"><button type="button" class="go">Install</button><button type="button" class="later">Not now</button></div>'
-        : "<p>Add us to your home screen: tap <b>Share</b> <span aria-hidden=\"true\">&#x2191;&#xFE0E;</span> at the bottom of Safari, then <b>Add to Home Screen</b>.</p>" +
+        : isIOS
+        ? "<p>Add us to your home screen: tap <b>Share</b> <span aria-hidden=\"true\">&#x2191;&#xFE0E;</span> at the bottom of Safari, then <b>Add to Home Screen</b>.</p>" +
+          '<div class="row"><button type="button" class="later">Got it</button></div>'
+        : "<p>Open your browser menu <span aria-hidden=\"true\">&#8942;</span> and choose <b>Install app</b> or <b>Add to Home screen</b>.</p>" +
           '<div class="row"><button type="button" class="later">Got it</button></div>') +
       "</div>" +
       '<button type="button" class="x" aria-label="Close">&times;</button>';
@@ -69,14 +102,7 @@
     box.querySelector(".later").addEventListener("click", close);
     box.querySelector(".x").addEventListener("click", close);
     var go = box.querySelector(".go");
-    if (go) go.addEventListener("click", function () {
-      var p = deferred; deferred = null; box.remove();
-      p.prompt();
-      p.userChoice.then(function (c) {
-        if (c.outcome !== "accepted") snooze();
-        if (window.dataLayer) window.dataLayer.push({ event: "app_install_prompt", outcome: c.outcome });
-      }).catch(function () {});
-    });
+    if (go) go.addEventListener("click", promptInstall);
   }
 
   window.addEventListener("beforeinstallprompt", function (e) {
