@@ -663,18 +663,11 @@ p { margin: 0; }
 .elite-hero .btn--ghost:hover { background: rgba(255, 255, 255, 0.1); }
 
 .elite-levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.elite-level { border-radius: 14px; padding: 24px; color: #fff; display: grid; gap: 12px; align-content: start; min-height: 230px; box-shadow: var(--shadow); }
-.elite-level h3 { font-size: 1.4rem; letter-spacing: 0.05em; }
-.elite-level p { color: rgba(255, 255, 255, 0.9); }
-.elite-level .btn { justify-self: start; margin-top: auto; color: #fff; }
-.elite-level .btn:hover { background: rgba(255, 255, 255, 0.14); }
-.elite-level--blue { background: linear-gradient(135deg, #0b3e9c, #1e6fe0 60%, #0a3a8f); }
-.elite-level--purple { background: linear-gradient(135deg, #3d1478, #7b2fcf 60%, #3a1172); }
-.elite-level--gold { background: linear-gradient(135deg, #8a6418, #d6aa4a 55%, #9c7420); color: var(--ink); }
-.elite-level--gold p { color: #2b2213; }
-.elite-level--gold .btn { color: var(--ink); }
-.elite-level--gold .btn:hover { background: rgba(0, 0, 0, 0.08); }
-.elite-chip { width: 44px; height: 34px; border-radius: 6px; background: linear-gradient(135deg, #f3f0e6, #c9c3b2); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15); }
+.elite-level { display: grid; gap: 10px; align-content: start; }
+.elite-level img { width: 100%; height: auto; border-radius: 14px; box-shadow: 0 16px 34px -18px rgba(34, 28, 24, 0.55); margin-bottom: 6px; }
+.elite-level h3 { font-size: 1.3rem; letter-spacing: 0.05em; }
+.elite-level p { color: var(--ink-2); }
+.elite-level .btn { justify-self: start; color: var(--walnut); }
 
 .elite-benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 12px; align-items: start; }
 .elite-benefits details { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 4px 18px; }
@@ -700,5 +693,5 @@ p { margin: 0; }
 .elite-chips a { display: inline-flex; align-items: center; min-height: 40px; padding: 6px 14px; border: 1px solid var(--brass); border-radius: 999px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.92rem; }
 .elite-chips a:hover { background: #fbf3e2; }
 
-@media (max-width: 860px) { .elite-levels { grid-template-columns: 1fr; } .elite-level { min-height: 0; } }
+@media (max-width: 860px) { .elite-levels { grid-template-columns: 1fr; gap: 32px; } }
 @media (prefers-reduced-motion: reduce) { .elite-home-poster img { transition: none; } }
