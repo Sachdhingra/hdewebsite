@@ -10,6 +10,7 @@ window.HDE_CONFIG = {
     since: "2006",
     partnerLine: "Authorised Godrej Interio channel partner", // FILL IN: confirm wording allowed by your partner agreement
     city: "Dehradun",
+    siteUrl: "https://hdefurniture.netlify.app/", // The live address. Change it if you move to your own domain (also in sitemap.xml and robots.txt).
     // Main shop number (user, 2026-09-30), also used for WhatsApp enquiries that come without a salesperson link.
     phone: "+91 99172 33664",
     phoneHref: "+919917233664",
@@ -72,6 +73,15 @@ window.HDE_CONFIG = {
     omniflowUrl: "https://cdrgbhnntonyofqkhzpm.supabase.co/functions/v1/website-lead",
     // Also offer a one-tap WhatsApp follow-up after a successful submission.
     offerWhatsAppAfterSubmit: true
+  },
+
+  /*
+   * Visitor analytics. Paste your Google Analytics 4 measurement id (looks like "G-ABC123XYZ",
+   * from analytics.google.com > Admin > Data streams) to see visitors, which ads and posts bring
+   * them, and how many tap Call, WhatsApp or Directions. Leave "" to load nothing.
+   */
+  analytics: {
+    ga4: ""
   },
 
   /*
