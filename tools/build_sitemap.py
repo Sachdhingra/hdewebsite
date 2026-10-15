@@ -12,6 +12,9 @@ BASE = "https://hdefurniture.netlify.app/"  # keep in step with business.siteUrl
 ROOT = Path(__file__).resolve().parent.parent / "site"
 PAGES = [  # (page, priority)
     ("", "1.0"), ("collections.html", "0.9"), ("stores.html", "0.9"), ("contact.html", "0.8"),
+    ("sofas-in-dehradun.html", "0.8"), ("recliners-in-dehradun.html", "0.8"), ("beds-in-dehradun.html", "0.8"),
+    ("mattress-in-dehradun.html", "0.8"), ("godrej-almirah-in-dehradun.html", "0.8"), ("home-lockers-in-dehradun.html", "0.8"),
+    ("dining-tables-in-dehradun.html", "0.8"), ("office-chairs-in-dehradun.html", "0.8"), ("modular-kitchen-in-dehradun.html", "0.8"),
     ("about.html", "0.6"), ("elite-card.html", "0.5"), ("room-planner.html", "0.5"),
 ]
 
