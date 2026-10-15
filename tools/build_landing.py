@@ -254,7 +254,10 @@ def card(p, interest):
 
 def head_template():
     src = (ROOT / "collections.html").read_text(encoding="utf-8")
-    return src[:src.index("</head>")]
+    # The showroom's business details (from stores.html), so each page ties its products to the Patel Nagar store
+    stores = (ROOT / "stores.html").read_text(encoding="utf-8")
+    m = re.search(r'  <script type="application/ld\+json">.*?</script>\n', stores, re.S)
+    return src[:src.index("</head>")] + (m.group(0) if m else "")
 
 
 def build(page, products, head, others):
