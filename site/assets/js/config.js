@@ -81,7 +81,7 @@ window.HDE_CONFIG = {
    * them, and how many tap Call, WhatsApp or Directions. Leave "" to load nothing.
    */
   analytics: {
-    ga4: ""
+    ga4: "G-6YWY4QP1NE"
   },
 
   /*
