@@ -41,6 +41,55 @@
   // (or one they pass on to family) keeps that salesperson on the enquiry.
   function withRef(url) { return salesRef ? url + (url.indexOf("?") > -1 ? "&" : "?") + "ref=" + encodeURIComponent(salesRef) : url; }
 
+  /* ---------- where the visitor came from (ads, social posts, QR codes) ---------- */
+  // Links in ads and posts carry utm_source / utm_medium / utm_campaign (Google and Meta ads add
+  // gclid / fbclid on their own). Keep the first one for 60 days so an enquiry sent on a later
+  // visit still shows which ad or post brought the customer.
+  var campaign = (function () {
+    var KEY = "hde_campaign", DAYS = 60, q;
+    try { q = new URLSearchParams(location.search); } catch (e) { return ""; }
+    var clean = function (v) { return (v || "").trim().toLowerCase().replace(/[^a-z0-9_.+-]+/g, "-").slice(0, 60); };
+    var parts = [clean(q.get("utm_source")) || (q.get("gclid") ? "google" : q.get("fbclid") ? "facebook" : ""),
+      clean(q.get("utm_medium")) || (q.get("gclid") ? "cpc" : ""), clean(q.get("utm_campaign"))].filter(Boolean);
+    var saved = null;
+    try { saved = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) {}
+    if (saved && saved.v && Date.now() - saved.at < DAYS * 864e5) return saved.v;
+    if (!parts.length) return "";
+    var v = parts.join(" / ");
+    try { localStorage.setItem(KEY, JSON.stringify({ v: v, at: Date.now() })); } catch (e) {}
+    return v;
+  })();
+
+  /* ---------- analytics ---------- */
+  // Events go to dataLayer (read by Google Tag Manager) and, when a GA4 id is set in config.js,
+  // straight to Google Analytics. Calls, WhatsApp taps and directions are the closest thing a
+  // website has to a showroom visit, so they are tracked as well as enquiries.
+  var A = C.analytics || {};
+  if (A.ga4 && /^G-[A-Z0-9]+$/.test(A.ga4)) {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", A.ga4);
+    var gs = document.createElement("script");
+    gs.async = true; gs.src = "https://www.googletagmanager.com/gtag/js?id=" + A.ga4;
+    document.head.appendChild(gs);
+  }
+  function track(event, params) {
+    params = params || {};
+    if (campaign) params.campaign = campaign;
+    if (window.gtag) window.gtag("event", event, params);
+    else if (window.dataLayer) window.dataLayer.push(Object.assign({ event: event }, params));
+  }
+  window.HDE_TRACK = track;
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href]");
+    if (!a) return;
+    var h = a.getAttribute("href");
+    if (/^tel:/.test(h)) track("click_call", { number: h.slice(4) });
+    else if (/wa\.me\//.test(h)) track("click_whatsapp", { page: page() });
+    else if (/google\.[a-z.]+\/maps|maps\.google\./.test(h)) track("click_directions", { label: a.textContent.trim().slice(0, 40) });
+  });
+
   /* ---------- shortlist (saved on this phone or laptop) ---------- */
   var shortlist = (function () {
     var KEY = "hde_shortlist", MAX = 40;
@@ -306,7 +355,7 @@
     return {
       name: v("name"), phone: "+91" + phone, email: v("email"), interest: v("interest"),
       area: v("area"), store: v("store"), message: v("message"), product: v("product"),
-      source: form.getAttribute("data-source"), page: location.pathname.split("/").pop() || "index.html",
+      source: form.getAttribute("data-source"), page: (location.pathname.split("/").pop() || "index.html") + (campaign ? " | from " + campaign : ""),
       ref: salesRef, submittedAt: new Date().toISOString()
     };
   }
@@ -373,7 +422,7 @@
       status.textContent = ""; status.removeAttribute("data-tone");
       send(lead).then(function (result) {
         form.outerHTML = doneHTML(lead, result);
-        if (window.dataLayer) window.dataLayer.push({ event: "lead_submitted", lead_source: lead.source, lead_interest: lead.interest });
+        track("lead_submitted", { lead_source: lead.source, lead_interest: lead.interest });
       }).catch(function () {
         btn.disabled = false; btn.textContent = "Request a call back";
         status.setAttribute("data-tone", "error");
@@ -509,6 +558,24 @@
     if (m) m.setAttribute("content", content);
   }
 
+  // Lets Google show the product (name, photo, MRP) in search, and points it at one address per product.
+  function productSchema(id, name, price, gallery, card) {
+    var url = (B.siteUrl || location.origin + "/") + "product.html?id=" + encodeURIComponent(id);
+    var abs = function (u) { return /^https?:/.test(u) ? u : (B.siteUrl || location.origin + "/") + u.replace(/^\//, ""); };
+    var link = $('link[rel="canonical"]');
+    if (link) link.setAttribute("href", url);
+    setMeta("og:url", url);
+    var el = $("#product-ld");
+    if (!el) { el = document.createElement("script"); el.type = "application/ld+json"; el.id = "product-ld"; document.head.appendChild(el); }
+    var data = {
+      "@context": "https://schema.org", "@type": "Product", name: name, url: url,
+      image: gallery.slice(0, 4).map(abs), brand: { "@type": "Brand", name: "Godrej Interio" },
+      category: card.type || undefined, description: card.note || undefined
+    };
+    if (price) data.offers = { "@type": "Offer", price: Math.round(price), priceCurrency: "INR", url: url, seller: { "@type": "Organization", name: B.name } };
+    el.textContent = JSON.stringify(data);
+  }
+
   function mountProductPage() {
     var root = $("[data-product-page]");
     if (!root) return;
@@ -538,6 +605,7 @@
       setMeta("description", name + ", " + (isMrp ? "MRP " : "") + rupees(price) + ". " + (card.note || "") + ". Available at " + B.name + ", " + B.city + ".");
       setMeta("og:title", name);
       setMeta("og:image", gallery[0]);
+      productSchema(optionId, name, price, gallery, card);
 
       var similar = CATALOG.filter(function (p) { return p !== card && p.room === card.room; });
       similar.sort(function (a, b) { return (b.type === card.type) - (a.type === card.type); });
@@ -679,7 +747,7 @@
     var pitch = hit && window.HDE_SUGGEST ? window.HDE_SUGGEST.pitch(hit.card) : "";
     toast("<strong>Added to your shortlist.</strong> " + (pitch ? "With " + esc(aKind(hit.card)) + " you may also need " + esc(pitch) + ". " : "") +
       '<a href="shortlist.html">See shortlist and suggestions</a>');
-    if (window.dataLayer) window.dataLayer.push({ event: "shortlist_add", product_id: id });
+    track("shortlist_add", { product_id: id });
     // A shortlist is the moment someone is keen: offer to install the site as an app (install.js).
     document.dispatchEvent(new CustomEvent("hde:engaged"));
   });
@@ -916,7 +984,7 @@
       }
       if (e.target.closest("[data-bundle-shuffle]")) { draw(); return; }
       var w = e.target.closest("[data-bundle-wa]");
-      if (w && window.dataLayer) window.dataLayer.push({ event: "bundle_whatsapp", bundle: w.getAttribute("data-bundle-wa"), tier: tier });
+      if (w) track("bundle_whatsapp", { bundle: w.getAttribute("data-bundle-wa"), tier: tier });
     });
     draw();
   }

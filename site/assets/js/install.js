@@ -62,7 +62,7 @@
     p.prompt();
     p.userChoice.then(function (c) {
       if (c.outcome !== "accepted") snooze();
-      if (window.dataLayer) window.dataLayer.push({ event: "app_install_prompt", outcome: c.outcome });
+      if (window.HDE_TRACK) window.HDE_TRACK("app_install_prompt", { outcome: c.outcome });
     }).catch(function () {});
   }
 
