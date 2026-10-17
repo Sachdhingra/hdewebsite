@@ -1,0 +1,47 @@
+# Home Decor Enterprises
+
+> Home Decor Enterprises (HDE) is an authorised Godrej Interio channel partner in Dehradun, Uttarakhand, India, selling Godrej Interio home and office furniture, mattresses, home lockers and modular kitchens since 2006. Prices on the website are Godrej Interio MRP; customers can call or WhatsApp for the day's best price. Free consultation is offered in the showroom or over the phone.
+
+- Website: https://hdefurniture.netlify.app/
+- Phone and WhatsApp: +91 99172 33664
+- After-sales service: +91 90121 06106 (Mon to Sat, 11 AM to 7 PM)
+- Email: sachdhingra@gmail.com
+- Instagram: https://www.instagram.com/godrej_interio_ddn/
+- Facebook: https://www.facebook.com/share/1DgBenjNp2/
+
+## Showrooms
+
+- Patel Nagar Showroom (open): No 23, Saharanpur Road, Patel Nagar, Dehradun, Uttarakhand 248001, opposite Kolhi Petrol Pump. Open every day, 11:00 AM to 8:00 PM. Phone +91 99172 33664. Map: https://maps.google.com/maps?cid=1477870679173429280
+- Subhash Road Showroom (opening soon, not yet open for visits): 46/1 Subhash Road, near ICICI Bank, Dehradun, Uttarakhand 248001. Phone +91 99172 33664.
+
+## Services
+
+- Free consultation in the showroom or over the phone, including modular kitchen and wardrobe planning.
+- Timely deliveries across Dehradun from the local showroom.
+- Warranty is as per Godrej Interio's warranty policy. It varies by product and is listed on each product page. After-sales service: +91 90121 06106 (Mon to Sat, 11 AM to 7 PM).
+
+## Product categories
+
+- [Sofas](https://hdefurniture.netlify.app/sofas-in-dehradun.html): 3-seater, L-shape, sofa sets and sofa cum beds in fabric and leatherette
+- [Recliners](https://hdefurniture.netlify.app/recliners-in-dehradun.html): single, two and three-seater, manual and motorised
+- [Beds](https://hdefurniture.netlify.app/beds-in-dehradun.html): king, queen and single beds with hydraulic and box storage
+- [Mattresses](https://hdefurniture.netlify.app/mattress-in-dehradun.html): foam, spring and orthopaedic mattresses in every size
+- [Godrej almirahs and wardrobes](https://hdefurniture.netlify.app/godrej-almirah-in-dehradun.html): steel almirahs, 2-door and 3-door, with locker and mirror
+- [Home lockers and safes](https://hdefurniture.netlify.app/home-lockers-in-dehradun.html): biometric, digital and manual
+- [Dining tables](https://hdefurniture.netlify.app/dining-tables-in-dehradun.html): 4, 6 and 8-seater sets in sheesham, engineered wood and glass
+- [Office chairs and study tables](https://hdefurniture.netlify.app/office-chairs-in-dehradun.html): ergonomic chairs, work desks and study tables
+- [Modular kitchens](https://hdefurniture.netlify.app/modular-kitchen-in-dehradun.html): Steel Chef steel kitchens, Willow Wok BWP ply and Flavors HDHMR
+
+## Main pages
+
+- [Home](https://hdefurniture.netlify.app/): showroom overview, featured furniture and enquiry form
+- [Collections](https://hdefurniture.netlify.app/collections.html): full Godrej Interio catalogue with MRP, searchable by room and category
+- [Showrooms](https://hdefurniture.netlify.app/stores.html): addresses, timings and directions
+- [Contact](https://hdefurniture.netlify.app/contact.html): call, WhatsApp or send an enquiry for a quote
+- [About](https://hdefurniture.netlify.app/about.html): the business since 2006
+- [Elite Card Programme](https://hdefurniture.netlify.app/elite-card.html): customer privilege programme
+- [See it in your room](https://hdefurniture.netlify.app/room-planner.html): place products at real size on a photo of your room
+
+## Optional
+
+- [Sitemap](https://hdefurniture.netlify.app/sitemap.xml): every page, including individual product pages

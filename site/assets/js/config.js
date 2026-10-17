@@ -20,8 +20,8 @@ window.HDE_CONFIG = {
     email: "sachdhingra@gmail.com",     // From the Google listing. A business address (e.g. info@yourdomain) looks more professional
     hours: "Open every day, 11:00 AM to 8:00 PM", // From the Google listing
     stripHours: "Showroom open 7 days, 11 AM to 8 PM", // Short version for the header strip (user, 2026-10-01)
-    instagram: "https://instagram.com/",   // FILL IN
-    facebook: "https://facebook.com/"      // FILL IN
+    instagram: "https://www.instagram.com/godrej_interio_ddn/", // user, 2026-10-17
+    facebook: "https://www.facebook.com/share/1DgBenjNp2/" // user, 2026-10-17
   },
 
   // Patel Nagar is from its Google Business listing (September 2026). The Karanpur showroom closed in
