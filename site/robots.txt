@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /shortlist.html
+
 
 User-agent: OAI-SearchBot
 Allow: /
