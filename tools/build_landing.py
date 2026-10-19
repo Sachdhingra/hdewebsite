@@ -340,7 +340,7 @@ def build(page, products, head, others):
                '      </div>\n    </section>\n  </main>\n\n  <div id="site-footer"></div>\n\n' % (esc(VISIT), esc(interest)))
     out.append('  <script src="assets/js/config.js"></script>\n  <script src="assets/js/data.js"></script>\n'
                '  <script src="assets/js/catalog.js"></script>\n  <script src="assets/js/suggest.js"></script>\n'
-               '  <script src="assets/js/main.js"></script>\n  <script src="assets/js/install.js"></script>\n</body>\n</html>\n')
+               '  <script src="assets/js/main.js"></script>\n  <script src="assets/js/agent.js" defer></script>\n  <script src="assets/js/install.js"></script>\n</body>\n</html>\n')
     (ROOT / (page["slug"] + ".html")).write_text("".join(out), encoding="utf-8")
     return len(picked)
 
