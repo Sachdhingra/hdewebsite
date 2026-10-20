@@ -1082,6 +1082,7 @@
       if (k === "tel") { el.href = "tel:" + B.phoneHref; el.textContent = B.phone; }
       else if (k === "wa") { el.href = waLink("Hi, I would like a quote."); }
       else if (k === "mail") { el.href = "mailto:" + B.email; el.textContent = B.email; }
+      else if (k === "ig") { el.href = B.instagram; }
       else if (B[k] != null) el.textContent = B[k];
     });
     $all("[data-elite-wa]").forEach(function (el) { el.href = waLink(ELITE_WA + (salesRef ? " (Ref: " + salesRef + ")" : "")); });
