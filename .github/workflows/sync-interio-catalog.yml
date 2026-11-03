@@ -52,7 +52,7 @@ jobs:
           python3 tools/build_landing.py
       - name: Commit catalogue if it changed
         run: |
-          git add -A site/sitemap.xml site/*-in-dehradun.html site/assets/js/catalog.js site/assets/data/products site/assets/img/products site/assets/img/rooms
+          git add -A site/sitemap.xml site/*-dehradun.html site/assets/js/catalog.js site/assets/data/products site/assets/img/products site/assets/img/rooms
           if git diff --cached --quiet; then
             echo "Catalogue unchanged."
             exit 0
@@ -62,5 +62,5 @@ jobs:
           git commit -m "Sync Interio catalogue ($(date -u +%Y-%m-%d))"
           # Site edits may have landed on the branch during the long scrape; the bot only
           # touches generated files, so replaying its commit on top is always clean.
-          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
