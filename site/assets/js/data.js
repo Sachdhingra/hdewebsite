@@ -71,10 +71,22 @@ window.HDE_DATA = {
       image: "https://images.unsplash.com/photo-1595428773491-ae4a0b7e3a4a?w=800&q=70&auto=format" }
   ],
 
-  // Real Google reviews from our listings (stores.interio.com), quoted as written.
+  // Real Google reviews (stores.interio.com and the Patel Nagar Google listing), quoted as written; dates are approximate.
   reviews: [
     { name: "Siddharth Kandari", area: "Patel Nagar showroom", date: "June 2026", text: "Experience was very good thanks to Neesha Maam for the hospitality the purchasing experience been great" },
     { name: "Saurabh Rana", area: "Google review", date: "September 2026", text: "Wonderful furniture.. lots of options and quality of the wood is fantastic." },
-    { name: "Surya Pal Singh Bisht", area: "Google review", date: "September 2026", text: "Godrej interio all product are good and attractive" }
+    { name: "Surya Pal Singh Bisht", area: "Google review", date: "September 2026", text: "Godrej interio all product are good and attractive" },
+    { name: "Parkash", area: "Patel Nagar showroom", date: "June 2026", text: "Had a wonderful experience at godrej interio.The furniture quality,elegant designs,and professional customer service made the entire shopping experience smooth and satisfying" },
+    { name: "J Sh", area: "Patel Nagar showroom", date: "June 2026", text: "The Sales team guy Shivam made us go through the showroom in a very polite and efficient manner and that's how ended up buying the furniture.... shall buy more in future as this is just the beginning.... Good store" },
+    { name: "Shreya Bisht", area: "Patel Nagar showroom", date: "June 2026", text: "We've been visiting Godrej Interio for a long time now & been a customer here for long. Our sales associate Nisha has been very kind & generous to us throughout these years. We definitely recommend visiting Godrej once for home goods purchase." },
+    { name: "Ganga", area: "Patel Nagar showroom", date: "June 2026", text: "The showroom is very aesthetically pleasing and impressive. Sales executive Mr. Amit Bhatt has been very cooperative and is knowledgeable about variants and features of various items which helped in making our decision." },
+    { name: "Varun Lekhwar", area: "Patel Nagar showroom", date: "July 2026", text: "The display was very good .Ms Nisha was very good to know about the product. Very well explained about all the products. Also showroom interior is quite decent" },
+    { name: "Vipin Thapliyal", area: "Patel Nagar showroom", date: "July 2026", text: "Store is well maintained and equipped with all sort of items. The representative Mr Shivam is very professional and good person explains everything with ease" },
+    { name: "Alok Joshi", area: "Patel Nagar showroom", date: "July 2026", text: "Satisfied Godrej product, showroom staff v.gud Mr Amit Bhatt explain very well Thanks Godrej interio" },
+    { name: "Sakshi Rautela", area: "Patel Nagar showroom", date: "May 2026", text: "I recently had a modular kitchen installed by the team at Godrej Interio, Patel Nagar, and the experience was good from start to finish." },
+    { name: "Anshul Jaiswal", area: "Patel Nagar showroom", date: "May 2026", text: "I got myself a modular kitchen from godrej and the architect made sure all my needs were catered to in the design phase also the technician who installed the kitchen were skilled and polite and made the installation seamless." },
+    { name: "S K", area: "Patel Nagar showroom", date: "June 2026", text: "I recently purchased XL size three door Almira from Godrej interio, the whole process from purchase to installation was conducted very well by the staff. Overall it was a wonderful experience and I got amazing discount on the purchase as well." },
+    { name: "Shobhit Goyal", area: "Patel Nagar showroom", date: "December 2025", text: "I recently purchased a metal modular kitchen from Godrej Interio, and I couldn’t be happier with my decision! The build quality is excellent…" },
+    { name: "Annesha Mukherjee", area: "Patel Nagar showroom", date: "2025", text: "Purchased a almirah from the store.It was great experience.There is so much variety available at the store.The staffs are so courteous and well behaved 😊even the delivery persons are also so helpful.Thank you Godrej interior for serving the best products" }
   ]
 };
