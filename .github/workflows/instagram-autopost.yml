@@ -1,0 +1,60 @@
+name: Instagram auto-post
+
+# Posts the next card from site/assets/ig/ to the godrej_interio_ddn Instagram account
+# and records it in site/assets/ig/posted.json. Runs daily at 7:30 pm IST, when the
+# showroom's Dehradun followers are scrolling after dinner. Runs only when the
+# IG_USER_ID and IG_ACCESS_TOKEN secrets exist; otherwise it reports a dry run.
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Post for real (untick for a dry run)"
+        type: boolean
+        default: false
+      max:
+        description: "Most posts to publish in this run"
+        default: "1"
+  schedule:
+    - cron: "0 14 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-autopost
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Post next card
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          PUBLISH: ${{ github.event_name == 'schedule' || github.event.inputs.publish == 'true' }}
+          MAX: ${{ github.event.inputs.max || '1' }}
+        run: |
+          if [ "$PUBLISH" = "true" ] && [ -n "$IG_USER_ID" ] && [ -n "$IG_ACCESS_TOKEN" ]; then
+            python3 tools/instagram/post_instagram.py --publish --max "$MAX"
+          else
+            echo "Dry run: publish is off or Instagram secrets are not set."
+            python3 tools/instagram/post_instagram.py --max "$MAX"
+          fi
+      - name: Commit posting record
+        run: |
+          git add site/assets/ig/posted.json
+          if git diff --cached --quiet; then
+            echo "Nothing posted."
+            exit 0
+          fi
+          git config user.name "hde-autopost-bot"
+          git config user.email "hde-autopost-bot@users.noreply.github.com"
+          git commit -m "Record Instagram post ($(date -u +%Y-%m-%d))"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
