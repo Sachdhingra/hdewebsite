@@ -155,7 +155,7 @@
     }).join("");
 
     var header =
-      '<a class="skip" href="#main">Skip to content</a>' +
+      '<a class="skip" href="' + esc(location.pathname + location.search) + '#main">Skip to content</a>' +
       '<div class="strip"><div class="wrap">' +
         '<span class="strip-partner"><span class="partner-pill"><img src="assets/img/interio-logo.png" alt="interio by Godrej" width="76" height="40"></span>' + esc(B.partnerLine) + " in " + esc(B.city) + " since " + esc(B.since) + "</span>" +
         '<span class="strip-contacts"><a href="tel:' + esc(B.phoneHref) + '">Call ' + esc(B.phone) + "</a>" +
@@ -514,7 +514,13 @@
     return (p.mrp ? "MRP" : "Price") + (p.fromPrice ? " from" : "");
   }
 
-  function productHref(p) { return "product.html?id=" + encodeURIComponent(p.id); }
+  // Every catalogue product has its own real page, product/<id>.html, written by tools/build_products.py.
+  // Other sizes and colours of it have no page of their own and open in product.html?id=<option id>.
+  function isCardId(id) { return (CATALOG || []).some(function (p) { return p.id === id; }); }
+  function productPath(id) { return isCardId(id) ? "product/" + encodeURIComponent(id) + ".html" : "product.html?id=" + encodeURIComponent(id); }
+  // Pages in product/ carry <base href="../">, so site-relative addresses resolve the same from every page.
+  function siteHref(rel) { try { return new URL(rel, document.baseURI).href; } catch (e) { return rel; } }
+  function productHref(p) { return productPath(p.id); }
 
   function heartButton(id, name) {
     var on = shortlist.has(id);
@@ -535,7 +541,7 @@
       '<button class="btn btn--primary" type="button" data-enquire data-product="' + esc(p.name) + '" data-interest="' + esc(room.name) + '">Get best price</button></div></div></article>';
   }
 
-  /* ---------- product page (product.html?id=...) ---------- */
+  /* ---------- product page (product/<id>.html, or product.html?id=... for other sizes and colours) ---------- */
   function findProduct(id) {
     id = String(id || "").toLowerCase();
     for (var i = 0; i < (CATALOG || []).length; i++) {
@@ -563,8 +569,9 @@
   }
 
   // Lets Google show the product (name, photo, MRP) in search, and points it at one address per product.
-  function productSchema(id, name, price, gallery, card) {
-    var url = (B.siteUrl || location.origin + "/") + "product.html?id=" + encodeURIComponent(id);
+  function productSchema(id, name, price, gallery, card, sku) {
+    // One address per product: sizes and colours point at the product's own page.
+    var url = (B.siteUrl || location.origin + "/") + "product/" + encodeURIComponent(card.id) + ".html";
     var abs = function (u) { return /^https?:/.test(u) ? u : (B.siteUrl || location.origin + "/") + u.replace(/^\//, ""); };
     var link = $('link[rel="canonical"]');
     if (link) link.setAttribute("href", url);
@@ -573,7 +580,7 @@
     if (!el) { el = document.createElement("script"); el.type = "application/ld+json"; el.id = "product-ld"; document.head.appendChild(el); }
     var data = {
       "@context": "https://schema.org", "@type": "Product", name: name, url: url,
-      image: gallery.slice(0, 4).map(abs), brand: { "@type": "Brand", name: "Godrej Interio" },
+      image: gallery.slice(0, 4).map(abs), sku: sku || card.sku || undefined, brand: { "@type": "Brand", name: "Godrej Interio" },
       category: card.type || undefined, description: card.note || undefined
     };
     if (price) data.offers = { "@type": "Offer", price: Math.round(price), priceCurrency: "INR", url: url, seller: { "@type": "Organization", name: B.name } };
@@ -584,7 +591,7 @@
     var root = $("[data-product-page]");
     if (!root) return;
     var params = new URLSearchParams(location.search);
-    var found = findProduct(params.get("id"));
+    var found = findProduct(params.get("id") || root.getAttribute("data-product-id"));
     if (!found) {
       root.innerHTML = '<section class="page-hero"><div class="wrap"><p class="crumbs"><a href="index.html">Home</a> / <a href="collections.html">Collections</a></p>' +
         "<h1>We couldn't find that product</h1><p>It may have been renamed or is no longer in the range. Browse the collections or ask us, and we will check stock for you.</p>" +
@@ -602,14 +609,14 @@
       var gallery = d && d.gallery && d.gallery.length ? d.gallery : [card.image];
       var specs = (d && d.specs) || [];
       var key = specs.filter(function (r) { return ["Size (W x H x D, cm)", "Colour", "Made of", "Warranty"].indexOf(r[0]) > -1; });
-      var pageUrl = location.origin + location.pathname + "?id=" + encodeURIComponent(optionId);
+      var pageUrl = siteHref(productPath(optionId));
       var waText = "Hi, I'm interested in the " + name + " (" + (isMrp ? "MRP " : "") + rupees(price) + "). Please share your best price and stock. " + pageUrl;
 
-      document.title = name + " | " + B.name + ", " + B.city;
+      document.title = name + " in " + B.city + " | " + B.name;
       setMeta("description", name + ", " + (isMrp ? "MRP " : "") + rupees(price) + ". " + (card.note || "") + ". Available at " + B.name + ", " + B.city + ".");
       setMeta("og:title", name);
       setMeta("og:image", gallery[0]);
-      productSchema(optionId, name, price, gallery, card);
+      productSchema(optionId, name, price, gallery, card, d && d.sku);
 
       var similar = CATALOG.filter(function (p) { return p !== card && p.room === card.room; });
       similar.sort(function (a, b) { return (b.type === card.type) - (a.type === card.type); });
@@ -672,10 +679,6 @@
         (similar.length ? '<section class="section section--stone"><div class="wrap"><div class="section-head"><div><h2>You may also like</h2></div><a class="link-arrow" href="collections.html#' + room.slug + '">All ' + esc(room.name.toLowerCase()) + " " + icon("arrow") + '</a></div><div class="grid-products">' +
           similar.slice(0, 4).map(productCard).join("") + "</div></div></section>" : "");
       wireImages(root);
-      var ld = { "@context": "https://schema.org", "@type": "Product", name: name, image: gallery, sku: d ? d.sku : card.sku, brand: { "@type": "Brand", name: "Godrej Interio" },
-        offers: { "@type": "Offer", priceCurrency: "INR", price: price, availability: "https://schema.org/InStock", seller: { "@type": "Organization", name: B.name } } };
-      var tag = $("#pdp-ld") || document.head.appendChild(Object.assign(document.createElement("script"), { id: "pdp-ld", type: "application/ld+json" }));
-      tag.textContent = JSON.stringify(ld);
     }
 
     function show(optionId) {
@@ -694,7 +697,11 @@
     });
     root.addEventListener("change", function (e) {
       if (e.target.id === "pdp-opt") {
-        history.replaceState(null, "", "?id=" + encodeURIComponent(e.target.value));
+        var to = siteHref(productPath(e.target.value));
+        // Moving between the product's own page (in product/) and product.html changes folder, so load it afresh
+        // rather than only changing the address: relative addresses would otherwise point at the wrong folder.
+        if (isCardId(e.target.value) || root.hasAttribute("data-product-id")) { location.replace(to); return; }
+        history.replaceState(null, "", to);
         show(e.target.value);
       }
     });
@@ -773,7 +780,7 @@
   }
 
   function listUrl(items) {
-    return withRef(location.origin + location.pathname.replace(/[^/]*$/, "") + "shortlist.html?items=" + items.map(function (it) { return encodeURIComponent(it.id); }).join(","));
+    return withRef(siteHref("shortlist.html") + "?items=" + items.map(function (it) { return encodeURIComponent(it.id); }).join(","));
   }
 
   function mountShortlist() {
