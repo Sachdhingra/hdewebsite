@@ -14,3 +14,9 @@
   for = "/assets/img/products/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
+
+# The Diwali page became the wedding-season page after the festival (2026-11).
+[[redirects]]
+  from = "/diwali-furniture-dehradun.html"
+  to = "/wedding-furniture-dehradun.html"
+  status = 301

@@ -194,27 +194,27 @@ PAGES = [
 ]
 
 # Seasonal page: products grouped by budget instead of one category. Keep the copy free of offers
-# and dates; HDE quotes its own festive price when the enquiry comes in.
+# and dates; HDE quotes its own seasonal price when the enquiry comes in.
 PAGES.append({
-    "slug": "diwali-furniture-dehradun", "room": None, "interest": "Diwali home refresh",
-    "types": ["Recliners", "Sofas", "Sofa Sets", "L shaped sofas", "Wooden Beds", "Dining Sets", "Dining Tables",
-              "Coffee Tables", "TV Units", "Digital Lockers", "Biometric Lockers", "Office Chairs", "Shoe Racks"],
+    "slug": "wedding-furniture-dehradun", "room": None, "interest": "Wedding season home setup",
+    "types": ["Wooden Beds", "Mattress", "Dressers", "Bedside Tables", "Sofas", "Sofa Sets", "L shaped sofas", "Recliners",
+              "Dining Sets", "Dining Tables", "Coffee Tables", "TV Units", "Digital Lockers", "Biometric Lockers", "Manual Lockers"],
     "bands": [("Under ₹15,000", 0, 15000), ("₹15,000 to ₹40,000", 15000, 40000), ("₹40,000 and above", 40000, 10**9)],
-    "title": "Diwali Furniture in Dehradun | Godrej Interio Sofas, Beds, Dining and Lockers | Home Decor Enterprises",
-    "desc": "Planning a Diwali home refresh in Dehradun? Godrej Interio sofas, recliners, beds, dining sets and home lockers at MRP, grouped by budget. Visit our Patel Nagar showroom and ask for today's best price.",
-    "h1": "Diwali furniture in Dehradun",
-    "sub": "Refresh your home for the festive season with Godrej Interio furniture, picked by budget.",
+    "title": "Wedding Furniture in Dehradun | Godrej Interio Beds, Sofas, Dining and Lockers | Home Decor Enterprises",
+    "desc": "Setting up a home for a wedding in Dehradun? Godrej Interio beds, mattresses, sofas, dining sets and home lockers at MRP, grouped by budget. Visit our Patel Nagar showroom and ask for today's best price.",
+    "h1": "Wedding furniture in Dehradun",
+    "sub": "Furnish a new couple's home with Godrej Interio furniture, picked by budget.",
     "intro": [
-        "Diwali is when many Dehradun families finally replace the old sofa, add a dining set before guests arrive, or buy a home locker for the jewellery. At Home Decor Enterprises you can see the Godrej Interio range in person and pick what fits your home and your budget.",
-        "Below are ideas at three budgets, with their MRP. Tell us what you are planning and we will share today's best price, colours and stock. The festive season is our busiest time, so it helps to visit or call early.",
+        "Wedding season is when many Dehradun families furnish a bedroom for the new couple, add a sofa and dining set for guests, or buy a home locker for the jewellery. At Home Decor Enterprises you can see the Godrej Interio range in person and pick what fits the home and the budget.",
+        "Below are ideas at three budgets, with their MRP. Tell us what you are planning and we will share today's best price, colours and stock. Wedding dates fill up fast, so it helps to visit or call early.",
     ],
     "tips": [
-        ("Plan the date", "Tell us when you need the furniture when you enquire. We will confirm whether stock and delivery can meet it."),
-        ("Refresh one room well", "A new sofa and centre table, or a dining set, changes a room more than many small buys."),
-        ("Gifts that last", "A recliner for parents, a study chair for a child or a home locker are gifts the family uses for years."),
+        ("Start with the bedroom", "A bed, a good mattress, a dresser and bedside tables make the couple's room feel complete."),
+        ("Plan the date", "Tell us the wedding date when you enquire. We will confirm whether stock and delivery can meet it."),
+        ("Gifts that last", "A home locker, a recliner or a dining set are wedding gifts the family uses for years."),
     ],
     "faq": [FAQ_WHERE, FAQ_PRICE,
-            ("Can I get it before Diwali?", "Tell us your date when you enquire. We will check stock and confirm a delivery date before you order."),
+            ("Can I get it before the wedding?", "Tell us your date when you enquire. We will check stock and confirm a delivery date before you order."),
             FAQ_DELIVERY, FAQ_EMI],
 })
 
