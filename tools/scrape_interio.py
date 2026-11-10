@@ -18,6 +18,7 @@ Usage:
 """
 import argparse
 import datetime as dt
+import difflib
 import gzip
 import html
 import json
@@ -269,6 +270,79 @@ def slug_name(url, sku):
     return re.sub(r"\b(Tv|Ohu|L)\b", lambda m: m.group(1).upper(), name)
 
 
+def name_tokens(name):
+    return [w for w in re.findall(r"[a-z0-9]+", name.lower()) if len(w) > 1]
+
+
+def same_design(heading, own):
+    """True when the page heading names the same design as the page's own URL.
+
+    Some size/colour pages on Interio show a different product's heading (the Zyne bedside table
+    page is headed "KD Plain Metal Storage Cupboard", Restomagic mattress pages "Orane 2-Door
+    Steel Almirah"). The URL slug carries this page's own SKU, so its first word, the design
+    name, must appear in the heading. Near spellings count ("Restomagic"/"Restomagics", "Emporer"/"Emprorer")."""
+    own_words = [w for w in name_tokens(own) if len(w) >= 3 and not w.isdigit()]
+    head_words = [w for w in name_tokens(heading) if len(w) >= 3]
+    if not own_words or not head_words:
+        return True
+    design = own_words[0]
+    return any(difflib.SequenceMatcher(None, design, w).ratio() >= 0.8 for w in head_words)
+
+
+def family_name(own):
+    """Fold key for a product whose heading can't be trusted: its own name without sizes."""
+    n = re.sub(r"\s+\d+(?:\.\d+)? X \d+(?:\.\d+)?(?: X \d+(?:\.\d+)?)? (?:Inches|Inch|Cm|Mm)\b.*$", "", own, flags=re.I)
+    return re.sub(r"\b\d-Seater\s+", "", n).strip()
+
+
+# What a product is, read from its name. Groups that are the same kind of thing share a class, so
+# "Slimline 2-Door With Locker" may be typed Steel Almirahs and a recliner sofa may be a Recliner.
+KIND_CLASSES = [
+    ("mattress", ["mattress"]),
+    ("seat", ["sofa", "recliner", "lounger", "settee"]),
+    ("chair", ["chair", "recliner"]),
+    ("table", ["table", "desk", "workstation"]),
+    ("storage", ["almirah", "wardrobe", "locker", "cupboard", "cabinet", "safe"]),
+    ("bed", ["bed", "beds", "diwan"]),
+]
+# Card label for a product whose own type can't be trusted; the first phrase found in the name wins.
+TYPE_BY_NAME = [
+    ("bedside table", "Bedside Tables"), ("dining chair", "Dining Chairs"), ("dining table", "Dining Tables"),
+    ("coffee table", "Coffee Tables"), ("centre table", "Coffee Tables"), ("center table", "Coffee Tables"),
+    ("corner table", "Corner Tables"), ("side table", "Corner Tables"), ("office chair", "Office Chairs"),
+    ("study table", "Work desks & Study Tables"), ("desk", "Work desks & Study Tables"),
+    ("mattress", "Mattress"), ("recliner", "Recliners"), ("sofa cum bed", "Sofa cum Beds"), ("sofa", "Sofas"),
+    ("almirah", "Steel Almirahs"), ("wardrobe", "Wardrobes"), ("locker", "Lockers"), ("shoe", "Shoe Racks"),
+    ("bed", "Beds"), ("chair", "Chairs"), ("table", "Tables"),
+]
+
+
+def kind_classes(text_, head_only=False):
+    """Classes named in a name or type; with head_only, just the main noun (the last one before 'with')."""
+    t = " " + re.split(r"\bwith\b", text_.lower())[0] + " "
+    words = re.findall(r"[a-z]+", t)
+    hits = [(i, cls) for i, w in enumerate(words) for cls, keys in KIND_CLASSES
+            if w in keys or (w.endswith("s") and w[:-1] in keys)]
+    if head_only:
+        last = max((i for i, _ in hits), default=None)
+        return {cls for i, cls in hits if i == last}
+    return {cls for _, cls in hits}
+
+
+def fits(kind, name):
+    """False when a type label plainly names another kind of product ("Bed" on a dining chair)."""
+    head, cls = kind_classes(name, head_only=True), kind_classes(kind)
+    return not (head and cls and not head & cls)
+
+
+def type_from_name(name):
+    low = " " + re.sub(r"[^a-z]+", " ", re.split(r"\bwith\b", name.lower())[0]) + " "
+    for phrase, label in TYPE_BY_NAME:
+        if " " + phrase in low:
+            return label
+    return ""
+
+
 def deal_type(desc):
     """Interio descriptions end with 'Get great deals on <Category> with ...'."""
     m = re.search(r"great deals(?: &(?:amp;)? offers)? on (?:various )?(.+?)(?:\s+(?:with|by)\b|[.!\u2714]|$)", desc, re.I)
@@ -400,14 +474,29 @@ def parse_product(page_html, url, sitemap_images=(), width=640):
         ld_img = ld_img[0] if ld_img else None
     if isinstance(ld_img, dict):
         ld_img = ld_img.get("url")
-    img = m.get("og:image") or ld_img or (sitemap_images[0] if sitemap_images else "")
-    desc = html.unescape(m.get("og:description") or m.get("description") or product_ld.get("description") or "").strip()
-    cats = category_path(p)
-    details = parse_details(page_html, cfg=cfg, sku=sku)
+    own = slug_name(url, sku)
+    # A heading for another design means the page's heading, breadcrumb and category text belong to
+    # that design too; this page's own data (URL, SKU, child jsonConfig entry, photos) still holds.
+    trusted = same_design(name, own)
     cid = config_child(cfg, sku)
-    if cid and not desc:
-        desc = html.unescape((cfg.get("metaDescriptions") or {}).get(cid) or "")
-    kind = deal_type(desc) or details["category"] or (pretty(cats[-1]) if cats else "")
+    details = parse_details(page_html, cfg=cfg, sku=sku)
+    img = m.get("og:image") or ld_img or (sitemap_images[0] if sitemap_images else "")
+    own_pics = [u for u in details["gallery"] if sku and sku.lower() in u.lower()]
+    if own_pics and sku.lower() not in img.lower():
+        img = own_pics[0]  # og:image on some option pages is the parent product's photo
+    if not img or "placeholder" in img:
+        img = (own_pics or [u for u in details["gallery"] if "placeholder" not in u] or [""])[0]
+    if not img:
+        return None  # a card without its own photo would show the wrong thing or a grey box
+    desc = html.unescape(m.get("og:description") or m.get("description") or product_ld.get("description") or "").strip()
+    child_desc = html.unescape((cfg.get("metaDescriptions") or {}).get(cid) or "") if cid else ""
+    if child_desc:  # this option's own text; og:description can be the parent product's
+        desc = child_desc
+    cats = category_path(p) if trusted else []
+    if not trusted:
+        name = own
+    candidates = [deal_type(desc)] + ([details["category"], pretty(cats[-1]) if cats else ""] if trusted else [])
+    kind = next((k for k in candidates if k and fits(k, name)), "") or type_from_name(name)
     # Some almirah pages carry another category's text ("Bed", "Mattress") or none at all.
     if "almirah" in name.lower() and "almirah" not in kind.lower():
         kind = "Steel Almirahs"
@@ -416,13 +505,14 @@ def parse_product(page_html, url, sitemap_images=(), width=640):
     details.pop("category")
     short = details.pop("short")
     return {
-        "slugName": slug_name(url, sku),
+        "slugName": own,
         "id": (sku or url.rstrip("/").rsplit("/", 1)[-1]).lower(),
         "sku": sku.upper(),
         "name": name,
         "room": room_for(cats, kind + " " + name),
         "type": kind[:1].upper() + kind[1:],
-        "family": name,
+        "family": name if trusted else family_name(own),
+        "headingMismatch": not trusted,
         # The site shows the MRP; HDE offers its own discount when the enquiry comes in, so
         # Interio's online selling price is deliberately not stored. `mrp` says the figure is an MRP.
         "from": round(mrp if mrp and mrp >= price else price),
@@ -506,6 +596,7 @@ def finalise(items):
         members.sort(key=lambda x: x["from"])
         card = dict(members[0])
         card.pop("details", None)
+        card.pop("headingMismatch", None)
         if len(members) > 1:
             names = [m.get("slugName") or m["name"] for m in members]
             if len(set(n.lower() for n in names)) < len(names):
@@ -684,13 +775,17 @@ def main():
             failed += 1
         time.sleep(a.delay)
 
+    fixed = [it for it in items if it.get("headingMismatch")]
+    for it in fixed:
+        print("  ~ heading on %s names another product; listed by its own name: %s" % (it["source"], it["name"]), file=sys.stderr)
     if not items:
         print("No products parsed; catalogue left unchanged.", file=sys.stderr)
         return 1
     write_details(items, a.details_dir)
     write_catalog(items, a.out, a.images_dir or None, a.rooms_dir or None)
-    print("Wrote %d product pages to %s as %d cards, colour variants folded (%d failed, %d blocked by robots.txt)"
-          % (len(items), a.out, len(finalise(list(items))), failed, skipped))
+    print("Wrote %d product pages to %s as %d cards, colour variants folded (%d failed, %d blocked by robots.txt, "
+          "%d pages headed with another product's name, listed by their own)"
+          % (len(items), a.out, len(finalise(list(items))), failed, skipped, len(fixed)))
     return 0
 
 
