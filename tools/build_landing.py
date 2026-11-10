@@ -29,8 +29,8 @@ PAGES = [
     {
         "slug": "sofas-in-dehradun", "room": "living", "interest": "Living Room",
         "types": ["Sofas", "Sofa", "Sofa Sets", "L shaped sofas", "Sofa cum Beds", "Sofa Cum Bed"],
-        "title": "Sofa Shop in Dehradun | Godrej Interio Sofas, L-Shape and Sofa cum Beds",
-        "desc": "Godrej Interio sofas in Dehradun: 3-seater, L-shape, sofa sets and sofa cum beds in fabric and leatherette. Sit on them at our Patel Nagar showroom. MRP shown, ask for today's best price.",
+        "title": "Sofa Shop in Dehradun | Godrej Interio Sofas, Sofa cum Beds",
+        "desc": "Godrej Interio sofas in Dehradun: 3-seater, L-shape, sofa sets and sofa cum beds. Try them at our Patel Nagar showroom. Ask for today's best price.",
         "h1": "Sofas in Dehradun",
         "sub": "Fabric, leatherette, L-shape and sofa cum beds from Godrej Interio, ready to try at our Patel Nagar showroom.",
         "intro": [
@@ -47,8 +47,8 @@ PAGES = [
     {
         "slug": "recliners-in-dehradun", "room": "living", "interest": "Living Room",
         "types": ["Recliners"],
-        "title": "Recliners in Dehradun | Godrej Interio Manual and Motorised Recliners",
-        "desc": "Godrej Interio single, two and three-seater recliners in Dehradun. Try them at our Patel Nagar showroom, open every day 11 AM to 8 PM. MRP shown, ask for today's best price.",
+        "title": "Recliners in Dehradun | Godrej Interio Recliner Sofas",
+        "desc": "Godrej Interio single, two and three-seater recliners in Dehradun. Try them at our Patel Nagar showroom, open daily 11 AM to 8 PM. Ask for today's best price.",
         "h1": "Recliners in Dehradun",
         "sub": "Single, two and three-seater Godrej Interio recliners to try at our Patel Nagar showroom.",
         "intro": [
@@ -65,8 +65,8 @@ PAGES = [
     {
         "slug": "beds-in-dehradun", "room": "bedroom", "interest": "Bedroom",
         "types": ["Wooden Beds", "Metal Beds"],
-        "title": "Beds in Dehradun | Godrej Interio Storage, King and Queen Beds",
-        "desc": "Godrej Interio king, queen and single beds in Dehradun, with hydraulic and box storage. See them at our Patel Nagar showroom. MRP shown, ask for today's best price.",
+        "title": "Beds in Dehradun | Godrej Interio Storage, King, Queen Beds",
+        "desc": "Godrej Interio king, queen and single beds in Dehradun, with hydraulic and box storage. See them at our Patel Nagar showroom. Ask for today's best price.",
         "h1": "Beds in Dehradun",
         "sub": "King, queen and single beds from Godrej Interio, many with hydraulic or box storage.",
         "intro": [
@@ -83,8 +83,8 @@ PAGES = [
     {
         "slug": "mattress-in-dehradun", "room": "bedroom", "interest": "Bedroom",
         "match": "mattress",
-        "title": "Mattress Shop in Dehradun | Godrej Interio Foam, Spring and Orthopaedic Mattresses",
-        "desc": "Godrej Interio foam, spring and orthopaedic mattresses in every size, in Dehradun. Lie down on them at our Patel Nagar showroom. MRP shown, ask for today's best price.",
+        "title": "Mattress Shop in Dehradun | Godrej Interio Mattresses",
+        "desc": "Godrej Interio foam, spring and orthopaedic mattresses in every size. Lie down on them at our Patel Nagar showroom in Dehradun. Ask for today's best price.",
         "h1": "Mattresses in Dehradun",
         "sub": "Foam, spring and orthopaedic Godrej Interio mattresses in single, queen and king sizes.",
         "intro": [
@@ -102,7 +102,7 @@ PAGES = [
         "slug": "godrej-almirah-in-dehradun", "room": "storage", "interest": "Storage",
         "types": ["Steel Almirahs", "Wooden Wardrobes"],
         "title": "Godrej Almirah in Dehradun | Steel Almirahs and Wardrobes",
-        "desc": "Godrej steel almirahs and wardrobes in Dehradun: 2-door, 3-door, with locker and mirror. See them at our Patel Nagar showroom. MRP shown, ask for today's best price.",
+        "desc": "Godrej steel almirahs and wardrobes in Dehradun: 2-door, 3-door, with locker and mirror. See them at our Patel Nagar showroom. Ask for today's best price.",
         "h1": "Godrej almirahs and wardrobes in Dehradun",
         "sub": "Steel almirahs with lockers and mirrors, and wooden wardrobes, from Godrej Interio.",
         "intro": [
@@ -119,8 +119,8 @@ PAGES = [
     {
         "slug": "home-lockers-in-dehradun", "room": "storage", "interest": "Storage",
         "types": ["Biometric Lockers", "Digital Lockers", "Manual Lockers"],
-        "title": "Godrej Home Lockers in Dehradun | Biometric, Digital and Manual Safes",
-        "desc": "Godrej Interio home lockers and safes in Dehradun: biometric, digital and manual. See them at our Patel Nagar showroom. MRP shown, ask for today's best price.",
+        "title": "Godrej Home Lockers in Dehradun | Digital, Biometric Safes",
+        "desc": "Godrej home lockers and safes in Dehradun: biometric, digital and manual. See them at our Patel Nagar showroom. Ask for today's best price.",
         "h1": "Home lockers in Dehradun",
         "sub": "Biometric, digital and manual Godrej Interio lockers for jewellery, cash and documents.",
         "intro": [
@@ -137,8 +137,8 @@ PAGES = [
     {
         "slug": "dining-tables-in-dehradun", "room": "dining", "interest": "Dining",
         "types": ["Dining Tables", "Dining Sets", "Dining Set"],
-        "title": "Dining Tables in Dehradun | Godrej Interio 4, 6 and 8 Seater Dining Sets",
-        "desc": "Godrej Interio 4, 6 and 8-seater dining tables and sets in sheesham, engineered wood and glass, in Dehradun. See them at our Patel Nagar showroom. MRP shown, ask for today's best price.",
+        "title": "Dining Tables in Dehradun | Godrej Interio Dining Sets",
+        "desc": "Godrej Interio 4, 6 and 8-seater dining tables and sets in wood and glass. See them at our Patel Nagar showroom in Dehradun. Ask for today's best price.",
         "h1": "Dining tables in Dehradun",
         "sub": "Four, six and eight-seater Godrej Interio dining tables and sets.",
         "intro": [
@@ -156,7 +156,7 @@ PAGES = [
         "slug": "office-chairs-in-dehradun", "room": "office", "interest": "Home Office",
         "types": ["Office Chairs", "Work desks & Study Tables"],
         "title": "Office Chairs and Study Tables in Dehradun | Godrej Interio",
-        "desc": "Godrej Interio ergonomic office chairs, work desks and study tables in Dehradun, for homes and offices. Try them at our Patel Nagar showroom. MRP shown, ask for today's best price.",
+        "desc": "Godrej Interio ergonomic office chairs, work desks and study tables in Dehradun. Try them at our Patel Nagar showroom. Ask for today's best price.",
         "h1": "Office chairs and study tables in Dehradun",
         "sub": "Ergonomic Godrej Interio chairs, work desks and study tables for home, office and students.",
         "intro": [
@@ -173,8 +173,8 @@ PAGES = [
     {
         "slug": "modular-kitchen-in-dehradun", "room": "kitchen", "interest": "Modular Kitchen",
         "types": ["Modular Kitchen Sets"], "kitchen": True,
-        "title": "Modular Kitchen in Dehradun | Godrej Interio Steel and Wooden Kitchens",
-        "desc": "Godrej Interio modular kitchens in Dehradun: Steel Chef steel kitchens, Willow Wok BWP ply and Flavors HDHMR. Free design consultation at our Patel Nagar showroom or on the phone.",
+        "title": "Modular Kitchen in Dehradun | Godrej Interio Kitchens",
+        "desc": "Godrej Interio modular kitchens in Dehradun in steel, BWP ply and HDHMR. Free design consultation at our Patel Nagar showroom or on the phone.",
         "h1": "Modular kitchens in Dehradun",
         "sub": "Godrej Interio steel and wooden modular kitchens, designed to your layout.",
         "intro": [
@@ -200,8 +200,8 @@ PAGES.append({
     "types": ["Wooden Beds", "Mattress", "Dressers", "Bedside Tables", "Sofas", "Sofa Sets", "L shaped sofas", "Recliners",
               "Dining Sets", "Dining Tables", "Coffee Tables", "TV Units", "Digital Lockers", "Biometric Lockers", "Manual Lockers"],
     "bands": [("Under ₹15,000", 0, 15000), ("₹15,000 to ₹40,000", 15000, 40000), ("₹40,000 and above", 40000, 10**9)],
-    "title": "Wedding Furniture in Dehradun | Godrej Interio Beds, Sofas, Dining and Lockers | Home Decor Enterprises",
-    "desc": "Setting up a home for a wedding in Dehradun? Godrej Interio beds, mattresses, sofas, dining sets and home lockers at MRP, grouped by budget. Visit our Patel Nagar showroom and ask for today's best price.",
+    "title": "Wedding Furniture in Dehradun | Beds, Sofas, Dining, Lockers",
+    "desc": "Setting up a home for a wedding in Dehradun? Godrej Interio beds, sofas, dining sets and lockers, grouped by budget, at our Patel Nagar showroom.",
     "h1": "Wedding furniture in Dehradun",
     "sub": "Furnish a new couple's home with Godrej Interio furniture, picked by budget.",
     "intro": [
@@ -301,6 +301,10 @@ def build(page, products, head, others):
         {"@type": "ListItem", "position": 2, "name": "Collections", "item": BASE + "collections.html"},
         {"@type": "ListItem", "position": 3, "name": page["h1"], "item": url}]}
     h += '  <script type="application/ld+json">%s</script>\n' % json.dumps(crumbs, ensure_ascii=False)
+    # The same questions and answers that are visible in the "Buying in Dehradun" section below
+    faq = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in page["faq"]]}
+    h += '  <script type="application/ld+json">%s</script>\n' % json.dumps(faq, ensure_ascii=False).replace("</", "<\\/")
 
     room = page["room"]
     interest = page["interest"]
