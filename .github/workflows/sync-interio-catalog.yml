@@ -20,6 +20,7 @@ on:
       - tools/scrape_interio.py
       - tools/build_sitemap.py
       - tools/build_landing.py
+      - tools/build_products.py
       - .github/workflows/sync-interio-catalog.yml
 
 permissions:
@@ -46,13 +47,14 @@ jobs:
             --limit "${{ github.event.inputs.limit || '0' }}" \
             --rooms "${{ github.event.inputs.rooms || '' }}" \
             --max-minutes 170
-      - name: Rebuild sitemap and Dehradun landing pages
+      - name: Rebuild product pages, sitemap and Dehradun landing pages
         run: |
+          python3 tools/build_products.py
           python3 tools/build_sitemap.py
           python3 tools/build_landing.py
       - name: Commit catalogue if it changed
         run: |
-          git add -A site/sitemap.xml site/*-dehradun.html site/assets/js/catalog.js site/assets/data/products site/assets/img/products site/assets/img/rooms
+          git add -A site/sitemap.xml site/*-dehradun.html site/product site/assets/js/catalog.js site/assets/data/products site/assets/img/products site/assets/img/rooms
           if git diff --cached --quiet; then
             echo "Catalogue unchanged."
             exit 0

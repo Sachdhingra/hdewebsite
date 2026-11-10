@@ -2,7 +2,7 @@
 
 A fast, static website (plain HTML, CSS and JavaScript, no build step) laid out like a large furniture-brand site: top contact strip, "Shop by room" mega menu, hero carousel with a call-back form beside it, room tiles, popular products with "Get best price" buttons, a modular kitchen process, showrooms, reviews and a full enquiry form. Every page has a floating WhatsApp button and, on phones, a sticky Call / WhatsApp / Free quote bar.
 
-Pages: `index.html`, `about.html`, `collections.html` (filter by room, deep links like `collections.html#kitchen`), `product.html?id=<product id>` (one page per product: photo gallery, price, size and colour options, features, specifications, WhatsApp share and a "Get best price" form), `stores.html`, `contact.html`.
+Pages: `index.html`, `about.html`, `collections.html` (filter by room, deep links like `collections.html#kitchen`), `product/<product id>.html` (one real page per product, written by `tools/build_products.py` so Google can index it; other sizes and colours open in `product.html?id=<option id>`: photo gallery, price, size and colour options, features, specifications, WhatsApp share and a "Get best price" form), `stores.html`, `contact.html`.
 
 ## Go live checklist
 

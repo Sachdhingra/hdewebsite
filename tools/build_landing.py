@@ -266,7 +266,7 @@ def pick(products, page):
 
 def card(p, interest):
     label = ("MRP" if p.get("mrp") else "Price") + (" from" if p.get("fromPrice") else "")
-    link = "product.html?id=" + p["id"]
+    link = "product/%s.html" % p["id"]  # the real page written by tools/build_products.py
     note = (str(p["variants"]) + " sizes, colours or finishes. " if p.get("variants") else "") + (p.get("note") or "")
     return ('<article class="card card--link"><a href="%s" tabindex="-1" aria-hidden="true"><div class="ph" data-label="%s">'
             '<img src="%s" alt="%s" loading="lazy" decoding="async" width="900" height="675"></div></a>'

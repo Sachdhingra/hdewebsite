@@ -26,10 +26,12 @@ With no argument, run `audit` and finish with the three changes most likely to b
 - **Sitemap**: add new pages to `PAGES` in `tools/build_sitemap.py`, then run
   `python3 tools/build_sitemap.py`. A new landing page must also be added to the `git add` line in
   `.github/workflows/sync-interio-catalog.yml` if its name does not end in `-dehradun.html`.
-- **Product pages** (`product.html?id=...`) render in the browser, have a canonical to
-  `collections.html` and are kept out of the sitemap, so Google does not index them. Do not add
-  them to the sitemap until they are pre-rendered as real HTML with their own canonical, title,
-  description and `Product` schema. That pre-rendering is the largest on-site opportunity.
+- **Product pages** (`site/product/<id>.html`, one per catalogue product) are generated as real
+  HTML by `tools/build_products.py`, with their own title, description, canonical, `Product` and
+  `BreadcrumbList` schema, and are listed in the sitemap. Never edit them by hand: change the
+  script and rerun it. They carry `<base href="../">` so links and scripts resolve as on other
+  pages. Other sizes and colours open in `product.html?id=<option id>` and point their canonical
+  at the product's own page. The weekly sync rebuilds the pages and removes ones that left the range.
 - **Business details** (name, address, phone, hours) live in `site/assets/js/config.js`, the
   JSON-LD block in `site/index.html`, `site/stores.html` and `site/llms.txt`. They must match the
   Google Business Profile exactly. Only list showrooms that are open.
@@ -59,7 +61,7 @@ skipped.
 1. Repo checks, no credits needed:
    - every page in `site/*.html` has one `<title>` (under about 60 characters, main phrase and
      "Dehradun" near the front), one meta description (under about 155 characters), one `<h1>`,
-     and a canonical pointing at itself (`product.html` and `shortlist.html` are exceptions);
+     and a canonical pointing at itself (`product.html` and `shortlist.html` are exceptions; check a sample of `site/product/`);
    - no two pages share a title or description;
    - every indexable page is in `sitemap.xml`, and nothing in the sitemap redirects or is missing;
    - JSON-LD parses, and `FurnitureStore`/`LocalBusiness` name, address, phone and hours match

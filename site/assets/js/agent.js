@@ -36,7 +36,10 @@
     try { return JSON.parse(localStorage.getItem("hde_shortlist") || "[]"); } catch (e) { return []; }
   }
   function productId() {
-    try { return (new URLSearchParams(location.search).get("id") || "").toLowerCase() || null; } catch (e) { return null; }
+    try {
+      var own = document.querySelector("[data-product-id]"); // product/<id>.html pages carry their id in the markup
+      return (new URLSearchParams(location.search).get("id") || (own && own.getAttribute("data-product-id")) || "").toLowerCase() || null;
+    } catch (e) { return null; }
   }
   // Light formatting for replies: links, **bold**, line breaks. Everything is escaped first.
   function fmt(t) {

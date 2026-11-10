@@ -1,8 +1,6 @@
-"""Writes site/sitemap.xml: the main pages only.
-
-Product pages (product.html?id=<id>) are left out on purpose: they render client-side, carry a canonical to
-collections.html, and have no indexable content in the raw HTML, so listing them only wastes crawl budget.
-Set INCLUDE_PRODUCTS = True once product pages are pre-rendered with self-referencing canonicals.
+"""Writes site/sitemap.xml: the main pages plus one entry per product page (site/product/<id>.html,
+written by tools/build_products.py). Other sizes and colours of a product (product.html?id=<option id>) are
+left out: they point Google at the product's own page.
 
 Run after tools/scrape_interio.py (the weekly 'Sync Interio catalogue' action does this), or by hand:
     python3 tools/build_sitemap.py
@@ -12,7 +10,7 @@ import re
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-INCLUDE_PRODUCTS = False
+INCLUDE_PRODUCTS = True
 BASE = "https://hdefurniture.netlify.app/"  # keep in step with business.siteUrl in site/assets/js/config.js
 ROOT = Path(__file__).resolve().parent.parent / "site"
 PAGES = [  # (page, priority)
@@ -39,7 +37,7 @@ def main():
         pid = p.get("id")
         if pid and pid not in seen:
             seen.add(pid)
-            urls.append((BASE + "product.html?id=" + pid, "0.6", updated))
+            urls.append((BASE + "product/" + pid + ".html", "0.6", ""))
     rows = []
     for loc, prio, mod in urls:
         rows.append("  <url><loc>%s</loc>%s<priority>%s</priority></url>" % (
