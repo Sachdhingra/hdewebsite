@@ -2,7 +2,12 @@
 // The AI sales assistant behind the chat bubble on hdefurniture.netlify.app.
 // Deploy in the Omniflow Supabase project as supabase/functions/website-agent/index.ts
 // with verify_jwt = false (the website calls it without a login, like website-lead).
-// Secret needed: ANTHROPIC_API_KEY. Optional: AGENT_MODEL, SITE_URL.
+// Model: Claude (secret ANTHROPIC_API_KEY, optional AGENT_MODEL) or OpenRouter, including its free
+// models (secret OPENROUTER_API_KEY, optional OPENROUTER_MODEL = one id or a comma list; when unset the
+// function picks free models that support tools from OpenRouter's live list). LLM_PROVIDER picks one
+// ("anthropic" or "openrouter"); unset = Claude if its key is set, else OpenRouter. If Claude fails
+// (e.g. out of credits) and an OpenRouter key is set, the reply falls back to OpenRouter.
+// Optional: SITE_URL.
 //
 // What it does: chats with a visitor, searches the live website catalogue, shows product
 // cards, adds picks to the visitor's shortlist, and sends the enquiry to website-lead with
@@ -13,6 +18,10 @@ const SITE = (Deno.env.get("SITE_URL") ?? "https://hdefurniture.netlify.app").re
 const MODEL = Deno.env.get("AGENT_MODEL") ?? "claude-sonnet-5-5";
 const API_KEY = Deno.env.get("ANTHROPIC_API_KEY") ?? "";
 const API_URL = (Deno.env.get("ANTHROPIC_BASE_URL") ?? "https://api.anthropic.com") + "/v1/messages";
+const OR_KEY = Deno.env.get("OPENROUTER_API_KEY") ?? "";
+const OR_MODELS = (Deno.env.get("OPENROUTER_MODEL") ?? "").split(",").map((m) => m.trim()).filter(Boolean);
+const OR_URL = (Deno.env.get("OPENROUTER_BASE_URL") ?? "https://openrouter.ai/api/v1").replace(/\/$/, "");
+const PROVIDER = (Deno.env.get("LLM_PROVIDER") ?? (API_KEY ? "anthropic" : "openrouter")).toLowerCase();
 const LEAD_URL = (Deno.env.get("SUPABASE_URL") ?? "https://cdrgbhnntonyofqkhzpm.supabase.co") + "/functions/v1/website-lead";
 const AGENT_NAME = "Asha";
 
@@ -302,13 +311,90 @@ function limited(ip: string) {
   return list.length > 40;
 }
 
+/* ---------------- model calls (Claude, or OpenRouter's OpenAI-compatible API) ---------------- */
+
+// Every reply is normalised to Claude's shape: { content: [text | tool_use blocks], stop_reason }.
+type Reply = { content: any[]; stop_reason: string; model?: string };
+
+async function callClaude(system: any[], messages: any[]): Promise<Reply> {
+  const r = await fetch(API_URL, {
+    method: "POST",
+    headers: { "x-api-key": API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
+    body: JSON.stringify({ model: MODEL, max_tokens: 1024, system, tools: TOOLS, messages }),
+  });
+  if (!r.ok) throw new Error(`Claude ${r.status}: ${await r.text()}`);
+  return await r.json();
+}
+
+// Free OpenRouter models that can call tools, from the live list (the free line-up changes often).
+let freeModels: { at: number; ids: string[] } | null = null;
+const PREFER = [/deepseek/i, /qwen3/i, /llama-3\.3-70b|llama-4/i, /gemini/i, /gpt-oss/i, /mistral|devstral/i, /glm|kimi/i];
+async function orModels() {
+  if (OR_MODELS.length) return OR_MODELS.slice(0, 3);
+  if (freeModels && Date.now() - freeModels.at < 6 * 3600_000) return freeModels.ids;
+  const r = await fetch(OR_URL + "/models");
+  if (!r.ok) throw new Error(`OpenRouter models ${r.status}`);
+  const list = ((await r.json()).data ?? []) as any[];
+  const rank = (id: string) => { const i = PREFER.findIndex((re) => re.test(id)); return i < 0 ? PREFER.length : i; };
+  const ids = list
+    .filter((m) => String(m.id).endsWith(":free") && (m.supported_parameters ?? []).includes("tools") && (m.context_length ?? 0) >= 16000)
+    .sort((a, b) => rank(a.id) - rank(b.id) || (b.context_length ?? 0) - (a.context_length ?? 0))
+    .map((m) => String(m.id)).slice(0, 3);
+  if (!ids.length) throw new Error("OpenRouter: no free model with tool support right now");
+  freeModels = { at: Date.now(), ids };
+  return ids;
+}
+
+function toOpenAI(system: any[], messages: any[]) {
+  const out: any[] = [{ role: "system", content: system.map((b) => b.text).join("\n\n") }];
+  for (const m of messages) {
+    if (typeof m.content === "string") { out.push({ role: m.role, content: m.content }); continue; }
+    if (m.role === "assistant") {
+      const text = m.content.filter((b: any) => b.type === "text").map((b: any) => b.text).join("\n");
+      const calls = m.content.filter((b: any) => b.type === "tool_use")
+        .map((b: any) => ({ id: b.id, type: "function", function: { name: b.name, arguments: JSON.stringify(b.input ?? {}) } }));
+      out.push({ role: "assistant", content: text || null, ...(calls.length ? { tool_calls: calls } : {}) });
+    } else {
+      for (const b of m.content) if (b.type === "tool_result") out.push({ role: "tool", tool_call_id: b.tool_use_id, content: b.content });
+    }
+  }
+  return out;
+}
+
+async function callOpenRouter(system: any[], messages: any[]): Promise<Reply> {
+  const models = await orModels();
+  const r = await fetch(OR_URL + "/chat/completions", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${OR_KEY}`, "content-type": "application/json", "HTTP-Referer": SITE, "X-Title": "HDE website assistant" },
+    body: JSON.stringify({
+      model: models[0], ...(models.length > 1 ? { models } : {}), max_tokens: 1024, temperature: 0.4,
+      messages: toOpenAI(system, messages),
+      tools: TOOLS.map((t) => ({ type: "function", function: { name: t.name, description: t.description, parameters: t.input_schema } })),
+    }),
+  });
+  const body = await r.text();
+  if (!r.ok) throw new Error(`OpenRouter ${r.status}: ${body.slice(0, 500)}`);
+  const res = JSON.parse(body);
+  if (res.error) throw new Error(`OpenRouter: ${JSON.stringify(res.error).slice(0, 500)}`);
+  const msg = res.choices?.[0]?.message ?? {};
+  const content: any[] = [];
+  if (typeof msg.content === "string" && msg.content.trim()) content.push({ type: "text", text: msg.content.trim() });
+  for (const c of msg.tool_calls ?? []) {
+    let input: unknown = {};
+    try { input = c.function?.arguments ? JSON.parse(c.function.arguments) : {}; } catch { input = {}; }
+    content.push({ type: "tool_use", id: c.id || crypto.randomUUID(), name: c.function?.name, input });
+  }
+  return { content, stop_reason: content.some((b) => b.type === "tool_use") ? "tool_use" : "end_turn", model: res.model };
+}
+
 /* ---------------- handler ---------------- */
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: CORS });
-  if (req.method === "GET") return json({ ok: !!API_KEY, name: AGENT_NAME });
+  const ready = PROVIDER === "openrouter" ? !!OR_KEY : !!(API_KEY || OR_KEY);
+  if (req.method === "GET") return json({ ok: ready, name: AGENT_NAME });
   if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
-  if (!API_KEY) return json({ error: "Assistant not configured" }, 503);
+  if (!ready) return json({ error: "Assistant not configured" }, 503);
 
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "anon";
   if (limited(ip)) return json({ reply: "Aap bahut tezi se message bhej rahe hain 🙂 Please thoda ruk kar try karein, ya +91 99172 33664 par call/WhatsApp karein.", actions: [] });
@@ -340,14 +426,19 @@ Deno.serve(async (req) => {
       { type: "text", text: SYSTEM, cache_control: { type: "ephemeral" } },
       { type: "text", text: await contextNote(ctx, productId) },
     ];
+    let useOR = PROVIDER === "openrouter" || !API_KEY;
     for (let turn = 0; turn < 7; turn++) {
-      const r = await fetch(API_URL, {
-        method: "POST",
-        headers: { "x-api-key": API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
-        body: JSON.stringify({ model: MODEL, max_tokens: 1024, system, tools: TOOLS, messages }),
-      });
-      if (!r.ok) throw new Error(`Claude ${r.status}: ${await r.text()}`);
-      const res = await r.json();
+      let res: Reply;
+      if (useOR) res = await callOpenRouter(system, messages);
+      else {
+        try { res = await callClaude(system, messages); } catch (e) {
+          if (!OR_KEY) throw e;
+          console.error("Claude failed, using OpenRouter:", e);
+          useOR = true;
+          res = await callOpenRouter(system, messages);
+        }
+      }
+      if (res.model) console.log("model", res.model);
       const text = res.content.filter((b: any) => b.type === "text").map((b: any) => b.text).join("\n").trim();
       if (text) reply = text;
       if (res.stop_reason !== "tool_use") break;
