@@ -76,12 +76,13 @@ window.HDE_CONFIG = {
   },
 
   /*
-   * AI shopping assistant (chat bubble). Runs on Omniflow's website-agent function. It helps visitors
+   * AI shopping assistant (chat bubble). Runs on this site's Netlify function (netlify/functions/asha.mts,
+   * key OPENROUTER_API_KEY in Netlify's environment variables). It helps visitors
    * find and shortlist products and sends their enquiry, with the salesperson code from ?ref= links,
    * to Omniflow like the forms do. The bubble only shows once the function is live. Set url to "" to switch it off.
    */
   agent: {
-    url: "https://cdrgbhnntonyofqkhzpm.supabase.co/functions/v1/website-agent",
+    url: "/api/asha",
     name: "Asha"
   },
 
