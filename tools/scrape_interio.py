@@ -503,6 +503,14 @@ def finalise(items):
             groups.setdefault(it["family"].lower(), []).append(it)
     out = []
     for members in groups.values():
+        # Interio's grouped listing pages (".../<design>-GINT338") have no SKU, photo or specs of
+        # their own. Their price normally repeats one of the real colour/size options, but some
+        # are stale: GINT338 (Slimline XL with locker and drawer) carried MRP 58,096 while every
+        # buyable colour is 1,16,781 or more. Drop a grouped page whose price matches no real option.
+        real = [m for m in members if m.get("sku")]
+        if real:
+            prices = {m["from"] for m in real}
+            members = [m for m in members if m.get("sku") or m["from"] in prices]
         members.sort(key=lambda x: x["from"])
         card = dict(members[0])
         card.pop("details", None)
