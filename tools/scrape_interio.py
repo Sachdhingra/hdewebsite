@@ -8,12 +8,17 @@ site/assets/js/catalog.js, which the website loads automatically, plus one
 site/assets/data/products/<id>.json per product with its photo gallery,
 features and specifications for the product page.
 
+A --rooms run refreshes just those rooms and merges them into the existing catalogue,
+so the weekly sync can be split across days (see .github/workflows/sync-interio-catalog.yml).
+Products the run did not reach (time limit, failed page) keep their last known data; a
+product is only removed when its room was fully synced and Interio no longer lists it.
+
 Standard library only, so it runs anywhere Python 3.8+ is installed.
 
 Usage:
   python3 tools/scrape_interio.py                       # full catalogue
   python3 tools/scrape_interio.py --limit 40            # quick sample
-  python3 tools/scrape_interio.py --rooms bedroom,living
+  python3 tools/scrape_interio.py --rooms bedroom,living   # refresh only these rooms, keep the rest
   python3 tools/scrape_interio.py --from-html page.html # parse a saved page (testing)
 """
 import argparse
@@ -534,7 +539,8 @@ def write_details(items, folder):
         name = it["id"] + ".json"
         keep.add(name)
         d = dict(it["details"], id=it["id"], sku=it["sku"], name=it.get("slugName") or it["name"],
-                 price=it["from"], mrp=it["mrp"], image=it["image"])
+                 price=it["from"], mrp=it["mrp"], image=it["image"], room=it["room"], type=it.get("type", ""),
+                 family=it.get("family") or it["name"], note=it.get("note", ""), source=it.get("source", ""))
         with open(os.path.join(folder, name), "w", encoding="utf-8") as f:
             json.dump(d, f, ensure_ascii=False, separators=(",", ":"))
     for old in os.listdir(folder):
@@ -616,6 +622,81 @@ def room_photos(items, cards, folder, today=None):
     return picks
 
 
+CARD_FIELDS = {"id", "sku", "name", "price", "mrp", "image", "room", "type", "family", "note", "source"}
+
+
+def url_key(url):
+    """Last part of a product URL, e.g. 'dinchr134' for .../muna-dining-chair-DINCHR134 (usually the id)."""
+    return url.rstrip("/").rsplit("/", 1)[-1].rsplit("-", 1)[-1].lower()
+
+
+def load_existing(catalog_path, details_dir):
+    """The products the site lists now, rebuilt from catalog.js and the per-product JSON files.
+
+    Files written before split syncs lack room/type/family/source; those come from the card
+    (or the card whose options include the product) in catalog.js."""
+    import os
+    try:
+        s = open(catalog_path, encoding="utf-8").read()
+        cards = json.JSONDecoder().raw_decode(s[s.index("products: ") + len("products: "):])[0]
+    except (OSError, ValueError):
+        return []
+    info = {}
+    for c in cards:
+        for oid in [c["id"]] + [o["id"] for o in c.get("options", [])]:
+            info[oid] = {"room": c["room"], "type": c.get("type", ""), "family": c.get("family") or c["name"],
+                         "note": c.get("note", ""), "source": c.get("source", "") if oid == c["id"] else ""}
+    items = []
+    for name in sorted(os.listdir(details_dir)) if os.path.isdir(details_dir) else []:
+        if not name.endswith(".json"):
+            continue
+        try:
+            with open(os.path.join(details_dir, name), encoding="utf-8") as f:
+                d = json.load(f)
+        except (OSError, ValueError):
+            continue
+        base = info.get(d.get("id"))
+        if not base or not d.get("price"):
+            continue  # not on the site now
+        items.append({
+            "slugName": d.get("name"), "id": d["id"], "sku": d.get("sku", ""), "name": d.get("name"),
+            "room": d.get("room") or base["room"], "type": d.get("type", base["type"]),
+            "family": d.get("family") or base["family"], "from": d["price"], "mrp": d.get("mrp", False),
+            "note": d.get("note", base["note"]), "image": d.get("image", ""),
+            "source": d.get("source") or base["source"],
+            "details": {k: v for k, v in d.items() if k not in CARD_FIELDS},
+        })
+    return items
+
+
+def matches(item, url):
+    k = url_key(url)
+    return (item.get("source") or "").lower() == url.lower() or item["id"] == k or item["id"].endswith("-" + k)
+
+
+def merge(existing, fetched, rooms, listed, failed_urls, complete):
+    """Existing catalogue with this run's products swapped in.
+
+    Fetched products replace the old copy (same id). An old product in a synced room is dropped
+    only when the run finished that room (complete) and Interio neither lists it nor failed to load it."""
+    new_ids = {it["id"] for it in fetched}
+    listed_keys = {url_key(u) for u in listed}
+    listed_low = {u.lower() for u in listed}
+    out, dropped = [], 0
+    for it in existing:
+        if it["id"] in new_ids:
+            continue
+        in_slice = not rooms or it["room"] in rooms
+        if in_slice and complete:
+            still = ((it.get("source") or "").lower() in listed_low or it["id"] in listed_keys
+                     or it["id"].rsplit("-", 1)[-1] in listed_keys)
+            if not still and not any(matches(it, u) for u in failed_urls):
+                dropped += 1
+                continue
+        out.append(it)
+    return out + list(fetched), dropped
+
+
 def write_catalog(items, path, images_dir=None, rooms_dir=None):
     cards = finalise(items)
     rooms = room_photos(items, cards, rooms_dir) if rooms_dir else {}
@@ -639,7 +720,8 @@ def main():
     ap.add_argument("--images-dir", default="site/assets/img/products", help="where card photos are copied ('' to link to interio.com)")
     ap.add_argument("--rooms-dir", default="site/assets/img/rooms", help="where this week's room-tile photos go ('' to keep the stock photos)")
     ap.add_argument("--limit", type=int, default=0, help="stop after N products (0 = all)")
-    ap.add_argument("--rooms", default="", help="comma list of rooms to keep, e.g. bedroom,living")
+    ap.add_argument("--rooms", default="", help="comma list of rooms to refresh, e.g. bedroom,living; other rooms are kept as they are")
+    ap.add_argument("--allow-shrink", action="store_true", help="write even if the catalogue loses more than 15%% of its products")
     ap.add_argument("--delay", type=float, default=1.0, help="seconds between page requests")
     ap.add_argument("--max-minutes", type=float, default=50, help="stop and save what was collected after this long")
     ap.add_argument("--width", type=int, default=640, help="image width to request")
@@ -658,14 +740,42 @@ def main():
     except Exception:
         rp = None
     keep = {r.strip() for r in a.rooms.split(",") if r.strip()}
+    existing = load_existing(a.out, a.details_dir)
+    by_source = {(it.get("source") or "").lower(): it["room"] for it in existing if it.get("source")}
+    by_key = {}
+    for it in existing:
+        by_key.setdefault(it["id"], it["room"])
+        by_key.setdefault(it["id"].rsplit("-", 1)[-1], it["room"])
+
+    def expected_room(url, hint):
+        """Room a URL belongs to before fetching it: the listing's room, the room it had last time, or a name guess."""
+        if hint:
+            return hint
+        known = by_source.get(url.lower()) or by_key.get(url_key(url))
+        if known:
+            return known
+        return room_for([], url.rstrip("/").rsplit("/", 1)[-1].replace("-", " "))
+
+    # Listing pages are only crawled when their room is being synced (storage listings carry no room).
+    pages = [(path, room) for path, room in FEATURED_PAGES if not keep or (room or "storage") in keep]
+    print("Syncing rooms: %s (%d products on the site now)" % (", ".join(sorted(keep)) or "all", len(existing)),
+          file=sys.stderr)
 
     items, failed, skipped = [], 0, 0
+    listed, failed_urls = [], []
+    complete = True
     started = time.time()
-    for url, imgs, room in all_products(SITEMAP_INDEX, FEATURED_PAGES):
+    for url, imgs, room in all_products(SITEMAP_INDEX, pages):
+        listed.append(url)
+        if keep and expected_room(url, room) not in keep:
+            continue  # another day's room: not fetched, kept as it is
         if a.limit and len(items) >= a.limit:
+            complete = False
             break
         if time.time() - started > a.max_minutes * 60:
-            print("Time limit reached; saving %d products collected so far." % len(items), file=sys.stderr)
+            print("Time limit reached; saving %d products collected so far, the rest keep last week's data."
+                  % len(items), file=sys.stderr)
+            complete = False
             break
         if rp and not rp.can_fetch(UA, url):
             skipped += 1
@@ -677,20 +787,28 @@ def main():
             item = None
         if item and room:
             item["room"] = room
-        if item and (not keep or item["room"] in keep):
+        if item:
             items.append(item)
             print("%4d  %-8s %8s  %s" % (len(items), item["room"], item["from"], item["name"]))
-        elif item is None:
+        else:
             failed += 1
+            failed_urls.append(url)
         time.sleep(a.delay)
 
     if not items:
         print("No products parsed; catalogue left unchanged.", file=sys.stderr)
         return 1
-    write_details(items, a.details_dir)
-    write_catalog(items, a.out, a.images_dir or None, a.rooms_dir or None)
-    print("Wrote %d product pages to %s as %d cards, colour variants folded (%d failed, %d blocked by robots.txt)"
-          % (len(items), a.out, len(finalise(list(items))), failed, skipped))
+    merged, dropped = merge(existing, items, keep, listed, failed_urls, complete)
+    if existing and len(merged) < 0.85 * len(existing) and not a.allow_shrink:
+        print("Catalogue would shrink from %d to %d products; left unchanged (use --allow-shrink if that is right)."
+              % (len(existing), len(merged)), file=sys.stderr)
+        return 1
+    write_details(merged, a.details_dir)
+    write_catalog(merged, a.out, a.images_dir or None, a.rooms_dir or None)
+    print("Refreshed %d products (%d failed, %d blocked by robots.txt, %d no longer on interio.com removed%s). "
+          "Catalogue: %d product pages as %d cards."
+          % (len(items), failed, skipped, dropped, "" if complete else "; run stopped early, nothing removed",
+             len(merged), len(finalise(list(merged)))))
     return 0
 
 
