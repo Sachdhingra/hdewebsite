@@ -48,7 +48,7 @@ PAGES = [
         "slug": "recliners-in-dehradun", "room": "living", "interest": "Living Room",
         "types": ["Recliners"],
         "title": "Recliners in Dehradun | Godrej Interio Recliner Sofas",
-        "desc": "Godrej Interio single, two and three-seater recliners in Dehradun. Try them at our Patel Nagar showroom, open daily 11 AM to 8 PM. Ask for today's best price.",
+        "desc": "Godrej Interio 1, 2 and 3-seater recliners in Dehradun. Try them at our Patel Nagar showroom, open 11 AM to 8 PM daily. Ask for today's best price.",
         "h1": "Recliners in Dehradun",
         "sub": "Single, two and three-seater Godrej Interio recliners to try at our Patel Nagar showroom.",
         "intro": [
@@ -59,6 +59,24 @@ PAGES = [
             ("Allow space behind", "Most recliners need some room behind or in front to open fully. Check the space before you choose."),
             ("Manual or motorised", "Manual recliners need no socket. Motorised ones open at a touch, which helps elderly parents. Ask us which models come in each."),
             ("Try the footrest", "Sit back fully in the showroom and check that your legs are supported."),
+        ],
+        "faq": [FAQ_WHERE, FAQ_PRICE, FAQ_DELIVERY, FAQ_EMI],
+    },
+    {
+        "slug": "sofa-cum-bed-in-dehradun", "room": "living", "interest": "Living Room",
+        "types": ["Sofa cum Beds"],
+        "title": "Sofa Cum Bed in Dehradun | Godrej Interio Sofabeds",
+        "desc": "Godrej Interio sofa cum beds and diwans in Dehradun: 1, 2 and 3-seater sofabeds that open into a bed for guests. See them at our Patel Nagar showroom.",
+        "h1": "Sofa cum bed in Dehradun",
+        "sub": "Godrej Interio sofabeds and diwans: a sofa by day and a bed for guests at night.",
+        "intro": [
+            "A sofa cum bed suits Dehradun homes where the living room or study doubles as a guest room. It seats the family by day and opens into a bed when relatives come to stay. At our Patel Nagar showroom you can open and close one yourself before you choose.",
+            "Here are the sofa cum beds and diwans in the current Godrej Interio range, with MRP. Ask us for today's best price, fabrics and colours.",
+        ],
+        "tips": [
+            ("Measure it open", "Check the room fits the bed when it is fully open, with space to walk around it, not just the sofa."),
+            ("Try the mechanism", "Open and close it in the showroom. It should be easy enough for whoever will do it most often."),
+            ("Sleep or sit", "If guests stay often, look at the mattress thickness. If it is mostly a sofa, choose for seat comfort."),
         ],
         "faq": [FAQ_WHERE, FAQ_PRICE, FAQ_DELIVERY, FAQ_EMI],
     },
