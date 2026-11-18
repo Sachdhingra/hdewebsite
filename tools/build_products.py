@@ -119,7 +119,8 @@ def build(card, template, similar):
     note = (card.get("note") or "").rstrip(". ")
     desc = "%s, %s.%s See it at our %s showroom in %s and ask for today's best price." % (
         name, price_text, " " + note + "." if note else "", SHOWROOM, CITY)
-    own_image = BASE + card["image"]
+    img = card["image"]
+    own_image = img if img.startswith("http") else BASE + img  # not yet hosted on the site
 
     h = template
     h = re.sub(r"<title>.*?</title>", lambda m: "<title>%s</title>" % esc("%s in %s | %s" % (name, CITY, BUSINESS)), h, count=1)
