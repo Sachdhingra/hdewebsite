@@ -81,6 +81,24 @@ PAGES = [
         "faq": [FAQ_WHERE, FAQ_PRICE, FAQ_DELIVERY, FAQ_EMI],
     },
     {
+        "slug": "centre-table-in-dehradun", "room": "living", "interest": "Living Room",
+        "types": ["Coffee Tables", "Coffee Table", "Corner Tables"],
+        "title": "Centre Table in Dehradun | Godrej Interio Coffee Tables",
+        "desc": "Godrej Interio centre, coffee and corner tables in Dehradun in wood, glass and marble. See them at our Patel Nagar showroom. Ask for today's best price.",
+        "h1": "Centre tables in Dehradun",
+        "sub": "Godrej Interio centre, coffee and corner tables in wood, glass, marble and stone.",
+        "intro": [
+            "The centre table holds the tea tray, the newspaper and the remote, and it sets the look of the whole living room. At our Patel Nagar showroom you can see Godrej Interio centre tables next to the sofas they suit, and check the height and finish in person.",
+            "Here are the centre tables, coffee tables and corner tables in the current range, with MRP. Ask us for today's best price, finishes and stock.",
+        ],
+        "tips": [
+            ("Match the sofa height", "A centre table a little lower than the sofa seat is easiest to reach from where you sit."),
+            ("Leave walking space", "Keep about 45 cm between the table and the sofa so people can pass and stretch their legs."),
+            ("Pick a top for your home", "Solid wood and engineered wood suit everyday use; glass and marble look lighter but need coasters and care."),
+        ],
+        "faq": [FAQ_WHERE, FAQ_PRICE, FAQ_DELIVERY, FAQ_EMI],
+    },
+    {
         "slug": "beds-in-dehradun", "room": "bedroom", "interest": "Bedroom",
         "types": ["Wooden Beds", "Metal Beds"],
         "title": "Beds in Dehradun | Godrej Interio Storage, King, Queen Beds",
