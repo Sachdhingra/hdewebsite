@@ -1,0 +1,24 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": "site",
+  "framework": null,
+  "headers": [
+    {
+      "source": "/assets/js/catalog.js",
+      "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
+    },
+    {
+      "source": "/assets/img/products/(.*)",
+      "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/diwali-furniture-dehradun.html",
+      "destination": "/wedding-furniture-dehradun.html",
+      "permanent": true
+    }
+  ]
+}
