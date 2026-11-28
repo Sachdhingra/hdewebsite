@@ -16,7 +16,7 @@ With no argument, run `audit` and finish with the three changes most likely to b
 ## How this site is built (read before changing anything)
 
 - `site/` is plain HTML, CSS and JS with no build step. Netlify publishes it as is.
-- Live address: `https://hdefurniture.netlify.app/`. It is written in `tools/build_landing.py`
+- Live address: `https://hdefurniture.online/`. It is written in `tools/build_landing.py`
   (`BASE`), `tools/build_sitemap.py` (`BASE`), `site/assets/js/config.js` (`business.siteUrl`),
   `site/robots.txt`, `site/llms.txt` and the canonical, Open Graph and JSON-LD tags of every page.
   A domain change must touch all of them, plus a 301 from the old address.

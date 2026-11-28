@@ -10,7 +10,7 @@ window.HDE_CONFIG = {
     since: "2006",
     partnerLine: "Authorised Godrej Interio channel partner", // FILL IN: confirm wording allowed by your partner agreement
     city: "Dehradun",
-    siteUrl: "https://hdefurniture.netlify.app/", // The live address. Change it if you move to your own domain (also in sitemap.xml and robots.txt).
+    siteUrl: "https://hdefurniture.online/", // The live address. Change it if you move to your own domain (also in sitemap.xml and robots.txt).
     // Main shop number (user, 2026-09-30), also used for WhatsApp enquiries that come without a salesperson link.
     phone: "+91 99172 33664",
     phoneHref: "+919917233664",
@@ -60,7 +60,7 @@ window.HDE_CONFIG = {
    *
    * Until a provider is set, the site runs in "none" mode so no lead is silently lost.
    *
-   * Salesperson links: https://hdefurniture.netlify.app/?ref=<code> tags every enquiry that visitor
+   * Salesperson links: https://hdefurniture.online/?ref=<code> tags every enquiry that visitor
    * sends with the salesperson's code. Omniflow assigns the lead to that salesperson; the other
    * providers include it as "ref", and WhatsApp messages end with "(Ref: <code>)".
    * Each salesperson sees their own link on the Omniflow sales dashboard ("My website link").

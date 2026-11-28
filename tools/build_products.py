@@ -15,7 +15,7 @@ import json
 import re
 from pathlib import Path
 
-BASE = "https://hdefurniture.netlify.app/"  # keep in step with business.siteUrl in site/assets/js/config.js
+BASE = "https://hdefurniture.online/"  # keep in step with business.siteUrl in site/assets/js/config.js
 ROOT = Path(__file__).resolve().parent.parent / "site"
 OUT = ROOT / "product"
 BUSINESS = "Home Decor Enterprises"
