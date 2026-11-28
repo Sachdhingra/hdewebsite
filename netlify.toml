@@ -21,8 +21,14 @@
   to = "/wedding-furniture-dehradun.html"
   status = 301
 
+# Old Netlify address: keep old shared and salesperson links working after the move to hdefurniture.online.
+[[redirects]]
+  from = "https://hdefurniture.netlify.app/*"
+  to = "https://hdefurniture.online/:splat"
+  status = 301
+  force = true
+
 # Interio's grouped GINT338 page carried a stale price, so its colours now live on their own card (2026-11).
-# Keeps salesperson links already shared (…gint338.html?ref=…) working.
 [[redirects]]
   from = "/product/slimline-xl-3-door-steel-almirah-with-locker-and-drawer-gint338.html"
   to = "/product/slimxl3drldbawspn.html"

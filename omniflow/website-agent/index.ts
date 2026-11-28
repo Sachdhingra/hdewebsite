@@ -9,7 +9,7 @@
 // the salesperson code (ref) from the link the visitor came in on, so the lead lands with
 // that salesperson in Omniflow.
 
-const SITE = (Deno.env.get("SITE_URL") ?? "https://hdefurniture.netlify.app").replace(/\/$/, "");
+const SITE = (Deno.env.get("SITE_URL") ?? "https://hdefurniture.online").replace(/\/$/, "");
 const MODEL = Deno.env.get("AGENT_MODEL") ?? "claude-sonnet-5-5";
 const API_KEY = Deno.env.get("ANTHROPIC_API_KEY") ?? "";
 const API_URL = (Deno.env.get("ANTHROPIC_BASE_URL") ?? "https://api.anthropic.com") + "/v1/messages";
