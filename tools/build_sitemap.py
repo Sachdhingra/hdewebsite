@@ -11,7 +11,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 INCLUDE_PRODUCTS = True
-BASE = "https://hdefurniture.netlify.app/"  # keep in step with business.siteUrl in site/assets/js/config.js
+BASE = "https://hdefurniture.online/"  # keep in step with business.siteUrl in site/assets/js/config.js
 ROOT = Path(__file__).resolve().parent.parent / "site"
 PAGES = [  # (page, priority)
     ("", "1.0"), ("collections.html", "0.9"), ("stores.html", "0.9"), ("contact.html", "0.8"),
