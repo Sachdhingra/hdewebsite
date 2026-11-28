@@ -700,20 +700,33 @@ p { margin: 0; }
 .seo-links { margin-top: 12px; line-height: 2; color: var(--ink-2); }
 .seo-links a { color: var(--walnut); font-weight: 600; }
 
-/* Homepage hero: the room video fills the stage and moves slowly (it has its own bedroom in it) */
-.hero-room { background: var(--stone); }
-.hero-room__wrap { grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr); }
-.hero-room__stage { position: relative; isolation: isolate; overflow: hidden; border-radius: 10px; min-height: 540px; color: #fff; background: #3b3530; display: flex; align-items: flex-end; }
-.hero-room__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; z-index: -2; }
-.hero-room__stage::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(24,18,14,.6) 0%, rgba(24,18,14,.22) 42%, rgba(24,18,14,0) 70%); }
-.hero-room__copy { position: relative; z-index: 2; max-width: 26rem; padding: clamp(28px, 4vw, 48px); }
+/* Homepage hero: the room video fills the whole hero, edge to edge, behind the copy and the form */
+.hero-room { position: relative; isolation: isolate; overflow: hidden; background: #3b3530; }
+.hero-room .hero-room__wrap { grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr); padding-block: clamp(28px, 4vw, 56px); align-items: center; }
+.hero-room__stage { position: static; color: #fff; display: flex; align-items: center; min-height: clamp(520px, calc(100svh - 260px), 760px); }
+.hero-room__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; z-index: -2; background: #3b3530; }
+.hero-room::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, rgba(24,18,14,.72) 0%, rgba(24,18,14,.4) 38%, rgba(24,18,14,.12) 62%, rgba(24,18,14,.3) 100%); }
+.hero-room__copy { position: relative; z-index: 2; max-width: 30rem; padding-block: clamp(12px, 2vw, 24px); }
 .hero-room__copy .eyebrow { color: #f3e6d2; }
-.hero-room__copy h1 { color: #fff; }
-.hero-room__copy p { color: rgba(255,255,255,.88); }
+.hero-room__copy h1 { color: #fff; text-shadow: 0 2px 18px rgba(0,0,0,.25); }
+.hero-room__copy p { color: rgba(255,255,255,.9); }
 .hero-room__copy .btn--ghost { color: #fff; border-color: rgba(255,255,255,.7); }
+.hero-room__copy .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.hero-room .lead-card { position: relative; z-index: 2; }
+.hero-room__sound { position: absolute; z-index: 3; left: max(var(--gutter), calc((100% - var(--wrap)) / 2 + var(--gutter))); bottom: 16px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.55); background: rgba(24,18,14,.5); color: #fff; font: inherit; font-size: .9rem; cursor: pointer; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.hero-room__sound[hidden] { display: none; }
+.hero-room__sound:hover { background: rgba(24,18,14,.7); }
+.hero-room__sound:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.hero-room__sound svg { width: 20px; height: 20px; }
+.hero-room__sound .icon-sound, .hero-room__sound[aria-pressed="true"] .icon-muted { display: none; }
+.hero-room__sound[aria-pressed="true"] .icon-sound { display: block; }
 @media (max-width: 900px) {
-  .hero-room__wrap { grid-template-columns: 1fr; }
-  .hero-room__stage { min-height: 560px; }
-  .hero-room__stage::after { background: linear-gradient(180deg, rgba(24,18,14,.25) 0%, rgba(24,18,14,.7) 60%, rgba(24,18,14,.85) 100%); }
-  .hero-room__copy { max-width: none; }
+  /* Phone and tablet: the video fills the top of the hero full width; the form follows below it */
+  .hero-room { background: var(--stone); }
+  .hero-room::after { content: none; }
+  .hero-room .hero-room__wrap { grid-template-columns: 1fr; padding-top: 0; }
+  .hero-room__stage { position: relative; isolation: isolate; overflow: hidden; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); min-height: clamp(460px, 72svh, 640px); }
+  .hero-room__stage::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(24,18,14,.15) 0%, rgba(24,18,14,.55) 50%, rgba(24,18,14,.88) 100%); }
+  .hero-room__copy { max-width: none; padding-block: 28px 72px; }
+  .hero-room__sound { left: auto; right: var(--gutter); bottom: 16px; }
 }

@@ -188,10 +188,16 @@
             <p>Firm support, wide armrests and easy-clean finishes, shown in a real room. Come and sit on it at our Patel Nagar showroom.</p>
             <div class="btns"><a class="btn btn--primary" href="collections.html">Browse the range</a><a class="btn btn--ghost" href="stores.html">Visit the showroom</a></div>
           </div>
-          <video class="hero-room__video" data-hero-video autoplay muted loop playsinline preload="auto" poster="assets/video/room-hero-poster.jpg" aria-hidden="true">
-            <source src="assets/video/room-hero.webm" type="video/webm">
-            <source src="assets/video/room-hero.mp4" type="video/mp4">
+          <video class="hero-room__video" data-hero-video autoplay muted loop playsinline preload="none" poster="assets/video/room-hero-poster.jpg" aria-hidden="true">
+            <source data-src="assets/video/room-hero.mp4" type="video/mp4">
+            <source data-src="assets/video/room-hero.webm" type="video/webm">
           </video>
+          <!-- Sound button: stays hidden until the hero video file has an audio track. Set data-hero-audio="off" when it does. -->
+          <button class="hero-room__sound" type="button" data-hero-sound data-hero-audio="off" aria-pressed="false" hidden>
+            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg>
+            <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
+            <span data-hero-sound-label>Sound on</span>
+          </button>
         </div>
 
         <aside class="lead-card" aria-labelledby="hero-form-title">
@@ -369,15 +375,41 @@
   <script src="assets/js/install.js"></script>
   <script src="assets/js/turntable.js"></script>
   <script>
-    /* Homepage hero video: plays at half speed; still under reduced motion. */
+    /* Homepage hero video: loads after the page so it never slows the first paint
+       (the poster shows until then), plays at half speed, and stays still under
+       reduced motion. Autoplay must be muted; the sound button unmutes on tap. */
     (function () {
       var v = document.querySelector("[data-hero-video]");
       if (!v) return;
       var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      v.defaultPlaybackRate = 0.5;
-      v.playbackRate = 0.5;
-      if (still) { v.pause(); }
-      else if (v.play) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      var btn = document.querySelector("[data-hero-sound]");
+      var label = document.querySelector("[data-hero-sound-label]");
+
+      function start() {
+        var sources = v.querySelectorAll("source[data-src]");
+        for (var i = 0; i < sources.length; i++) sources[i].src = sources[i].getAttribute("data-src");
+        v.preload = "auto";
+        v.load();
+        v.defaultPlaybackRate = 0.5;
+        v.playbackRate = 0.5;
+        if (still) return;
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      }
+      if (document.readyState === "complete") start();
+      else window.addEventListener("load", start);
+      v.addEventListener("loadedmetadata", function () { v.playbackRate = still ? 1 : 0.5; });
+
+      if (btn && btn.getAttribute("data-hero-audio") === "on") {
+        btn.hidden = false;
+        btn.addEventListener("click", function () {
+          var on = v.muted;
+          v.muted = !on;
+          if (on) { v.playbackRate = 1; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          else { v.playbackRate = still ? 1 : 0.5; }
+          btn.setAttribute("aria-pressed", on ? "true" : "false");
+          if (label) label.textContent = on ? "Sound off" : "Sound on";
+        });
+      }
     })();
   </script>
 </body>
