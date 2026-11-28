@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap">
-  <link rel="preload" as="image" href="assets/img/bayflow/front-1600.webp" imagesrcset="assets/img/bayflow/front-800.webp 800w, assets/img/bayflow/front-1600.webp 1600w" imagesizes="(max-width: 900px) 100vw, 640px">
+  <link rel="preload" as="image" href="assets/video/hero-bed-poster.webp" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/styles.css">
   <!-- Business details for Google (Search, Maps). Only open showrooms are listed: add Subhash Road
        here once it opens. Keep in step with assets/js/config.js. -->
@@ -181,33 +181,18 @@
   <main id="main">
     <section class="hero" aria-label="Featured">
       <div class="wrap">
-        <div class="tt-stage" data-turntable>
-          <div class="tt-turn" tabindex="0" role="img" aria-roledescription="360 degree product view" aria-label="Bayflow leatherette sofa in Toffee Beige. Drag, or use the arrow keys, to turn it.">
-            <div class="tt-rig">
-            <img class="tt-frame is-on" src="assets/img/bayflow/front-1600.webp" srcset="assets/img/bayflow/front-800.webp 800w, assets/img/bayflow/front-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 640px" alt="" width="1600" height="893" draggable="false" fetchpriority="high">
-            <img class="tt-frame" src="assets/img/bayflow/front-left-1600.webp" srcset="assets/img/bayflow/front-left-800.webp 800w, assets/img/bayflow/front-left-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 640px" alt="" width="1600" height="893" draggable="false" decoding="async">
-            <img class="tt-frame" src="assets/img/bayflow/side-1600.webp" srcset="assets/img/bayflow/side-800.webp 800w, assets/img/bayflow/side-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 640px" alt="" width="1600" height="893" draggable="false" decoding="async">
-            <img class="tt-frame" src="assets/img/bayflow/back-left-1600.webp" srcset="assets/img/bayflow/back-left-800.webp 800w, assets/img/bayflow/back-left-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 640px" alt="" width="1600" height="893" draggable="false" decoding="async">
-            <img class="tt-frame" src="assets/img/bayflow/back-1600.webp" srcset="assets/img/bayflow/back-800.webp 800w, assets/img/bayflow/back-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 640px" alt="" width="1600" height="893" draggable="false" decoding="async">
-            <img class="tt-frame" src="assets/img/bayflow/front-right-1600.webp" srcset="assets/img/bayflow/front-right-800.webp 800w, assets/img/bayflow/front-right-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 640px" alt="" width="1600" height="893" draggable="false" decoding="async">
-              <div class="tt-spots">
-                <button class="tt-spot" type="button" style="left:35%;top:43%"><span>Firm lumbar support</span></button>
-                <button class="tt-spot" type="button" style="left:85%;top:45%"><span>Wide armrests with a wood inlay</span></button>
-                <button class="tt-spot" type="button" style="left:57%;top:66%"><span>Channel-stitched seat cushions</span></button>
-                <button class="tt-spot" type="button" style="left:18.7%;top:85%"><span>Solid wooden legs</span></button>
-              </div>
-            </div>
-          </div>
-          <div class="tt-copy">
-            <span class="eyebrow">Godrej Interio · Bayflow</span>
+        <div class="vh-stage">
+          <video class="vh-video" autoplay muted loop playsinline preload="metadata" poster="assets/video/hero-bed-poster.webp" width="960" height="712" aria-label="An upholstered bed with a winged headboard turning slowly in a studio">
+            <source src="assets/video/hero-bed.webm" type="video/webm">
+            <source src="assets/video/hero-bed.mp4" type="video/mp4">
+          </video>
+          <script>/* Respect reduced motion: hold the first frame instead of looping */
+            (function () { var v = document.currentScript.previousElementSibling; if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) { v.removeAttribute("autoplay"); v.removeAttribute("loop"); v.pause(); } })();</script>
+          <div class="vh-copy">
+            <span class="eyebrow">Beds and bedroom furniture</span>
             <h1>Furniture made for the way Dehradun lives</h1>
-            <p>Firm lumbar support, wide armrests and easy-clean leatherette. Turn it around here, then sit on it at our Patel Nagar showroom.</p>
-            <div class="btns"><a class="btn btn--primary" href="product/56101502sd01869.html">See the Bayflow</a><button class="tt-link" type="button" data-enquire data-interest="Living Room" data-product="Bayflow Leatherette Sofa">or get a free quote</button></div>
-          </div>
-          <div class="tt-tag"><strong>Bayflow Leatherette Sofa</strong><span>Toffee Beige · 1, 2 and 3 seater · 3-year warranty</span><span class="tt-price">From ₹49,407 MRP</span></div>
-          <div class="tt-dock">
-            <div class="tt-angles" role="group" aria-label="Choose a view"><button class="tt-angle" type="button" style="background-image:url(assets/img/bayflow/front-thumb.webp)" aria-label="Front view" aria-pressed="true"></button><button class="tt-angle" type="button" style="background-image:url(assets/img/bayflow/front-left-thumb.webp)" aria-label="Front left view" aria-pressed="false"></button><button class="tt-angle" type="button" style="background-image:url(assets/img/bayflow/side-thumb.webp)" aria-label="Side view" aria-pressed="false"></button><button class="tt-angle" type="button" style="background-image:url(assets/img/bayflow/back-left-thumb.webp)" aria-label="Back left view" aria-pressed="false"></button><button class="tt-angle" type="button" style="background-image:url(assets/img/bayflow/back-thumb.webp)" aria-label="Back view" aria-pressed="false"></button><button class="tt-angle" type="button" style="background-image:url(assets/img/bayflow/front-right-thumb.webp)" aria-label="Front right view" aria-pressed="false"></button></div>
-            <span class="tt-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 12a9 4 0 0 0 18 0"/><path d="m18 9 3 3-3 3"/><path d="M21 12a9 4 0 0 0-18 0" opacity=".35"/></svg>Drag to turn</span>
+            <p>Upholstered beds, storage beds and mattresses to suit every room. Come and see them in person at our Patel Nagar showroom.</p>
+            <div class="btns"><a class="btn btn--primary" href="beds-in-dehradun.html">Explore beds</a><button class="tt-link" type="button" data-enquire data-interest="Bedroom">or get a free quote</button></div>
           </div>
         </div>
 
@@ -384,6 +369,5 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/agent.js" defer></script>
   <script src="assets/js/install.js"></script>
-  <script src="assets/js/turntable.js"></script>
 </body>
 </html>
