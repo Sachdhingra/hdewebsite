@@ -82,6 +82,8 @@ p { margin: 0; }
 .strip-service { white-space: nowrap; }
 @media (max-width: 380px) { .strip-service { white-space: normal; } }
 .strip-note { color: #c9bcae; font-size: 0.8rem; }
+/* Phones: the bottom bar already has Call and WhatsApp, and the footer has the service line, so keep the strip to one line. */
+@media (max-width: 720px) { .strip-contacts { display: none; } .strip .wrap { padding-block: 6px; } }
 
 /* Header */
 .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(255, 255, 255, 0.97); border-bottom: 1px solid var(--line); backdrop-filter: saturate(1.4) blur(8px); }
@@ -104,6 +106,7 @@ p { margin: 0; }
 .brand-name { font: 600 1.1rem/1.1 var(--display); }
 .brand-sub { display: block; font: 500 0.72rem/1.2 var(--body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); margin-top: 3px; }
 @media (max-width: 420px), (min-width: 1301px) and (max-width: 1799px) { .brand-sub { display: none; } }
+@media (max-width: 420px) { .site-header .wrap { gap: 10px; min-height: 64px; } .brand { gap: 8px; } .brand-name { font-size: 0.95rem; line-height: 1.25; } }
 .nav { display: flex; align-items: center; gap: 4px; margin-left: auto; }
 .nav > a, .nav-item > button {
   font: 600 0.92rem var(--body); letter-spacing: 0.03em; padding: 10px 12px; min-height: 44px;
