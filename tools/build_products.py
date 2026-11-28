@@ -36,6 +36,12 @@ LANDING = [
     (("Modular Kitchen Sets",), "modular-kitchen-in-dehradun.html", "Modular kitchens in Dehradun"),
 ]
 KEY_SPECS = ("Size (W x H x D, cm)", "Colour", "Made of", "Warranty")
+# Product pages that moved: old page id -> new page id. The site is served by GitHub Pages, which has no
+# server redirects, so a small page forwards visitors (keeping ?ref= for salesperson links).
+MOVED = {
+    # Interio's grouped GINT338 page had a stale price; the design's colours now lead the card (2026-11).
+    "slimline-xl-3-door-steel-almirah-with-locker-and-drawer-gint338": "slimxl3drldbawspn",
+}
 
 
 def esc(s):
@@ -119,7 +125,8 @@ def build(card, template, similar):
     note = (card.get("note") or "").rstrip(". ")
     desc = "%s, %s.%s See it at our %s showroom in %s and ask for today's best price." % (
         name, price_text, " " + note + "." if note else "", SHOWROOM, CITY)
-    own_image = BASE + card["image"]
+    img = card["image"]
+    own_image = img if img.startswith("http") else BASE + img  # not yet hosted on the site
 
     h = template
     h = re.sub(r"<title>.*?</title>", lambda m: "<title>%s</title>" % esc("%s in %s | %s" % (name, CITY, BUSINESS)), h, count=1)
@@ -202,6 +209,16 @@ def build(card, template, similar):
     (OUT / (pid + ".html")).write_text("".join(out), encoding="utf-8")
 
 
+def moved_page(new):
+    to = new + ".html"
+    return ('<!doctype html>\n<html lang="en-IN">\n<head>\n  <meta charset="utf-8">\n'
+            '  <title>This product has moved | %s</title>\n  <meta name="robots" content="noindex">\n'
+            '  <link rel="canonical" href="%sproduct/%s">\n  <meta http-equiv="refresh" content="0; url=%s">\n'
+            '  <script>location.replace("%s" + location.search + location.hash);</script>\n</head>\n<body>\n'
+            '  <p>This product has moved to <a href="%s">its new page</a>.</p>\n</body>\n</html>\n'
+            % (BUSINESS, BASE, to, to, to, to))
+
+
 def main():
     products = [p for p in catalogue() if re.fullmatch(r"[a-z0-9_-]+", p.get("id") or "")]
     src = (ROOT / "product.html").read_text(encoding="utf-8")
@@ -216,6 +233,12 @@ def main():
         same.sort(key=lambda q: q.get("type") != p.get("type"))  # same kind of product first; the sort is stable
         build(p, template, same[:4])
         keep.add(p["id"] + ".html")
+    ids = {p["id"] for p in products}
+    for old, new in MOVED.items():
+        if old in ids or new not in ids:
+            continue
+        (OUT / (old + ".html")).write_text(moved_page(new), encoding="utf-8")
+        keep.add(old + ".html")
     stale = [f for f in OUT.glob("*.html") if f.name not in keep]
     for f in stale:  # products that left the range
         f.unlink()

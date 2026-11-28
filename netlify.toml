@@ -27,3 +27,9 @@
   to = "https://hdefurniture.online/:splat"
   status = 301
   force = true
+
+# Interio's grouped GINT338 page carried a stale price, so its colours now live on their own card (2026-11).
+[[redirects]]
+  from = "/product/slimline-xl-3-door-steel-almirah-with-locker-and-drawer-gint338.html"
+  to = "/product/slimxl3drldbawspn.html"
+  status = 301

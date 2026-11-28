@@ -28550,23 +28550,18 @@ window.HDE_CATALOG = { updated: "2026-11-28", rooms: {"bedroom": {"image": "asse
   "fromPrice": true
  },
  {
-  "id": "slimline-xl-3-door-steel-almirah-with-locker-and-drawer-gint338",
-  "sku": "",
+  "id": "slimxl3drldbawspn",
+  "sku": "SLIMXL3DRLDBAWSPN",
   "name": "Slimline XL 3 Door Steel Almirah with Locker and Drawer",
   "room": "storage",
   "type": "Steel Almirahs",
   "family": "Slimline XL 3 Door Steel Almirah with Locker and Drawer",
-  "from": 58096,
+  "from": 116781,
   "mrp": true,
-  "note": "",
-  "image": "",
-  "source": "https://interio.com/product/slimline-xl-3-door-steel-almirah-with-locker-and-drawer-GINT338",
+  "note": "1-Year Warranty, 1 Locker, 2 Drawers, 8 Shelves",
+  "image": "assets/img/products/slimxl3drldbawspn.jpg",
+  "source": "https://interio.com/product/slimline-xl-3-door-steel-almirah-alpine-white-and-sea-pine-SLIMXL3DRLDBAWSPN",
   "options": [
-   {
-    "id": "slimline-xl-3-door-steel-almirah-with-locker-and-drawer-gint338",
-    "name": "Slimline Xl 3-Door Steel Almirah With Locker And Drawer",
-    "price": 58096
-   },
    {
     "id": "slimxl3drldbawspn",
     "name": "Slimline Xl 3-Door Steel Almirah Alpine White And Sea Pine",
@@ -28603,8 +28598,9 @@ window.HDE_CATALOG = { updated: "2026-11-28", rooms: {"bedroom": {"image": "asse
     "price": 119560
    }
   ],
-  "variants": 8,
-  "fromPrice": true
+  "variants": 7,
+  "fromPrice": true,
+  "remoteImage": "https://interio.com/media/catalog/product/s/l/slimxl3drldbawspn_01_1920x1080.jpg?optimize=high&bg-color=255,255,255&fit=bounds&width=640"
  },
  {
   "id": "56101509sd00639",
